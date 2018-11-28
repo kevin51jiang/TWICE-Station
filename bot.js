@@ -18,13 +18,15 @@ var args = process.argv.slice(2)[0];
 bot.login(args)
 .catch(error => { if(error) console.log("gitgud haha"); });
 
-var ping = "<@247955535620472844>•d";
+var ping = "<@247955535620472844>•";
+
+const prefix = ";";
 
 bot.on('ready', () =>
 {
     console.log(`Bot started!`) 
     
-    // bot.user.setStatus('Online')
+    bot.user.setStatus('Online')
     bot.user.setActivity('with TWICE MEMES members');
 
     bot.channels.get("496531070167285770").send(ping);
@@ -61,20 +63,15 @@ bot.on('message', message =>
     
     command = command.toLowerCase().replace(/\s\s+/g, " ");
 
-    // if(command.startsWith(";"))
-    // {
-    //     if(message.author.id != "247955535620472844")
-    //         return message.reply("I'm Beta. Use <@496529668850057227> instead.");
-    // }
-    
-    // fun.interaction(message);
+    if(!command.startsWith(prefix)) return;
+    command = command.replace(prefix, "");
 
-    if(command == ";ping")
+    if(command == "ping")
         pong(message);
 
     //#region music
 
-    if(command.startsWith(";"))
+    if(command.startsWith(""))
     {
         for(var album in data.albums)
         {
@@ -83,43 +80,43 @@ bot.on('message', message =>
         }
     }
 
-    if(command == ";connect")
+    if(command == "connect")
         player.connect(message.channel);
 
     if
     (
-        command == ";disconnect" || 
-        command == ";dc" ||
-        command == ";stop"
+        command == "disconnect" || 
+        command == "dc" ||
+        command == "stop"
     )
         player.disconnect(message.channel);
 
-    if(command == ";skip")
+    if(command == "skip")
         player.skip(message.channel);
 
     //#endregion
 
     //#region info
 
-    if(command.startsWith(";i ") || command.startsWith(";info "))
+    if(command.startsWith("i ") || command.startsWith("info "))
         info.command(message, command.split(/\s(.+)/));
 
-    if(command == ";albums")
+    if(command == "albums")
         info.albums(message);
         
-    if(command == ";lists")
+    if(command == "lists")
         info.lists(message);
 
-    if(command == ";help")
+    if(command == "help")
         info.help(message, bot);
             
-    if(command == ";botinfo")
+    if(command == "botinfo")
         info.botinfo(message, bot);
         
-    if(command == ";serverinfo")
+    if(command == "serverinfo")
         info.serverinfo(message);
         
-    if(command == ";userinfo" || command.startsWith(";userinfo "))
+    if(command == "userinfo" || command.startsWith("userinfo "))
         info.userinfo(message);
 
     //#endregion
@@ -128,13 +125,13 @@ bot.on('message', message =>
 
     if
     (
-        command == ";coins" || 
-        command == ";c" ||
-        command == ";bal" ||
-        command == ";daily" ||
-        command == ";d" ||
-        command.startsWith(";c ") ||
-        command.startsWith(";coins ")
+        command == "coins" || 
+        command == "c" ||
+        command == "bal" ||
+        command == "daily" ||
+        command == "d" ||
+        command.startsWith("c ") ||
+        command.startsWith("coins ")
     )
         coins.command(message, command.split(" "));
 
@@ -142,32 +139,32 @@ bot.on('message', message =>
 
     //#region games
 
-    if(command == ";trivia" || command == ";t")
+    if(command == "trivia" || command == "t")
         games.trivia(message);
     if
     (
-        command.startsWith(";trivia add ") ||
-        command.startsWith(";t add ")
+        command.startsWith("trivia add ") ||
+        command.startsWith("t add ")
     )
         games.triviaAdd(message);
-    if(command == ";era")
+    if(command == "era")
         games.era(message);
     if
     (
-        command == ";eras" || 
-        command == ";eralist"
+        command == "eras" || 
+        command == "eralist"
     )
         games.eras(message);
-    if(command.startsWith(";era add"))
+    if(command.startsWith("era add"))
         games.eraAdd(message);
     
-    if(command == ";verify all")
+    if(command == "verify all")
         games.eraVerifyAll(message);
-    if(command.startsWith(";verify ") && command != ";verify all")
+    if(command.startsWith("verify ") && command != "verify all")
         games.eraVerify(message, true);
-    if(command.startsWith(";reject "))
+    if(command.startsWith("reject "))
         games.eraVerify(message, false);
-    if(command == ";pending")
+    if(command == "pending")
         games.pending(message);
 
     //#endregion 
@@ -176,25 +173,25 @@ bot.on('message', message =>
 
     if
     (
-        command == ";candybong" ||
-        command == ";cb" ||
-        command.startsWith(";candybong ") ||
-        command.startsWith(";cb ")
+        command == "candybong" ||
+        command == "cb" ||
+        command.startsWith("candybong ") ||
+        command.startsWith("cb ")
     )
         candybongs.candybong(message);
 
     if
     (
-        command == ";candybongs" ||
-        command == ";cbs"
+        command == "candybongs" ||
+        command == "cbs"
     )
         candybongs.candybongs(message);
     
     if
     (
-        command == ";candybongtop" ||
-        command == ";cbtop" ||
-        command == ";cbt"
+        command == "candybongtop" ||
+        command == "cbtop" ||
+        command == "cbt"
     )
         candybongs.leaderboard(message);
 
@@ -204,37 +201,37 @@ bot.on('message', message =>
 
     if
     (
-        command == ";search" ||
-        command == ";s"
+        command == "search" ||
+        command == "s"
     )
         items.search(message);
     if
     (
-        command == ";oncebag" ||
-        command == ";bag" ||
-        command == ";ob"
+        command == "oncebag" ||
+        command == "bag" ||
+        command == "ob"
     )
         items.bag(message, false);
     if
     (
-        command == ";oncebag m" ||
+        command == "oncebag m" ||
         command == "bag m" ||
-        command == ";ob m"
+        command == "ob m"
     )
     {
         items.bag(message, true);
     }
 
-    if(command.startsWith(";sell "))
+    if(command.startsWith("sell "))
         items.sell(message);
 
-    if(command.startsWith(";trade "))
+    if(command.startsWith("trade "))
         items.trade(message);
 
     //#endregion
         
     // For debugging
-    if(command.startsWith(";reset "))
+    if(command.startsWith("reset "))
         database.reset(message.content.slice(7))
         .then(() => message.channel.send("Table recreated."));
 
@@ -242,7 +239,7 @@ bot.on('message', message =>
 
     //#region RPG   
 
-    if(command.startsWith(";g "))    
+    if(command.startsWith("g "))    
         rpg.command(message);
 
     //#endregion
@@ -251,15 +248,15 @@ bot.on('message', message =>
 
     if
     (
-        command == ";test" ||
-        command.startsWith(";test ")
+        command == "test" ||
+        command.startsWith("test ")
     )
         test(message);
-    if(command.startsWith(";pr "))
+    if(command.startsWith("pr "))
         clean(message);
-    if(command.startsWith(";grant "))
+    if(command.startsWith("grant "))
         grantAccess(message);
-    if(command.startsWith(";smack "))
+    if(command.startsWith("smack "))
         smack(message);
 
     //#endregion
@@ -280,15 +277,6 @@ function pings(message)
         var tzuyuping = bot.emojis.find(emote => emote.name == "TzuyuPing");
         message.react(tzuyuping.id);
     }
-
-    // if(chat.match(/:.*:/g))
-    // {
-    //     var emoteID = chat.match(/:\d*>/)[0].slice(0, -1).substr(1);
-    //     if(chat.includes("<a:"))
-    //         return message.channel.send("https://cdn.discordapp.com/emojis/" + emoteID + ".gif")
-
-    //     message.channel.send("https://cdn.discordapp.com/emojis/" + emoteID + ".png")
-    // }
 }
 
 function pong(message)
@@ -347,11 +335,9 @@ function sql(message)
     {
         message.channel.send("✅")
         .then(m => m.delete(1000));
-        // message.delete();
     },
     () =>
     {
-        // message.delete();
         message.author.send("An error occured with the query.")
         .then(m => m.delete(1000));
     });

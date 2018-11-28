@@ -112,8 +112,8 @@ function get(message, user)
 {
     var id = user.id;
     var giver = message.author.id;
-
-    if(giver == id)
+    
+    if(message.mentions.members.first() && giver == id)
         return message.reply("hahayes");
 
     if(giver != id)

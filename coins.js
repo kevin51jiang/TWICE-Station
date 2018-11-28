@@ -15,14 +15,14 @@ exports.command = (message, params) =>
     {
         switch(params[0])
         {
-            case ";coins":
-            case ";c":
-            case ";bal":
+            case "coins":
+            case "c":
+            case "bal":
                 this.balance(message);
                 break;
 
-            case ";daily":
-            case ";d":
+            case "daily":
+            case "d":
                 daily(message);
                 break;
         }
