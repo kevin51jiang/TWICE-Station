@@ -1,0 +1,5305 @@
+{
+	"color": "#A32CFF",
+	"coinImage": "https://cdn.discordapp.com/attachments/496531070167285770/506610234886979594/bTX3J5S.png",
+	"checkImage": "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/53/white-heavy-check-mark_2705.png",
+	"wrongImage": "https://discordemoji.com/assets/emoji/x.png",
+	"albums": {
+		"theStoryBegins": {
+			"code": "tsb",
+			"title": "The Story Begins",
+			"link": "https://www.youtube.com/watch?v=6KMN61Zsd58",
+			"tracks": [
+				{
+					"title": "Like Ohh-Ahh",
+					"link": "https://www.youtube.com/watch?v=8BgIHJvTeCU",
+					"duration": ""
+				},
+				{
+					"title": "Do It Again",
+					"link": "https://www.youtube.com/watch?v=7vDSQJpod7Y",
+					"duration": ""
+				},
+				{
+					"title": "I think I'm Crazy",
+					"link": "https://www.youtube.com/watch?v=8HUzP-iTCQQ",
+					"duration": ""
+				},
+				{
+					"title": "Truth",
+					"link": "https://www.youtube.com/watch?v=nSGqXl-vyuo",
+					"duration": ""
+				},
+				{
+					"title": "Candy Boy",
+					"link": "https://www.youtube.com/watch?v=PFed9RaUIbo",
+					"duration": ""
+				},
+				{
+					"title": "Like a Fool",
+					"link": "https://www.youtube.com/watch?v=PvvBo6MGPLs",
+					"duration": ""
+				}
+			],
+			"cover": "https://i.scdn.co/image/82fcd832c095f99ee8fd751f81d0a2f93208e1d4",
+			"color": "#ED0D65",
+			"duration": "20:02"
+		},
+		"pageTwo": {
+			"code": "pgt",
+			"title": "Page Two",
+			"link": "https://www.youtube.com/watch?v=87rSLnElFHU",
+			"tracks": [
+				{
+					"title": "Cheer Up",
+					"link": "https://www.youtube.com/watch?v=uPm7ZTNAZ0c",
+					"duration": ""
+				},
+				{
+					"title": "Precious Love",
+					"link": "https://www.youtube.com/watch?v=TF39ASECiNs",
+					"duration": ""
+				},
+				{
+					"title": "Touchdown",
+					"link": "https://www.youtube.com/watch?v=t8x9-0fJgvE",
+					"duration": ""
+				},
+				{
+					"title": "Tuk Tok",
+					"link": "https://www.youtube.com/watch?v=tM2hrzRPIIU",
+					"duration": ""
+				},
+				{
+					"title": "Woohoo",
+					"link": "https://www.youtube.com/watch?v=2nb0GKCxs1g",
+					"duration": ""
+				},
+				{
+					"title": "My Headphones On",
+					"link": "https://www.youtube.com/watch?v=lNIbBQeuKoY",
+					"duration": ""
+				},
+				{
+					"title": "I'm Gonna Be a Star",
+					"link": "https://www.youtube.com/watch?v=W34HcTzs4x0",
+					"duration": ""
+				}
+			],
+			"cover": "https://i.scdn.co/image/9c581e4951265c3c7a768e72519be88947758755",
+			"color": "#80DADA",
+			"duration": "23:51"
+		},
+		"twicecoasterLane1": {
+			"code": "tc1",
+			"title": "TWICEcoaster: Lane 1",
+			"link": "https://www.youtube.com/watch?v=VoeCjXx8_-k",
+			"tracks": [
+				{
+					"title": "TT",
+					"link": "https://www.youtube.com/watch?v=dYYA1IZc4JI",
+					"duration": ""
+				},
+				{
+					"title": "1 to 10",
+					"link": "https://www.youtube.com/watch?v=EYWD9IlZ4N8",
+					"duration": ""
+				},
+				{
+					"title": "Ponytail",
+					"link": "https://www.youtube.com/watch?v=GR6QvlCKazk",
+					"duration": ""
+				},
+				{
+					"title": "Jelly Jelly",
+					"link": "https://www.youtube.com/watch?v=dcZZRuhVnFs",
+					"duration": ""
+				},
+				{
+					"title": "Pit-a-Pat",
+					"link": "https://www.youtube.com/watch?v=gySq3p0qgug",
+					"duration": ""
+				},
+				{
+					"title": "Next Page",
+					"link": "https://www.youtube.com/watch?v=3aB1tb0Jgx4",
+					"duration": ""
+				},
+				{
+					"title": "One in a Million",
+					"link": "https://www.youtube.com/watch?v=EYU5DS_2xcM",
+					"duration": ""
+				}
+			],
+			"cover": "https://i.scdn.co/image/6551b45b4e5a692f61cd42357e7f9b08753430f9",
+			"color": "#F8C89A",
+			"duration": "22:48"
+		},
+		"twicecoasterLane2": {
+			"code": "tc2",
+			"title": "TWICEcoaster: Lane 2",
+			"link": "https://www.youtube.com/watch?v=4WO-5pIwdpAnf",
+			"tracks": [
+				{
+					"title": "Knock Knock",
+					"link": "https://www.youtube.com/watch?v=4WO-5pIwdpA",
+					"duration": ""
+				},
+				{
+					"title": "Melting",
+					"link": "https://www.youtube.com/watch?v=Z6w2QPqYtrs",
+					"duration": ""
+				},
+				{
+					"title": "1 to 10",
+					"link": "https://www.youtube.com/watch?v=EYWD9IlZ4N8",
+					"duration": ""
+				},
+				{
+					"title": "Ponytail",
+					"link": "https://www.youtube.com/watch?v=GR6QvlCKazk",
+					"duration": ""
+				},
+				{
+					"title": "Jelly Jelly",
+					"link": "https://www.youtube.com/watch?v=dcZZRuhVnFs",
+					"duration": ""
+				},
+				{
+					"title": "Pit-a-Pat",
+					"link": "https://www.youtube.com/watch?v=gySq3p0qgug",
+					"duration": ""
+				},
+				{
+					"title": "Next Page",
+					"link": "https://www.youtube.com/watch?v=3aB1tb0Jgx4",
+					"duration": ""
+				},
+				{
+					"title": "One in a Million",
+					"link": "https://www.youtube.com/watch?v=EYU5DS_2xcM",
+					"duration": ""
+				}
+			],
+			"cover": "https://i.scdn.co/image/8ed6a0c95f39ded5003aac8598797563992ecb00",
+			"color": "#EB5429",
+			"duration": "29:55"
+		},
+		"signal": {
+			"code": "sgl",
+			"title": "Signal",
+			"link": "https://www.youtube.com/watch?v=mg1QGwSzKLM",
+			"tracks": [
+				{
+					"title": "Signal",
+					"link": "https://www.youtube.com/watch?v=zzqLsRINwbg",
+					"duration": ""
+				},
+				{
+					"title": "Three Times a Day",
+					"link": "https://www.youtube.com/watch?v=gUMm9U4eDls",
+					"duration": ""
+				},
+				{
+					"title": "Only You",
+					"link": "https://www.youtube.com/watch?v=vXzUDPoR9cs",
+					"duration": ""
+				},
+				{
+					"title": "Hold Me Tight",
+					"link": "https://www.youtube.com/watch?v=2mKY7i7xxIM",
+					"duration": ""
+				},
+				{
+					"title": "Eye Eye Eyes",
+					"link": "https://www.youtube.com/watch?v=DkgNYR6eVrw",
+					"duration": ""
+				},
+				{
+					"title": "Someone Like Me",
+					"link": "https://www.youtube.com/watch?v=gpaW4U779Uc",
+					"duration": ""
+				}
+			],
+			"cover": "https://i.scdn.co/image/770c9b5ddc0a151bf255406b7285abb121dd7a30",
+			"color": "#123056",
+			"duration": "19:54"
+		},
+		"twicetagram": {
+			"code": "twt",
+			"title": "Twicetagram",
+			"link": "https://www.youtube.com/watch?v=O1khOyJzKII",
+			"tracks": [
+				{
+					"title": "Likey",
+					"link": "https://www.youtube.com/watch?v=Dqn65yZYswI",
+					"duration": ""
+				},
+				{
+					"title": "Turtle",
+					"link": "https://www.youtube.com/watch?v=IEOHkaQcRwA",
+					"duration": ""
+				},
+				{
+					"title": "Missing U",
+					"link": "https://www.youtube.com/watch?v=iiOHI0X-A3w",
+					"duration": ""
+				},
+				{
+					"title": "Wow",
+					"link": "https://www.youtube.com/watch?v=C2RiBkNsAnk",
+					"duration": ""
+				},
+				{
+					"title": "FFW",
+					"link": "https://www.youtube.com/watch?v=BXI6z_b8tK0",
+					"duration": ""
+				},
+				{
+					"title": "Ding Dong",
+					"link": "https://www.youtube.com/watch?v=davOz6Lt3Dc",
+					"duration": ""
+				},
+				{
+					"title": "24/7",
+					"link": "https://www.youtube.com/watch?v=3BvnwltugcM",
+					"duration": ""
+				},
+				{
+					"title": "Look at Me",
+					"link": "https://www.youtube.com/watch?v=Yjyn6Ily6hM",
+					"duration": ""
+				},
+				{
+					"title": "Rollin'",
+					"link": "https://www.youtube.com/watch?v=6MiMAnJDcJk",
+					"duration": ""
+				},
+				{
+					"title": "Love Line",
+					"link": "https://www.youtube.com/watch?v=_SbdRIg0GcI",
+					"duration": ""
+				},
+				{
+					"title": "Don't Give Up",
+					"link": "https://www.youtube.com/watch?v=ZxPD0yJ_7pE",
+					"duration": ""
+				},
+				{
+					"title": "You in My Heart",
+					"link": "https://www.youtube.com/watch?v=3QsJvGB3_UU",
+					"duration": ""
+				},
+				{
+					"title": "Jaljayo Good Night",
+					"link": "https://www.youtube.com/watch?v=SxqgmfykBfE",
+					"duration": ""
+				}
+			],
+			"cover": "https://i.scdn.co/image/1c2eba4f54e9a90e797ace930676ef6cd87d1779",
+			"color": "#FAE122",
+			"duration": "44:16"
+		},
+		"merry&Happy": {
+			"code": "mnh",
+			"title": "Merry & Happy",
+			"link": "https://www.youtube.com/watch?v=7YxlZZ3E6nY",
+			"tracks": [
+				{
+					"title": "Heart Shaker",
+					"link": "https://www.youtube.com/watch?v=EBV3EaP0Wb8",
+					"duration": ""
+				},
+				{
+					"title": "Merry & Happy",
+					"link": "https://www.youtube.com/watch?v=wYwS81YSKSQ",
+					"duration": ""
+				},
+				{
+					"title": "Likey",
+					"link": "https://www.youtube.com/watch?v=Dqn65yZYswI",
+					"duration": ""
+				},
+				{
+					"title": "Turtle",
+					"link": "https://www.youtube.com/watch?v=IEOHkaQcRwA",
+					"duration": ""
+				},
+				{
+					"title": "Missing U",
+					"link": "https://www.youtube.com/watch?v=iiOHI0X-A3w",
+					"duration": ""
+				},
+				{
+					"title": "Wow",
+					"link": "https://www.youtube.com/watch?v=C2RiBkNsAnk",
+					"duration": ""
+				},
+				{
+					"title": "FFW",
+					"link": "https://www.youtube.com/watch?v=BXI6z_b8tK0",
+					"duration": ""
+				},
+				{
+					"title": "Ding Dong",
+					"link": "https://www.youtube.com/watch?v=davOz6Lt3Dc",
+					"duration": ""
+				},
+				{
+					"title": "24/7",
+					"link": "https://www.youtube.com/watch?v=3BvnwltugcM",
+					"duration": ""
+				},
+				{
+					"title": "Look at Me",
+					"link": "https://www.youtube.com/watch?v=Yjyn6Ily6hM",
+					"duration": ""
+				},
+				{
+					"title": "Rollin'",
+					"link": "https://www.youtube.com/watch?v=6MiMAnJDcJk",
+					"duration": ""
+				},
+				{
+					"title": "Love Line",
+					"link": "https://www.youtube.com/watch?v=_SbdRIg0GcI",
+					"duration": ""
+				},
+				{
+					"title": "Don't Give Up",
+					"link": "https://www.youtube.com/watch?v=ZxPD0yJ_7pE",
+					"duration": ""
+				},
+				{
+					"title": "You in My Heart",
+					"link": "https://www.youtube.com/watch?v=3QsJvGB3_UU",
+					"duration": ""
+				},
+				{
+					"title": "Jaljayo Good Night",
+					"link": "https://www.youtube.com/watch?v=SxqgmfykBfE",
+					"duration": ""
+				}
+			],
+			"cover": "https://i.scdn.co/image/a7fc15227ce39023c5e3d356efb29e327957cea4",
+			"color": "#027C55",
+			"duration": "50:38"
+		},
+		"whatIsLove": {
+			"code": "wil",
+			"title": "What Is Love?",
+			"link": "https://www.youtube.com/watch?v=_5VumMAOEY8",
+			"tracks": [
+				{
+					"title": "What is Love?",
+					"link": "https://www.youtube.com/watch?v=tcaauRPFUEQ",
+					"duration": ""
+				},
+				{
+					"title": "Sweet Talker",
+					"link": "https://www.youtube.com/watch?v=uU3_bPFmC7w",
+					"duration": ""
+				},
+				{
+					"title": "Ho!",
+					"link": "https://www.youtube.com/watch?v=-lSsZFUkDiI",
+					"duration": ""
+				},
+				{
+					"title": "Dejavu",
+					"link": "https://www.youtube.com/watch?v=BBX_DKc5t3s",
+					"duration": ""
+				},
+				{
+					"title": "Say Yes",
+					"link": "https://www.youtube.com/watch?v=fG74Pwrehe4",
+					"duration": ""
+				},
+				{
+					"title": "Stuck",
+					"link": "https://www.youtube.com/watch?v=5TCAwHPLLKU",
+					"duration": ""
+				}
+			],
+			"cover": "https://i.scdn.co/image/14e0b19c0cfb689d914ea021a393f25d77f6eeb8",
+			"color": "#A497CD",
+			"duration": "20:06"
+		},
+		"summerNights": {
+			"code": "smn",
+			"title": "Summer Nights",
+			"link": "https://www.youtube.com/watch?v=NeK8uYZKVcs",
+			"tracks": [
+				{
+					"title": "Dance The Night Away",
+					"link": "https://www.youtube.com/watch?v=dXcNuRkNWpo",
+					"duration": ""
+				},
+				{
+					"title": "Chillax",
+					"link": "https://www.youtube.com/watch?v=rEv7cw34_wE",
+					"duration": ""
+				},
+				{
+					"title": "Shot Thru the Heart",
+					"link": "https://www.youtube.com/watch?v=Pnvh7fDMgWY",
+					"duration": ""
+				},
+				{
+					"title": "What is Love?",
+					"link": "https://www.youtube.com/watch?v=tcaauRPFUEQ",
+					"duration": ""
+				},
+				{
+					"title": "Sweet Talker",
+					"link": "https://www.youtube.com/watch?v=uU3_bPFmC7w",
+					"duration": ""
+				},
+				{
+					"title": "Ho!",
+					"link": "https://www.youtube.com/watch?v=-lSsZFUkDiI",
+					"duration": ""
+				},
+				{
+					"title": "Dejavu",
+					"link": "https://www.youtube.com/watch?v=BBX_DKc5t3s",
+					"duration": ""
+				},
+				{
+					"title": "Say Yes",
+					"link": "https://www.youtube.com/watch?v=fG74Pwrehe4",
+					"duration": ""
+				},
+				{
+					"title": "Stuck",
+					"link": "https://www.youtube.com/watch?v=5TCAwHPLLKU",
+					"duration": ""
+				}
+			],
+			"cover": "https://i.scdn.co/image/671e629019a12e2a1f7cf7a0c86d0a44cb6a8e58",
+			"color": "#E7CF87",
+			"duration": "29:44"
+		},
+		"yesOrYes": {
+			"code": "yoy",
+			"title": "Yes or Yes",
+			"link": "https://www.youtube.com/watch?v=-3tjzWUIEk0",
+			"tracks": [
+				{
+					"title": "Yes or Yes",
+					"link": "https://www.youtube.com/watch?v=LS143SsUGAQ",
+					"duration": ""
+				},
+				{
+					"title": "Say You Love Me",
+					"link": "https://www.youtube.com/watch?v=UC7w4TRsL88",
+					"duration": ""
+				},
+				{
+					"title": "Lalala",
+					"link": "https://www.youtube.com/watch?v=kURfpL3Tgw0",
+					"duration": ""
+				},
+				{
+					"title": "Young & Wild",
+					"link": "https://www.youtube.com/watch?v=ly8eEhVt-u0",
+					"duration": ""
+				},
+				{
+					"title": "Sunset",
+					"link": "https://www.youtube.com/watch?v=nkNRnCONSzo",
+					"duration": ""
+				},
+				{
+					"title": "After Moon",
+					"link": "https://www.youtube.com/watch?v=f0OjmmgzQuM",
+					"duration": ""
+				},
+				{
+					"title": "BDZ (Korean Ver.)",
+					"link": "https://www.youtube.com/watch?v=zDP_-L_6EVQ",
+					"duration": ""
+				}
+			],
+			"cover": "https://i.scdn.co/image/67cc1debed5c16a0801d83aed07da2d01a9fa20c",
+			"color": "#E60F16",
+			"duration": "24:01"
+		}
+	},
+	"trivia": [
+		{
+			"number": "1",
+			"question": "What year did Twice debut?",
+			"choices": [
+				"2015",
+				"2014",
+				"2013",
+				"2016"
+			],
+			"answer": "2015"
+		},
+		{
+			"number": "2",
+			"question": "What month did Twice debut?",
+			"choices": [
+				"November",
+				"September",
+				"October",
+				"August"
+			],
+			"answer": "October"
+		},
+		{
+			"number": "3",
+			"question": "What day of the month did Twice debut?",
+			"choices": [
+				"21",
+				"20",
+				"22",
+				"23"
+			],
+			"answer": "20"
+		},
+		{
+			"number": "4",
+			"question": "What was Jihyo's name before she changed it?",
+			"choices": [
+				"Jennie",
+				"Park",
+				"Jihyun",
+				"Jisoo"
+			],
+			"answer": "Jisoo"
+		},
+		{
+			"number": "5",
+			"question": "Who came in second when Twice was voting for leader of the group?",
+			"choices": [
+				"Jeongyeon",
+				"Nayeon",
+				"Sana",
+				"Dahyun"
+			],
+			"answer": "Jeongyeon"
+		},
+		{
+			"number": "6",
+			"question": "Which member was born in the US?",
+			"choices": [
+				"Jeongyeon",
+				"Chaeyoung",
+				"Jihyo",
+				"Mina"
+			],
+			"answer": "Mina"
+		},
+		{
+			"number": "7",
+			"question": "Why are Dahyun and Sanas ship named SaiDa?",
+			"choices": [
+				"Sana said it's SAna + DAhyun and the i in the middle is for twIce.",
+				"SaiDa means sprite in Korean and they said they are refreshing like a sprite.",
+				"SaiDa is a character from an anime that Sana watched when she was young.",
+				"It's a ship name created by fans after TWICE's debut."
+			],
+			"answer": "SaiDa means sprite in Korean and they said they are refreshing like a sprite."
+		},
+		{
+			"number": "8",
+			"question": "What is the maknae line nickname?",
+			"choices": [
+				"Twice Maknaes",
+				"After School Meal Club",
+				"Maknae Yeojadeul",
+				"School Meal Club"
+			],
+			"answer": "After School Meal Club"
+		},
+		{
+			"number": "9",
+			"question": "What is the name of Jeongyeon's dog?",
+			"choices": [
+				"Kookie",
+				"Gucci",
+				"Nanan",
+				"Snowy"
+			],
+			"answer": "Nanan"
+		},
+		{
+			"number": "10",
+			"question": "Jihyo joined JYPE the same day as which other famous idol?",
+			"choices": [
+				"Sunmi",
+				"Gain",
+				"IU",
+				"Jinyoung"
+			],
+			"answer": "Sunmi"
+		},
+		{
+			"number": "11",
+			"question": "Who is nicknamed the Strawberry Princess?",
+			"choices": [
+				"Dahyun",
+				"Chaeyoung",
+				"Nayeon",
+				"Tzuyu"
+			],
+			"answer": "Chaeyoung"
+		},
+		{
+			"number": "12",
+			"question": "Which Marvel character does Jihyo want to wish her a happy birthday?",
+			"choices": [
+				"Iron Man",
+				"Captain America",
+				"Thor",
+				"Hulk"
+			],
+			"answer": "Thor"
+		},
+		{
+			"number": "13",
+			"question": "Which member injured their leg after being kicked by a horse during a reality show?",
+			"choices": [
+				"Nayeon",
+				"Tzuyu",
+				"Sana",
+				"Jeongyeon"
+			],
+			"answer": "Jeongyeon"
+		},
+		{
+			"number": "14",
+			"question": "What is Nayeon dog name and who named it?",
+			"choices": [
+				"Kookeu, Chaeyoung named it",
+				"Nanan, Jeongyeon named it",
+				"Gucci, Chaeyoung named it",
+				"Coco, Jeongyeon named it"
+			],
+			"answer": "Kookeu, Chaeyoung named it"
+		},
+		{
+			"number": "15",
+			"question": "Momo's dad is a big fan of which member?",
+			"choices": [
+				"Jeongyeon",
+				"Nayeon",
+				"Sana",
+				"Jihyo"
+			],
+			"answer": "Jihyo"
+		},
+		{
+			"number": "16",
+			"question": "What was Jeongyeon's name before she changed it? ",
+			"choices": [
+				"Kyungwan",
+				"Jeongyeon",
+				"Kyeongwon",
+				"Kyungwun"
+			],
+			"answer": "Kyungwan"
+		},
+		{
+			"number": "17",
+			"question": "This member is the first JYP artist to go to the toilet in the middle of a concert.",
+			"choices": [
+				"Tzuyu",
+				"Momo",
+				"Nayeon",
+				"Jeongyeon"
+			],
+			"answer": "Jeongyeon"
+		},
+		{
+			"number": "18",
+			"question": "Which member has a sister that is a famous actress?",
+			"choices": [
+				"Nayeon",
+				"Dahyun",
+				"Jeongyeon",
+				"Chaeyoung"
+			],
+			"answer": "Jeongyeon"
+		},
+		{
+			"number": "19",
+			"question": "What is Momo's favorite food?",
+			"choices": [
+				"Jokbal",
+				"Kimchi",
+				"Bulgogi",
+				"Cheese Kimbap"
+			],
+			"answer": "Jokbal"
+		},
+		{
+			"number": "20",
+			"question": "Where did Jeongyeon work as a part time job during trainee days?",
+			"choices": [
+				"At a bakery",
+				"At a fast food restaurant",
+				"At a shop",
+				"At a salon"
+			],
+			"answer": "At a bakery"
+		},
+		{
+			"number": "21",
+			"question": "Which members have driver's license?",
+			"choices": [
+				"Sana, Mina, Momo",
+				"Sana, Jihyo, Nayeon",
+				"Nayeon, Jeongyeon, Jihyo",
+				"Sana, Mina, Nayeon"
+			],
+			"answer": "Nayeon, Jeongyeon, Jihyo"
+		},
+		{
+			"number": "22",
+			"question": "Which member admitted to watching youtube videos of herself?",
+			"choices": [
+				"Dahyun",
+				"Nayeon",
+				"Jihyo",
+				"Chaeyoung"
+			],
+			"answer": "Chaeyoung"
+		},
+		{
+			"number": "23",
+			"question": "Who are the peach sisters?",
+			"choices": [
+				"Mina, Momo",
+				"Sana, Momo",
+				"Nayeon, Momo",
+				"Nayeon, Jeongyeon"
+			],
+			"answer": "Nayeon, Momo"
+		},
+		{
+			"number": "24",
+			"question": "Who are the 3 members who trained the longest?",
+			"choices": [
+				"Jihyo, Nayeon, Jeongyeon",
+				"Jihyo, Nayeon, Sana",
+				"Jihyo, Nayeon, Mina",
+				"Jihyo, Nayeon, Dahyun"
+			],
+			"answer": "Jihyo, Nayeon, Jeongyeon"
+		},
+		{
+			"number": "25",
+			"question": "Who is the member who trained the longest?",
+			"choices": [
+				"Nayeon",
+				"Sana",
+				"Jihyo",
+				"Mina"
+			],
+			"answer": "Jihyo"
+		},
+		{
+			"number": "26",
+			"question": "Who won popularity vote during their time in sixteen?",
+			"choices": [
+				"Dahyun",
+				"Nayeon",
+				"Sana",
+				"Jihyo"
+			],
+			"answer": "Dahyun"
+		},
+		{
+			"number": "27",
+			"question": "Who's the leader of the group?",
+			"choices": [
+				"Jeongyeon",
+				"Nayeon",
+				"Jihyo",
+				"Sana"
+			],
+			"answer": "Jihyo"
+		},
+		{
+			"number": "28",
+			"question": "Who is the best dancer in twice?",
+			"choices": [
+				"Sana",
+				"Mina",
+				"Nayeon",
+				"Momo"
+			],
+			"answer": "Momo"
+		},
+		{
+			"number": "29",
+			"question": "Which member can only do the tissue thing (Huge bokkae motae)?",
+			"choices": [
+				"Momo",
+				"Tzuyu",
+				"Sana",
+				"Dahyun"
+			],
+			"answer": "Momo"
+		},
+		{
+			"number": "30",
+			"question": "Which member hates water?",
+			"choices": [
+				"Sana",
+				"Jeongyeon",
+				"Jihyo",
+				"Momo"
+			],
+			"answer": "Momo"
+		},
+		{
+			"number": "31",
+			"question": "Who is the biggest troll in twice?",
+			"choices": [
+				"Momo",
+				"Sana",
+				"Nayeon",
+				"Jeongyeon"
+			],
+			"answer": "Jeongyeon"
+		},
+		{
+			"number": "32",
+			"question": "Which members were romeo and juliet in the What is Love MV?",
+			"choices": [
+				"Sana and Dahyun",
+				"Jeongyeon and Tzuyu",
+				"Momo and Tzuyu",
+				"Jeongyeon and Jihyo"
+			],
+			"answer": "Jeongyeon and Tzuyu"
+		},
+		{
+			"number": "33",
+			"question": "What is Tzuyu's English name?",
+			"choices": [
+				"Sharon",
+				"Sally",
+				"Jane",
+				"Chou"
+			],
+			"answer": "Sally"
+		},
+		{
+			"number": "34",
+			"question": "What animal is Sana associated with?",
+			"choices": [
+				"Squirrel",
+				"Rabbit",
+				"Cat",
+				"Turtle"
+			],
+			"answer": "Squirrel"
+		},
+		{
+			"number": "35",
+			"question": "What dog is Sana associated with?",
+			"choices": [
+				"Husky",
+				"Shiba",
+				"Golden Retriever",
+				"Pug"
+			],
+			"answer": "Shiba"
+		},
+		{
+			"number": "36",
+			"question": "What is the costume of Nayeon in TT MV?",
+			"choices": [
+				"Vampiress",
+				"Tinkerbell",
+				"Devil",
+				"Pinocchio"
+			],
+			"answer": "Devil"
+		},
+		{
+			"number": "37",
+			"question": "What is the costume of Dahyun in TT MV?",
+			"choices": [
+				"Superhero",
+				"Rabbit",
+				"Ice Queen",
+				"Devil"
+			],
+			"answer": "Rabbit"
+		},
+		{
+			"number": "38",
+			"question": "What is the costume of Sana in TT MV?",
+			"choices": [
+				"Devil",
+				"Mermaid",
+				"Pirate",
+				"Superhero"
+			],
+			"answer": "Superhero"
+		},
+		{
+			"number": "39",
+			"question": "What is the costume of Mina in TT MV?",
+			"choices": [
+				"Ice Queen",
+				"Rabbit",
+				"Mermaid",
+				"Pirate"
+			],
+			"answer": "Pirate"
+		},
+		{
+			"number": "40",
+			"question": "What is the costume of Jeongyeon in TT MV?",
+			"choices": [
+				"Pinocchio",
+				"Vampiress",
+				"Ice Queen",
+				"Pirate"
+			],
+			"answer": "Pinocchio"
+		},
+		{
+			"number": "41",
+			"question": "What is the costume of Tzuyu in TT MV?",
+			"choices": [
+				"Vampiress",
+				"Superhero",
+				"Ice Queen",
+				"Mermaid"
+			],
+			"answer": "Vampiress"
+		},
+		{
+			"number": "42",
+			"question": "What is the costume of Chaeyoung in TT MV?",
+			"choices": [
+				"Rabbit",
+				"Pirate",
+				"Mermaid",
+				"Devil"
+			],
+			"answer": "Mermaid"
+		},
+		{
+			"number": "43",
+			"question": "What is the costume of Momo in TT MV?",
+			"choices": [
+				"Pirate",
+				"Rabbit",
+				"Tinkerbell",
+				"Devil"
+			],
+			"answer": "Tinkerbell"
+		},
+		{
+			"number": "44",
+			"question": "What is the costume of Jihyo in TT MV?",
+			"choices": [
+				"Devil",
+				"Mermaid",
+				"Tinkerbell",
+				"Ice Queen"
+			],
+			"answer": "Ice Queen"
+		},
+		{
+			"number": "45",
+			"question": "Which member is an only child?",
+			"choices": [
+				"Sana",
+				"Dahyun",
+				"Tzuyu",
+				"Nayeon"
+			],
+			"answer": "Sana"
+		},
+		{
+			"number": "46",
+			"question": "Who was the other member added to the Twice lineup along with Momo?",
+			"choices": [
+				"Sana",
+				"Dahyun",
+				"Tzuyu",
+				"Mina"
+			],
+			"answer": "Tzuyu"
+		},
+		{
+			"number": "47",
+			"question": "How many members were originally planned for the debut line up in SIXTEEN?",
+			"choices": [
+				"6",
+				"7",
+				"8",
+				"9"
+			],
+			"answer": "7"
+		},
+		{
+			"number": "48",
+			"question": "What year did Twice get their first music show win?",
+			"choices": [
+				"2014",
+				"2015",
+				"2016",
+				"2017"
+			],
+			"answer": "2015"
+		},
+		{
+			"number": "49",
+			"question": "What song got Twice their first music show win?",
+			"choices": [
+				"Signal",
+				"Likey",
+				"Cheer Up",
+				"TT"
+			],
+			"answer": "Cheer Up"
+		},
+		{
+			"number": "50",
+			"question": "Who ranked first in Sixteen?",
+			"choices": [
+				"Sana",
+				"Nayeon",
+				"Mina",
+				"Jihyo"
+			],
+			"answer": "Jihyo"
+		},
+		{
+			"number": "51",
+			"question": "What is Tzuyu's nationality?",
+			"choices": [
+				"Chinese",
+				"Taiwanese",
+				"Japanese",
+				"Korean"
+			],
+			"answer": "Taiwanese"
+		},
+		{
+			"number": "52",
+			"question": "Which song is connected to TT?",
+			"choices": [
+				"Heart Shaker",
+				"Signal",
+				"Likey",
+				"Knock Knock"
+			],
+			"answer": "Knock Knock"
+		},
+		{
+			"number": "53",
+			"question": "The name \"TWICE\" means to touch people's heart twice through-",
+			"choices": [
+				"Once with their heart and another with their minds.",
+				"Once with their eyes and another with their ears.",
+				"Once with their eyes and another with their hearts.",
+				"Once with their ears and another with their hearts."
+			],
+			"answer": "Once with their eyes and another with their ears."
+		},
+		{
+			"number": "54",
+			"question": "Who was Mina's partner in Running Man when they appeared as guests during their \"What Is Love\" promotions?",
+			"choices": [
+				"Jaesuk",
+				"Haha",
+				"Kwangsoo",
+				"Jihyo"
+			],
+			"answer": "Kwangsoo"
+		},
+		{
+			"number": "55",
+			"question": "Who acted and cried, to pull a prank on Seo Janghoon, in TWICE's first appearance in Knowing Bros?",
+			"choices": [
+				"Jeongyeon",
+				"Nayeon",
+				"Mina",
+				"Dahyun"
+			],
+			"answer": "Jeongyeon"
+		},
+		{
+			"number": "56",
+			"question": "What is the name of Jeongyeon's sister, who is an actress?",
+			"choices": [
+				"Seungyeon",
+				"Mingyeon",
+				"Hwangyeon",
+				"Yeongyeon"
+			],
+			"answer": "Seungyeon"
+		},
+		{
+			"number": "57",
+			"question": "Jeongyeon, along with her sister Seungyeon and actor Kim Minsuk, hosted which Korean Music Show?",
+			"choices": [
+				"Music Bank Show",
+				"Music Core",
+				"Inkigayo",
+				"M-Countdown"
+			],
+			"answer": "Inkigayo"
+		},
+		{
+			"number": "58",
+			"question": "Eye Eye Eyes was part of which album/EP?",
+			"choices": [
+				"Twicecoaster: Lane 1",
+				"Signal",
+				"Twicetagram",
+				"Summer Nights"
+			],
+			"answer": "Signal"
+		},
+		{
+			"number": "59",
+			"question": "Which member said \"sweet potatoes grew from the tree\"?",
+			"choices": [
+				"Sana",
+				"Dahyun",
+				"Chaeyoung",
+				"Momo"
+			],
+			"answer": "Momo"
+		},
+		{
+			"number": "60",
+			"question": "Who produced TWICE's debut track \"Like Ooh Aah\"?",
+			"choices": [
+				"JYP",
+				"JunK",
+				"Black Eyed Pilsung",
+				"Shinsadong Tiger"
+			],
+			"answer": "Black Eyed Pilsung"
+		},
+		{
+			"number": "61",
+			"question": "Who was in got7's A MV?",
+			"choices": [
+				"Sana",
+				"Jihyo",
+				"Mina",
+				"Dahyun"
+			],
+			"answer": "Sana"
+		},
+		{
+			"number": "62",
+			"question": "How many songs did JYP produce for TWICE all in all?",
+			"choices": [
+				"3",
+				"8",
+				"6",
+				"5"
+			],
+			"answer": "6"
+		},
+		{
+			"number": "63",
+			"question": "Who was the main actor in got7's Girls Girls Girls?",
+			"choices": [
+				"Jeongyeon",
+				"Momo",
+				"Nayeon",
+				"Sana"
+			],
+			"answer": "Nayeon"
+		},
+		{
+			"number": "64",
+			"question": "I'm Gonna Be a Star is only available on the CD version of which album/EP?",
+			"choices": [
+				"Page Two",
+				"The Story Begins",
+				"Signal",
+				"Twicecoaster: Lane 1"
+			],
+			"answer": "Page Two"
+		},
+		{
+			"number": "65",
+			"question": "Who was chosen as the \"pic-dol\" in TWICE's first appearance in Idol Room?",
+			"choices": [
+				"Nayeon",
+				"Tzuyu",
+				"Jihyo",
+				"Jeongyeon"
+			],
+			"answer": "Jeongyeon"
+		},
+		{
+			"number": "66",
+			"question": "Who left Sana alone to be eliminated during TWICE's first guest appearance on Running Man?",
+			"choices": [
+				"Mina",
+				"Chaeyoung",
+				"Tzuyu",
+				"Dahyun"
+			],
+			"answer": "Chaeyoung"
+		},
+		{
+			"number": "67",
+			"question": "Dahyun has a special talent in finding what?",
+			"choices": [
+				"Birds",
+				"Once",
+				"Phones",
+				"Cameras"
+			],
+			"answer": "Cameras"
+		},
+		{
+			"number": "68",
+			"question": "Which 2PM member got hit with a bag, thrown by a very young Jihyo?",
+			"choices": [
+				"Taecyeon",
+				"Nichkhun",
+				"Junho",
+				"Jay Park"
+			],
+			"answer": "Taecyeon"
+		},
+		{
+			"number": "69",
+			"question": "What is the name of Mina's older brother?",
+			"choices": [
+				"Kenta",
+				"Kai",
+				"Hiro",
+				"Mike"
+			],
+			"answer": "Kai"
+		},
+		{
+			"number": "70",
+			"question": "Based on Mina's pre debut pictures and social media account, it is known she was a fan of which K-Pop band?",
+			"choices": [
+				"TRAXX",
+				"FT Island",
+				"CN Blue",
+				"N Flying"
+			],
+			"answer": "CN Blue"
+		},
+		{
+			"number": "71",
+			"question": "Which twice song among these is made by JYP?",
+			"choices": [
+				"Rollin'",
+				"Merry and Happy",
+				"Eye Eye Eyes",
+				"Truth"
+			],
+			"answer": "Merry and Happy"
+		},
+		{
+			"number": "72",
+			"question": "What movie was Mina portraying in the “What Is Love” music video?",
+			"choices": [
+				"La Boum",
+				"Titanic",
+				"500 Days of Summer",
+				"Clueless"
+			],
+			"answer": "La Boum"
+		},
+		{
+			"number": "73",
+			"question": "Which member was added to Twice's line-up due to the most popularity in Sixteen?",
+			"choices": [
+				"Momo",
+				"Dahyun",
+				"Tzuyu",
+				"Mina"
+			],
+			"answer": "Tzuyu"
+		},
+		{
+			"number": "74",
+			"question": "Which member was injured and was unable to film with the group when they went to Vietnam, in their guest appearance in the show Carefree Travelers?",
+			"choices": [
+				"Jihyo",
+				"Jeongyeon",
+				"Dahyun",
+				"Momo"
+			],
+			"answer": "Dahyun"
+		},
+		{
+			"number": "75",
+			"question": "Which song song gave Twice their first win in M COUNTDOWN?",
+			"choices": [
+				"Signal",
+				"Likey",
+				"Cheer Up",
+				"Like Ooh Ahh"
+			],
+			"answer": "Cheer Up"
+		},
+		{
+			"number": "76",
+			"question": "In the Knock Knock MV, who knocked on the door?",
+			"choices": [
+				"Momo",
+				"Jeongyeon",
+				"JYP",
+				"Sana"
+			],
+			"answer": "JYP"
+		},
+		{
+			"number": "77",
+			"question": "Which four members performed the song “Dangerous Woman” when they appeared on the show Yoo Sugarman?",
+			"choices": [
+				"Mina, Jihyo, Momo, Sana",
+				"Momo, Sana, Mina, Tzuyu",
+				"Nayeon, Jihyo, Jeongyeon, Chaeyoung",
+				"Nayeon, Jihyo, Chaeyoung, Tzuyu"
+			],
+			"answer": "Nayeon, Jihyo, Chaeyoung, Tzuyu"
+		},
+		{
+			"number": "78",
+			"question": "In Twice's elegant private life', who's blood type were the members anticipating to find out?",
+			"choices": [
+				"Jeongyeon",
+				"Dahyun",
+				"Momo",
+				"Sana"
+			],
+			"answer": "Momo"
+		},
+		{
+			"number": "79",
+			"question": "What was JYP holding when he appeared in the Knock Knock MV?",
+			"choices": [
+				"A Keyboard",
+				"A Launchpad",
+				"A Book",
+				"A Gift"
+			],
+			"answer": "A Keyboard"
+		},
+		{
+			"number": "80",
+			"question": "Which member made a cameo in the drama Dream High 2?",
+			"choices": [
+				"Jihyo",
+				"Tzuyu",
+				"Jeongyeon",
+				"Nayeon"
+			],
+			"answer": "Nayeon"
+		},
+		{
+			"number": "81",
+			"question": "What is the name of Dahyun’s older brother?",
+			"choices": [
+				"Jaesuk",
+				"Myungsoo",
+				"Hyunmoo",
+				"Seho"
+			],
+			"answer": "Myungsoo"
+		},
+		{
+			"number": "82",
+			"question": "What does “J-Line” stand for?",
+			"choices": [
+				"The Japanese Members",
+				"Members with “J” as the initial of their names",
+				"Members who are big fans of JYP",
+				"Members who were part of 6Mix"
+			],
+			"answer": "The Japanese Members"
+		},
+		{
+			"number": "83",
+			"question": "Who is the center of the group?",
+			"choices": [
+				"Nayeon",
+				"Jeongyeon",
+				"Jihyo",
+				"Sana"
+			],
+			"answer": "Nayeon"
+		},
+		{
+			"number": "84",
+			"question": "Which members wrote the lyrics for \"Sweet Talker\"?",
+			"choices": [
+				"NoJam Bros (Jeongyeon, Chaeyoung)",
+				"NaMo (Nayeon, Momo)",
+				"MiHyo (Mina, Jihyo)",
+				"MiMo (Mina, Momo)"
+			],
+			"answer": "NoJam Bros (Jeongyeon, Chaeyoung)"
+		},
+		{
+			"number": "85",
+			"question": "What is the correct spelling of Nayeon in Hangul?",
+			"choices": [
+				"나언",
+				"나연",
+				"나욘",
+				"나이언"
+			],
+			"answer": "나연"
+		},
+		{
+			"number": "86",
+			"question": "Which members are part of the \"School Meal Club?\"",
+			"choices": [
+				"Dahyun, Chaeyoung, Tzuyu",
+				"Nayeon, Jeongyeon, Jihyo",
+				"Mina, Momo, Sana",
+				"Jeongyeon, Momo, Sana"
+			],
+			"answer": "Dahyun, Chaeyoung, Tzuyu"
+		},
+		{
+			"number": "87",
+			"question": "What is the correct spelling of Dahyun in Hangul?",
+			"choices": [
+				"다휸",
+				"다현",
+				"닿윤",
+				"닿연"
+			],
+			"answer": "다현"
+		},
+		{
+			"number": "88",
+			"question": "What is the correct spelling of Sana in Hangul?",
+			"choices": [
+				"산아",
+				"시나",
+				"서나",
+				"사나"
+			],
+			"answer": "사나"
+		},
+		{
+			"number": "89",
+			"question": "What is the correct spelling of Mina in Hangul?",
+			"choices": [
+				"미나",
+				"민아",
+				"마나",
+				"미냐"
+			],
+			"answer": "미나"
+		},
+		{
+			"number": "90",
+			"question": "What is the correct spelling of Jeongyeon in Hangul?",
+			"choices": [
+				"정예온",
+				"저연",
+				"정현",
+				"정연"
+			],
+			"answer": "정연"
+		},
+		{
+			"number": "91",
+			"question": "What is the correct spelling of Tzuyu in Hangul?",
+			"choices": [
+				"츠위",
+				"쯔외",
+				"쯔위",
+				"쯔의"
+			],
+			"answer": "쯔위"
+		},
+		{
+			"number": "92",
+			"question": "What is the correct spelling of Chaeyoung in Hangul?",
+			"choices": [
+				"채오웅",
+				"채영",
+				"채응",
+				"채융"
+			],
+			"answer": "채영"
+		},
+		{
+			"number": "93",
+			"question": "What is the correct spelling of Momo in Hangul?",
+			"choices": [
+				"머머",
+				"무무",
+				"몸오",
+				"모모"
+			],
+			"answer": "모모"
+		},
+		{
+			"number": "94",
+			"question": "What is the correct spelling of Jihyo in Hangul?",
+			"choices": [
+				"짛요",
+				"지효",
+				"지혀",
+				"짛여"
+			],
+			"answer": "지효"
+		},
+		{
+			"number": "95",
+			"question": "What is the correct spelling of Twice in Hangul?",
+			"choices": [
+				"트외이스",
+				"투와이스",
+				"트와이스",
+				"톼이스"
+			],
+			"answer": "트와이스"
+		},
+		{
+			"number": "96",
+			"question": "How was Twice formed?",
+			"choices": [
+				"There was a talent show contest in JYP Entertainment, and the first 9 winners became Twice.",
+				"JYP chose 9 trainees himself and debuted them.",
+				"JYP held auditions for trainees and chose 9 of them to become Twice.",
+				"They were formed from a reality girl group survival show called Sixteen."
+			],
+			"answer": "They were formed from a reality girl group survival show called Sixteen."
+		},
+		{
+			"number": "97",
+			"question": "Why is a bunny or rabbit associated with Nayeon?",
+			"choices": [
+				"Nayeon has a pet rabbit",
+				"Nayeon is as cute as a bunny",
+				"Nayeon has bunny teeth",
+				"Nayeon wore a bunny suit costume before"
+			],
+			"answer": "Nayeon has bunny teeth"
+		},
+		{
+			"number": "98",
+			"question": "How old is Nayeon (international age as of 2018)?",
+			"choices": [
+				"23",
+				"22",
+				"24",
+				"21"
+			],
+			"answer": "23"
+		},
+		{
+			"number": "99",
+			"question": "When did Nayeon became a trainee in JYP Entertainment?",
+			"choices": [
+				"September 15, 2010",
+				"September 15, 2011",
+				"September 14, 2010",
+				"September 16, 2010"
+			],
+			"answer": "September 15, 2010"
+		},
+		{
+			"number": "100",
+			"question": "Which of the following attributes is Nayeon's ideal attribute?",
+			"choices": [
+				"Respectful",
+				"Charming",
+				"Handsome",
+				"Buff"
+			],
+			"answer": "Buff"
+		},
+		{
+			"number": "101",
+			"question": "Which of the following TWICE songs did Mina made a ballet version for?",
+			"choices": [
+				"LIKEY",
+				"SIGNAL",
+				"CHEER UP",
+				"Like OOH-AHH"
+			],
+			"answer": "Like OOH-AHH"
+		},
+		{
+			"number": "102",
+			"question": "Which member choreographed the song \"JELLY JELLY\"?",
+			"choices": [
+				"Momo",
+				"Dahyun",
+				"Sana",
+				"Chaeyoung"
+			],
+			"answer": "Dahyun"
+		},
+		{
+			"number": "103",
+			"question": "Which member wrote the lyrics for \"LOVE LINE\"?",
+			"choices": [
+				"Nayeon",
+				"Jihyo",
+				"Jeongyeon",
+				"Chaeyoung"
+			],
+			"answer": "Jeongyeon"
+		},
+		{
+			"number": "104",
+			"question": "Which member wrote the lyrics for \"DON'T GIVE UP\"?",
+			"choices": [
+				"Mina",
+				"Dahyun",
+				"Jihyo",
+				"Chaeyoung"
+			],
+			"answer": "Chaeyoung"
+		},
+		{
+			"number": "105",
+			"question": "Which of the following songs in the album \"What is Love?\", was written by Jihyo?",
+			"choices": [
+				"DEJAVU",
+				"HO!",
+				"What is Love?",
+				"SWEET TALKER"
+			],
+			"answer": "HO!"
+		},
+		{
+			"number": "106",
+			"question": "Which of the following songs was written by the J-Line (Momo, Sana, Mina)?",
+			"choices": [
+				"Shot thru the heart",
+				"Pink Lemonade",
+				"LUV ME",
+				"LOOK AT ME"
+			],
+			"answer": "Shot thru the heart"
+		},
+		{
+			"number": "107",
+			"question": "Which of the following members wrote the song, \"Precious Love\", along with JYP?",
+			"choices": [
+				"Chaeyoung ",
+				"Jihyo",
+				"Jeongyeon",
+				"Nayeon"
+			],
+			"answer": "Chaeyoung "
+		},
+		{
+			"number": "108",
+			"question": "Which of the following members wrote the song, \"EYES EYES EYS\" along with Jihyo?",
+			"choices": [
+				"Dahyun",
+				"Chaeyoung",
+				"Mina",
+				"Nayeon"
+			],
+			"answer": "Chaeyoung"
+		},
+		{
+			"number": "109",
+			"question": "Which members wrote the song \"MISSING U\"?",
+			"choices": [
+				"Mina and Chaeyoung",
+				"Jihyo and Jeongyeon",
+				"Chaeyoung and Dahyun",
+				"Dahyun and Sana"
+			],
+			"answer": "Chaeyoung and Dahyun"
+		},
+		{
+			"number": "110",
+			"question": "Which members wrote the song \"24/7\"?",
+			"choices": [
+				"Jihyo and Nayeon",
+				"Momo and Mina",
+				"Chaeyoung and Dahyun",
+				"Jeongyeon and Jihyo"
+			],
+			"answer": "Jihyo and Nayeon"
+		},
+		{
+			"number": "111",
+			"question": "Which of the following songs was written by Chaeyoung and Jeongyeon?",
+			"choices": [
+				"HO!",
+				"THREE TIMES A DAY",
+				"SWEET TALKER",
+				"EYE EYE EYES"
+			],
+			"answer": "SWEET TALKER"
+		},
+		{
+			"number": "112",
+			"question": "Which member wrote the song, \"SUNSET\"?",
+			"choices": [
+				"Nayeon",
+				"Jihyo",
+				"Jeongyeon",
+				"Sana"
+			],
+			"answer": "Jihyo"
+		},
+		{
+			"number": "113",
+			"question": "Which member wrote the song, \"LALALA\"?",
+			"choices": [
+				"Mina",
+				"Momo",
+				"Jeongyeon",
+				"Chaeyoung"
+			],
+			"answer": "Jeongyeon"
+		},
+		{
+			"number": "114",
+			"question": "Which member wrote the song, \"YOUNG AND WILD\" ?",
+			"choices": [
+				"Jeongyeon",
+				"Chaeyoung",
+				"Dahyun",
+				"Nayeon"
+			],
+			"answer": "Chaeyoung"
+		},
+		{
+			"number": "115",
+			"question": "What is the name of Tzuyu's dog?",
+			"choices": [
+				"Hulk",
+				"Kookeu",
+				"Lucky",
+				"Gucci"
+			],
+			"answer": "Gucci"
+		},
+		{
+			"number": "116",
+			"question": "Which album is the song \"Like a Fool\" from?",
+			"choices": [
+				"THE STORY BEGINS",
+				"PAGE TWO",
+				"SIGNAL",
+				"#TWICE"
+			],
+			"answer": "THE STORY BEGINS"
+		},
+		{
+			"number": "117",
+			"question": "Which of the following songs is from album, \"The Story Begins\" ?",
+			"choices": [
+				"Touchdown",
+				"Woohoo",
+				"Going Crazy",
+				"CHEER UP"
+			],
+			"answer": "Going Crazy"
+		},
+		{
+			"number": "118",
+			"question": "Which album is the song, \"Candy Boy\" , from?",
+			"choices": [
+				"PAGE TWO",
+				"THE STORY BEGINS",
+				"#TWICE",
+				"TWICEcoaster: LANE 1"
+			],
+			"answer": "THE STORY BEGINS"
+		},
+		{
+			"number": "119",
+			"question": "Which album is the song, \"Precious Love\" , from?",
+			"choices": [
+				"THE STORY BEGINS",
+				"TWICEcoaster: LANE 1",
+				"#TWICE",
+				"PAGE TWO"
+			],
+			"answer": "PAGE TWO"
+		},
+		{
+			"number": "120",
+			"question": "Which of the following songs is the title track for the album, \"PAGE TWO\" ?",
+			"choices": [
+				"Like OOH-AHH",
+				"CHEER UP",
+				"KNOCK KNOCK",
+				"TT"
+			],
+			"answer": "CHEER UP"
+		},
+		{
+			"number": "121",
+			"question": "Which of the following songs is from the album \"PAGE TWO\" ?",
+			"choices": [
+				"Headphone",
+				"Candy Boy",
+				"JELLY JELLY",
+				"ONE IN A MILLION"
+			],
+			"answer": "Headphone"
+		},
+		{
+			"number": "122",
+			"question": "Which member has the nickname, \"Thomas the train\" ?",
+			"choices": [
+				"Sana",
+				"Momo",
+				"Jihyo",
+				"Chaeyoung"
+			],
+			"answer": "Jihyo"
+		},
+		{
+			"number": "123",
+			"question": "Which member in TWICE is good friends with BLΛƆKPIИK’s Jisoo and Jennie?",
+			"choices": [
+				"Dahyun",
+				"Mina",
+				"Jeongyeon",
+				"Nayeon"
+			],
+			"answer": "Nayeon"
+		},
+		{
+			"number": "124",
+			"question": "Which of the following options is Jeongyeon’s and Sana’s ship name?",
+			"choices": [
+				"Sayeon",
+				"230",
+				"1211",
+				"Jeongna"
+			],
+			"answer": "230"
+		},
+		{
+			"number": "125",
+			"question": "Which member has the nickname, \"Dancing Machine\" ?",
+			"choices": [
+				"Sana",
+				"Momo",
+				"Mina",
+				"Dahyun"
+			],
+			"answer": "Momo"
+		},
+		{
+			"number": "126",
+			"question": "which member plays the role of JB's crush in GOT7’s \"Stop stop it\" MV?",
+			"choices": [
+				"Nayeon",
+				"Chaeyoung",
+				"Dahyun",
+				"Jihyo"
+			],
+			"answer": "Dahyun"
+		},
+		{
+			"number": "127",
+			"question": "Which member plays the role of a waitress in GOT7’s \"A\" MV?",
+			"choices": [
+				"Sana",
+				"Mina",
+				"Momo",
+				"Nayeon"
+			],
+			"answer": "Sana"
+		},
+		{
+			"number": "128",
+			"question": "Which member was featured in Jun-ho’s \"Instant love\" MV?",
+			"choices": [
+				"Dahyun",
+				"Jihyo",
+				"Sana",
+				"Tzuyu"
+			],
+			"answer": "Sana"
+		},
+		{
+			"number": "129",
+			"question": "Which of the following members is the clumsiest?",
+			"choices": [
+				"Mina",
+				"Sana",
+				"Chaeyoung",
+				"Nayeon"
+			],
+			"answer": "Sana"
+		},
+		{
+			"number": "130",
+			"question": "How many siblings does Sana have?",
+			"choices": [
+				"0",
+				"1",
+				"2",
+				"3"
+			],
+			"answer": "0"
+		},
+		{
+			"number": "131",
+			"question": "Which member has the nickname, \"Black Swan\" ?",
+			"choices": [
+				"Nayeon",
+				"Sana",
+				"Jihyo",
+				"Mina"
+			],
+			"answer": "Mina"
+		},
+		{
+			"number": "132",
+			"question": "Which member is known for singing the famous \"Shy shy shy\" line?",
+			"choices": [
+				"Sana",
+				"Mina",
+				"Momo",
+				"Tzuyu"
+			],
+			"answer": "Sana"
+		},
+		{
+			"number": "133",
+			"question": "Which of the following members was popular pre-debut due to the \"Eagle Dance\" video?",
+			"choices": [
+				"Sana",
+				"Jeongyeon",
+				"Momo",
+				"Dahyun"
+			],
+			"answer": "Dahyun"
+		},
+		{
+			"number": "134",
+			"question": "Which survival show did the members of TWICE go through prior to their debut?",
+			"choices": [
+				"Produce 48",
+				"SIXTEEN",
+				"Produce 101 Season 1",
+				"Produce 101 Season 2"
+			],
+			"answer": "SIXTEEN"
+		},
+		{
+			"number": "135",
+			"question": "Which member enjoys listening to American Hip-Hop?",
+			"choices": [
+				"Chaeyoung",
+				"Dahyun",
+				"Mina",
+				"Jihyo"
+			],
+			"answer": "Chaeyoung"
+		},
+		{
+			"number": "136",
+			"question": "Which of the following colour combinations is TWICE's official colours?",
+			"choices": [
+				"Warm White and Pink ",
+				"Pink and Magenta",
+				"Neon Magenta and Apricot",
+				"Apricot and Pink"
+			],
+			"answer": "Neon Magenta and Apricot"
+		},
+		{
+			"number": "137",
+			"question": "What is the name of TWICE's debut album in Korea?",
+			"choices": [
+				"Candy Pop",
+				"One More Time",
+				"Wake Me Up",
+				"THE STORY BEGINS"
+			],
+			"answer": "THE STORY BEGINS"
+		},
+		{
+			"number": "138",
+			"question": "Which members were present in the first two episodes of \"Trick & True\" ?",
+			"choices": [
+				"Jeongyeon, Jihyo and Sana",
+				"Chaeyoung, Jihyo and Tzuyu",
+				"Momo, Mina and Sana",
+				"Dahyun, Mina and Sana"
+			],
+			"answer": "Jeongyeon, Jihyo and Sana"
+		},
+		{
+			"number": "139",
+			"question": "Which of the following songs had won TWICE their first music program award?",
+			"choices": [
+				"Like OOH-AHH",
+				"CHEER UP",
+				"One More Time",
+				"I'm Gonna Be A Star"
+			],
+			"answer": "CHEER UP"
+		},
+		{
+			"number": "140",
+			"question": "In the \"SIGNAL\" MV, who possesses the power to hypnotise?",
+			"choices": [
+				"Nayeon",
+				"Sana",
+				"Mina",
+				"Chaeyoung"
+			],
+			"answer": "Mina"
+		},
+		{
+			"number": "141",
+			"question": "Which state of the United States was Mina born in?",
+			"choices": [
+				"Texas",
+				"California",
+				"Washington",
+				"Oregon"
+			],
+			"answer": "Texas"
+		},
+		{
+			"number": "142",
+			"question": "Which of the following songs is in the album, \"PAGE TWO\" ?",
+			"choices": [
+				"1 TO 10",
+				"Going Crazy",
+				"Precious Love",
+				"CHILLAX"
+			],
+			"answer": "Precious Love"
+		},
+		{
+			"number": "143",
+			"question": "Which member has introduced GFriend's \"Eunha\" as her girlfriend in a livestream?",
+			"choices": [
+				"Momo",
+				"Chaeyoung",
+				"Sana",
+				"Nayeon"
+			],
+			"answer": "Sana"
+		},
+		{
+			"number": "144",
+			"question": "How many siblings does Jeongyeon have?",
+			"choices": [
+				"1",
+				"2",
+				"3",
+				"4"
+			],
+			"answer": "2"
+		},
+		{
+			"number": "145",
+			"question": "Which of the following MVs share the same ending as \"TT\" ?",
+			"choices": [
+				"KNOCK KNOCK",
+				"CHEER UP",
+				"SIGNAL",
+				"Dance The Night Away"
+			],
+			"answer": "KNOCK KNOCK"
+		},
+		{
+			"number": "146",
+			"question": "Along with GFriend, I.O.I, and Red Velvet, which song did TWICE perform to during the 2016 KBS Song Festival?",
+			"choices": [
+				"Sorry, Sorry",
+				"Gee",
+				"Gandam Style",
+				"Into The New World"
+			],
+			"answer": "Into The New World"
+		},
+		{
+			"number": "147",
+			"question": "Which member sleeps the earliest?",
+			"choices": [
+				"Mina",
+				"Dahyun",
+				"Chaeyoung",
+				"Tzuyu"
+			],
+			"answer": "Tzuyu"
+		},
+		{
+			"number": "148",
+			"question": "Which member was prominently featured in GOT7’s \"Girls Girls Girls\" music video? ",
+			"choices": [
+				"Nayeon",
+				"Jeongyeon",
+				"Jihyo",
+				"Dahyun"
+			],
+			"answer": "Nayeon"
+		},
+		{
+			"number": "149",
+			"question": "Which members were in Nayeon's team in the Once Halloween fanmeeting?",
+			"choices": [
+				"Jeongyeon, Momo, Jihyo",
+				"Mina, Dahyun, Tzuyu",
+				"Momo, Sana, Dahyun",
+				"Sana, Mina, Chaeyoung"
+			],
+			"answer": "Momo, Sana, Dahyun"
+		},
+		{
+			"number": "150",
+			"question": "Which Miss A's music video were most of the TWICE members featured in?",
+			"choices": [
+				"Only You",
+				"Hush",
+				"Breathe",
+				"I Don’t Need A Man"
+			],
+			"answer": "Only You"
+		},
+		{
+			"number": "151",
+			"question": "Which member’s favourite Japanese sentence is \"The opposite of love is not hate, but indifference.\" ?",
+			"choices": [
+				"Dahyun",
+				"Mina",
+				"Chaeyoung",
+				"Sana"
+			],
+			"answer": "Mina"
+		},
+		{
+			"number": "152",
+			"question": "Which member shares a room with Jeongyeon in the dormitory?",
+			"choices": [
+				"Momo",
+				"Tzuyu",
+				"Nayeon",
+				"Chaeyoung"
+			],
+			"answer": "Momo"
+		},
+		{
+			"number": "153",
+			"question": "Momo was featured in Heechul’s and Kyunghoon’s music video. What was the title of the aforementioned MV?",
+			"choices": [
+				"Sweet Moment",
+				"Sweet Talker",
+				"Sweet Life",
+				"Sweet Dream"
+			],
+			"answer": "Sweet Dream"
+		},
+		{
+			"number": "154",
+			"question": "When Nayeon was young, she was involved in a car accident. Which part of her body is weak due to the accident?",
+			"choices": [
+				"Left Hand",
+				"Left Leg",
+				"Lower Back",
+				"Both Shoulders"
+			],
+			"answer": "Left Leg"
+		},
+		{
+			"number": "155",
+			"question": "Aside from Jihyo, which other member is also ambidextrous?",
+			"choices": [
+				"Momo",
+				"Chaeyoung",
+				"Tzuyu",
+				"Jeongyeon"
+			],
+			"answer": "Jeongyeon"
+		},
+		{
+			"number": "156",
+			"question": "Which fruit is Jihyo allergic to?",
+			"choices": [
+				"Grapes",
+				"Kiwis",
+				"Pineapples",
+				"Rambutans"
+			],
+			"answer": "Pineapples"
+		},
+		{
+			"number": "157",
+			"question": "What is Mina’s religion?",
+			"choices": [
+				"Islam",
+				"Catholicism",
+				"Buddhism",
+				"Shintoism"
+			],
+			"answer": "Catholicism"
+		},
+		{
+			"number": "158",
+			"question": "What is Mina’s favourite ballet production?",
+			"choices": [
+				"La Corsaire",
+				"Swan Lake",
+				"Depaato Rose",
+				"Enpitsu Sedai"
+			],
+			"answer": "La Corsaire"
+		},
+		{
+			"number": "159",
+			"question": "Which member is the most flexible?",
+			"choices": [
+				"Momo",
+				"Sana",
+				"Mina",
+				"Dahyun"
+			],
+			"answer": "Dahyun"
+		},
+		{
+			"number": "160",
+			"question": "The Maknae Line (Dahyun, Chaeyoung and Tzuyu) share a room in the dormitory.",
+			"choices": [
+				"True",
+				"False"
+			],
+			"answer": "True"
+		},
+		{
+			"number": "161",
+			"question": "Dahyun is Christian.",
+			"choices": [
+				"True",
+				"False"
+			],
+			"answer": "True"
+		},
+		{
+			"number": "162",
+			"question": "Tzuyu was born in Taipei, Taiwan.",
+			"choices": [
+				"True",
+				"False"
+			],
+			"answer": "False"
+		},
+		{
+			"number": "163",
+			"question": "Which of the following MVs is the first to hit 400 million views?",
+			"choices": [
+				"Heart Shaker",
+				"TT",
+				"Dance The Night Away",
+				"LIKEY"
+			],
+			"answer": "TT"
+		},
+		{
+			"number": "164",
+			"question": "Which of these moments made Dahyun famous in Korea?",
+			"choices": [
+				"Her saying \"Wow, expensive.\" ",
+				"Her fair skin",
+				"Eagle Dance",
+				"Her double eyelids"
+			],
+			"answer": "Eagle Dance"
+		},
+		{
+			"number": "165",
+			"question": "How many years was Jihyo a trainee for JYP Entertainment?",
+			"choices": [
+				"8",
+				"9",
+				"10",
+				"11"
+			],
+			"answer": "10"
+		},
+		{
+			"number": "166",
+			"question": "Which of the following members does ballet?",
+			"choices": [
+				"Momo",
+				"Mina",
+				"Sana",
+				"Dahyun"
+			],
+			"answer": "Mina"
+		},
+		{
+			"number": "167",
+			"question": "What is the meaning of \"TT\" ?",
+			"choices": [
+				"TwiceTagram",
+				"TwiceTwice",
+				"Their dance move",
+				"Sad Face Emoticon"
+			],
+			"answer": "Sad Face Emoticon"
+		},
+		{
+			"number": "168",
+			"question": "Which member said the famous line \"Wow, expensive.\" ?",
+			"choices": [
+				"Jihyo",
+				"Dahyun",
+				"Sana",
+				"Nayeon"
+			],
+			"answer": "Dahyun"
+		},
+		{
+			"number": "169",
+			"question": "Which of the following members is afraid of heights?",
+			"choices": [
+				"Sana",
+				"Chaeyoung",
+				"Jihyo",
+				"Momo"
+			],
+			"answer": "Momo"
+		},
+		{
+			"number": "170",
+			"question": "Which of the following members is the main rapper?",
+			"choices": [
+				"Chaeyoung",
+				"Tzuyu",
+				"Momo",
+				"Dahyun"
+			],
+			"answer": "Chaeyoung"
+		},
+		{
+			"number": "171",
+			"question": "Why is Dahyun called \"Dubu\" ?",
+			"choices": [
+				"Her skin tone is very pale",
+				"Dubu means \"eagle\" in Korean",
+				"Her parents gave her that nickname",
+				"It was the name of her pet dog that died"
+			],
+			"answer": "Her skin tone is very pale"
+		},
+		{
+			"number": "172",
+			"question": "When is Tzuyu's birthday?",
+			"choices": [
+				"April 23 1999",
+				"June 14 1999",
+				"June 20 1999",
+				"July 14 1999"
+			],
+			"answer": "June 14 1999"
+		},
+		{
+			"number": "173",
+			"question": "When is Chaeyoung's birthday?",
+			"choices": [
+				"September 22 1998",
+				"April 23 1999",
+				"May 28 1999",
+				"November 9 1999"
+			],
+			"answer": "April 23 1999"
+		},
+		{
+			"number": "174",
+			"question": "When is Dahyun's birthday?",
+			"choices": [
+				"April 23 1997",
+				"May 28 1998",
+				"September 22 1998",
+				"November 9 1998"
+			],
+			"answer": "May 28 1998"
+		},
+		{
+			"number": "175",
+			"question": "When is Mina's birthday?",
+			"choices": [
+				"March 24 1997",
+				"November 1 1997",
+				"November 9 1997",
+				"December 29 1997"
+			],
+			"answer": "March 24 1997"
+		},
+		{
+			"number": "176",
+			"question": "When is Sana's birthday?",
+			"choices": [
+				"April 23 1996",
+				"May 28 1996",
+				"June 14 1996",
+				"December 29 1996"
+			],
+			"answer": "December 29 1996"
+		},
+		{
+			"number": "177",
+			"question": "When is Momo's birthday?",
+			"choices": [
+				"December 29 1995",
+				"April 23 1996",
+				"November 1 1996",
+				"November 9 1996"
+			],
+			"answer": "November 9 1996"
+		},
+		{
+			"number": "178",
+			"question": "When is Jeongyeon's birthday?",
+			"choices": [
+				"March 24 1996",
+				"November 1 1996",
+				"November 9 1996",
+				"December 29 1996"
+			],
+			"answer": "November 1 1996"
+		},
+		{
+			"number": "179",
+			"question": "When is Nayeon's birthday?",
+			"choices": [
+				"February 1 1995",
+				"September 22 1995",
+				"November 9 1995",
+				"December 29 1995"
+			],
+			"answer": "September 22 1995"
+		},
+		{
+			"number": "180",
+			"question": "When is Jihyo's birthday?",
+			"choices": [
+				"November 1 1996",
+				"February 1 1997",
+				"September 22 1997",
+				"November 9 1997"
+			],
+			"answer": "February 1 1997"
+		},
+		{
+			"number": "181",
+			"question": "Which of the listed events was Nayeon a host?",
+			"choices": [
+				"32nd Golden Disc Awards",
+				"Idol Star Athletics Championships 2018",
+				"26th Seoul Music Awards",
+				"27th Seoul Music Awards"
+			],
+			"answer": "Idol Star Athletics Championships 2018"
+		},
+		{
+			"number": "182",
+			"question": "In the \"What is Love?\" MV, the scene with Dahyun and Chaeyoung was a reference to which movie? ",
+			"choices": [
+				"Goldfinger",
+				"Ultraviolet",
+				"You Only Live Twice",
+				"Leon: The Professional"
+			],
+			"answer": "Leon: The Professional"
+		},
+		{
+			"number": "183",
+			"question": "In the \"What is Love?\" MV, the scene with Momo and Tzuyu was a reference to which movie? ",
+			"choices": [
+				"The Greatest Showman",
+				"La La Land",
+				"Dreamers",
+				"Beauty and the Beast"
+			],
+			"answer": "La La Land"
+		},
+		{
+			"number": "184",
+			"question": "Which Japanese movie is referenced in the \"What is Love?\" MV?",
+			"choices": [
+				"Sensei Kunshu",
+				"Princess Mononoke",
+				"Love Letter",
+				"As The Gods Will"
+			],
+			"answer": "Love Letter"
+		},
+		{
+			"number": "185",
+			"question": "In the \"What is Love?\" MV, the scene with Sana and Tzuyu was a reference to which movie?",
+			"choices": [
+				"La La Land",
+				"Pulp Fiction",
+				"Memento",
+				"Gone Girl"
+			],
+			"answer": "Pulp Fiction"
+		},
+		{
+			"number": "186",
+			"question": "Which French movie is referenced in the \"What is Love?\" MV?",
+			"choices": [
+				"The Intouchables",
+				"C'est la vie!",
+				"La Boum",
+				"La vie en rose"
+			],
+			"answer": "La Boum"
+		},
+		{
+			"number": "187",
+			"question": "In the \"What is Love?\" MV, the scene with Jeongyeon and Sana was a reference to which movie?",
+			"choices": [
+				"Thir13en Ghosts",
+				"Sprited Away",
+				"Ghost",
+				"Ghost in the Shell"
+			],
+			"answer": "Ghost"
+		},
+		{
+			"number": "188",
+			"question": "In the \"What is Love?\" MV, the scene with Jeongyeon and Tzuyu was a reference to which movie?",
+			"choices": [
+				"The Great Gatsby",
+				"Romeo + Juliet",
+				"Love Letter",
+				"La La Land"
+			],
+			"answer": "Romeo + Juliet"
+		},
+		{
+			"number": "189",
+			"question": "What was Tzuyu's costume during the 2018 Once Halloween Fanmeet?",
+			"choices": [
+				"Avatar",
+				"Corpse Bride",
+				"Coraline",
+				"Sadness"
+			],
+			"answer": "Corpse Bride"
+		},
+		{
+			"number": "190",
+			"question": "What was Chaeyoung's costume during the 2018 Once Halloween Fanmeet?",
+			"choices": [
+				"Riddler",
+				"Bane",
+				"Two-faced",
+				"Joker"
+			],
+			"answer": "Joker"
+		},
+		{
+			"number": "191",
+			"question": "What was Dahyun's costume during the 2018 Once Halloween Fanmeet?",
+			"choices": [
+				"Annabelle",
+				"Chuckie",
+				"Wendy",
+				"Mandy"
+			],
+			"answer": "Annabelle"
+		},
+		{
+			"number": "192",
+			"question": "What was Mina's costume during the 2018 Once Halloween Fanmeet?",
+			"choices": [
+				"Mathayus",
+				"Ra-Antef",
+				"Ahmanet",
+				"Cleopatra"
+			],
+			"answer": "Ahmanet"
+		},
+		{
+			"number": "193",
+			"question": "What was Jihyo's costume during the 2018 Once Halloween Fanmeet?",
+			"choices": [
+				"Princess Mononoke",
+				"Julia Chang",
+				"A Native American",
+				"Pocahontas"
+			],
+			"answer": "A Native American"
+		},
+		{
+			"number": "194",
+			"question": "What was Sana's costume during the 2018 Once Halloween Fanmeet?",
+			"choices": [
+				"The Red Queen",
+				"The Queen of Hearts",
+				"The Queen of Diamonds",
+				"The White Queen"
+			],
+			"answer": "The Red Queen"
+		},
+		{
+			"number": "195",
+			"question": "What was Momo's costume during the 2018 Once Halloween Fanmeet?",
+			"choices": [
+				"Maleficent",
+				"Ursula",
+				"Yzma",
+				"Cruella De Vil"
+			],
+			"answer": "Cruella De Vil"
+		},
+		{
+			"number": "196",
+			"question": "What was Jeongyeon's costume during the 2018 Once Halloween Fanmeet?",
+			"choices": [
+				"Menos",
+				"No Face",
+				"Gillian",
+				"Hollow"
+			],
+			"answer": "No Face"
+		},
+		{
+			"number": "197",
+			"question": "What was Nayeon's costume during the 2018 Once Halloween Fanmeet?",
+			"choices": [
+				"Batwoman",
+				"Black Widow",
+				"Catwoman",
+				"Black Canary"
+			],
+			"answer": "Catwoman"
+		},
+		{
+			"number": "198",
+			"question": "What is Nayeon afraid of?",
+			"choices": [
+				"Heights",
+				"Spiders",
+				"The sea",
+				"Crowds"
+			],
+			"answer": "The sea"
+		},
+		{
+			"number": "199",
+			"question": "What is Nayeon's favorite color?",
+			"choices": [
+				"Blue",
+				"Red",
+				"Pink",
+				"Purple"
+			],
+			"answer": "Purple"
+		},
+		{
+			"number": "200",
+			"question": "What is Nayeon afraid of?",
+			"choices": [
+				"Heights",
+				"Spiders",
+				"The sea",
+				"Crowds"
+			],
+			"answer": "The sea"
+		},
+		{
+			"number": "201",
+			"question": "What is Nayeon most confident in?",
+			"choices": [
+				"Her face",
+				"Her lips",
+				"Her whole being",
+				"Her legs"
+			],
+			"answer": "Her lips"
+		},
+		{
+			"number": "202",
+			"question": "What is Jeongyeon's favorite number, and the meaning behind it?",
+			"choices": [
+				"9; there is 9 TWICE members",
+				"1; it is the day of her birthday",
+				"31; it is the date she auditioned for JYP",
+				"0; she doesn't have a favourite number"
+			],
+			"answer": "0; it means she doesn't have one"
+		},
+		{
+			"number": "203",
+			"question": "What is Nayeon's favorite number, and the meaning behind it?",
+			"choices": [
+				"1; as there is 1 Nayeon",
+				"9; there is 9 TWICE members",
+				"22; it is the day of her birthday",
+				"6; it represents 6mix, the group Nayeon was originally going to debut in"
+			],
+			"answer": "9; it means 9 TWICE members"
+		},
+		{
+			"number": "204",
+			"question": "Which dance genre is Momo most confident in?",
+			"choices": [
+				"Hip-Hop",
+				"Jazz",
+				"Urban",
+				"Freestyle"
+			],
+			"answer": "Urban"
+		},
+		{
+			"number": "205",
+			"question": "What is Momo's favorite food?",
+			"choices": [
+				"Live octopus",
+				"Jokbal",
+				"Sweet and sour pork",
+				"Sausage stew"
+			],
+			"answer": "Jokbal"
+		},
+		{
+			"number": "206",
+			"question": "What is Momo's favorite color?",
+			"choices": [
+				"Pink",
+				"Black",
+				"Blue",
+				"Green"
+			],
+			"answer": "Pink"
+		},
+		{
+			"number": "207",
+			"question": "What is Momo's favorite number, and the meaning behind it?",
+			"choices": [
+				"99; it represents her birthday",
+				"96; it means 1996, the year she was born in",
+				"64; it is the number on his father's shirt when he plays football",
+				"100; Momo means 100 in Japanese"
+			],
+			"answer": "64; it is the number on his father's shirt when he plays football"
+		},
+		{
+			"number": "208",
+			"question": "What is Momo allergic to?",
+			"choices": [
+				"Sushi",
+				"Salmon",
+				"Pollen",
+				"Nayeon"
+			],
+			"answer": "Salmon"
+		},
+		{
+			"number": "209",
+			"question": "What is Sana afraid of?",
+			"choices": [
+				"Heights",
+				"The sea",
+				"Spiders",
+				"Thunder"
+			],
+			"answer": "Thunder"
+		},
+		{
+			"number": "210",
+			"question": "What is Sana allergic to?",
+			"choices": [
+				"Sushi",
+				"Pollen",
+				"Salmon",
+				"Eggplant"
+			],
+			"answer": "Pollen"
+		},
+		{
+			"number": "211",
+			"question": "What is Sana's specialty?",
+			"choices": [
+				"Cooking",
+				"Drums",
+				"Calligraphy",
+				"Karuta"
+			],
+			"answer": "Calligraphy"
+		},
+		{
+			"number": "212",
+			"question": "What is Jihyo's favorite color?",
+			"choices": [
+				"Red",
+				"Blue",
+				"Apricot and Magenta",
+				"Pink"
+			],
+			"answer": "Red"
+		},
+		{
+			"number": "213",
+			"question": "What is Jihyo's favorite webtoon?",
+			"choices": [
+				"Tower of God",
+				"Noblesse",
+				"Lookism",
+				"Cheese in the Trap"
+			],
+			"answer": "Lookism"
+		},
+		{
+			"number": "214",
+			"question": "What is Jihyo's favorite music genre?",
+			"choices": [
+				"Kpop",
+				"Jazz",
+				"R&B soul",
+				"Reggae"
+			],
+			"answer": "R&B soul"
+		},
+		{
+			"number": "215",
+			"question": "What is Jihyo allergic to?",
+			"choices": [
+				"Pollen",
+				"Seafood",
+				"Salmon",
+				"Pineapple"
+			],
+			"answer": "Pineapple"
+		},
+		{
+			"number": "216",
+			"question": "What is Mina's favorite karaoke song?",
+			"choices": [
+				"Sailor Moon OP",
+				"Almost is Never Enough!",
+				"2PM's My House",
+				"Taeyang's Wedding Dress"
+			],
+			"answer": "Almost is Never Enough!"
+		},
+		{
+			"number": "217",
+			"question": "What is Mina's favorite condiment?",
+			"choices": [
+				"Mustard",
+				"Mayonnaise",
+				"Hot Sauce",
+				"Ketchup"
+			],
+			"answer": "Ketchup"
+		},
+		{
+			"number": "218",
+			"question": "What is Mina's favorite number, and the meaning behind it?",
+			"choices": [
+				"24; it is the day of her birthday",
+				"11; she learnt ballet for 11 years",
+				"23; it means The Pirate",
+				"37; 37 in Japanese is pronounced as \"Mi\" for 3 and \"Na\" for 7"
+			],
+			"answer": "37; 37 in Japanese is pronounced as \"Mi\" for 3 and \"Na\" for 7"
+		},
+		{
+			"number": "219",
+			"question": "What is Dahyun afraid of?",
+			"choices": [
+				"Animals",
+				"The sea",
+				"Crowds",
+				"Thunder"
+			],
+			"answer": "Animals"
+		},
+		{
+			"number": "220",
+			"question": "What is Dahyun's favorite drink?",
+			"choices": [
+				"Soju",
+				"Chocolate milk",
+				"Orange juice",
+				"Coke"
+			],
+			"answer": "Chocolate milk"
+		},
+		{
+			"number": "221",
+			"question": "What habit does Dahyun have?",
+			"choices": [
+				"Covering her mouth",
+				"Touching her nose",
+				"Widening her nostrils",
+				"Cracking her knuckles"
+			],
+			"answer": "Touching her nose"
+		},
+		{
+			"number": "222",
+			"question": "What is Chaeyoung's favorite color?",
+			"choices": [
+				"Pink",
+				"Orange",
+				"Black",
+				"Indigo"
+			],
+			"answer": "Black"
+		},
+		{
+			"number": "223",
+			"question": "What is Tzuyu's favorite Baskin Robbins flavor?",
+			"choices": [
+				"Matcha",
+				"Chocolate",
+				"Bubblegum",
+				"Cookies and Cream"
+			],
+			"answer": "Cookies and Cream"
+		},
+		{
+			"number": "224",
+			"question": "In the \"Like OOH-AHH\" MV, which TWICE member is shown to be clumsy?",
+			"choices": [
+				"Mina",
+				"Momo",
+				"Dahyun",
+				"Sana"
+			],
+			"answer": "Sana"
+		},
+		{
+			"number": "225",
+			"question": "As of October 2018, which year did TWICE have the most MVs uploaded onto YouTube?",
+			"choices": [
+				"2015",
+				"2016",
+				"2017",
+				"2018"
+			],
+			"answer": "2017"
+		},
+		{
+			"number": "226",
+			"question": "What is Tzuyu's favorite music genre?",
+			"choices": [
+				"R&B soul",
+				"Pop songs",
+				"Reggae",
+				"Classical"
+			],
+			"answer": "Pop songs"
+		},
+		{
+			"number": "227",
+			"question": "Who is Jihyo’s bias in 2PM?",
+			"choices": [
+				"Nichkhun",
+				"Taecyeon",
+				"Jay Park",
+				"Wooyoung"
+			],
+			"answer": "Nichkhun"
+		},
+		{
+			"number": "228",
+			"question": "On the variety show \"Weekly Idol\" , which song did TWICE not dance to at 2x speed?",
+			"choices": [
+				"LIKEY",
+				"TT",
+				"CHEER UP",
+				"SIGNAL"
+			],
+			"answer": "TT"
+		},
+		{
+			"number": "229",
+			"question": "Which injury caused Jihyo to take a break from all activities in 2017?",
+			"choices": [
+				"Knee injury",
+				"Rib injury",
+				"Arm injury",
+				"Back injury"
+			],
+			"answer": "Knee injury"
+		},
+		{
+			"number": "230",
+			"question": "Sana’s name in Korean means “wife”.",
+			"choices": [
+				"True",
+				"False"
+			],
+			"answer": "False"
+		},
+		{
+			"number": "231",
+			"question": "JYP personally approached and scouted Tzuyu when she was still in Taiwan.",
+			"choices": [
+				"True",
+				"False"
+			],
+			"answer": "False"
+		},
+		{
+			"number": "232",
+			"question": "Sana is an only child.",
+			"choices": [
+				"True",
+				"False"
+			],
+			"answer": "True"
+		},
+		{
+			"number": "233",
+			"question": "Dahyun became viral in Korea before debut by doing an \"emu dance\" in church. ",
+			"choices": [
+				"True",
+				"False"
+			],
+			"answer": "False"
+		},
+		{
+			"number": "234",
+			"question": "In \"KNOCK KNOCK\" MV, why did the door close?",
+			"choices": [
+				"The kids in the \"TT\" MV closed it",
+				"JYP himself closed the door",
+				"The door closed by itself when the clock struck 12 o'clock",
+				"A magical gust of wind closed the door"
+			],
+			"answer": "The door closed by itself when the clock struck 12 o'clock"
+		},
+		{
+			"number": "235",
+			"question": "Momo used to be part of the Korean girl group \"MOMOLAND\".",
+			"choices": [
+				"True",
+				"False"
+			],
+			"answer": "False"
+		},
+		{
+			"number": "236",
+			"question": "In \"KNOCK KNOCK\" MV, what was JYP holding when he showed up at the door?",
+			"choices": [
+				"Keyboard",
+				"Guitar",
+				"Radio",
+				"Piano"
+			],
+			"answer": "Piano"
+		},
+		{
+			"number": "237",
+			"question": "How many dance breaks are there in all the TWICE MVs as of 30th October 2018?",
+			"choices": [
+				"None",
+				"4",
+				"2",
+				"1"
+			],
+			"answer": "2"
+		},
+		{
+			"number": "238",
+			"question": "TWICE writes and composes all of their music.",
+			"choices": [
+				"True",
+				"False"
+			],
+			"answer": "False"
+		},
+		{
+			"number": "239",
+			"question": "How many versions of \"YES OR YES\" albums are there?",
+			"choices": [
+				"1",
+				"2",
+				"3",
+				"4"
+			],
+			"answer": "3"
+		},
+		{
+			"number": "240",
+			"question": "Jihyo is ambidextrous.",
+			"choices": [
+				"True",
+				"False"
+			],
+			"answer": "True"
+		},
+		{
+			"number": "241",
+			"question": "Dahyun’s nickname, \"Dubu\", means tofu in Korean.",
+			"choices": [
+				"True",
+				"False"
+			],
+			"answer": "True"
+		},
+		{
+			"number": "242",
+			"question": "According to Momo, she used to be very smart, and was well versed in English, until she was pushed by a classmate and hitting her head on what?",
+			"choices": [
+				"A door",
+				"A wall",
+				"A chair",
+				"A closet"
+			],
+			"answer": "A wall"
+		},
+		{
+			"number": "243",
+			"question": "Whose name tag did Tzuyu remove, resulting her team to lose, in their first ever appearance on Running Man?",
+			"choices": [
+				"Sukjin",
+				"Kwangsoo",
+				"Gary",
+				"Jaesuk"
+			],
+			"answer": "Jaesuk"
+		},
+		{
+			"number": "244",
+			"question": "Where did TWICE go to during their appearance on \"Carefree Travelers\" ?",
+			"choices": [
+				"Vietnam",
+				"Malaysia",
+				"Thailand",
+				"Bangladesh"
+			],
+			"answer": "Vietnam"
+		},
+		{
+			"number": "245",
+			"question": "What was Jihyo’s nickname she asked the cast members to guess in their episode of Knowing Bros?",
+			"choices": [
+				"Thomas",
+				"Mic",
+				"Jigglypuff",
+				"Corn"
+			],
+			"answer": "Mic"
+		},
+		{
+			"number": "246",
+			"question": "During TWICE’s \"Lost Time\" special, what was the first item they acquired?",
+			"choices": [
+				"A bird",
+				"A teddy bear",
+				"A rose",
+				"A book"
+			],
+			"answer": "A rose"
+		},
+		{
+			"number": "247",
+			"question": "How many years did Mina practise ballet?",
+			"choices": [
+				"6",
+				"7",
+				"11",
+				"12"
+			],
+			"answer": "11"
+		},
+		{
+			"number": "248",
+			"question": "Who made spring rolls on the survival show, \"SIXTEEN\" ?",
+			"choices": [
+				"Sana",
+				"Tzuyu",
+				"Mina",
+				"Nayeon"
+			],
+			"answer": "Sana"
+		},
+		{
+			"number": "249",
+			"question": "What does Momo’s name mean in Japanese?",
+			"choices": [
+				"Jokbal",
+				"Peaches",
+				"Mango",
+				"Kimchi"
+			],
+			"answer": "Peaches"
+		},
+		{
+			"number": "250",
+			"question": "Which of the these members (Chaeyoung, Mina, Jihyo, Dahyun) is the oldest?",
+			"choices": [
+				"Chaeyoung",
+				"Mina",
+				"Jihyo",
+				"Dahyun"
+			],
+			"answer": "Jihyo"
+		},
+		{
+			"number": "251",
+			"question": "TWICE is the highest selling girl group in terms of physical album sales.",
+			"choices": [
+				"True",
+				"False"
+			],
+			"answer": "True"
+		},
+		{
+			"number": "252",
+			"question": "Dahyun is called \"Dubu\" because she has pale complextion.",
+			"choices": [
+				"True",
+				"False"
+			],
+			"answer": "False"
+		},
+		{
+			"number": "253",
+			"question": "Which member revealed the fact that she finds it difficult to pronounce the word \"butt\" in Korean?",
+			"choices": [
+				"Momo",
+				"Sana",
+				"Mina",
+				"Tzuyu"
+			],
+			"answer": "Sana"
+		},
+		{
+			"number": "254",
+			"question": "Sana had revealed that she acted like she did not understand Korean during her trainee days when she was getting scolded?",
+			"choices": [
+				"True",
+				"False"
+			],
+			"answer": "True"
+		},
+		{
+			"number": "255",
+			"question": "Tzuyu’s iconic hair flip shot during the Idol Star Athletics Championships 2016 archery competition scored a 10-pointer.",
+			"choices": [
+				"True",
+				"False"
+			],
+			"answer": "False"
+		},
+		{
+			"number": "256",
+			"question": "Momo's blood type is A.",
+			"choices": [
+				"True",
+				"False"
+			],
+			"answer": "True"
+		},
+		{
+			"number": "257",
+			"question": "For a period of time, Jihyo binge ate because the debut of 6mix was cancelled.",
+			"choices": [
+				"True",
+				"False"
+			],
+			"answer": "True"
+		},
+		{
+			"number": "258",
+			"question": "Why did Sana’s parents hesitate to let her pursue her dream of becoming an idol in Korea?",
+			"choices": [
+				"They were afraid that she would feel lonely",
+				"They wanted Sana to finish her education",
+				"They did not bear to let Sana live alone in a foreign country",
+				"They did not trust Korean agencies"
+			],
+			"answer": "They wanted Sana to finish her education"
+		},
+		{
+			"number": "259",
+			"question": "Who was pushed/hit pretty hard by Doni during TWICE’s first appearance on the show \"IDOL ROOM\" ?",
+			"choices": [
+				"Dahyun",
+				"Jeongyeon",
+				"Momo",
+				"Nayeon"
+			],
+			"answer": "Jeongyeon"
+		},
+		{
+			"number": "260",
+			"question": "What was Sana’s nickname she made the cast of \"Knowing Bros\" guess? ",
+			"choices": [
+				"Hamster",
+				"Shibe",
+				"Squirrel",
+				"Octopus"
+			],
+			"answer": "Hamster"
+		},
+		{
+			"number": "261",
+			"question": "Which song was TWICE promoting when they first appeared on Knowin Bros?",
+			"choices": [
+				"TT",
+				"SIGNAL",
+				"Like OOH-AHH",
+				"CHEER UP"
+			],
+			"answer": "CHEER UP"
+		},
+		{
+			"number": "262",
+			"question": "What is Jeongyeon's father's profession?",
+			"choices": [
+				"A baker",
+				"Chef specializing in French cuisine",
+				"Chef specializing in Korean cuisine",
+				"Chef specializing in Chinese cuisine"
+			],
+			"answer": "Chef specializing in Korean cuisine"
+		},
+		{
+			"number": "263",
+			"question": "What is the name of Jeongyeon's father?",
+			"choices": [
+				"Yoo Jae-hyuk",
+				"Yoo Chang-hoon",
+				"Yoo Chang-joon",
+				"Yoo Kyung-wan"
+			],
+			"answer": "Yoo Chang-joon"
+		},
+		{
+			"number": "264",
+			"question": "What is the name of Mina’s family dog?",
+			"choices": 
+			[
+				"Rei",
+				"Ray",
+				"Rey",
+				"Rai"
+			],
+			"answer": "Rei"
+		},
+		{
+			"number": "265",
+			"question": "Which member gets angry if the dormitory is messy?",
+			"choices": 
+			[
+				"Jihyo",
+				"Mina",
+				"Chaeyoung",
+				"Jeongyeon"
+			],
+			"answer": "Jeongyeon"
+		},
+		{
+			"number": "266",
+			"question": "Which member has a habit of hitting the person besides her if she’s excited or is laughing?",
+			"choices": 
+			[
+				"Jeongyeon",
+				"Sana",
+				"Nayeon",
+				"Dahyun"
+			],
+			"answer": "Nayeon"
+		},
+		{
+			"number": "267",
+			"question": "Which member had a biking accident, where she ended up flying like Superman after she hit a rock?",
+			"choices": 
+			[
+				"Momo",
+				"Sana",
+				"Nayeon",
+				"Chaeyoung"
+			],
+			"answer": "Sana"
+		},
+		{
+			"number": "268",
+			"question": "JYP stands for JihYo Park.",
+			"choices": 
+			[
+				"True",
+				"False"
+			],
+			"answer": "False"
+		},
+		{
+			"number": "269",
+			"question": "Which GOT7 member took a picture with Mina that sparked controversy during TWICE’s rookie days?",
+			"choices": 
+			[
+				"Mark",
+				"BamBam",
+				"JB",
+				"Jinyoung"
+			],
+			"answer": "BamBam"
+		},
+		{
+			"number": "270",
+			"question": "Which city in Canada did TWICE shoot the \"Likey\" MV?",
+			"choices": 
+			[
+				"Vancouver",
+				"Toronto",
+				"Winnipeg",
+				"Quebec City"
+			],
+			"answer": "Vancouver"
+		},
+		{
+			"number": "271",
+			"question": "Where did TWICE film \"TWICE TV 3\" ?",
+			"choices": 
+			[
+				"Incheon",
+				"Jeju",
+				"Busan",
+				"Pyongyang"
+			],
+			"answer": "Jeju"
+		},
+		{
+			"number": "272",
+			"question": "Which TWICE TV was filmed in Switzerland?",
+			"choices": 
+			[
+				"TWICE TV 2",
+				"TWICE TV 4",
+				"TWICE TV 5",
+				"TWICE TV 6"
+			],
+			"answer": "TWICE TV 5"
+		},
+		{
+			"number": "273",
+			"question": "Which country was TWICE TV 6 filmed in?",
+			"choices": 
+			[
+				"Taiwan",
+				"Singapore",
+				"Switzerland",
+				"Mongolia"
+			],
+			"answer": "Singapore"
+		},
+		{
+			"number": "274",
+			"question": "Which member wasn’t able to go to Switzerland to film TWICE TV 5?",
+			"choices": 
+			[
+				"Dahyun",
+				"Momo",
+				"Jihyo",
+				"Mina"
+			],
+			"answer": "Jihyo"
+		},
+		{
+			"number": "275",
+			"question": "Which member was part of Weekly Idol’s \"Idols are the best\" corner?",
+			"choices": 
+			[
+				"Momo",
+				"Sana",
+				"Nayeon",
+				"Dahyun"
+			],
+			"answer": "Dahyun"
+		},
+		{
+			"number": "276",
+			"question": "TWICE was the first to wear the \"Idol Room\" shirts aside from the hosts.",
+			"choices": 
+			[
+				"True",
+				"False"
+			],
+			"answer": "True"
+		},
+		{
+			"number": "277",
+			"question": "Which member is not the youngest in their own family?",
+			"choices": 
+			[
+				"Jeongyeon",
+				"Nayeon",
+				"Mina",
+				"Dahyun"
+			],
+			"answer": "Nayeon"
+		},
+		{
+			"number": "278",
+			"question": "Which member is not the oldest in their own family?",
+			"choices": 
+			[
+				"Chaeyoung",
+				"Tzuyu",
+				"Nayeon",
+				"Jihyo"
+			],
+			"answer": "Tzuyu"
+		},
+		{
+			"number": "279",
+			"question": "Who is the only member with an active Wikipedia page?",
+			"choices": 
+			[
+				"Momo",
+				"Sana",
+				"Mina",
+				"Tzuyu"
+			],
+			"answer": "Tzuyu"
+		},
+		{
+			"number": "280",
+			"question": "The song \"Heart Shaker\" contains the following lyrics, \"Is Sana gay\" .",
+			"choices": 
+			[
+				"True",
+				"False"
+			],
+			"answer": "False"
+		},
+		{
+			"number": "281",
+			"question": "What is the meaning for the term \"THRICE\" ?",
+			"choices": 
+			[
+				"Super fans",
+				"Haters",
+				"YouTube channels dedicated to making TWICE related content",
+				"TWICE fansites"
+			],
+			"answer": "Haters"
+		},
+		{
+			"number": "282",
+			"question": "Which member thought Jihyo was Indonesian when she first met her?",
+			"choices": 
+			[
+				"Nayeon",
+				"Jeongyeon",
+				"Dahyun",
+				"Chaeyoung"
+			],
+			"answer": "Jeongyeon"
+		},
+		{
+			"number": "283",
+			"question": "Aside from Japanese and Korean, what other language is Momo \"fluent\" in?",
+			"choices": 
+			[
+				"English",
+				"Mandarin Chinese",
+				"Momo Language",
+				"French"
+			],
+			"answer": "Momo Language"
+		},
+		{
+			"number": "284",
+			"question": "Which brand of tomato ketchup is Mina’s favourite?",
+			"choices": 
+			[
+				"Heinz",
+				"Del Monte",
+				"Hunt's",
+				"McDonald's"
+			],
+			"answer": "Heinz"
+		},
+		{
+			"number": "285",
+			"question": "Which member does not like drinking water?",
+			"choices": 
+			[
+				"Dahyun",
+				"Sana",
+				"Momo",
+				"Jeongyeon"
+			],
+			"answer": "Momo"
+		},
+		{
+			"number": "286",
+			"question": "TWICE is the first Korean girl group to have a Japanese Dome Tour.",
+			"choices": 
+			[
+				"True",
+				"False"
+			],
+			"answer": "True"
+		},
+		{
+			"number": "287",
+			"question": "Mina sleeps when she’s very stressed.",
+			"choices": 
+			[
+				"True",
+				"False"
+			],
+			"answer": "False"
+		},
+		{
+			"number": "288",
+			"question": "Mina had a nosebleed from both her nostrils when she was young because she was overjoyed she received a puppy she wanted to raise.",
+			"choices": 
+			[
+				"True",
+				"False"
+			],
+			"answer": "True"
+		},		
+		{
+			"number": "289",
+			"question": "What did Sana make for JYP in her mini cooking show, during the first episode of SIXTEEN?",
+			"choices": 
+			[
+				"Spring rolls",
+				"Croquette",
+				"Pizza",
+				"Salad"
+			],
+			"answer": "Spring rolls"
+		},
+		{
+			"number": "290",
+			"question": "Who was the first trainee that was announced as a Minor member in \"Sixteen\" ? ",
+			"choices": 
+			[
+				"Nayeon",
+				"Jihyo",
+				"Sana",
+				"Tzuyu"
+			],
+			"answer": "Sana"
+		},
+		{
+			"number": "291",
+			"question": "Who is the last Major member announced in \"Sixteen\" ?",
+			"choices": 
+			[
+				"Jihyo",
+				"Dahyun",
+				"Nayeon",
+				"Sana"
+			],
+			"answer": "Dahyun"
+		},
+		{
+			"number": "292",
+			"question": "Who is the first Major member announced in \"Sixteen\" ?",
+			"choices": 
+			[
+				"Jihyo",
+				"Jeongyeon",
+				"Sana",
+				"Nayeon"
+			],
+			"answer": "Nayeon"
+		},
+		{
+			"number": "293",
+			"question": "As of 16 November 2018,\"YES or YES\" MV is the fastest at generating 10 million and 20 million views.",
+			"choices": 
+			[
+				"True",
+				"False"
+			],
+			"answer": "True"
+		},
+		{
+			"number": "294",
+			"question": "Who acts like a \"parent\" in TWICE?",
+			"choices": 
+			[
+				"Nayeon",
+				"Jeongyeon",
+				"Jihyo",
+				"Mina"
+			],
+			"answer": "Jeongyeon"
+		},
+		{
+			"number": "295",
+			"question": "Which of the following members poessess driving licenses?",
+			"choices": 
+			[
+				"3MIX (Nayeon, Jeongyeon, Jihyo)",
+				"Sana and Jihyo",
+				"Nayeon and Momo",
+				"Mina"
+			],
+			"answer": "3MIX (Nayeon, Jeongyeon, Jihyo)"
+		},
+		{
+			"number": "296",
+			"question": "Who is the only member without double eyelids?",
+			"choices": 
+			[
+				"Sana",
+				"Jihyo",
+				"Dahyun",
+				"Nayeon"
+			],
+			"answer": "Dahyun"
+		},
+		{
+			"number": "297",
+			"question": "Which fictitious movie character is Tzuyu associated with?",
+			"choices": 
+			[
+				"Harry Potter",
+				"Gollum",
+				"Darth Vader",
+				"Yoda"
+			],
+			"answer": "Yoda"
+		},
+		{
+			"number": "298",
+			"question": "Which TWICE member isn’t a member of the School Meal Club?",
+			"choices": 
+			[
+				"Momo",
+				"Dahyun",
+				"Chaeyoung",
+				"Tzuyu"
+			],
+			"answer": "Momo"
+		},
+		{
+			"number": "299",
+			"question": "What is Tzuyu's nationality?",
+			"choices": 
+			[
+				"Chinese",
+				"Korean",
+				"Taiwanese",
+				"Vietnamese"
+			],
+			"answer": "Taiwanese"
+		},
+		{
+			"number": "300",
+			"question": "In Episode 26 of \"Idol Room\", how long did Jihyo take to eat the jelly in the quick eating challenge?",
+			"choices": 
+			[
+				"13.37 seconds",
+				"14.56 seconds",
+				"18.88 seconds",
+				"20.00 seconds"
+			],
+			"answer": "14.56 seconds"
+		}
+	],
+	"era": [
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/506663661818085376/mina_what_is_love.gif",
+			"era": "what is love"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/506666311313784853/momo_dtna.gif",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/506673963829690389/jeongyeon_tt.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/506674300166602762/jeongyeon_likey.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/506674820084138005/jeongyeon_tt_1.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/507092603083423755/image0.jpg",
+			"era": "heart shaker"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/507092772558209034/image0.jpg",
+			"era": "heart shaker"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/507092877772324864/image0.jpg",
+			"era": "heart shaker"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/507092921380634636/image0.jpg",
+			"era": "heart shaker"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/507092969380118529/image0.jpg",
+			"era": "knock knock"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/507093028473667584/image0.jpg",
+			"era": "knock knock"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/507093101139984385/image0.jpg",
+			"era": "knock knock"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/507093161391423488/image0.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/507093205255192586/image0.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/507093289741189120/image0.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/507093405805969408/image0.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/qF7BEsT.png",
+			"era": "what is love"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/496531070167285770/503953329421025311/DpvlT4rU0AIfjeL.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/496531070167285770/503902073524584448/IMG_20180725_192350.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/496531070167285770/503900640792018946/twicetagram_42004135_2028623007233490_5398267720636669065_n.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/496531070167285770/503951230154965012/Nayeon_5682.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/503991824331964428/Nayeon_4661.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/CrXT47J.png",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/4oKcB6V.png",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/A9lI1XI.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/PsuA0ZV.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/lh7r1o5.png",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/maaTyux.png",
+			"era": "knock knock"
+		},
+		{
+			"image": "https://i.imgur.com/ufCXYaQ.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/fW7MFJH.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/138194483492683777/503435745000685598/DSC03981.jpg",
+			"era": "knock knock"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/496531070167285770/503901655448944640/IMG_20180910_093615.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/496531070167285770/503903004965994497/Nayeon_7815.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/496531070167285770/503936240140156947/154747265N05_41516584102_5.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/496531070167285770/503948757419819074/e634ba3.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/507790717456744448/unnamed.jpg",
+			"era": "heart shaker"
+		},
+		{
+			"image": "https://i.imgur.com/csjKlUa.png",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/u76M8Jc.png",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/cVSsGaB.png",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/pmNTh7s.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/ij92Xcj.png",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/whvFuG6.png",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/oTmZfi8.png",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/Kj8qWVl.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/c4dggmo.png",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/kDEgGAo.png",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/3P9GBrJ.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/Wzf4nvM.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/xXeZYISh.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/1vAsJBO.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/pLPXFjQ.png",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/p4lAfC2.png",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/9b7qlwlh.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/LL77w69.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/iXORB34.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/1MF0c5v.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/WIRhWgP.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/OoK0Ctp.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/Njv0i0q.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/RNGwTc7.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/PyFkW0s.gif",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/cj7uGdA.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/OMGMQqq.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/P0Iu5sU.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/sJ5wSjN.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/ujbk8UF.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/wFvTz6Q.png",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/WzbVLHu.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/N5mx3u1.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/N3x9Q97.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/UdAFCae.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/RGHgPDO.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/VjCVrzI.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/dYpDPcz.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/dRZ104w.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/e0GDZEW.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/6ge5OCe.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/apqGBqA.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/2c0lMFc.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/MnXrRHB.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/NR74dxK.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/IiHROti.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/P19kv9a.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/fKVCVtZ.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/Mly3fzC.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/8rrN3xw.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/Rpt845Z.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://mimgnews.pstatic.net/image/origin/433/2018/11/05/51300.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/tJ8M47X.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/Oicn9ov.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/2WO19hX.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/MEyu1QF.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/597MNlE.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/JSox4Bs.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/ZRzGkUw.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/e3LO2k6.png",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/dSPH1Ag.png",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/s1s1VrI.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/SPVXU56.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/zHJ32K4.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/hlqGhWr.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/3GmfjoG.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/zL7UQa7.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/tWAo5QO.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/zcFCcpg.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/tcihVbL.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/pVsrTFF.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/WeaNthG.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/524blIB.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/SpHFWsg.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/AIPx3aZ.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/GgYMB4u.png",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/zuBoTpG.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/8H8fCzx.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/D4oLFJg.jpg",
+			"era": "knock knock"
+		},
+		{
+			"image": "https://i.imgur.com/e7Wkntj.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/zJrbjYP.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/9JXTNtH.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/IOWCn8g.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/XhX7laC.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/z03FLuj.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/oG8pu4V.jpg",
+			"era": "heart shaker"
+		},
+		{
+			"image": "https://i.imgur.com/wg7mMJk.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/jspWlIx.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/PcG2O8d.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/9pWYKtt.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/TSiO56t.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/Rd8cHrg.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/aM0Q18i.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/RLSzS9r.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/ZxQt5oS.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/Rd8cHrg.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/LXPVyfr.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://media.discordapp.net/attachments/490852822393290772/510398153149644811/DriYRGdUwAUfS6o.png",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/UkYvjaO.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/EafBYxr.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/LYIMmtD.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/U1atnRk.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/TN5Xjhd.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/itixJYR.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/Sn6R7HK.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/2Ero9a1.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/EafBYxr.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/h4BnftA.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/0hp0oDY.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/E7xgS3c.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/rtg1uia.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/1HyjFJp.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/UC0WfFu.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/X4uVDY6.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/8UWZyN5.png",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/2cIFVET.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/Cd96xEG.png",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/HJd5KVY.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/xonxgaw.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/9TXrZLE.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/darR6GQ.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/MnRm1xW.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://i.imgur.com/Ri3VEIV.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/k0QFmVv.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/LfNyaYF.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/7A6T7N1.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/AYIsaBS.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/jfIqRMN.png",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/cwBMrJK.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/RgmMfph.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://i.imgur.com/7cZWEpR.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/Fz7KxOw.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/wZk2g7m.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/VtlVTsc.jpg",
+			"era": "knock knock"
+		},
+		{
+			"image": "https://i.imgur.com/uhpc7fp.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/t0TjdfM.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/TXNYRhz.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/fu6rhZb.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/a3DPz1u.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/IFJAMAV.jpg",
+			"era": "knock knock"
+		},
+		{
+			"image": "https://i.imgur.com/qhheY6A.jpg",
+			"era": "knock knock"
+		},
+		{
+			"image": "https://i.imgur.com/Jl01IAH.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/fK5bo4m.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/NR6jXHe.png",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/HHbmEu2.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/3b9NToA.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/SDvuXSp.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/MiVoD38.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/9JpMp80.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/l9mdKpN.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/TGt8VAw.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/BIwiRBd.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/jMWeWnx.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/VWutsy7.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/GNWQnYW.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/3MOM6RO.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/BKsuWY6.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/RSrxYXf.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/iAefxww.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/ngxKiA0.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/tBWgK1B.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/MPjoTYS.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/6EaIUmo.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/y6UDD6j.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/HO8vMse.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/DYykgVS.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/2b1O9TV.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/dH0I5pS.jpg",
+			"era": "heart shaker"
+		},
+		{
+			"image": "https://i.imgur.com/SONx5P4.jpg",
+			"era": "heart shaker"
+		},
+		{
+			"image": "https://i.imgur.com/xOhBcOF.jpg",
+			"era": "heart shaker"
+		},
+		{
+			"image": "https://i.imgur.com/jHVSWDu.jpg",
+			"era": "heart shaker"
+		},
+		{
+			"image": "https://i.imgur.com/LO9ruH7.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/hClrnku.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/p7oq9hC.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/LdF3vho.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/qjOjP9E.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/lsyoqic.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/smYMyJm.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/eiFQHgK.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/gomP141.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/X8p1UvD.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/QKDGLk1.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/EKevcqY.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/gRIg3AB.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/GAMvhMc.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/R4pYqWZ.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/efNofRp.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/HVjt9H4.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/vjMuSuH.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/MhHYmm9.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/OcEjcC8.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/Y5Fwaky.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/dt0I3tB.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/h6kwAPe.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/2BLFzMl.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/Ig5wZ1S.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/iCfiJcG.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/sfyeqbs.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/hh04fkF.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/m5QOdME.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/IljMIAF.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://i.imgur.com/BNRpTd1.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/J3XQTYT.png",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://i.imgur.com/Iv3LWRu.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/nSnerOj.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/Np2hmYA.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/bQBy57Q.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/422Iq1f.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/w1woMtB.jpg",
+			"era": "bdz"
+		},
+		{
+			"image": "https://i.imgur.com/l2tnAEC.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/8bqhJZp.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/juntqUK.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/LdYjqTw.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/WRAdvUB.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://i.imgur.com/bD7Gdao.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://i.imgur.com/XorHn2H.png",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/EWvuuW0.jpg",
+			"era": "knock knock"
+		},
+		{
+			"image": "https://i.imgur.com/IBYqEF2.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/whxhbvZ.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/dWuZqtF.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/rCwS7Ic.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/504044287810338836/DY-3UU7U0AEn081.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/504044302087749632/DYN2eDfU0AApPru.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/504044323965370368/DY-vh6TU0AE3OM6.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/504044336967581697/DYvoNIPV4AAo1S3.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://cdn.discordapp.com/attachments/481255884941557778/504044436779434014/DWZbY02UMAER0G_.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/MZy7Ud0.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/OXp6tox.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/7gRjAb6.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/3Phi0dq.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/lU42o2c.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/Nq97nBc.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/2jrdYd6.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/UJZx6j2.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/zjxuSBk.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/fTtN7iW.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/zeu8bcI.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/krt6Y5S.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/md0gR3z.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/a6n0afH.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/rYq1RuF.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "http://i.imgur.com/HrbkBpY.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/4k7RXKk.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/nl8y7Wx.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/16qDwtu.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/I8mK6dd.jpg",
+			"era": "yes or yes"
+		},
+		{
+			"image": "https://i.imgur.com/LiLN1pn.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/Ih6hhcJ.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/sF1DSdy.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/cp4bVu4.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/S7bix2z.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/plX03XO.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/VllBaUh.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/OC5Tdqg.jpg",
+			"era": "heart shaker"
+		},
+		{
+			"image": "https://i.imgur.com/AiVASgy.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/hLkWGQe.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/KFQyXbo.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/onyU9qO.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/aSpx0cs.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://i.imgur.com/29X5PJA.jpg",
+			"era": "knock knock"
+		},
+		{
+			"image": "https://i.imgur.com/tORqLzs.jpg",
+			"era": "knock knock"
+		},
+		{
+			"image": "https://i.imgur.com/sbFir47.jpg",
+			"era": "knock knock"
+		},
+		{
+			"image": "https://i.imgur.com/CDIUcsM.jpg",
+			"era": "knock knock"
+		},
+		{
+			"image": "https://i.imgur.com/tWjgasq.jpg",
+			"era": "knock knock"
+		},
+		{
+			"image": "https://i.imgur.com/cwxyF2I.jpg",
+			"era": "knock knock"
+		},
+		{
+			"image": "https://i.imgur.com/XkEOOxl.gif",
+			"era": "knock knock"
+		},
+		{
+			"image": "https://i.imgur.com/mJO2N8m.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/CmCB486.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/S19779h.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/b2izetU.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/ZCSXhiu.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://i.imgur.com/Fk6gRlF.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://i.imgur.com/nAeX0H9.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://i.imgur.com/hmxPyQk.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/83lVhNz.jpg",
+			"era": "like ooh ahh"
+		},
+		{
+			"image": "https://i.imgur.com/2TH9lJB.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/n7PJfp3.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/ffuvoVP.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/icSjYPa.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/m9BHLgQ.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/cEticRx.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/soiboc7.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/9pK7P88.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/kSkhDLh.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/Q3BBTc2.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/4XyuchG.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/hExW5Is.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/R4ctGQ7.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/DKb7Re2.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/qVIKYVh.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://i.imgur.com/3185JVY.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://i.imgur.com/F1K0C0h.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://i.imgur.com/fEHMc2N.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://i.imgur.com/nquZYSK.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://i.imgur.com/JLNtafK.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://i.imgur.com/uOceDL7.png",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/YjbMVlT.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/XVrH8T3.jpg",
+			"era": "heart shaker"
+		},
+		{
+			"image": "https://i.imgur.com/LfVe0pJ.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/BintmhM.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/SdX82LT.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/QKkHrtO.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/aoIN1jo.jpg",
+			"era": "knock knock"
+		},
+		{
+			"image": "https://i.imgur.com/op2A0mj.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/4UvPsfE.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/307YHiN.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/XeBzMRk.jpg",
+			"era": "signal"
+		},
+		{
+			"image": "https://i.imgur.com/86h9YBf.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/AOxDxbI.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/mKFSOuI.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/P49DIpa.jpg",
+			"era": "heart shaker"
+		},
+		{
+			"image": "https://i.imgur.com/G9RqxTW.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/tHhI2KO.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/IhtA8Us.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/Pod27pY.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/YQUy4Cr.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/0LllZLU.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/iejsjeF.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/1KTy03G.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/Js4ROTs.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/wae0Mvx.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/5lkcVsv.jpg",
+			"era": "cheer up"
+		},
+		{
+			"image": "https://i.imgur.com/BldXa5x.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://i.imgur.com/CdFgCIv.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/3drnbFh.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/uTFO4sh.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/Fbdo0r6.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/CdFgCIv.jpg",
+			"era": "likey"
+		},
+		{
+			"image": "https://i.imgur.com/HzrgCMc.jpg",
+			"era": "dance the night away"
+		},
+		{
+			"image": "https://i.imgur.com/SSkuqou.jpg",
+			"era": "what is love"
+		},
+		{
+			"image": "https://i.imgur.com/oJURTky.jpg",
+			"era": "heart shaker"
+		},
+		{
+			"image": "https://i.imgur.com/HIZkL0H.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/jVLqJBT.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/YYSRdKU.jpg",
+			"era": "tt"
+		},
+		{
+			"image": "https://i.imgur.com/6JHRpUK.jpg",
+			"era": "like ooh ahh"
+		}
+	]
+}

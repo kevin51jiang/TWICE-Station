@@ -1,0 +1,546 @@
+
+{
+    "items":
+    {
+        "nice": 
+        {
+            "name": "nice",
+            "text": "__nice__",
+            "limit": 100,
+            "cost": 1,
+            "list":    
+            [
+                {
+                    "code": "c",
+                    "item": "Candy",
+                    "image": "🍬"
+                },
+                {
+                    "code": "j",
+                    "item": "Jelly",
+                    "image": "🍓"
+                }
+            ]
+        },
+        
+        "good": 
+        {
+            "name": "good", 
+            "text": "**good**",
+            "limit": 55,
+            "cost": 10,
+            "list":
+            [
+                {
+                    "code": "a",
+                    "item": "Album",
+                    "image": "💿"
+                },
+                {
+                    "code": "p",
+                    "item": "Plushie",
+                    "image": ""
+                }
+            ]
+        },
+    
+        "amazing": 
+        {
+            "name": "amazing",
+            "text": "__**amazing**__",
+            "limit": 25,
+            "cost": 50,
+            "list":
+            [
+                {
+                    "code": "pc",
+                    "item": "Photocard",
+                    "image": "🎞"
+                },
+                {
+                    "code": "ps",
+                    "item": "Poster",
+                    "image": "🖼"
+                }
+            ]
+        },
+    
+        "rare": 
+        {
+            "name": "rare",
+            "text": "**RARE**",
+            "limit": 10,
+            "cost": 150,
+            "list":
+            [
+                {
+                    "code": "mc",
+                    "item": "MC Rail Cap",
+                    "image": "https://i.imgur.com/papUxvz.png"
+                },
+                {
+                    "code": "jk",
+                    "item": "Jokbal",
+                    "image": "https://i.imgur.com/XXocy8y.png"
+                },
+                {
+                    "code": "sb",
+                    "item": "Strawberry",
+                    "image": "https://i.imgur.com/MVvL7M1.png"
+                },
+                {
+                    "code": "cm",
+                    "item": "Camera",
+                    "image": "https://i.imgur.com/kCP8DD9.png"
+                },
+                {
+                    "code": "sx",
+                    "item": "Saxophone",
+                    "image": "https://i.imgur.com/r9Bn7Xn.png"
+                },
+                {
+                    "code": "ck",
+                    "item": "Cheese Kimbap",
+                    "image": "https://i.imgur.com/LHXMx6o.png"
+                },
+                {
+                    "code": "th",
+                    "item": "Thomas the Train",
+                    "image": "https://i.imgur.com/4AiC8zx.png"
+                },
+                {
+                    "code": "bw",
+                    "item": "Archery Bow",
+                    "image": "https://i.imgur.com/cEMhTQx.jpg"
+                },
+                {
+                    "code": "sw",
+                    "item": "Black Swan",
+                    "image": "https://i.imgur.com/qOufKJA.png"
+                }
+            ]
+        },
+    
+        "legendary": 
+        {
+            "name": "legendary",
+            "text": "__**LEGENDARY**__",
+            "limit": 1,
+            "cost": 2500,
+            "list":
+            [
+                {
+                    "code": "mmc",
+                    "item": "Momo's Circle",
+                    "image": "https://i.imgur.com/FecM5ob.png"
+                },
+                {
+                    "code": "jkb",
+                    "item": "JYP's MIDI Keyboard",
+                    "image": "https://i.imgur.com/4PW4KE5.png"
+                },
+                {
+                    "code": "ptp",
+                    "item": "JYP Plastic Pants",
+                    "image": "https://i.imgur.com/yEpLsr0.png"
+                },
+                {
+                    "code": "idl",
+                    "item": "Idol Room Shirt",
+                    "image": "https://i.imgur.com/WY1TCJe.png"
+                },
+                {
+                    "code": "sxt",
+                    "item": "Sixteen Necklace",
+                    "image": "https://i.imgur.com/uRinEh7.png"
+                },
+                {
+                    "code": "psw",
+                    "item": "Pocari Sweat",
+                    "image": "https://i.imgur.com/bg0zHIp.png"
+                },
+                {
+                    "code": "yoy",
+                    "item": "Yes or Yes Dice",
+                    "image": "https://i.imgur.com/EaE1r8L.png"
+                },
+                {
+                    "code": "jhp",
+                    "item": "Jihyo's Photobook",
+                    "image": "https://i.imgur.com/M3Sf2ew.png"
+                },
+                {
+                    "code": "chd",
+                    "item": "Chaeyoung's Drawing",
+                    "image": "https://i.imgur.com/Ib23ete.jpg"
+                },
+                {
+                    "code": "chj",
+                    "item": "Cheer Up Jacket",
+                    "image": "https://i.imgur.com/s0wo5mo.jpg"
+                }
+            ]
+        }
+    },
+
+    "members":
+    [
+        {
+            "code": "ny",
+            "name": "Nayeon",
+            "animal": "Bunny",
+            "emote": "🐰",
+            "photocard": "https://i.imgur.com/iNX9ErD.jpg",
+            "poster": "https://i.imgur.com/loE6BZX.jpg"
+        },
+        {
+            "code": "dh",
+            "name": "Dahyun",
+            "animal": "Eagle",
+            "emote": "🦅",
+            "photocard": "https://i.imgur.com/ax1G8UG.jpg",
+            "poster": "https://i.imgur.com/gXDt6ur.jpg"
+        },
+        {
+            "code": "sn",
+            "name": "Sana",
+            "animal": "Squirrel",
+            "emote": "🐿",
+            "photocard": "https://i.imgur.com/wTi3BoN.jpg",
+            "poster": "https://i.imgur.com/ab0c1za.jpg"
+        },
+        {
+            "code": "mn",
+            "name": "Mina",
+            "animal": "Penguin",
+            "emote": "🐧",
+            "photocard": "https://i.imgur.com/pZfwokN.jpg",
+            "poster": "https://i.imgur.com/8RR64UD.jpg"
+        },
+        {
+            "code": "jy",
+            "name": "Jeongyeon",
+            "animal": "Dragon",
+            "emote": "🐲",
+            "photocard": "https://i.imgur.com/pA54JXE.jpg",
+            "poster": "https://i.imgur.com/FXegKZo.jpg"
+        },
+        {
+            "code": "tz",
+            "name": "Tzuyu",
+            "animal": "Puppy",
+            "emote": "🐶",
+            "photocard": "https://i.imgur.com/JpqJVKL.jpg",
+            "poster": "https://i.imgur.com/GUjUPk0.jpg"
+        },
+        {
+            "code": "ch",
+            "name": "Chaeyoung",
+            "animal": "Tiger",
+            "emote": "🐯",
+            "photocard": "https://i.imgur.com/3f62mR5.jpg",
+            "poster": "https://i.imgur.com/XeTSFwd.jpg"
+        },
+        {
+            "code": "mm",
+            "name": "Momo",
+            "animal": "Pig",
+            "emote": "🐷",
+            "photocard": "https://i.imgur.com/ZNXbMOZ.jpg",
+            "poster": "https://i.imgur.com/trfa56Z.jpg"
+        },
+        {
+            "code": "jh",
+            "name": "Jihyo",
+            "animal": "Unicorn",
+            "emote": "🦄",
+            "photocard": "https://i.imgur.com/2w7UaID.jpg",
+            "poster": "https://i.imgur.com/TC3qOnd.jpg"
+        }
+    ],
+
+    "collections":
+    {
+        "Sweet":
+        {
+            "items":
+            [ 
+                "ny-c",
+                "ny-j",
+                "dh-c",
+                "dh-j",
+                "sn-c",
+                "sn-j",
+                "mn-c",
+                "mn-j",
+                "jy-c",
+                "jy-j",
+                "tz-c",
+                "tz-j",
+                "ch-c",
+                "ch-j",
+                "mm-c",
+                "mm-j",
+                "jh-c",
+                "jh-j"
+            ],
+            "bonus": 50
+        }, 
+
+        "Album":
+        {
+            "items":
+            [ 
+                "tsb-a", 
+                "pgt-a", 
+                "tc1-a", 
+                "tc2-a", 
+                "sgl-a", 
+                "twt-a", 
+                "mnh-a", 
+                "wil-a", 
+                "smn-a", 
+                "yoy-a"
+            ],
+            "bonus": 500
+        },
+        
+        "Plushie":
+        {
+            "items":
+            [ 
+                "ny-p",
+                "dh-p",
+                "sn-p",
+                "mn-p",
+                "jy-p",
+                "tz-p",
+                "ch-p",
+                "mm-p",
+                "jh-p" 
+            ],
+            "bonus": 400
+        },
+
+        "TWICE":
+        {
+            "items":
+            [
+                "ny-pc",
+                "ny-ps",
+                "dh-pc",
+                "dh-ps",
+                "sn-pc",
+                "sn-ps",
+                "mn-pc",
+                "mn-ps",
+                "jy-pc",
+                "jy-ps",
+                "tz-pc",
+                "tz-ps",
+                "ch-pc",
+                "ch-ps",
+                "mm-pc",
+                "mm-ps",
+                "jh-pc",
+                "jh-ps"
+            ],
+            "bonus": 1500
+        },
+
+        "Nayeon":
+        {
+            "items":
+            [
+                "ny-p",
+                "ny-pc",
+                "ny-ps",
+                "mc"
+            ],
+            "bonus": 500
+        },
+
+        "Dahyun":
+        {
+            "items":
+            [
+                "dh-p",
+                "dh-pc",
+                "dh-ps",
+                "cm"
+            ],
+            "bonus": 500
+        },
+
+        "Sana":
+        {
+            "items":
+            [
+                "sn-p",
+                "sn-pc",
+                "sn-ps",
+                "ck"
+            ],
+            "bonus": 500
+        },
+
+        "Mina":
+        {
+            "items":
+            [
+                "mn-p",
+                "mn-pc",
+                "mn-ps",
+                "sw"
+            ],
+            "bonus": 500
+        },
+
+        "Jeongyeon":
+        {
+            "items":
+            [
+                "jy-p",
+                "jy-pc",
+                "jy-ps",
+                "sx"
+            ],
+            "bonus": 500
+        },
+
+        "Tzuyu":
+        {
+            "items":
+            [
+                "tz-p",
+                "tz-pc",
+                "tz-ps",
+                "bw"
+            ],
+            "bonus": 500
+        },
+
+        "Chaeyoung":
+        {
+            "items":
+            [
+                "ch-p",
+                "ch-pc",
+                "ch-ps",
+                "sb"
+            ],
+            "bonus": 500
+        },
+
+        "Momo":
+        {
+            "items":
+            [
+                "mm-p",
+                "mm-pc",
+                "mm-ps",
+                "jk"
+            ],
+            "bonus": 500
+        },
+
+        "Jihyo":
+        {
+            "items":
+            [
+                "jh-p",
+                "jh-pc",
+                "jh-ps",
+                "th"
+            ],
+            "bonus": 500
+        },
+
+        "JYP":
+        {
+            "items":
+            [
+                "jkb",
+                "ptp",
+                "sgl-a", 
+                "wil-a"
+            ],
+            "bonus": 10000
+        },
+
+        "Cheer Up":
+        {
+            "items":
+            [
+                "pgt-a",
+                "chj"
+            ],
+            "bonus": 3000
+        },
+
+        "Yes or Yes":
+        {
+            "items":
+            [
+                "yoy-a",
+                "yoy"
+            ],
+            "bonus": 3000
+        },
+
+        "Nayeon Special":
+        {
+            "items":
+            [
+                "ny-pc",
+                "mc",
+                "psw"
+            ],
+            "bonus": 4000
+        },
+
+        "Momo Special":
+        {
+            "items":
+            [
+                "mm-pc",
+                "jk",
+                "mmc"
+            ],
+            "bonus": 4000
+        },
+
+        "Chaeyoung Special":
+        {
+            "items":
+            [
+                "ch-pc",
+                "sb",
+                "chd"
+            ],
+            "bonus": 4000
+        },
+
+        "Jihyo Special":
+        {
+            "items":
+            [
+                "jh-pc",
+                "th",
+                "jhp"
+            ],
+            "bonus": 4000
+        },
+        
+        "Jeongyeon Special":
+        {
+            "items":
+            [
+                "jy-pc",
+                "sx",
+                "idl"
+            ],
+            "bonus": 4000
+        }
+    }
+}
