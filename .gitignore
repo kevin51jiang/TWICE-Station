@@ -61,7 +61,7 @@ typings/
 .next
 
 # sqlite
-.sqlite
+userdata.sqlite
 
 # other folders
 others/
