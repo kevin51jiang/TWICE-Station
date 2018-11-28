@@ -60,12 +60,6 @@ bot.on('message', message =>
     var channel = message.channel;
     
     command = command.toLowerCase().replace(/\s\s+/g, " ");
-
-    if(command.startsWith(";"))
-    {
-        if(message.author.id != "247955535620472844")
-            return message.reply("I'm Beta. Use <@496529668850057227> instead.");
-    }
     
     // fun.interaction(message);
 
