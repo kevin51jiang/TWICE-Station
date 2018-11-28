@@ -24,7 +24,7 @@ bot.on('ready', () =>
 {
     console.log(`Bot started!`) 
     
-    bot.user.setStatus('Online')
+    // bot.user.setStatus('Online')
     bot.user.setActivity('with TWICE MEMES members');
 
     bot.channels.get("496531070167285770").send(ping);
@@ -61,11 +61,11 @@ bot.on('message', message =>
     
     command = command.toLowerCase().replace(/\s\s+/g, " ");
 
-    if(command.startsWith(";"))
-    {
-        if(message.author.id != "247955535620472844")
-            return message.reply("I'm Beta. Use <@496529668850057227> instead.");
-    }
+    // if(command.startsWith(";"))
+    // {
+    //     if(message.author.id != "247955535620472844")
+    //         return message.reply("I'm Beta. Use <@496529668850057227> instead.");
+    // }
     
     // fun.interaction(message);
 
