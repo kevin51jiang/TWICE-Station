@@ -381,7 +381,8 @@ function test(message)
 
     var embed = new Discord.RichEmbed()
         .setColor(data.color)
-        .setImage("https://drive.google.com/uc?export=view&id=0B8Hl0NLXwoPyZlZzbHVXVERScEU");
+        .setTitle("This is to test changes in the git.")
+        .setImage("https://cdn.discordapp.com/attachments/138194483492683777/517375853945159691/DtGi7aYV4AE1EcS.png");
 
     message.channel.send(embed);
 
