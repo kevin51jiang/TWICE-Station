@@ -23,7 +23,7 @@ bot.login(args)
 
 var ping = "<@247955535620472844>•d";
 
-const prefix = "'";
+const prefix = ";";
 
 bot.on('ready', () =>
 {
