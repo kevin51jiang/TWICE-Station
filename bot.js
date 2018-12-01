@@ -72,9 +72,6 @@ bot.on('message', message =>
     var command = message.content;
     var channel = message.channel;
 
-    if(command == ";s")
-        return;
-
     command = command.toLowerCase().replace(/\s\s+/g, " ");
 
     if(command == "gn")
