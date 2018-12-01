@@ -16,11 +16,14 @@ const rpg = require("./rpg");
 
 var args = process.argv.slice(2)[0];
 bot.login(args)
-.catch(error => { if(error) console.log("gitgud haha"); });
+.catch(error =>
+{
+    if(error) console.log("gitgud haha"); 
+});
 
-var ping = "<@247955535620472844>•";
+var ping = "<@247955535620472844>•d";
 
-const prefix = ";";
+const prefix = "'";
 
 bot.on('ready', () =>
 {
@@ -58,10 +61,24 @@ bot.on('message', message =>
 
     coins.rng(message);
 
+    // if(command.startsWith(""))
+    // {
+    //     if(message.author.id != "247955535620472844")
+    //         return message.reply("I'm Beta. Use <@496529668850057227> instead.");
+    // }
+    
+    // fun.interaction(message);
+
     var command = message.content;
     var channel = message.channel;
-    
+
+    if(command == ";s")
+        return;
+
     command = command.toLowerCase().replace(/\s\s+/g, " ");
+
+    if(command == "gn")
+        return message.author.send("gn");
 
     if(!command.startsWith(prefix)) return;
     command = command.replace(prefix, "");
@@ -71,6 +88,7 @@ bot.on('message', message =>
 
     //#region music
 
+    //TODO
     if(command.startsWith(""))
     {
         for(var album in data.albums)
@@ -258,9 +276,13 @@ bot.on('message', message =>
         grantAccess(message);
     if(command.startsWith("smack "))
         smack(message);
+    if(command.startsWith("crash"))
+        crash();
 
     //#endregion
 });
+
+bot.on('error', console.error);
 
 function pings(message)
 {
@@ -331,15 +353,23 @@ function sql(message)
 
     var query = message.content.slice(5);
     database.query(query)
-    .then(() =>
+    .then(result =>
     {
-        message.channel.send("✅")
-        .then(m => m.delete(1000));
+        var response = "✅";
+        if(result) 
+        {
+            response = "```json\n" + result + "\n```";
+            response = response
+                .replace(/\\/g, "")
+                .replace(/"{/g, "'{")
+                .replace(/}"/g, "}'");
+        }
+        message.channel.send(response, { split: true })
+        .catch(console.error);
     },
     () =>
     {
-        message.author.send("An error occured with the query.")
-        .then(m => m.delete(1000));
+        message.author.send("An error occured with the query.");
     });
 }
 
@@ -360,16 +390,15 @@ function smack(message)
     //     .send(name + " has been smacked."));
 }
 
+function crash(message)
+{
+    message.channel.send("crash");
+}
+
 function test(message)
 {
     if(message.author.id != "247955535620472844")
         return;
-
-    var embed = new Discord.RichEmbed()
-        .setColor(data.color)
-        .setImage("https://drive.google.com/uc?export=view&id=0B8Hl0NLXwoPyZlZzbHVXVERScEU");
-
-    message.channel.send(embed);
 
     // var number = message.content.slice(6).split("+");
     // var x = parseInt(number[0]),
@@ -421,3 +450,33 @@ function test(message)
     //     "```"
     // );
 }
+
+//IMPORTANT: Querying from Pitch's database for era pics
+
+    // var db = mysql.createConnection
+    // ({
+    //     host: "80.211.57.115",
+    //     user: "esfox",
+    //     password: "esfoxcookie#",
+    //     database: "twicestation",
+    //     port: 3306
+    // });
+
+    // db.query('SELECT * FROM obr_artykul WHERE eragame = "1" AND art_dzial = "1" ORDER BY RAND() LIMIT 1;',
+    // (error, rows) =>
+    // {
+    //     if(error) return console.log(error);
+
+    //     var urlprefix = 'https://twicestation.kpoplul.com/upload/ogloszenie/';
+    //     var image = urlprefix + rows[0].art_img;
+    //     var era = rows[0].art_tagi;
+    //     image = encodeURI(image);
+
+    //     var embed = new Discord.RichEmbed()
+    //         .setColor(data.color)
+    //         .setTitle(era)
+    //         .setImage(image);
+    //         // .setImage("https://drive.google.com/uc?export=view&id=0B8Hl0NLXwoPyZlZzbHVXVERScEU");
+    
+    //     message.channel.send(embed);
+    // });

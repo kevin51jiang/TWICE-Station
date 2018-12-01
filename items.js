@@ -34,20 +34,16 @@ function onCooldown(message)
             if(wait > 0.9)
                 wait = Math.round(wait);
 
-            var title = "❄ On cooldown! Please wait **" + wait;
+            var waitText = `Please wait **${wait}`;
             if(wait == 1)
-                title += " second**."
-            else title += " seconds**."
+                waitText += " second**."
+            else waitText += " seconds**."
 
             var embed = new Discord.RichEmbed()
                 .setColor(data.color)
-                .setTitle(title)
-            message.channel.send(message.author, embed)
-            .then(msg =>
-            {
-                // msg.delete(3000);
-            });
-            // message.delete();
+                .addField("❄ On cooldown!", waitText);
+                // .setTitle(title)
+            message.channel.send(message.author, embed);
             return true;
         }
     } 

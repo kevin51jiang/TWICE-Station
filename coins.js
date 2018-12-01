@@ -47,6 +47,11 @@ exports.command = (message, params) =>
         case "g":
             pay(message, parameters[1]);
             break;
+
+        case "top":
+        case "t":
+            leaderboard(message);
+            break;
     }
 }
 
@@ -144,8 +149,6 @@ exports.balance = (message) =>
 
 function daily(message)
 {
-    var response = /* "**Still under developement.\n\n**" ;*/
-        message.author;
     var currentTime = Date.now();
     var user = message.author.id;
 
@@ -170,10 +173,14 @@ function daily(message)
         {
             seconds %= 60;
 
-            var text = "\n⌛ Please wait __**" + (24 - Math.ceil(hours)) + " hours**__, " + 
-                "__**" + (60 - (Math.ceil(minutes) % 60)) + " minutes**__, and " +
-                "__**" + (60 - Math.ceil(seconds)) + " seconds**__.";
-            message.channel.send(response, makeEmbed(text));
+            var text = `\n⌛ Please wait ${(24 - Math.ceil(hours))} hours, ` + 
+                `${(60 - (Math.ceil(minutes)))} minutes and ` +
+                `${(60 - Math.ceil(seconds))} seconds.`;
+
+            var embed = new Discord.RichEmbed()
+                .setColor(data.color)
+                .setTitle(text);
+            message.channel.send(message.author, embed);
         }
     },
     () =>
@@ -199,16 +206,11 @@ function daily(message)
         else if(random <= 20) daily = dailyRNG(401, 600);
         else daily = dailyRNG(200, 400);
 
-        response += ", you received **" + daily + " TWICE**COINS.";
-        addCoins(message, message.author, daily, response, false);
-    }
-    
-    function makeEmbed(text)
-    {
         var embed = new Discord.RichEmbed()
             .setColor(data.color)
-            .setTitle(text);
-        return embed;
+            .setTitle(`You received ${daily} TWICECOINS.`);
+        // var response = "You received **" + daily + " TWICE**COINS.";
+        addCoins(message, message.author, daily, embed, true);
     }
 }
 
@@ -294,6 +296,51 @@ function add(message, amount)
             + "__**" + amount + "**__ **TWICE**COINS.";
 
     addCoins(message, user, amount, response, false);
+}
+
+function leaderboard(message)
+{
+    database.getAllCoins()
+    .then(result =>
+    {
+        result = result.sort((a,b) =>
+        {
+            if(a.coins < b.coins)
+              return 1;
+            if(a.coins > b.coins)
+              return -1;
+            return 0;
+        });
+        
+        if(result.length > 10)
+            result = result.slice(0, 10);
+        var table = "💰 **TWICE**COINS Leaderboard\n" +
+
+            "```css\n";
+        
+        var number = 0;
+        for(user of result)
+        {   
+            number++;
+            var name = message.guild.members
+                .get(user.id).user.tag;
+            var spaces = "   ";
+            if(number == 10) spaces = "  ";
+            table += `#${number}${spaces}${formatString(name, 15)}   ${user.coins}\n`;
+        }
+
+        table += "\n```";
+        message.channel.send(table);
+    });
+    
+    function formatString(string, length)
+    {
+        if(string.length > length)
+            string = string.slice(0, length);
+        var spaces = length - string.length;
+        string += new Array(spaces + 1).join(" ");
+        return string;
+    }
 }
 
 function addCoins(message, user, amount, response, mentionAndEmbed)

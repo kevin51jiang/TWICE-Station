@@ -132,6 +132,16 @@ exports.getCoins = (user) =>
     });
 }
 
+exports.getAllCoins = () =>
+{
+    return new Promise
+    (success =>
+    {
+        sql.all("SELECT * FROM coins")
+        .then(table => success(table));
+    }).catch(console.error)
+}
+
 //#endregion
 
 //#region daily
@@ -414,14 +424,20 @@ exports.resetRPGStats = (id) =>
 //Testing
 exports.query = (query) =>
 {
+    query = query.toLowerCase();
     return new Promise
     ((success, fail) =>
     {
-        sql.run(query)
-        .then(result =>
+        if(query.includes("select"))
         {
-            success(result);
-        })
+            sql.all(query)
+            .then(result => success(JSON.stringify(result, null, "  ")))
+            .catch(() => fail());
+            return;
+        }
+
+        sql.run(query)
+        .then(() => success())
         .catch(() => fail());
     });
 }

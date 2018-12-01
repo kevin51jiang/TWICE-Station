@@ -13,14 +13,18 @@ function onCooldown(message)
     {
         if(cooldowns[user] != 0)
         {
-            // var wait = (cooldown - (Date.now() - cooldowns[user])) / 1000;
-            // if(wait > 0.9)
-            //     wait = Math.round(wait);
+            var wait = ~~(((cooldown - (Date.now() - cooldowns[user])) 
+                / 1000)/60);
+
+            var waitText = `around **${wait} minutes**`;
+            if(wait < 1)
+                waitText = "in less than **1 minute**";
 
             var title = "🚚  Your Candy Bong is still being delivered!";
             var embed = new Discord.RichEmbed()
                 .setColor(data.color)
-                .setTitle(title)
+                .addField(title, `It will arrive in ${waitText}.`);
+                // .setTitle(title)
             message.channel.send(message.author, embed)
             return true;
         }
@@ -83,7 +87,7 @@ exports.leaderboard = (message) =>
         if(result.length > 10)
             result = result.slice(0, 10);
 
-        var table = "**🍭 Candy Bong Leaderboard**\n" +
+        var table = "🍭 Candy Bong Leaderboard\n" +
             "```css\n";
         
         var number = 0;
@@ -91,8 +95,9 @@ exports.leaderboard = (message) =>
         {   
             number++;
             var name = message.guild.members.get(user.id).displayName;
-            
-            table += `#${number}  ${formatString(user.count, 5)}  ${name}\n`;
+            var spaces = "   ";
+            if(number == 10) spaces = "  ";
+            table += `#${number}${spaces}${formatString(user.count, 5)}  ${name}\n`;
         }
 
         table += "\n```";
