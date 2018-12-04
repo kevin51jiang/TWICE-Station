@@ -160,7 +160,7 @@ function daily(message)
         var minutes = (difference / (1000 * 60));
         var seconds = (difference / 1000);
 
-        if(hours < 1) 
+        if(hours > 1) 
             minutes = minutes % 60;
 
         if(hours >= 24)
