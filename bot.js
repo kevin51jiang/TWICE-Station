@@ -21,7 +21,7 @@ bot.login(args)
     if(error) console.log("gitgud haha"); 
 });
 
-var ping = "<@247955535620472844>•d";
+var ping = "<@247955535620472844>*";
 
 const prefix = ";";
 
@@ -86,13 +86,10 @@ bot.on('message', message =>
     //#region music
 
     //TODO
-    if(command.startsWith(""))
+    for(var album in data.albums)
     {
-        for(var album in data.albums)
-        {
-            if(command.substr(1).replace(/\s/g, '') == album.toLowerCase())
-                player.playAlbum(channel, data.albums[album]);
-        }
+        if(command.substr(1).replace(/\s/g, '') == album.toLowerCase())
+            player.playAlbum(channel, data.albums[album]);
     }
 
     if(command == "connect")
@@ -243,15 +240,15 @@ bot.on('message', message =>
     if(command.startsWith("trade "))
         items.trade(message);
 
+    if
+    (
+        command == "collections" ||
+        command == "cols"
+    )
+        items.collections(message);
+
     //#endregion
         
-    // For debugging
-    if(command.startsWith("reset "))
-        database.reset(message.content.slice(7))
-        .then(() => message.channel.send("Table recreated."));
-
-    //#endregion
-
     //#region RPG   
 
     if(command.startsWith("g "))    
@@ -261,6 +258,13 @@ bot.on('message', message =>
 
     //#region Dev commands
 
+    if(command.startsWith("reset "))
+    {
+        if(message.author.id != "247955535620472844") return;
+        
+        database.reset(message.content.slice(7))
+            .then(() => message.channel.send("Table recreated."));
+    }
     if
     (
         command == "test" ||

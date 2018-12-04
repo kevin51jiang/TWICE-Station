@@ -228,17 +228,21 @@ exports.bag = (message, isOnMobile) =>
             var table = "";
             for(item of chunks[i])
             {
+                var cost = (item.amount * item.cost);
+                total += cost;
                 count += item.amount;
-                total += (item.amount * item.cost);
-                table += formatString(item.item, 30);
 
                 if(!isOnMobile)
-                    table += formatString(item.amount.toString(), 5) +
-                        formatString(item.value, 12) + (item.cost * item.amount) +"\n";
+                {
+                    table += formatString(item.item, 30) +
+                        formatString(item.amount.toString(), 5) +
+                        formatString(item.value, 12) + cost + "\n";
+                }
                 else
-                    table += "\nx" + 
-                        formatString(item.amount.toString(), 5) + 
-                        formatString(item.value, 15) + (item.cost * item.amount) +"\n\n";
+                {
+                    table += `${item.item} (${item.value.toLowerCase()})\n` + 
+                        `x${item.amount} = ${item.cost}\n\n`;
+                }
             }
 
             var text = "";
@@ -247,20 +251,29 @@ exports.bag = (message, isOnMobile) =>
             if(i == 0)
             {
                 text = "🎒 **OnceBag Contents**\n";
+
                 if(!isOnMobile)
                     table = formatString("       Item", 27) + 
                         formatString("Amount", 8) +
                         formatString("Value", 12) +
                         "Cost\n" + separator + "\n" + table;
-            }
+            }   
 
             text += "```ml\n";
 
             if(i == chunks.length - 1)
             {
-                table += separator + "\n" + 
-                    formatString(new Array(22).join(" ") + "Total", 30) + 
-                    formatString(count.toString(), 17) + total.toLocaleString();
+                if(!isOnMobile)
+                {
+                    table += separator + "\n" + 
+                        formatString(new Array(22).join(" ") + "Total", 30) + 
+                        formatString(count.toString(), 17) + total.toLocaleString();
+                }
+                else
+                {
+                    table += "———————————————————————" +
+                        `\nTotal (${count} items) = ${total}`;
+                }
             }
 
             text += table + "\n```";
@@ -496,6 +509,71 @@ exports.trade = (message) =>
     {
         return message.reply("your OnceBag is empty.");
     });
+}
+
+exports.collections = (message) =>
+{
+    var collectionsInfo = 
+    [
+        {
+            title: "Sweet Collection",
+            bonus: "50",
+            description: "All 9 candies and jellies, 1 of each member.",
+        },
+        {
+            title: "Plushie Collection",
+            bonus: "400",
+            description: "All 9 plushies, 1 of each member.",
+        },
+        {
+            title: "Album Collection",
+            bonus: "500",
+            description: "All the 10 Korea release albums.",
+        },
+        {
+            title: "Member Collection",
+            bonus: "500",
+            description: "The plushie, photocard, poster and the rare item of a member. (9 collections, 1 for each member)",
+        },
+        {
+            title: "TWICE Collection",
+            bonus: "1,500",
+            description: "All the 9 member photocards and posters.",
+        },
+        {
+            title: "Cheer Up Collection",
+            bonus: "3,000",
+            description: "Page Two Album and Cheer Up Jacket.",
+        },
+        {
+            title: "Yes or Yes Collection",
+            bonus: "3,000",
+            description: "Yes or Yes Album and Yes or Yes Dice.",
+        },
+        {
+            title: "Member Special Collection",
+            bonus: "4,000",
+            description: "The photocard, rare item and legendary item of a member. (Only for Nayeon, Jeongyeon, Momo, Jihyo and Chaeyoung).",
+        },
+        {
+            title: "JYP Collection",
+            bonus: "10,000",
+            description: "What Is Love? Album, Signal Album, JYP Plastic Pants and JYP's MIDI Keyboard."
+        },
+    ];
+
+    var description = "";
+    collectionsInfo.forEach(element =>
+    {
+        description += `**${element.title}** - **${element.bonus}**\n` +
+            `-${element.description}\n\n`;
+    });
+
+    var embed = new Discord.RichEmbed()
+        .setColor(data.color)
+        .setTitle("🛍 Collections 🛍")
+        .setDescription(description);
+    message.channel.send(embed);
 }
 
 function checkCollection(message, bag)

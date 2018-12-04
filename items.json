@@ -285,6 +285,23 @@
                 "jh-j"
             ],
             "bonus": 50
+        },
+        
+        "Plushie":
+        {
+            "items":
+            [ 
+                "ny-p",
+                "dh-p",
+                "sn-p",
+                "mn-p",
+                "jy-p",
+                "tz-p",
+                "ch-p",
+                "mm-p",
+                "jh-p" 
+            ],
+            "bonus": 400
         }, 
 
         "Album":
@@ -303,49 +320,6 @@
                 "yoy-a"
             ],
             "bonus": 500
-        },
-        
-        "Plushie":
-        {
-            "items":
-            [ 
-                "ny-p",
-                "dh-p",
-                "sn-p",
-                "mn-p",
-                "jy-p",
-                "tz-p",
-                "ch-p",
-                "mm-p",
-                "jh-p" 
-            ],
-            "bonus": 400
-        },
-
-        "TWICE":
-        {
-            "items":
-            [
-                "ny-pc",
-                "ny-ps",
-                "dh-pc",
-                "dh-ps",
-                "sn-pc",
-                "sn-ps",
-                "mn-pc",
-                "mn-ps",
-                "jy-pc",
-                "jy-ps",
-                "tz-pc",
-                "tz-ps",
-                "ch-pc",
-                "ch-ps",
-                "mm-pc",
-                "mm-ps",
-                "jh-pc",
-                "jh-ps"
-            ],
-            "bonus": 1500
         },
 
         "Nayeon":
@@ -456,16 +430,30 @@
             "bonus": 500
         },
 
-        "JYP":
+        "TWICE":
         {
             "items":
             [
-                "jkb",
-                "ptp",
-                "sgl-a", 
-                "wil-a"
+                "ny-pc",
+                "ny-ps",
+                "dh-pc",
+                "dh-ps",
+                "sn-pc",
+                "sn-ps",
+                "mn-pc",
+                "mn-ps",
+                "jy-pc",
+                "jy-ps",
+                "tz-pc",
+                "tz-ps",
+                "ch-pc",
+                "ch-ps",
+                "mm-pc",
+                "mm-ps",
+                "jh-pc",
+                "jh-ps"
             ],
-            "bonus": 10000
+            "bonus": 1500
         },
 
         "Cheer Up":
@@ -541,6 +529,18 @@
                 "idl"
             ],
             "bonus": 4000
+        },
+
+        "JYP":
+        {
+            "items":
+            [
+                "jkb",
+                "ptp",
+                "sgl-a", 
+                "wil-a"
+            ],
+            "bonus": 10000
         }
     }
 }

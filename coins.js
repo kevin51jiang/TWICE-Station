@@ -160,7 +160,9 @@ function daily(message)
         var minutes = (difference / (1000 * 60));
         var seconds = (difference / 1000);
 
-        //TODO: fix
+        if(hours < 1) 
+            minutes = minutes % 60;
+
         if(hours >= 24)
         {   
             database.setDaily(user, currentTime.toString())
@@ -208,8 +210,7 @@ function daily(message)
 
         var embed = new Discord.RichEmbed()
             .setColor(data.color)
-            .setTitle(`You received ${daily} TWICECOINS.`);
-        // var response = "You received **" + daily + " TWICE**COINS.";
+            .setTitle(`💰 You received ${daily} TWICECOINS.`);
         addCoins(message, message.author, daily, embed, true);
     }
 }
@@ -253,7 +254,7 @@ function pay(message, amount)
                 );
             });
         })
-    }).catch(() => message.reply("You don't have coins yet!"));
+    }).catch(() => message.reply("you don't have coins yet!"));
 
     function paidMessage(payor, payee, amount)
     {
@@ -275,10 +276,6 @@ function add(message, amount)
         "247955535620472844",
         "200132493335199746",
         "274336998771130368",
-
-        // "198205443045064705",
-        // "236125387480891392",
-        // "247023528702902272"
     ];
 
     if(!testers.includes(message.author.id))  
@@ -289,8 +286,7 @@ function add(message, amount)
         return message.reply("that's not a number. :thinking:");
         
     var user = message.mentions.users.first();
-    if(!user)
-        return;
+    if(!user) return;
 
     var response = "**" + user.username + "** has received " 
             + "__**" + amount + "**__ **TWICE**COINS.";
