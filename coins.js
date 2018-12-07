@@ -210,7 +210,7 @@ function daily(message)
 
         var embed = new Discord.RichEmbed()
             .setColor(data.color)
-            .setTitle(`💰 You received ${daily} TWICECOINS.`);
+            .setTitle(`💰 You received ${daily} TWICECOINS`);
         addCoins(message, message.author, daily, embed, true);
     }
 }

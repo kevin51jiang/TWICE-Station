@@ -628,7 +628,7 @@ function attack(message, mode)
 
         function killUpdate(killedCoins)
         {
-            var coinsEarned = killedCoins / 2;
+            var coinsEarned = Math.floor(killedCoins / 2);
             var totalCoins = killerCoins + coinsEarned;
     
             database.updateCoins(totalCoins, killer.id)

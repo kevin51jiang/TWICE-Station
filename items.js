@@ -211,7 +211,7 @@ exports.bag = (message, isOnMobile) =>
         if(bag.length == 0)
             return message.reply("your OnceBag is empty.");
 
-        if(!bag) return message.reply("an error occured. 😦")
+        if(!bag) return message.reply("an error occured. 😦");
 
         var chunks = [];
 

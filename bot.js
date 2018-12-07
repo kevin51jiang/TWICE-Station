@@ -21,9 +21,9 @@ bot.login(args)
     if(error) console.log("gitgud haha"); 
 });
 
-var ping = "<@247955535620472844>*";
+var ping = "<@247955535620472844>*d";
 
-const prefix = ";";
+const prefix = "'";
 
 bot.on('ready', () =>
 {
@@ -34,7 +34,7 @@ bot.on('ready', () =>
 
     bot.channels.get("496531070167285770").send(ping);
 
-    player.init(bot.channels.get("496542169549504538"));
+    player.init(bot);
     database.init();
 });
 
@@ -57,7 +57,7 @@ bot.on('message', message =>
         return;
     }
 
-    pings(message);
+    pings(message); 
 
     coins.rng(message);
 
@@ -70,7 +70,6 @@ bot.on('message', message =>
     // fun.interaction(message);
 
     var command = message.content;
-    var channel = message.channel;
 
     command = command.toLowerCase().replace(/\s\s+/g, " ");
 
@@ -85,15 +84,41 @@ bot.on('message', message =>
 
     //#region music
 
-    //TODO
-    for(var album in data.albums)
-    {
-        if(command.substr(1).replace(/\s/g, '') == album.toLowerCase())
-            player.playAlbum(channel, data.albums[album]);
-    }
+    // for(var album in data.albums)
+    // {
+    //     if(command.replace(/\s/g, "") == album.toLowerCase()
+    //         .replace("&", "and")
+    //         .replace("?", ""))
+    //         player.playAlbum(channel, data.albums[album]);
+    // }
 
-    if(command == "connect")
-        player.connect(message.channel);
+    if(command == "start")
+        player.start(message);
+
+    if
+    (
+        command.startsWith("play ") ||
+        command.startsWith("p ")
+    )
+        player.playSong(message);
+
+    if
+    (
+        command == "skip" ||
+        command == "next" ||
+        command == "n"
+    )
+        player.skip(message);
+
+    if
+    (
+        command == "queue" ||
+        command == "q"
+    )
+        player.queue(message);
+
+    if(command == "np")
+        player.nowPlaying(message);
 
     if
     (
@@ -101,10 +126,7 @@ bot.on('message', message =>
         command == "dc" ||
         command == "stop"
     )
-        player.disconnect(message.channel);
-
-    if(command == "skip")
-        player.skip(message.channel);
+        player.stop(message);
 
     //#endregion
 
