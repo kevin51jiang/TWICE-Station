@@ -48,7 +48,8 @@ function createTables()
             "CREATE TABLE IF NOT EXISTS items" +
             "(" +
                 "id TEXT, " +
-                "inventory TEXT" +
+                "inventory TEXT, " +
+                "collections TEXT" +
             ")"
         );
         sql.run

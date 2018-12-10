@@ -124,8 +124,8 @@ exports.balance = (message) =>
         .setFooter("With these coins you can buy roles for yourself!");
 
         if(user.id == message.author.id)
-            return message.channel.send(message.author + "\n" +
-                "**THIS IS STILL UNDER TESTING. COINS MIGHT RESET ANYTIME.**",
+            return message.channel.send(message.author + "\n", 
+                // + "**THIS IS STILL UNDER TESTING. COINS MIGHT RESET ANYTIME.**",
                 embed);
 
         embed.setAuthor(user.displayName, user.user.displayAvatarURL)

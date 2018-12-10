@@ -294,132 +294,327 @@ exports.bag = (message, isOnMobile) =>
     }
 }
 
+exports.collections = (message) =>
+{
+    var user = message.author.id;
+    database.getCollections(user)
+    .then(collections =>
+    {
+        if(!collections) return errorReply();
+
+        try
+        {
+            collections = JSON.parse(collections);
+            if(collections.length <= 0) return errorReply();
+
+            var embed = new Discord.RichEmbed() 
+                .setColor(data.color)
+                .addField("✅ Completed Collections",
+                    `• ${collections.join("\n• ")}`);
+            
+            message.channel.send(embed);
+        }
+        catch(error) { console.log(error) };
+    },
+    () =>
+    {
+        errorReply();
+    });
+            
+    function errorReply()
+    {
+        message.reply("you haven't completed any collections yet.");
+    }
+}
+
+exports.collectionList = (message) =>
+{
+    var collectionsInfo = 
+    [
+        {
+            title: "Sweet Collection",
+            bonus: "50",
+            description: "All 9 candies and jellies, 1 of each member.",
+        },
+        {
+            title: "Plushie Collection",
+            bonus: "400",
+            description: "All 9 plushies, 1 of each member.",
+        },
+        {
+            title: "Album Collection",
+            bonus: "500",
+            description: "All the 10 Korea release albums.",
+        },
+        {
+            title: "Member Collection",
+            bonus: "500",
+            description: "The plushie, photocard, poster and the rare item of a member. (9 collections, 1 for each member)",
+        },
+        {
+            title: "TWICE Collection",
+            bonus: "1,500",
+            description: "All the 9 member photocards and posters.",
+        },
+        {
+            title: "Cheer Up Collection",
+            bonus: "3,000",
+            description: "Page Two Album and Cheer Up Jacket.",
+        },
+        {
+            title: "Yes or Yes Collection",
+            bonus: "3,000",
+            description: "Yes or Yes Album and Yes or Yes Dice.",
+        },
+        {
+            title: "Member Special Collection",
+            bonus: "4,000",
+            description: "The photocard, rare item and legendary item of a member. (Only for Nayeon, Jeongyeon, Momo, Jihyo and Chaeyoung).",
+        },
+        {
+            title: "JYP Collection",
+            bonus: "10,000",
+            description: "What Is Love? Album, Signal Album, JYP Plastic Pants and JYP's MIDI Keyboard."
+        },
+    ];
+
+    var description = "";
+    collectionsInfo.forEach(element =>
+    {
+        description += `**${element.title}** - **${element.bonus}**\n` +
+            `-${element.description}\n\n`;
+    });
+
+    var embed = new Discord.RichEmbed()
+        .setColor(data.color)
+        .setTitle("🛍 Collections 🛍")
+        .setDescription(description);
+    message.channel.send(embed);
+}
+
+const SellMode = 
+{ 
+    item: "item", 
+    all: "all", 
+    value: "value" ,
+    duplicates: "duplicates",
+    collection: "collection" 
+};
+
 //TODO: fix "you sold for 0 coins"
 exports.sell = (message) =>
 {
-    var parameter = message.content
-        .slice(6).toLowerCase();
-    var amount = parameter.split("=");
-    if(amount.length > 1)
-    {
-        parameter = amount[0].trim();
-        amount = amount[1].trim();
-    }
+    var parameter = message.content;
+    parameter = parameter
+        .substring(parameter.indexOf(" "))
+        .toLowerCase()
+        .trim();
 
-    var toSellAll = false;
-    var toSellByValue = false;
+    var mode = SellMode.item;
 
-    if
-    (
-        parameter == "all" ||
-        parameter == "a"
-    )   
-        toSellAll = true;
+    if(parameter == "all")   
+        mode = SellMode.all;
 
-    for(key in items)
-    {
-        if(parameter == key)
-            toSellByValue = true;
-    }
+    if(Object.keys(items).includes(parameter))
+        mode = SellMode.value;
+        
+    if(parameter.match("(duplicates|dup)"))
+        mode = SellMode.duplicates;
+    
+    if(parameter.match("(collection |col |c ).*"))
+        mode = SellMode.collection;
 
     var user = message.author.id;
     database.getItems(user)
     .then(bag =>
     {
         bag = parseItems(JSON.parse(bag));
-
-        if(toSellAll || toSellByValue)
-        {
-            var bagObject = {};
-            var earn = 0;
-            for(content of bag)
-            {
-                var price = content.amount * content.cost;
-                if(toSellByValue)
-                {
-                    if(content.value.toLowerCase() == parameter)
-                        earn += price;
-                    else bagObject[content.code] = content.amount;
-                }
-                else earn += price;
-            }
-
-            if(toSellByValue)
-                return save(bagObject, earn);
-            return save({}, earn);
-        }
-
-        var item = getItemFromName(parameter);
-        if(!item) return message.reply("can't find that item.");
-        if(!bag.some(i => i.code == item.code))
-            return message.reply("you don't have that item.");
-
-        var bagObject = {};
+        var tempBag = {};
         var earn = 0;
-        for(content of bag)
+
+        switch(mode)
         {
-            if(item.code == content.code)
-            {
-                if(!amount || isNaN(amount))
-                    amount = 1;
-                    
-                if(amount > content.amount)
-                    amount = content.amount;
-                
-                var count = content.amount - amount;
+            case SellMode.item:
+                sellItem();
+                break;
 
-                if(count != 0)
-                    bagObject[content.code] = count;
+            case SellMode.all:
+                sellAll();
+                break;
 
-                earn = parseInt(item.cost) * amount;
-            }
-            else bagObject[content.code] = content.amount;
+            case SellMode.value:
+                sellByValue();
+                break;
+
+            case SellMode.duplicates:
+                sellDuplicates();
+                break;
+
+            case SellMode.collection:
+                sellByCollection();
+                break;
         }
 
-        save(bagObject, earn);
-
-        function save(bag, earn)
+        function sellItem()
         {
-            database.updateItems(user, JSON.stringify(bag))
+            var item = parameter;
+            if(parameter.indexOf("=") > -1)
+                item = parameter.substring(0, parameter.indexOf("=")).trim();
+
+            var amount = parameter.substring(parameter.indexOf("=") + 1).trim();
+            if(amount == parameter) amount = 1;
+            if(!amount) amount = 1;
+
+            item = getItemFromName(item);
+            if(!item) return message.reply("can't find that item.");
+
+            item = bag.find(i => i.code == item.code);
+            if(!item) return message.reply("you don't have that item.");
+         
+            var count = item.amount;
+            if(amount > count) amount = count;
+
+            for(i of bag)
+            {
+                if(i.code == item.code)
+                {
+                    count = i.amount - amount;
+                    if(count != 0) tempBag[i.code] = count;
+                }
+                else tempBag[i.code] = i.amount;
+            }
+            
+            earn = parseInt(item.cost) * amount;
+            save(item, amount);
+        }
+
+        function sellAll()
+        {
+            bag.forEach(i => earn += i.cost * i.amount);
+            if(earn == 0)
+                return message.reply("you don't have any items.");
+            save();
+        }
+
+        function sellByValue()
+        {
+            bag.forEach(i => 
+            {
+                if(i.value.toLowerCase() == parameter)
+                    earn += i.cost * i.amount;
+                else tempBag[i.code] = i.amount;
+            });
+
+            if(earn == 0) 
+                return message.reply(`you don't have any ${parameter} items.`);
+            save();
+        }
+
+        function sellDuplicates()
+        {
+            bag.forEach(i =>
+            {
+                if(i.amount > 1)
+                    earn += i.cost * (i.amount - 1);
+                tempBag[i.code] = 1;
+            });
+
+            if(earn == 0) 
+                return message.reply("you don't have duplicate items.");
+            save();
+        }
+
+        function sellByCollection()
+        {
+            var collection = parameter
+                .substring(parameter.indexOf(" ") + 1)
+                .trim();
+                
+            if(!Object.keys(collections).some(c => c.toLowerCase() == collection))
+                return message.reply("that's not a collection.");
+
+            database.getCollections(user)
+            .then(completedCollections =>
+            {
+                if(!completedCollections) return errorReply();
+                try
+                {
+                    completedCollections = JSON.parse(completedCollections);
+                    if(completedCollections.length <= 0) return errorReply();
+                    if(!completedCollections.some(c => c.toLowerCase() == collection))
+                        return message.reply("you haven't completed that collection.");
+    
+                    var key = Object.keys(collections).find(c => c.toLowerCase() == collection);
+                    collection = collections[key];
+
+                    bag.forEach(i =>
+                    {
+                        if(collection.items.includes(i.code))
+                            earn += i.cost * i.amount;
+                        else tempBag[i.code] = i.amount;
+                    });
+
+                    save(key);
+                }
+                catch(error) { errorReply() };
+            },
+            () =>
+            {
+                errorReply();
+            });
+            
+            function errorReply()
+            {
+                message.reply("you haven't completed any collections yet.");
+            }
+        }
+
+        function save(item, amount)
+        {
+            database.updateItems(user, JSON.stringify(tempBag))
             .then(() =>
             {
                 var embed = new Discord.RichEmbed() 
                     .setColor(data.color);
                     
-                var amountText = "";
+                var soldText = "💰 You sold";
+                var earnText = `For __**${earn}**__ **TWICE**COINS`;
 
-                if(amount && amount > 1)
-                    amountText = amount + " ";
-
-                var earnText = "For __**" + earn + "**__ **TWICE**COINS";
-
-                if(toSellAll)
+                switch(mode)
                 {
-                    embed.addField("💰 You sold all items", 
-                        earnText);
-                        
-                    return send();
-                }   
+                    case SellMode.item:
+                        if(amount == 1) amount = "";
+                        else amount = `${amount} `;
+                        embed.addField(`${soldText} ${amount}**${item.item}**`,
+                            earnText);
+                        break;
 
-                if(toSellByValue)
-                {
-                    parameter = parameter.charAt(0).toUpperCase() + 
-                        parameter.slice(1);
-                    embed.addField("💰 You sold all **" + parameter + "** items", 
+                    case SellMode.all:
+                        embed.addField(`${soldText} all items`, earnText);
+                        break;
+
+                    case SellMode.value:
+                        parameter = parameter.charAt(0).toUpperCase() + 
+                            parameter.slice(1);
+                        embed.addField(`${soldText} all **${parameter}** items`, 
+                            earnText);
+                        break;
+                    case SellMode.duplicates:
+                        embed.addField(`${soldText} all duplicate items`, earnText);
+                        break;
+
+                    case SellMode.collection:
+                        embed.addField(`${soldText} all the items from ${item} collection`,
                         earnText);
-                    return send();
+                        break;
                 }
-                
-                embed.addField("💰 You sold " + amountText + 
-                    "**" + item.name + "**", 
-                    earnText);
 
                 send();
 
                 function send()
                 {
                     coins.earnEmbed(message, earn, embed);
-                    checkCollection(message, bag);
+                    checkCollection(message, tempBag);
                 }
             });
         }
@@ -509,71 +704,6 @@ exports.trade = (message) =>
     {
         return message.reply("your OnceBag is empty.");
     });
-}
-
-exports.collections = (message) =>
-{
-    var collectionsInfo = 
-    [
-        {
-            title: "Sweet Collection",
-            bonus: "50",
-            description: "All 9 candies and jellies, 1 of each member.",
-        },
-        {
-            title: "Plushie Collection",
-            bonus: "400",
-            description: "All 9 plushies, 1 of each member.",
-        },
-        {
-            title: "Album Collection",
-            bonus: "500",
-            description: "All the 10 Korea release albums.",
-        },
-        {
-            title: "Member Collection",
-            bonus: "500",
-            description: "The plushie, photocard, poster and the rare item of a member. (9 collections, 1 for each member)",
-        },
-        {
-            title: "TWICE Collection",
-            bonus: "1,500",
-            description: "All the 9 member photocards and posters.",
-        },
-        {
-            title: "Cheer Up Collection",
-            bonus: "3,000",
-            description: "Page Two Album and Cheer Up Jacket.",
-        },
-        {
-            title: "Yes or Yes Collection",
-            bonus: "3,000",
-            description: "Yes or Yes Album and Yes or Yes Dice.",
-        },
-        {
-            title: "Member Special Collection",
-            bonus: "4,000",
-            description: "The photocard, rare item and legendary item of a member. (Only for Nayeon, Jeongyeon, Momo, Jihyo and Chaeyoung).",
-        },
-        {
-            title: "JYP Collection",
-            bonus: "10,000",
-            description: "What Is Love? Album, Signal Album, JYP Plastic Pants and JYP's MIDI Keyboard."
-        },
-    ];
-
-    var description = "";
-    collectionsInfo.forEach(element =>
-    {
-        description += `**${element.title}** - **${element.bonus}**\n` +
-            `-${element.description}\n\n`;
-    });
-
-    var embed = new Discord.RichEmbed()
-        .setColor(data.color)
-        .setTitle("🛍 Collections 🛍")
-        .setDescription(description);
-    message.channel.send(embed);
 }
 
 function checkCollection(message, bag)

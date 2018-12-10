@@ -21,7 +21,7 @@ bot.login(args)
     if(error) console.log("gitgud haha"); 
 });
 
-var ping = "<@247955535620472844>*d";
+var ping = "<@247955535620472844>•";
 
 const prefix = ";";
 
@@ -30,7 +30,7 @@ bot.on('ready', () =>
     console.log(`Bot started!`) 
     
     bot.user.setStatus('Online')
-    bot.user.setActivity('with TWICE MEMES members');
+    // bot.user.setActivity('with TWICE MEMES members');
 
     bot.channels.get("496531070167285770").send(ping);
 
@@ -256,6 +256,13 @@ bot.on('message', message =>
         items.bag(message, true);
     }
 
+    if
+    (
+        command == "collections" ||
+        command == "cols"
+    )
+        items.collections(message);
+
     if(command.startsWith("sell "))
         items.sell(message);
 
@@ -264,10 +271,10 @@ bot.on('message', message =>
 
     if
     (
-        command == "collections" ||
-        command == "cols"
+        command == "collectionlist" ||
+        command == "clist"
     )
-        items.collections(message);
+        items.collectionList(message);
 
     //#endregion
         
