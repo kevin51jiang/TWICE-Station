@@ -52,7 +52,7 @@ function onCooldown(message)
     cooldowns[user] = Date.now();
     setTimeout(() =>    
     {
-        cooldowns[user] = 0;
+        delete cooldowns[user];
     }, cooldown);
 
     return false;
