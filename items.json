@@ -27,7 +27,7 @@
         {
             "name": "good", 
             "text": "**good**",
-            "limit": 55,
+            "limit": 45,
             "cost": 10,
             "list":
             [
@@ -48,7 +48,7 @@
         {
             "name": "amazing",
             "text": "__**amazing**__",
-            "limit": 25,
+            "limit": 20,
             "cost": 50,
             "list":
             [
@@ -69,7 +69,7 @@
         {
             "name": "rare",
             "text": "**RARE**",
-            "limit": 10,
+            "limit": 7,
             "cost": 150,
             "list":
             [
@@ -125,7 +125,7 @@
         {
             "name": "legendary",
             "text": "__**LEGENDARY**__",
-            "limit": 1,
+            "limit": 0.5,
             "cost": 2500,
             "list":
             [

@@ -22,6 +22,7 @@ const cooldown = 10000;
 const capacity = 100;
 
 var trades = [];
+const tradeTime = 30000;
 
 function onCooldown(message)
 {
@@ -198,7 +199,8 @@ exports.bag = (message, isOnMobile) =>
         message.author.id != "200132493335199746" && 
         message.author.id != "247955535620472844" &&
         message.author.id != "202288155599175680" &&
-        message.author.id != "274336998771130368")
+        message.author.id != "274336998771130368" &&
+        message.author.id != "499435825503797248")
         return message.channel.send("**SOON**:tm:");
 
     var user = message.author.id;
@@ -312,7 +314,7 @@ exports.collections = (message) =>
                 .addField("✅ Completed Collections",
                     `• ${collections.join("\n• ")}`);
             
-            message.channel.send(embed);
+            message.channel.send(message.author, embed);
         }
         catch(error) { console.log(error) };
     },
@@ -401,7 +403,6 @@ const SellMode =
     collection: "collection" 
 };
 
-//TODO: fix "you sold for 0 coins"
 exports.sell = (message) =>
 {
     var parameter = message.content;
@@ -418,7 +419,7 @@ exports.sell = (message) =>
     if(Object.keys(items).includes(parameter))
         mode = SellMode.value;
         
-    if(parameter.match("(duplicates|dup)"))
+    if(parameter.match("(duplicates|dup)$"))
         mode = SellMode.duplicates;
     
     if(parameter.match("(collection |col |c ).*"))
@@ -629,8 +630,8 @@ exports.sell = (message) =>
 exports.trade = (message) =>
 {
     var parameters = message.content.slice(6);
-    var mention = message.mentions.members.first();
     var user = message.member;
+    var mention = message.mentions.members.first();
 
     if(!mention) return;
     if(mention.id == user.id) return message.reply("nice meme.");
@@ -649,61 +650,77 @@ exports.trade = (message) =>
         if(!parseItems(bag).some(i => i.code == item.code))
             return message.reply("you don't have that item.");
     
-        if(trades.some(t => t.from.id == user.id))
+        if(trades.some(t => t.from == user.id))
             return message.reply("you have a trade in progress.");
 
-        if(trades.some(t => t.to.id == mention.id))
+        if(trades.some(t => t.to == mention.id))
             return message.reply("someone is trading to that person. " + 
                 "\nPlease wait before they finish.");
 
-        var trade = trades.find(t => t.to.id == user.id);
-        if(trade)
-        {
-            delete bag[item.code];
-
-            if(bag[trade.item.code])
-                bag[trade.item.code] = parseInt(bag[trade.item.code]) + 1;
-            else bag[trade.item.code] = 1;
-
-            console.log(bag);
-
-            database.getItems(mention.id)
-            .then(fromBag =>
-            {
-                fromBag = JSON.parse(fromBag);
-                
-                delete fromBag[trade.item.code];
-
-                if(fromBag[item.code])
-                    fromBag[item.code] = parseInt(fromBag[item.code]) + 1;
-                else fromBag[item.code] = 1;
-
-                console.log(fromBag);
-                    
-                message.channel.send("Still in dev so nothing is saved yet.\n" +
-                trade.from.toString() + " gives **" + trade.item.name + "** to " + trade.to.toString() + ".\n" +
-                trade.to.toString() + " gives **" + item.name + "** to " + trade.from.toString() + ".");
-
-                trades = trades.filter(t => t.to.id != user.id);
-                console.log(trades);
+        var trade = trades.find(t => t.to == user.id);
+        if(!trade)
+        {   
+            trades.push
+            ({
+                from: user.id,
+                item: item,
+                to: mention.id
             });
+
+            message.channel.send(`Waiting for the response of **${mention.displayName}**...`);
+            setTimeout(() =>
+            {
+                trades = trades.filter(t => t.from != user.id);
+                message.reply("the trade has timed out.");
+                console.log(trades);
+            }, tradeTime);
+
+            console.log(trades);
             return;
         }
-            
-        trades.push
-        ({
-            from: user,
-            item: item,
-            to: mention
-        });
-        message.channel.send("Waiting for the response of " + mention.toString() + "...");
 
-        console.log(trades);
+        message.channel.send(`${message.author} ${mention}\n`);
+        
+        delete bag[item.code];
+
+        if(bag[trade.item.code])
+            bag[trade.item.code] = parseInt(bag[trade.item.code]) + 1;
+        else bag[trade.item.code] = 1;
+
+        console.log(bag);
+
+        database.getItems(mention.id)
+        .then(fromBag =>
+        {
+            fromBag = JSON.parse(fromBag);
+            
+            delete fromBag[trade.item.code];
+
+            if(fromBag[item.code])
+                fromBag[item.code] = parseInt(fromBag[item.code]) + 1;
+            else fromBag[item.code] = 1;
+
+            console.log(fromBag);
+            confirmTrade(trade);
+        });
     },
     () =>
     {
         return message.reply("your OnceBag is empty.");
     });
+
+    function confirmTrade(trade)
+    {
+        trades = trades.filter(t => t.to != user.id);
+        console.log(trades);
+
+        var fromUser = message.guild.members.get(trade.from).displayName;
+        var toUser = message.guild.members.get(trade.to).displayName;
+
+        message.channel.send("Still in dev so nothing is saved yet.\n" +
+        `${fromUser} gives **${trade.item.name}** to ${toUser}\n` +
+        `${toUser} gives **${item.name}** to ${fromUser}.`);
+    }
 }
 
 function checkCollection(message, bag)
