@@ -433,6 +433,12 @@ function test(message)
     if(message.author.id != "247955535620472844")
         return;
 
+    var parameter = message.content;
+    parameter = parameter.substring(parameter.indexOf(" ") + 1);
+    if(parameter == message.content) return;
+
+    items.get(message, parameter);
+
     // var number = message.content.slice(6).split("+");
     // var x = parseInt(number[0]),
     //     y = parseInt(number[1]),

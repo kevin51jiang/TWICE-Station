@@ -130,11 +130,6 @@
             "list":
             [
                 {
-                    "code": "mmc",
-                    "item": "Momo's Circle",
-                    "image": "https://i.imgur.com/FecM5ob.png"
-                },
-                {
                     "code": "jkb",
                     "item": "JYP's MIDI Keyboard",
                     "image": "https://i.imgur.com/4PW4KE5.png"
@@ -165,6 +160,11 @@
                     "image": "https://i.imgur.com/EaE1r8L.png"
                 },
                 {
+                    "code": "chj",
+                    "item": "Cheer Up Jacket",
+                    "image": "https://i.imgur.com/s0wo5mo.jpg"
+                },
+                {
                     "code": "jhp",
                     "item": "Jihyo's Photobook",
                     "image": "https://i.imgur.com/M3Sf2ew.png"
@@ -175,9 +175,39 @@
                     "image": "https://i.imgur.com/Ib23ete.jpg"
                 },
                 {
-                    "code": "chj",
-                    "item": "Cheer Up Jacket",
-                    "image": "https://i.imgur.com/s0wo5mo.jpg"
+                    "code": "mmc",
+                    "item": "Momo's Circle",
+                    "image": "https://i.imgur.com/FecM5ob.png"
+                },
+                {
+                    "code": "dbc",
+                    "item": "Dubu Cushion",
+                    "image": "https://i.ytimg.com/vi/Wqj15fbhKu4/maxresdefault.jpg"
+                },
+                {
+                    "code": "gci",
+                    "item": "Gucci",
+                    "image": "https://i.imgur.com/JIfD9dH.png"
+                },
+                {
+                    "code": "kng",
+                    "item": "Kkaengi",
+                    "image": "https://i.imgur.com/gax0X5t.png"
+                },
+                {
+                    "code": "sgt",
+                    "item": "Sana's Green Tea",
+                    "image": "https://i.imgur.com/Bpo59eZ.png"
+                },
+                {
+                    "code": "jyl",
+                    "item": "Jeongyeon's Legos",
+                    "image": "https://i.imgur.com/Gvi0yD7.png"
+                },
+                {
+                    "code": "mnl",
+                    "item": "Mina's Laptop",
+                    "image": "https://i.imgur.com/ZTyTkiG.png"
                 }
             ]
         }
@@ -482,7 +512,7 @@
             [
                 "ny-pc",
                 "mc",
-                "psw"
+                "kng"
             ],
             "bonus": 4000
         },
@@ -526,7 +556,51 @@
             [
                 "jy-pc",
                 "sx",
-                "idl"
+                "jyl"
+            ],
+            "bonus": 4000
+        },
+
+        "Dahyun Special":
+        {
+            "items":
+            [
+                "dh-pc",
+                "cm",
+                "dbc"
+            ],
+            "bonus": 4000
+        },
+
+        "Tzuyu Special":
+        {
+            "items":
+            [
+                "tz-pc",
+                "bw",
+                "gci"
+            ],
+            "bonus": 4000
+        },
+
+        "Sana Special":
+        {
+            "items":
+            [
+                "sn-pc",
+                "ck",
+                "sgt"
+            ],
+            "bonus": 4000
+        },
+
+        "Mina Special":
+        {
+            "items":
+            [
+                "mn-pc",
+                "sw",
+                "mnl"
             ],
             "bonus": 4000
         },
@@ -551,6 +625,8 @@
         "🤢 You found Jokbal, but it already gone bad.",
         "🤢 You found Cheesse Kimbap, but it already gone bad.",
         "🗑 You found a faded photocard and threw it away.",
-        "🤷 You found nothing at all."
+        "🤷 You found nothing at all.",
+        "🗑 You found a broken Candy Bong. What a waste.",
+        "🗑 You found a used Twiceland ticket. You wish you had one..."
     ]
 }

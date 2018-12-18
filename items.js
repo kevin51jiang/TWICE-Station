@@ -58,6 +58,21 @@ function onCooldown(message)
     return false;
 }
 
+exports.get = (message, parameter) =>
+{
+    var item = items.legendary.list;
+    item = item.find(i => i.code == parameter);
+    if(!item) return;
+    
+    var embed = new Discord.RichEmbed()
+        .setColor(data.color)
+        .setTitle("🔎 You found...")
+        .setThumbnail(item.image)
+        .addField(`**${item.item}**`, "‍");
+
+    message.channel.send(embed);
+}
+
 exports.search = (message) =>
 {
     if
@@ -378,7 +393,7 @@ exports.collectionList = (message) =>
         {
             title: "Member Special Collection",
             bonus: "4,000",
-            description: "The photocard, rare item and legendary item of a member. (Only for Nayeon, Jeongyeon, Momo, Jihyo and Chaeyoung).",
+            description: "The photocard, rare item and legendary item of a member.",
         },
         {
             title: "JYP Collection",
