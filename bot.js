@@ -259,6 +259,9 @@ bot.on('message', message =>
         items.bag(message, true);
     }
 
+    if(command.startsWith("sell "))
+        items.sell(message);
+
     if
     (
         command == "collections" ||
@@ -266,8 +269,8 @@ bot.on('message', message =>
     )
         items.collections(message);
 
-    if(command.startsWith("sell "))
-        items.sell(message);
+    if(command == "chances")
+        items.chances(message);
 
     // if(command.startsWith("trade "))
     //     items.trade(message);

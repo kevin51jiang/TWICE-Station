@@ -523,6 +523,61 @@
 			"cover": "https://i.scdn.co/image/67cc1debed5c16a0801d83aed07da2d01a9fa20c",
 			"color": "#E60F16",
 			"duration": "24:01"
+		},
+		"theYearOfYes": {
+			"code": "tyy",
+			"title": "The Year of \"YES\"",
+			"link": "https://www.youtube.com/watch?v=-3tjzWUIEk0",
+			"tracks": [
+				{
+					"title": "The Best Thing I Ever Did",
+					"link": "http://www.youtube.com/watch?v=CjZf_Cfp4Qw",
+					"duration": ""
+				},
+				{
+					"title": "Be as ONE (Korean ver.)",
+					"link": "http://www.youtube.com/watch?v=TzoDUWmFB5M",
+					"duration": ""
+				},
+				{
+					"title": "Yes or Yes",
+					"link": "https://www.youtube.com/watch?v=LS143SsUGAQ",
+					"duration": ""
+				},
+				{
+					"title": "Say You Love Me",
+					"link": "https://www.youtube.com/watch?v=UC7w4TRsL88",
+					"duration": ""
+				},
+				{
+					"title": "Lalala",
+					"link": "https://www.youtube.com/watch?v=kURfpL3Tgw0",
+					"duration": ""
+				},
+				{
+					"title": "Young & Wild",
+					"link": "https://www.youtube.com/watch?v=ly8eEhVt-u0",
+					"duration": ""
+				},
+				{
+					"title": "Sunset",
+					"link": "https://www.youtube.com/watch?v=nkNRnCONSzo",
+					"duration": ""
+				},
+				{
+					"title": "After Moon",
+					"link": "https://www.youtube.com/watch?v=f0OjmmgzQuM",
+					"duration": ""
+				},
+				{
+					"title": "BDZ (Korean Ver.)",
+					"link": "https://www.youtube.com/watch?v=zDP_-L_6EVQ",
+					"duration": ""
+				}
+			],
+			"cover": "https://i.scdn.co/image/a9c13fb328423c703d26b8d98a8c6987e4242404",
+			"color": "#F2DCAA",
+			"duration": "31:30"
 		}
 	},
 	"trivia": [

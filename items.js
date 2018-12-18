@@ -86,8 +86,17 @@ exports.search = (message) =>
             return;
     }
 
+    if(!message.member.roles.find(role => role.id == "511484288953352192") &&
+        message.author.id != "200132493335199746" && 
+        message.author.id != "247955535620472844" &&
+        message.author.id != "202288155599175680" &&
+        message.author.id != "499435825503797248" &&
+        message.author.id != "274336998771130368")
+        return message.reply("this command is only accessible to those that have the `testers` role because the bot is still under development.");
+
     var rng = Math.random() * 100;
     var tier;
+    var foundTrash = false;
 
     if(rng < items.legendary.limit)
         tier = items.legendary;
@@ -99,13 +108,11 @@ exports.search = (message) =>
         tier = items.good;
     else if(rng < items.nice.limit)
         tier = items.nice;
-    else 
+    else
     {
-        var embed = new Discord.RichEmbed()
-            .setColor(data.color)
-            .setTitle(json.trash[~~(Math.random() * json.trash.length)]);
-        return message.channel.send(embed);
-    }
+        foundTrash = true;
+        return save();
+    } 
 
     var list = tier.list;   
     var index = Math.floor(Math.random() * list.length);
@@ -169,50 +176,57 @@ exports.search = (message) =>
     }
 
     embed.addField("**" + item + "**", "It's " + tier.text + "!");
-
-    var user = message.author.id;
-
-    if(!message.member.roles.find(role => role.id == "511484288953352192") &&
-        message.author.id != "200132493335199746" && 
-        message.author.id != "247955535620472844" &&
-        message.author.id != "202288155599175680" &&
-        message.author.id != "499435825503797248" &&
-        message.author.id != "274336998771130368")
-        return message.reply("this command is only accessible to those that have the `testers` role because the bot is still under development.");
-     
     embed.setFooter("Item code: " + code);
 
-    database.getItems(user)
-    .then(bag =>
+    save();
+
+    function save()
     {
-        bag = JSON.parse(bag);
-
-        var count = 0;
-        for(key in bag)
-            count += bag[key];
-
-        if(count >= capacity)
-            return message.reply("your OnceBag is full!");
-
-        if(bag[code])
-            bag[code] = parseInt(bag[code]) + 1;
-        else bag[code] = 1;
-
-        database.updateItems(user, JSON.stringify(bag));
-
-        message.channel.send(message.author, embed)
-        .then(() => 
+        var user = message.author.id;
+        database.getItems(user)
+        .then(bag =>
         {
-            checkCollection(message, bag);
+            bag = JSON.parse(bag);
+    
+            var count = 0;
+            for(key in bag)
+                count += bag[key];
+    
+            if(count >= capacity)
+                return message.reply("your OnceBag is full!");
+    
+            if(foundTrash) return trash();
+            
+            if(bag[code])
+                bag[code] = parseInt(bag[code]) + 1;
+            else bag[code] = 1;
+    
+            database.updateItems(user, JSON.stringify(bag));
+    
+            message.channel.send(message.author, embed)
+            .then(() => 
+            {
+                checkCollection(message, bag);
+            });
+        },
+        () =>
+        {
+            if(foundTrash) return trash();
+
+            var bag = {};
+            bag[code] = 1;
+            database.addItems(user, JSON.stringify(bag));
+            message.channel.send(message.author, embed);
         });
-    },
-    () =>
+    }
+
+    function trash()
     {
-        var bag = {};
-        bag[code] = 1;
-        database.addItems(user, JSON.stringify(bag));
-        message.channel.send(message.author, embed);
-    });
+        var embed = new Discord.RichEmbed()
+        .setColor(data.color)
+        .setTitle(json.trash[~~(Math.random() * json.trash.length)]);
+        message.channel.send(embed);
+    }
 }
 
 exports.bag = (message, isOnMobile) =>
@@ -648,6 +662,39 @@ exports.sell = (message) =>
     });
 }
 
+exports.chances = (message) =>
+{
+    var tiers = Object.values(items).map(t => t.limit);
+    tiers.sort((a, b) => a - b);
+    
+    var chances = [];
+    var last = 0;
+    tiers.forEach(t =>
+    {
+        chances.push(t - last);
+        last = t;
+    });
+    chances.push(100 - tiers.pop());
+    chances.sort((a, b) => b - a);
+    tiers = [ "Trash" ].concat(Object.keys(items)
+        .map(t => t[0].toUpperCase() + t.substring(1)));
+    for(var i = 0; i < chances.length; i++)
+        chances[i] = tiers[i] + 
+            new Array(10 - tiers[i].length).join(" ") +
+            ` = ${chances[i]}%`;
+
+    var line = new Array(5).join("‍ ‍") + "\n";
+    var description = "```ml\n" +
+        chances.join("\n") + line + 
+        "```";
+
+    var embed = new Discord.RichEmbed()
+        .setColor(data.color)
+        .addField("📊 Item Value Chances", description);
+
+    message.channel.send(embed);
+}
+
 //TODO
 exports.trade = (message) =>
 {
@@ -767,7 +814,7 @@ function checkCollection(message, bag)
         for(key in collections)
         {
             completed = collections[key].items.every(item => 
-                bag.indexOf(item) >= 0 );
+                bag.indexOf(item) >= 0);
                 
             if(completedCollections.includes(key))
             {
