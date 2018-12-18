@@ -57,6 +57,9 @@ bot.on('message', message =>
         return;
     }
 
+    if(message.guild.id == "524367541200617492")
+        return;
+
     pings(message); 
 
     coins.rng(message);

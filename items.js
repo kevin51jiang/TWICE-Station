@@ -82,8 +82,15 @@ exports.search = (message) =>
         tier = items.amazing;
     else if(rng < items.good.limit)
         tier = items.good;
-    else
+    else if(rng < items.nice.limit)
         tier = items.nice;
+    else 
+    {
+        var embed = new Discord.RichEmbed()
+            .setColor(data.color)
+            .setTitle(json.trash[~~(Math.random() * json.trash.length)]);
+        return message.channel.send(embed);
+    }
 
     var list = tier.list;   
     var index = Math.floor(Math.random() * list.length);
