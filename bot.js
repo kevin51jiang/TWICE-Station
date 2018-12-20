@@ -21,9 +21,9 @@ bot.login(args)
     if(error) console.log("gitgud haha"); 
 });
 
-var ping = "<@247955535620472844>•";
+var ping = "<@247955535620472844>•d";
 
-const prefix = ";";
+const prefix = "'";
 
 bot.on('ready', () =>
 {
@@ -130,6 +130,9 @@ bot.on('message', message =>
         command == "stop"
     )
         player.stop(message);
+
+    if(command == "reset")
+        player.reset(message);
 
     //#endregion
 
@@ -262,6 +265,9 @@ bot.on('message', message =>
     if(command.startsWith("sell "))
         items.sell(message);
 
+    if(command == "items")
+        items.list(message);
+
     if
     (
         command == "collections" ||
@@ -286,8 +292,8 @@ bot.on('message', message =>
         
     //#region RPG   
 
-    if(command.startsWith("g "))    
-        rpg.command(message);
+    // if(command.startsWith("g "))    
+    //     rpg.command(message);
 
     //#endregion
 

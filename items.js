@@ -47,7 +47,7 @@ function onCooldown(message)
             message.channel.send(message.author, embed);
             return true;
         }
-    } 
+    }
      
     cooldowns[user] = Date.now();
     setTimeout(() =>    
@@ -144,7 +144,7 @@ exports.search = (message) =>
 
     if(item.item == "Album")
     {
-        var index = [Math.floor(Math.random() * Object.keys(data.albums).length)];
+        var index = Math.floor(Math.random() * Object.keys(data.albums).length);
         var album = Object.values(data.albums)[index];
         embed.setThumbnail(album.cover);
         
@@ -223,9 +223,9 @@ exports.search = (message) =>
     function trash()
     {
         var embed = new Discord.RichEmbed()
-        .setColor(data.color)
-        .setTitle(json.trash[~~(Math.random() * json.trash.length)]);
-        message.channel.send(embed);
+            .setColor(data.color)
+            .setTitle(json.trash[~~(Math.random() * json.trash.length)]);
+        message.channel.send(message.author, embed);
     }
 }
 
@@ -660,6 +660,39 @@ exports.sell = (message) =>
     {
         message.reply("your OnceBag is empty.");
     });
+}
+
+exports.list = (message) =>
+{
+    var response = "__**List of All Items**__\n\n";
+
+    for(key in items)
+    {
+        var value = key.substring(0, 1).toUpperCase() +
+            key.substring(1);
+        var description = "";
+        items[key].list.forEach(i =>
+        {
+            description += "• " + i.item;
+            if
+            (
+                key == items.nice.name ||
+                key == items.amazing.name
+            )
+                description += " (x9, 1 for each member)";
+            if(i.item == "Plushie")
+                description += " (x9, 1 for each member)";
+            if(i.item == "Album")
+                description += " (x11, 1 for each korean release album)";
+
+            description += "\n";
+        });
+
+        response += `**${value}**\n\`\`\`ml\n${description}\n\`\`\`\n`;
+    }
+
+    message.reply("I sent you the list of items in DM's. 👍");
+    message.author.send(response);
 }
 
 exports.chances = (message) =>

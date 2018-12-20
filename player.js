@@ -36,7 +36,10 @@ function play()
         connection().player.streamingData.pausedTime = 0;
 
         if(queue.length == 0)
+        {
+            toQueue = false;
             queue.push(tracks[getRandomIndex()]);
+        }
 
         play();
     });
@@ -110,7 +113,10 @@ exports.skip = (message) =>
 { 
     if(!connection()) return;
     if(!connection().dispatcher) return;
-    
+
+    if(message)
+        if(!joined(message)) return;
+
     connection().dispatcher.end();
     if(!connection()) return;
 
@@ -122,6 +128,7 @@ exports.playSong = (message) =>
 {
     if(!connection())
         return message.channel.send("`;start` first.");
+    if(!joined(message)) return;
     
     var parameters = message.content;
     parameters = parameters.substring(parameters.indexOf(" ")).trim();
@@ -192,6 +199,8 @@ exports.nowPlaying = (message) =>
 exports.stop = (message) =>
 {
     if(!connection()) return;
+    if(message)
+        if(!joined(message)) return;
     
     stop = true;
     connection().disconnect();
@@ -203,18 +212,34 @@ exports.stop = (message) =>
 exports.reset = (message) =>
 {
     if(!connection()) return;
+    if(!joined(message)) return;
     
-    module.exports.stop();
+    this.stop();
     setTimeout(() =>
     {
-        module.exports.start();
-        message.channel.send(makeEmbed("🔁  Restarted"));  
+        this.start(message);
     }, 1000);
 }
 
 function connection()
 {
     return bot.voiceConnections.get("481250119304478741");
+}
+
+function joined(message)
+{
+    var isJoined = true;
+
+    if(!connection()) isJoined = false;
+    var userConnection = message.member.voiceChannelID;
+    if(!userConnection) isJoined = false;
+    if(userConnection != connection().channel.id)
+        isJoined = false;
+
+    if(!isJoined)
+        message.reply("you must join the voice channel where I am.");
+        
+    return isJoined;
 }
 
 var currentIndex;

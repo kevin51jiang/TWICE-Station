@@ -1,18 +1,17 @@
 const Discord = require('discord.js');
 const data = require("./data.json");
+const database = require("./database");
 
-var message;
-
-exports.command = (msg, params) =>
+exports.command = (message, params) =>
 {
-    message = msg;
-    parameters = params;
-
     var command = params[1].toLowerCase();
 
     for(key in data.albums)
     {
-        if(command.replace(/\s/g, '') == key.toLowerCase())
+        if(command
+            .replace(" and ", "&")
+            .replace(" n ", "&")
+            .replace(/\s/g, '') == key.toLowerCase())
         {
             var album = data.albums[key];
 
@@ -131,9 +130,36 @@ exports.userinfo = (message) =>
 
     if(rolesText)
         embed.addField("Roles", rolesText);
-            
-    message.channel.send(embed);
-    return;
+
+    var coins = 0,
+        candybongs = 0;
+
+    database.getCoins(user.id)
+    .then(c =>
+    {
+        coins = c;
+        database.getCandyBongs(user.id)
+        .then(cb =>
+        {
+            candybongs = cb;
+            addCredits();
+        },
+        () => { addCredits(); });
+    },
+    () => { addCredits(); });
+
+    function addCredits()
+    {
+        embed.setFooter(`User has: 💰 ${coins.toLocaleString()} TWICECOINS ` + 
+            `| 🍭 ${candybongs} Candy Bongs`);
+        send();
+    }
+
+    function send()
+    {
+        message.channel.send(embed);
+        return;
+    }
 }
 
 exports.botinfo = (message, bot) =>

@@ -6,6 +6,8 @@ const coins = require("./coins");
 const database = require("./database");
 
 const data = require("./data.json");
+const trivias = require("./trivias.json");
+const eraPics = require("./eraPics.json");
 const pending = require("./pending.json");
 
 var gameCommands = [ ";trivia", ";t", ";era" ];
@@ -61,18 +63,18 @@ exports.trivia = (message) =>
     if(!testers.includes(message.author.id))
         return message.reply("we still need more trivias so please submit some. :pensive:\nTry `-triviahelp`");
 
-    var trivias = data.trivia;
-    var triviaNumber = getRandomIndex(trivias);
+    var questions = trivias;
+    var triviaNumber = getRandomIndex(questions);
     database.getTrivias(message.author.id)
     .then(answered =>
     {
         answered = answered.split(",");
         answered.pop();
-        trivias = trivias.filter
+        questions = questions.filter
             (value => !answered.includes(value.number));
-        triviaNumber = getRandomIndex(trivias);
+        triviaNumber = getRandomIndex(questions);
             
-        if(trivias.length <= 0)
+        if(questions.length <= 0)
             return message.reply
                 ("you have no more trivias left. ¯\\_(ツ)_/¯");
 
@@ -85,7 +87,7 @@ exports.trivia = (message) =>
 
     function askTrivia()
     {
-        var trivia = trivias[triviaNumber];
+        var trivia = questions[triviaNumber];
         var choices = trivia.choices;
         var choicesText = "```css\n";
         for(i in choices)
@@ -156,7 +158,7 @@ exports.era = (message) =>
     if(!testers.includes(message.author.id))
         return;
 
-    var items = data.era;
+    var items = eraPics;
     var index = getRandomIndex(items);
     var item = items[index];
 
@@ -443,7 +445,7 @@ exports.eraVerify = (message, accepted) =>
             era : entry.era
         };
     
-        data.era.push(entry);
+        eraPics.push(entry);
         json = JSON.stringify(data, null, "\t");
 
         if(!accepted)
@@ -460,7 +462,7 @@ exports.eraVerify = (message, accepted) =>
             return;
         }
 
-        fs.writeFile("data.json", json, "utf8", 
+        fs.writeFile("eraPics.json", json, "utf8", 
         error =>
         {
             if(error) throw error;
@@ -504,11 +506,11 @@ exports.eraVerifyAll = (message) =>
             era : era.era
         };
         
-        data.era.push(era);
+        eraPics.push(era);
     }
 
     var json = JSON.stringify(data, null, "\t");
-    fs.writeFile("data.json", json, "utf8", 
+    fs.writeFile("eraPics.json", json, "utf8", 
     error =>
     {
         if(error) throw error;
