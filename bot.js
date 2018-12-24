@@ -21,9 +21,9 @@ bot.login(args)
     if(error) console.log("gitgud haha"); 
 });
 
-var ping = "<@247955535620472844>•";
+var ping = "<@247955535620472844>•d";
 
-const prefix = ";";
+const prefix = "'";
 
 bot.on('ready', () =>
 {
@@ -146,6 +146,9 @@ bot.on('message', message =>
         
     if(command == "lists")
         info.lists(message);
+
+    if(command == "meme")
+        info.meme(message);
 
     if(command == "help")
         info.help(message, bot);

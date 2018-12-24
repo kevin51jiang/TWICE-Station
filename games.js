@@ -7,7 +7,7 @@ const database = require("./database");
 
 const data = require("./data.json");
 const trivias = require("./trivias.json");
-const eraPics = require("./eraPics.json");
+const eraPics = require("./erapics.json");
 const pending = require("./pending.json");
 
 var gameCommands = [ ";trivia", ";t", ";era" ];

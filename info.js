@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 const data = require("./data.json");
 const database = require("./database");
 
+const memes = require("./memes.json");
+
 exports.command = (message, params) =>
 {
     var command = params[1].toLowerCase();
@@ -82,6 +84,68 @@ exports.lists = (message) =>
         );
         
     message.channel.send(embed);
+}
+
+var onCooldown = false;
+
+exports.meme = (message) =>
+{
+    if(onCooldown) return message.reply("please wait a few seconds.");
+    onCooldown = true;
+    setTimeout(() =>
+    {
+        onCooldown = false;
+    }, 3000);
+
+    fetch();
+    
+    function fetch()
+    {
+        var messageID = memes[~~(Math.random() * memes.length)];
+        message.guild.channels.get("484658678721413120")
+        .fetchMessage(messageID)
+        .then(m => 
+        {
+            if(!m) return fetch();
+            if(m.attachments.size == 0)
+            {
+                if(m.embeds.length == 0) return fetch();
+                return readMessage(false);
+            }
+            readMessage(true);
+
+            function readMessage(hasAttachment)
+            {
+                var content = hasAttachment?
+                    m.attachments.first() : m.embeds[0];
+                
+                var poster = m.member;
+                if(!poster) poster = m.author.username;
+                else poster = poster.displayName;
+                var response = `\`Meme posted by: ${poster}\`\n\n`;
+                
+                var text = m.content.replace(content.url, "");
+                if(text)
+                {
+                    if(m.mentions.users.size != 0)
+                    {
+                        var mention = m.mentions.users.first().username;
+                        text = text.replace(/<@.*>/g, `**${mention}**`);
+                    }
+                    response = `${response}${text}\n`;
+                }
+                response += content.url;
+
+                message.channel.send(response);
+            }
+        })
+        .catch(console.error);
+    }
+}
+
+exports.addMeme = (message) =>
+{
+    
 }
 
 exports.help = (message, bot) =>
