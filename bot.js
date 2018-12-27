@@ -147,8 +147,14 @@ bot.on('message', message =>
     if(command == "lists")
         info.lists(message);
 
+    if(command.startsWith("lyrics "))
+        info.lyrics(message);
+
     if(command == "meme")
         info.meme(message);
+
+    if(message.channel.id == "484658678721413120")
+        info.addMeme(message);
 
     if(command == "help")
         info.help(message, bot);

@@ -1,7 +1,10 @@
 const Discord = require('discord.js');
-const data = require("./data.json");
 const database = require("./database");
+const request = require("request");
+const cheerio = require("cheerio");
+const fs = require("fs");
 
+const data = require("./data.json");
 const memes = require("./memes.json");
 
 exports.command = (message, params) =>
@@ -86,6 +89,108 @@ exports.lists = (message) =>
     message.channel.send(embed);
 }
 
+exports.lyrics = (message) =>
+{
+    var text = message.content;
+    text = text.substring(text.indexOf(" ") + 1);
+    var parameters = text.split(" ");
+    if(!parameters) return;
+    
+    var languages = [ 'rom', 'han', 'eng' ];
+    var language = 0;
+
+    if(languages.includes(parameters[0]))
+    {
+        language = languages.indexOf(parameters[0]);
+        parameters.splice(0, 1);
+    }
+    
+    var song = parameters.join(" ");
+    var album = Object.values(data.albums)
+        .find(v => v.tracks.find(t => hasTitle(t, song)));
+    if(!album) return error();
+
+    var track = album.tracks.find(t => hasTitle(t, song));
+
+    function hasTitle(track, song)
+    {
+        return track.title.toLowerCase()
+            .includes(song.toLowerCase());
+    }
+
+    var link = track.lyrics;
+    if(!link) return error();
+
+    message.channel.startTyping();
+    request(link, (error, response, html) =>
+    {
+        message.channel.stopTyping();
+        if(error) return error(); 
+        if(response.statusCode != 200) return error();
+
+        const $ = cheerio.load(html);
+        $("table").each((index, element) =>
+        {
+            var border = $(element).attr("border");
+            if(border == 0)
+            {
+                var td = cheerio.load(element);
+                element = td("td").each((i, e) =>
+                {
+                    if(i == language)
+                    {
+                        var lyrics = $(e).text();
+                        sendLyrics(lyrics);
+
+                        // var lyrics = [];
+                        // var stanza = cheerio.load(e);
+                        // stanza("p").each((j, p) =>
+                        // {
+                        //     lyrics.push($(p).text());
+                        // });
+
+                        // sendLyrics(lyrics.join("\n\n"));
+                    }
+                });
+            }
+        });
+    });
+
+    function sendLyrics(lyrics)
+    {
+        var embed = new Discord.RichEmbed()
+            .setColor(data.color);
+
+        if(lyrics.length <= 2000)
+        {
+            embed.setTitle(track.title)
+                 .setDescription(lyrics);
+            return message.channel.send(embed);
+        }
+
+        lyrics = lyrics.split("\n");
+        var lines = lyrics.length;
+        var lyricBlocks = [];
+        for(let i = 0; i < lines; i += lines / 2)
+            lyricBlocks.push(lyrics.slice(i, i + (lines / 2)));
+
+        for(let i = 0; i < lyricBlocks.length; i++)
+        {
+            var embed = new Discord.RichEmbed()
+                .setColor(data.color);
+
+            if(i == 0) embed.setTitle(track.title)
+            embed.setDescription(lyricBlocks[i].join("\n"));
+            message.channel.send(embed);
+        }
+    }
+
+    function error()
+    {
+        return message.reply("cannot find lyrics for that song.");
+    }
+}
+
 var onCooldown = false;
 
 exports.meme = (message) =>
@@ -139,13 +244,23 @@ exports.meme = (message) =>
                 message.channel.send(response);
             }
         })
-        .catch(console.error);
+        .catch(error =>
+        {
+           console.log(error);
+           message.reply("woops. Something went wrong. Try again.");
+        });
     }
 }
 
 exports.addMeme = (message) =>
 {
-    
+    memes.push(message.id);
+    try
+    {
+        fs.writeFile("memes.json", JSON.stringify(memes, null, "\t"), 
+            "utf8", error => { if(error) throw error; });
+    }
+    catch(error) { console.log(error); }
 }
 
 exports.help = (message, bot) =>
