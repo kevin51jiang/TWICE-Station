@@ -620,7 +620,7 @@ exports.wheel = (message) =>
         .setTitle("Wheel of TWICE")
         .setDescription(`${choseString}\nSpinning...`);
 
-    message.channel.send(embed)
+    message.channel.send(message.author, embed)
     .then(m =>
     {
         setTimeout(() =>
@@ -634,7 +634,7 @@ exports.wheel = (message) =>
                 `YOU WIN __**${rewards.wheel}**__ **TWICE**COINS! 🎉` : 
                 "You lose. 😛";
             embed.setDescription(description);
-            m.edit(embed)
+            m.edit(message.author, embed)
             .then(() =>
             {
                 if(isWin) coins.earn(message, rewards.wheel);
