@@ -62,6 +62,9 @@ bot.on('message', message =>
     pings(message); 
 
     coins.rng(message);
+        
+    if(message.channel.id == "484658678721413120")
+        info.addMeme(message);
 
     // if(command.startsWith(""))
     // {
@@ -151,9 +154,6 @@ bot.on('message', message =>
 
     if(command == "meme")
         info.meme(message);
-
-    if(message.channel.id == "484658678721413120")
-        info.addMeme(message);
 
     if(command == "help")
         info.help(message, bot);
