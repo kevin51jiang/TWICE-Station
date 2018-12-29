@@ -1,3 +1,4 @@
+
 const Discord = require("discord.js");
 const database = require("./database");
 
@@ -67,33 +68,16 @@ exports.rng = (message) =>
             return;
     }
 
-    var user = message.author;
     var coinsRNG = rng1;
 
     if(coinsRNG == 0)
         return;
 
-    database.getCoins(user.id).then
-    ((coins) =>
-    {
-        database.updateCoins(coins + coinsRNG, user.id).then
-        (() => earnMessage(coinsRNG));
-    },
-    () =>
-    {
-        addNewUser(user, coinsRNG).then
-        (() => earnMessage(coinsRNG));
-    });
-
-    function earnMessage(amount)
-    {
-        var embed = new Discord.RichEmbed()
-            .setColor(data.color)
-            .setTitle("💰 You found **" + amount + "** TWICECOINS!")
-            .setFooter("THIS IS STILL UNDER TESTING. COINS MIGHT RESET ANYTIME.");
-    
-        message.channel.send(message.author, embed);
-    }
+    var embed = new Discord.RichEmbed()
+        .setColor(data.color)
+        .setTitle("💰 You found **" + coinsRNG + "** TWICECOINS!")
+        .setFooter("THIS IS STILL UNDER TESTING. COINS MIGHT RESET ANYTIME.");
+    this.earnEmbed(message, coinsRNG, embed);
 }
 
 exports.earn = (message, amount, response) =>
@@ -358,6 +342,7 @@ function addCoins(message, user, amount, response, mentionAndEmbed)
 
     function respond()
     {
+        if(!response) return;
         if(mentionAndEmbed)
             message.channel.send(user, response);
         else message.channel.send(response);

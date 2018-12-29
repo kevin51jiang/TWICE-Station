@@ -9,13 +9,56 @@ const data = require("./data.json");
 const trivias = require("./trivias.json");
 const eraPics = require("./erapics.json");
 const pending = require("./pending.json");
+const members = require("./items.json").members;
 
-var gameCommands = [ ";trivia", ";t", ";era" ];
+var commands = 
+{
+    trivia: "trivia",
+    t: "t",
+    era: "era",
+    wheel: "wheel"
+};
+
 var rewards =
 {
     trivia: 25,
-    era: 50
+    era: 50,
+    wheel: 100
 };
+
+//TODO: Cooldown is per command.
+const cooldown = 3000;
+var cooldowns =
+{
+    wheel: {}
+};
+
+function onCooldown(message, command)
+{
+    var cd = {};
+    switch(command)
+    {
+        case commands.wheel:
+            cd = cooldowns.wheel;
+            break;
+    }
+
+    if(cd[message.author.id])
+    {
+        var embed = new Discord.RichEmbed()
+            .setColor(data.color)
+            .setTitle("❄ On cooldown, please wait a few seconds.");
+        message.channel.send(message.author, embed);
+        return true;
+    }
+    
+    cd[message.author.id] = true;
+    setTimeout(() =>
+    {
+        delete cd[message.author.id];
+    }, cooldown);
+    return false;
+}
 
 function waitAnswer(message)
 {
@@ -36,7 +79,8 @@ function waitAnswer(message)
             userAnswered = true;
             collector.stop();
             
-            if(gameCommands.includes(reply.content))
+            if(Object.values(commands)
+                .includes(reply.content.substr(1)))
                 return;
     
             success(reply);
@@ -557,6 +601,48 @@ exports.pending = (message) =>
 }
 
 //#endregion
+
+//#region Wheel of Twice
+exports.wheel = (message) =>
+{
+    if(onCooldown(message, commands.wheel)) return;
+
+    var chat = message.content;
+    var parameters = chat.substr(chat.indexOf(" ") + 1);
+    var member = members.find(m =>
+        m.name.toLowerCase() == parameters.toLowerCase() ||
+        m.code == parameters.toLowerCase());
+    if(!member) return message.reply("you did not type a member.");
+
+    var choseString = `You chose **${member.name}**.\n`;
+    var embed = new Discord.RichEmbed()
+        .setColor(data.color)
+        .setTitle("Wheel of TWICE")
+        .setDescription(`${choseString}\nSpinning...`);
+
+    message.channel.send(embed)
+    .then(m =>
+    {
+        setTimeout(() =>
+        {
+            var rngMember = members[getRandomIndex(members)];
+            var description = `${choseString}` + 
+                `The wheel stops at **${rngMember.name}**!\n\n`;
+        
+            var isWin = member.code == rngMember.code;
+            description += isWin? 
+                `YOU WIN __**${rewards.wheel}**__ **TWICE**COINS! 🎉` : 
+                "You lose. 😛";
+            embed.setDescription(description);
+            m.edit(embed)
+            .then(() =>
+            {
+                if(isWin) coins.earn(message, rewards.wheel);
+            });
+        }, 2000);
+    });
+}
+
 
 function getRandomIndex(array)
 {

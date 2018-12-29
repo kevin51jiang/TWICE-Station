@@ -30,7 +30,6 @@ bot.on('ready', () =>
     console.log(`Bot started!`) 
     
     bot.user.setStatus('Online')
-    // bot.user.setActivity('with TWICE MEMES members');
 
     bot.channels.get("496531070167285770").send(ping);
 
@@ -76,8 +75,8 @@ bot.on('message', message =>
 
     command = command.toLowerCase().replace(/\s\s+/g, " ");
 
-    if(command == "gn")
-        return message.author.send("gn");
+    // if(command == "gn")
+    //     return message.author.send("gn");
 
     if(!command.startsWith(prefix)) return;
     command = command.replace(prefix, "");
@@ -204,9 +203,16 @@ bot.on('message', message =>
         command == "eralist"
     )
         games.eras(message);
-    if(command.startsWith("era add"))
+    if(command.startsWith("era add "))
         games.eraAdd(message);
     
+    if
+    (
+        command.startsWith("wheel ") ||
+        command.startsWith("w ")
+    )
+        games.wheel(message);
+
     if(command == "verify all")
         games.eraVerifyAll(message);
     if(command.startsWith("verify ") && command != "verify all")

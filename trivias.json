@@ -3287,5 +3287,149 @@
             "20.00 seconds"
         ],
         "answer": "14.56 seconds"
-    }
+    },
+    {
+		"number": "301",
+		"question": "Which Twice members are ambidextrous?",
+		"choices": 
+		[
+			"Jeongyeon and Jihyo",
+			"Nayeon and Mina",
+			"Momo and Sana",
+			"Dahyun and Tzuyu"
+		],
+		"answer": "Jeongyeon and Jihyo"
+	},
+	{
+		"number": "302",
+		"question": "Which older member wakes up early to cook for the Maknae Line before school? ",
+		"choices": 
+		[
+			"Jeongyeon",
+			"Sana",
+			"Jihyo",
+			"Mina"
+		],
+		"answer": "Mina"
+	},
+	{
+		"number": "303",
+		"question": "What is Chaeyoung's Catholic name? ",
+		"choices": 
+		[
+			"Katarina",
+			"Kate",
+			"Sally",
+			"Sharon"
+		],
+		"answer": "Katarina"
+	},
+	{
+		"number": "304",
+		"question": "What is Tzuyu's official height?",
+		"choices": 
+		[
+			"160cm",
+			"159cm",
+			"170cm",
+			"168cm"
+		],
+		"answer": "170cm"
+	},
+	{
+		"number": "305",
+		"question": "Which member made the following comment, \"Green tea is green\" ?",
+		"choices": 
+		[
+			"Momo",
+			"Sana",
+			"Mina",
+			"Tzuyu"
+		],
+		"answer": "Sana"
+	},
+	{
+		"number": "306",
+		"question": "Who was the original artist of the song, \"I Want You Back\", a song which TWICE did a cover of?",
+		"choices": 
+		[
+			"Michael Jackson",
+			"Madonna",
+			"Elvis",
+			"Jackson 5"
+		],
+		"answer": "Jackson 5"
+	},
+	{
+		"number": "307",
+		"question": "What nickname did fans give to Mina because of the demeanor she expresses? ",
+		"choices": 
+		[
+			"Sister-in-law",
+			"Daughter-in-law",
+			"Mother-in-law",
+			"Cousin-in-law"
+		],
+		"answer": "Daughter-in-law"
+	},
+	{
+		"number": "308",
+		"question": "During TWICE’s fourth appearance in Running Man, which member stole cabbage leaves from the sweet potato team?",
+		"choices": 
+		[
+			"Jeongyeon",
+			"Nayeon",
+			"Tzuyu",
+			"Sana"
+		],
+		"answer": "Jeongyeon"
+	},
+	{
+		"number": "309",
+		"question": "Which member imitated Kang Hodong’s catch phrase \"obbseo sseong\" during the group’s 3rd appearance in Knowing Bros?",
+		"choices": 
+		[
+			"Tzuyu",
+			"Momo",
+			"Sana",
+			"Nayeon"
+		],
+		"answer": "Sana"
+	},
+	{
+		"number": "310",
+		"question": "What is the actual lyrics of the iconic \"Is Sana gay\" line in Heart Shaker?",
+		"choices": 
+		[
+			"Itsanhage",
+			"Insallah gae",
+			"Insanghage",
+			"It's not okay"
+		],
+		"answer": "Insanghage"
+	},
+	{
+		"number": "311",
+		"question": "Which anime was the \"Nico Nico Ni\" phrase that Momo does, from?",
+		"choices": 
+		[
+			"One Piece",
+			"K-On!",
+			"Love Live",
+			"Highschool DxD"
+		],
+		"answer": "Love Live"
+	},
+	{
+		"number": "312",
+		"question": "Which of these songs have the iconic JYP whisper?",
+		"choices": 
+		[
+			"SIGNAL",
+			"What Is Love?",
+			"Like OOH-AHH",
+			"TT"
+		],
+		"answer": "SIGNAL"
+	}
 ]
