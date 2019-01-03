@@ -101,7 +101,8 @@ exports.leaderboard = (message) =>
         }
 
         table += "\n```";
-        message.channel.send(table);
+        message.channel.send(table)
+        .catch(console.error);
     });
     
     function formatString(string, length)

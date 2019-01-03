@@ -613,19 +613,22 @@ exports.wheel = (message) =>
         m.name.toLowerCase() == parameters.toLowerCase() ||
         m.code == parameters.toLowerCase());
     if(!member) return message.reply("you did not type a member.");
-
+    
+    var rngMember = members[getRandomIndex(members)];
+    // var rngMember = members[0];
+    
     var choseString = `You chose **${member.name}**.\n`;
     var embed = new Discord.RichEmbed()
         .setColor(data.color)
         .setTitle("Wheel of TWICE")
-        .setDescription(`${choseString}\nSpinning...`);
+        .setDescription(`${choseString}\nSpinning...`)
+        // .setImage(rngMember.wheelgif);   
 
     message.channel.send(message.author, embed)
     .then(m =>
     {
         setTimeout(() =>
         {
-            var rngMember = members[getRandomIndex(members)];
             var description = `${choseString}` + 
                 `The wheel stops at **${rngMember.name}**!\n\n`;
         
@@ -639,10 +642,9 @@ exports.wheel = (message) =>
             {
                 if(isWin) coins.earn(message, rewards.wheel);
             });
-        }, 2000);
+        }, 4000);
     });
 }
-
 
 function getRandomIndex(array)
 {

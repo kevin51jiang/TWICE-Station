@@ -221,31 +221,8 @@
             "animal": "Bunny",
             "emote": "🐰",
             "photocard": "https://i.imgur.com/iNX9ErD.jpg",
-            "poster": "https://i.imgur.com/loE6BZX.jpg"
-        },
-        {
-            "code": "dh",
-            "name": "Dahyun",
-            "animal": "Eagle",
-            "emote": "🦅",
-            "photocard": "https://i.imgur.com/ax1G8UG.jpg",
-            "poster": "https://i.imgur.com/gXDt6ur.jpg"
-        },
-        {
-            "code": "sn",
-            "name": "Sana",
-            "animal": "Squirrel",
-            "emote": "🐿",
-            "photocard": "https://i.imgur.com/wTi3BoN.jpg",
-            "poster": "https://i.imgur.com/ab0c1za.jpg"
-        },
-        {
-            "code": "mn",
-            "name": "Mina",
-            "animal": "Penguin",
-            "emote": "🐧",
-            "photocard": "https://i.imgur.com/pZfwokN.jpg",
-            "poster": "https://i.imgur.com/8RR64UD.jpg"
+            "poster": "https://i.imgur.com/loE6BZX.jpg",
+            "wheelgif": "https://i.imgur.com/aL3K13Y.gif"
         },
         {
             "code": "jy",
@@ -253,23 +230,8 @@
             "animal": "Dragon",
             "emote": "🐲",
             "photocard": "https://i.imgur.com/pA54JXE.jpg",
-            "poster": "https://i.imgur.com/FXegKZo.jpg"
-        },
-        {
-            "code": "tz",
-            "name": "Tzuyu",
-            "animal": "Puppy",
-            "emote": "🐶",
-            "photocard": "https://i.imgur.com/JpqJVKL.jpg",
-            "poster": "https://i.imgur.com/GUjUPk0.jpg"
-        },
-        {
-            "code": "ch",
-            "name": "Chaeyoung",
-            "animal": "Tiger",
-            "emote": "🐯",
-            "photocard": "https://i.imgur.com/3f62mR5.jpg",
-            "poster": "https://i.imgur.com/XeTSFwd.jpg"
+            "poster": "https://i.imgur.com/FXegKZo.jpg",
+            "wheelgif": "https://i.imgur.com/mQA8zbk.gif"
         },
         {
             "code": "mm",
@@ -277,7 +239,17 @@
             "animal": "Pig",
             "emote": "🐷",
             "photocard": "https://i.imgur.com/ZNXbMOZ.jpg",
-            "poster": "https://i.imgur.com/trfa56Z.jpg"
+            "poster": "https://i.imgur.com/trfa56Z.jpg",
+            "wheelgif": "https://i.imgur.com/DjEX5G0.gif"
+        },
+        {
+            "code": "sn",
+            "name": "Sana",
+            "animal": "Squirrel",
+            "emote": "🐿",
+            "photocard": "https://i.imgur.com/wTi3BoN.jpg",
+            "poster": "https://i.imgur.com/ab0c1za.jpg",
+            "wheelgif": "https://i.imgur.com/vP2l7TQ.gif"
         },
         {
             "code": "jh",
@@ -285,7 +257,44 @@
             "animal": "Unicorn",
             "emote": "🦄",
             "photocard": "https://i.imgur.com/2w7UaID.jpg",
-            "poster": "https://i.imgur.com/TC3qOnd.jpg"
+            "poster": "https://i.imgur.com/TC3qOnd.jpg",
+            "wheelgif": "https://i.imgur.com/ZTJNQM0.gif"
+        },
+        {
+            "code": "mn",
+            "name": "Mina",
+            "animal": "Penguin",
+            "emote": "🐧",
+            "photocard": "https://i.imgur.com/pZfwokN.jpg",
+            "poster": "https://i.imgur.com/8RR64UD.jpg",
+            "wheelgif": "https://i.imgur.com/2KzUJ6L.gif"
+        },
+        {
+            "code": "dh",
+            "name": "Dahyun",
+            "animal": "Eagle",
+            "emote": "🦅",
+            "photocard": "https://i.imgur.com/ax1G8UG.jpg",
+            "poster": "https://i.imgur.com/gXDt6ur.jpg",
+            "wheelgif": "https://i.imgur.com/qSqpFNL.gif"
+        },
+        {
+            "code": "ch",
+            "name": "Chaeyoung",
+            "animal": "Tiger",
+            "emote": "🐯",
+            "photocard": "https://i.imgur.com/3f62mR5.jpg",
+            "poster": "https://i.imgur.com/XeTSFwd.jpg",
+            "wheelgif": "https://i.imgur.com/U048E2Z.gif"
+        },
+        {
+            "code": "tz",
+            "name": "Tzuyu",
+            "animal": "Puppy",
+            "emote": "🐶",
+            "photocard": "https://i.imgur.com/JpqJVKL.jpg",
+            "poster": "https://i.imgur.com/GUjUPk0.jpg",
+            "wheelgif": "https://i.imgur.com/vLC3n68.gif"
         }
     ],
 
