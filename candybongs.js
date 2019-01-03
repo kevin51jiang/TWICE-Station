@@ -90,21 +90,13 @@ exports.leaderboard = (message) =>
         var table = "🍭 Candy Bong Leaderboard\n" +
             "```css\n";
         
-        console.log(result);
         var number = 0;
         for(user of result)
         {   
-            console.log(number);
-            console.log(user);
-
             number++;
             var name = message.guild.members.get(user.id).displayName;
             var spaces = "   ";
             if(number == 10) spaces = "  ";
-            // console.log(`number: ${number}`);
-            // console.log(`spaces: ${spaces}`);
-            // console.log(`count: ${user.count}`);
-            // console.log(`name: ${name}`);
             table += `#${number}${spaces}${user.count}  ${name}\n`;
         }
 
