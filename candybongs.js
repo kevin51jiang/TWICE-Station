@@ -75,7 +75,6 @@ exports.leaderboard = (message) =>
     database.getAllCandyBongs()
     .then(result =>
     {
-        console.log(`result: ${result}`);
         result = result.sort((a,b) =>
         {
             if(a.count < b.count)
@@ -91,23 +90,25 @@ exports.leaderboard = (message) =>
         var table = "🍭 Candy Bong Leaderboard\n" +
             "```css\n";
         
-        console.log(`sorted result: ${result}`);
+        console.log(result);
         var number = 0;
         for(user of result)
         {   
+            console.log(number);
+            console.log(user);
+
             number++;
             var name = message.guild.members.get(user.id).displayName;
             var spaces = "   ";
             if(number == 10) spaces = "  ";
-            console.log(`number: ${number}`);
-            console.log(`spaces: ${spaces}`);
-            console.log(`count: ${user.count}`);
-            console.log(`name: ${name}`);
+            // console.log(`number: ${number}`);
+            // console.log(`spaces: ${spaces}`);
+            // console.log(`count: ${user.count}`);
+            // console.log(`name: ${name}`);
             table += `#${number}${spaces}${user.count}  ${name}\n`;
         }
 
         table += "\n```";
-        console.log(`table: ${table}`);
         message.channel.send(table)
         .catch(console.error);
     });
