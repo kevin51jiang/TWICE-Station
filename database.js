@@ -1,5 +1,15 @@
 const sql = require ("sqlite");
 
+const tables = 
+{
+    coins: "coins",
+    daily: "daily",
+    trivia: "trivia",
+    items: "items",
+    candybongs: "candybongs",
+    rpg: "rpg"
+};
+
 exports.init = () =>
 {
     return new Promise
@@ -20,7 +30,7 @@ function createTables()
     {
         sql.run
         (
-            "CREATE TABLE IF NOT EXISTS coins" + 
+            `CREATE TABLE IF NOT EXISTS ${tables.coins}` + 
             "(" + 
                 "id TEXT, " + 
                 "username TEXT, " + 
@@ -29,7 +39,7 @@ function createTables()
         );
         sql.run
         (
-            "CREATE TABLE IF NOT EXISTS daily" + 
+            `CREATE TABLE IF NOT EXISTS ${tables.daily}` + 
             "(" + 
                 "id TEXT, " + 
                 "time TEXT" +
@@ -37,7 +47,7 @@ function createTables()
         );
         sql.run
         (
-            "CREATE TABLE IF NOT EXISTS trivia" + 
+            `CREATE TABLE IF NOT EXISTS ${tables.trivia}` + 
             "(" + 
                 "id TEXT, " + 
                 "answered TEXT" +
@@ -45,7 +55,7 @@ function createTables()
         );
         sql.run
         (
-            "CREATE TABLE IF NOT EXISTS items" +
+            `CREATE TABLE IF NOT EXISTS ${tables.items}` +
             "(" +
                 "id TEXT, " +
                 "inventory TEXT, " +
@@ -54,7 +64,7 @@ function createTables()
         );
         sql.run
         (
-            "CREATE TABLE IF NOT EXISTS candybongs" +
+            `CREATE TABLE IF NOT EXISTS ${tables.candybongs}` +
             "(" +
                 "id TEXT, " + 
                 "count INTEGER" +
@@ -62,7 +72,7 @@ function createTables()
         );
         sql.run
         (
-            "CREATE TABLE IF NOT EXISTS rpg" +
+            `CREATE TABLE IF NOT EXISTS ${tables.rpg}` +
             "(" +
                 "id TEXT, " + 
                 "hp INTEGER, " +
@@ -95,8 +105,20 @@ exports.reset = (tableName) =>
     });
 }
 
-//#region coins
+exports.remove = (user) =>
+{
+    sql.run(`DELETE FROM ${tables.coins} WHERE id = ${user}`);
+    sql.run(`DELETE FROM ${tables.daily} WHERE id = ${user}`);
+    sql.run(`DELETE FROM ${tables.trivia} WHERE id = ${user}`);
+    sql.run(`DELETE FROM ${tables.items} WHERE id = ${user}`);
+    sql.run(`DELETE FROM ${tables.candybongs} WHERE id = ${user}`);
+    sql.run(`DELETE FROM ${tables.rpg} WHERE id = ${user}`);
 
+    console.log(`User with ID ${user} has been deleted from the database.`);
+}
+
+//#region coins
+ 
 exports.addCoins = (id, username) =>
 {
     return new Promise

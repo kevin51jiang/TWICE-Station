@@ -339,6 +339,11 @@ bot.on('message', message =>
     //#endregion
 });
 
+bot.on("guildMemberRemove", member =>
+{
+    database.remove(member.id);
+});
+
 bot.on('error', console.error);
 
 function pings(message)
