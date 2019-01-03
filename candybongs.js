@@ -97,7 +97,7 @@ exports.leaderboard = (message) =>
             var name = message.guild.members.get(user.id).displayName;
             var spaces = "   ";
             if(number == 10) spaces = "  ";
-            table += `#${number}${spaces}${formatString(user.count, 5)}  ${name}\n`;
+            table += `#${number}${spaces}${formatString(user.count, 6)}  ${name}\n`;
         }
 
         table += "\n```";
