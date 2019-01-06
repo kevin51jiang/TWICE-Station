@@ -695,6 +695,54 @@ exports.list = (message) =>
     message.author.send(response);
 }
 
+exports.codes = (message) =>
+{
+    var embed = new Discord.RichEmbed()
+        .setColor(data.color)
+        .setTitle("🔡 Codes");
+
+    for(var value of Object.values(items))
+    {
+        var valueName = value.name.charAt(0).toUpperCase()
+            + value.name.substr(1);
+        var itemList = value.list.map(i => `${i.code} - ${i.item}`);
+        embed.addField(valueName + " Items", 
+            "```ml\n" + itemList.join("\n") + "```", true);
+    }
+
+    var memberCodes = "```ml\n" + 
+        members.map(m => `${m.code} - ${m.name}`)
+        .join("\n") + "```";
+    var albumCodes = "```ml\n" + 
+        Object.values(data.albums).map(a => 
+            `${a.code} - ${a.title}`)
+            .join("\n") + "```";
+
+    embed
+        .addField("Members", memberCodes, true)
+        .addField("Albums", albumCodes, true)
+        .addField("‍", 
+            `• For **Nice** and **Amazing** items and **Plushies**, ` + 
+            `the code format is: 
+            \`(member code)-(item code)\`
+            E.g. 
+            - \`ch-c\` (Chaeyoung Candy)
+            - \`sn-pc\` (Sana Photocard)
+            - \`ny-p\` (Nayeon Bunny Plushie)
+
+            • For **Albums**, the code format is: 
+            \`(album code)-a\`
+            E.g.
+            - \`tsb-a\` (The Story Begins Album)
+            - \`wil-a\` (What Is Love? Album)`);    
+
+    embed.setFooter("The codes can be used for selling items and " +
+        "for the Wheel of TWICE game.");
+
+    message.reply("I sent you the list of codes in DM's. 👍");
+    message.author.send(embed);
+}
+
 exports.chances = (message) =>
 {
     var tiers = Object.values(items).map(t => t.limit);
@@ -879,7 +927,8 @@ function checkCollection(message, bag)
 
             var title = "You have completed the **" + collected[0] + 
                 " Collection**!";
-            var description = "You earn a bonus of __**" + reward.toLocaleString() + 
+            var description = "You earn a bonus of __**" + 
+                reward.toLocaleString() + 
                 "**__ **TWICE**COINS! 💰";
 
             var count = collected.length;
@@ -891,7 +940,8 @@ function checkCollection(message, bag)
                 for(collection of collected)
                     description += "• " + collection + "\n";
 
-                description += "\nYou earn a bonus of __**" + reward.toLocaleString() + 
+                description += "\nYou earn a bonus of __**" + 
+                    reward.toLocaleString() + 
                     "**__ **TWICE**COINS! 💰";
             }
 

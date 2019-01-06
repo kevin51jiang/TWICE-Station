@@ -105,7 +105,8 @@ var testers =
 exports.trivia = (message) =>
 {
     if(!testers.includes(message.author.id))
-        return message.reply("we still need more trivias so please submit some. :pensive:\nTry `-triviahelp`");
+        return message.reply("we still need more trivias so please submit some. " +
+            ":pensive:\nTry `-triviahelp`");
 
     var questions = trivias;
     var triviaNumber = getRandomIndex(questions);
@@ -200,7 +201,7 @@ exports.triviaAdd = (message) =>
 exports.era = (message) =>
 {
     if(!testers.includes(message.author.id))
-        return;
+        return message.reply("we still need more pics so please stay tuned!");
 
     var items = eraPics;
     var index = getRandomIndex(items);
@@ -621,7 +622,8 @@ exports.wheel = (message) =>
     var embed = new Discord.RichEmbed()
         .setColor(data.color)
         .setTitle("Wheel of TWICE")
-        .setDescription(`${choseString}\nSpinning...`)
+        .setDescription(`${choseString}\nSpinning... ` + 
+            "<a:WheelSpin:530589274769195018>")
         // .setImage(rngMember.wheelgif);   
 
     message.channel.send(message.author, embed)
@@ -630,12 +632,12 @@ exports.wheel = (message) =>
         setTimeout(() =>
         {
             var description = `${choseString}` + 
-                `The wheel stops at **${rngMember.name}**!\n\n`;
+                `The wheel stopped at **${rngMember.name}**!\n\n`;
         
             var isWin = member.code == rngMember.code;
             description += isWin? 
                 `YOU WIN __**${rewards.wheel}**__ **TWICE**COINS! 🎉` : 
-                "You lose. 😛";
+                "You lose. ❌";
             embed.setDescription(description);
             m.edit(message.author, embed)
             .then(() =>
@@ -645,6 +647,7 @@ exports.wheel = (message) =>
         }, 4000);
     });
 }
+//#endregion
 
 function getRandomIndex(array)
 {

@@ -27,12 +27,9 @@ const prefix = ";";
 
 bot.on('ready', () =>
 {
-    console.log(`Bot started!`) 
-    
-    bot.user.setStatus('Online')
-
+    console.log(`Bot started!`);
+    bot.user.setStatus('Online');
     bot.channels.get("496531070167285770").send(ping);
-
     player.init(bot);
     database.init();
 });
@@ -77,9 +74,6 @@ bot.on('message', message =>
     var command = message.content;
 
     command = command.toLowerCase().replace(/\s\s+/g, " ");
-
-    // if(command == "gn")
-    //     return message.author.send("gn");
 
     if(!command.startsWith(prefix)) return;
     command = command.replace(prefix, "");
@@ -262,14 +256,12 @@ bot.on('message', message =>
         items.search(message);
     if
     (
-        command == "oncebag" ||
         command == "bag" ||
         command == "ob"
     )
         items.bag(message, false);
     if
     (
-        command == "oncebag m" ||
         command == "bag m" ||
         command == "ob m"
     )
@@ -282,6 +274,13 @@ bot.on('message', message =>
 
     if(command == "items")
         items.list(message);
+
+    if
+    (
+        command == "itemcodes" ||
+        command == "ic"
+    )
+        items.codes(message);
 
     if
     (
@@ -462,11 +461,11 @@ function test(message)
     if(message.author.id != "247955535620472844")
         return;
 
-    var parameter = message.content;
-    parameter = parameter.substring(parameter.indexOf(" ") + 1);
-    if(parameter == message.content) return;
+    // var parameter = message.content;
+    // parameter = parameter.substring(parameter.indexOf(" ") + 1);
+    // if(parameter == message.content) return;
 
-    items.get(message, parameter);
+    // items.get(message, parameter);
 
     // var number = message.content.slice(6).split("+");
     // var x = parseInt(number[0]),

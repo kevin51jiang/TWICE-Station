@@ -48,11 +48,29 @@ exports.albums = (message) =>
         i++;
     }
 
+    var japanese = 
+    `1. One More Time
+    2. Wake Me Up
+    3. Candy Pop`;
+
+    var melody =
+    `1. Alone (Chaeyoung)
+    2. Good Person (Mina)
+    3. Sana's Melody Project`;
+
+    var covers =
+    `1. 그리움만 쌓이네 (Nayeon)
+    2. Like a Star (Jeongyeon & her sister, Seungyeon)`;
+
     var embed = new Discord.RichEmbed()
         .setTitle("TWICE Current Albums 💿")
         .setColor("#fc5d9d")
         .setThumbnail("https://i.imgur.com/hhfIJUF.gif")
-        .setDescription(albums)
+        .addField("Korean Releases", albums)
+        // .addField("Japanese Releases", japanese + "\n‍")
+        // .addField("Melody Projects", melody + "\n‍")
+        // .addField("Covers", covers + "\n‍")
+
         // .setDescription(' ```' + 
         // ';page two\n' + 
         // ';signal\n' +
@@ -71,6 +89,10 @@ exports.albums = (message) =>
 
 exports.lists = (message) =>
 {
+    if(message.author.id != "200132493335199746" ||
+        message.author.id != "247955535620472844")
+        return;
+
     var embed = new Discord.RichEmbed()
         .setColor(data.color)
         .setThumbnail("https://i.imgur.com/Vp9dbMJ.png")
@@ -352,7 +374,7 @@ exports.botinfo = (message, bot) =>
             "Japanese releases etc..\n\nIf you need any help, " + 
             "doing `;help` will show the list of what I can do " + 
             "for you!")
-        .addField("If you're having any problems message my creator:",
+        .addField("If you're having any problems or concerns, message my creator:",
             /* "<@200132493335199746> &  */"<@247955535620472844>")
         .addField("I was created on:", bot.user.createdAt);
 

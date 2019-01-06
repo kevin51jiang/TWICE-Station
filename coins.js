@@ -75,8 +75,7 @@ exports.rng = (message) =>
 
     var embed = new Discord.RichEmbed()
         .setColor(data.color)
-        .setTitle("💰 You found **" + coinsRNG + "** TWICECOINS!")
-        .setFooter("THIS IS STILL UNDER TESTING. COINS MIGHT RESET ANYTIME.");
+        .setTitle("💰 You found **" + coinsRNG + "** TWICECOINS!");
     this.earnEmbed(message, coinsRNG, embed);
 }
 
