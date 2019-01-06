@@ -205,7 +205,7 @@ bot.on('message', message =>
         command.startsWith("wheel ") ||
         command.startsWith("w ")
     )
-        games.wheel(message);
+        games.wheel(message, bot);
 
     if(command == "verify all")
         games.eraVerifyAll(message);

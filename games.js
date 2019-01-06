@@ -604,7 +604,7 @@ exports.pending = (message) =>
 //#endregion
 
 //#region Wheel of Twice
-exports.wheel = (message) =>
+exports.wheel = (message, bot) =>
 {
     if(onCooldown(message, commands.wheel)) return;
 
@@ -617,13 +617,15 @@ exports.wheel = (message) =>
     
     var rngMember = members[getRandomIndex(members)];
     // var rngMember = members[0];
-    
+
+    var wheelEmote = bot.emojis.find(e => e.name == "WheelSpin");
+
     var choseString = `You chose **${member.name}**.\n`;
     var embed = new Discord.RichEmbed()
         .setColor(data.color)
         .setTitle("Wheel of TWICE")
         .setDescription(`${choseString}\nSpinning... ` + 
-            "<a:WheelSpin:530589274769195018>")
+            wheelEmote.toString())
         // .setImage(rngMember.wheelgif);   
 
     message.channel.send(message.author, embed)
