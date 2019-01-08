@@ -455,10 +455,10 @@ exports.sell = (message) =>
     if(Object.keys(items).includes(parameter))
         mode = SellMode.value;
         
-    if(parameter.match("(duplicates|dup)$"))
+    if(parameter.match("^(duplicates|dup)$"))
         mode = SellMode.duplicates;
     
-    if(parameter.match("(collection |col |c ).*"))
+    if(parameter.match("^(collection |col |c ).*"))
         mode = SellMode.collection;
 
     var user = message.author.id;

@@ -81,6 +81,37 @@ bot.on('message', message =>
     if(command == "ping")
         pong(message);
 
+    //#region info
+
+    if(command.startsWith("i ") || command.startsWith("info "))
+        info.command(message, command.split(/\s(.+)/));
+
+    if(command == "albums")
+        info.albums(message);
+        
+    if(command == "lists")
+        info.lists(message);
+
+    if(command.startsWith("lyrics "))
+        info.lyrics(message);
+
+    if(command == "meme")
+        info.meme(message);
+
+    if(command == "help")
+        info.help(message, bot);
+            
+    if(command == "botinfo")
+        info.botinfo(message, bot);
+        
+    if(command == "serverinfo")
+        info.serverinfo(message);
+        
+    if(command == "userinfo" || command.startsWith("userinfo "))
+        info.userinfo(message);
+
+    //#endregion
+
     //#region music
 
     // for(var album in data.albums)
@@ -132,50 +163,39 @@ bot.on('message', message =>
 
     //#endregion
 
-    //#region info
-
-    if(command.startsWith("i ") || command.startsWith("info "))
-        info.command(message, command.split(/\s(.+)/));
-
-    if(command == "albums")
-        info.albums(message);
-        
-    if(command == "lists")
-        info.lists(message);
-
-    if(command.startsWith("lyrics "))
-        info.lyrics(message);
-
-    if(command == "meme")
-        info.meme(message);
-
-    if(command == "help")
-        info.help(message, bot);
-            
-    if(command == "botinfo")
-        info.botinfo(message, bot);
-        
-    if(command == "serverinfo")
-        info.serverinfo(message);
-        
-    if(command == "userinfo" || command.startsWith("userinfo "))
-        info.userinfo(message);
-
-    //#endregion
-
     //#region coins
 
     if
     (
         command == "coins" || 
-        command == "c" ||
         command == "bal" ||
-        command == "daily" ||
-        command == "d" ||
+        command == "c" ||
+        command.startsWith("coins ") ||
         command.startsWith("c ") ||
-        command.startsWith("coins ")
+        command.startsWith("bal ")
     )
-        coins.command(message, command.split(" "));
+        coins.balance(message);
+        // coins.command(message, command.split(" "));
+        
+    if
+    (
+        command == "daily" ||
+        command == "d"
+    )    
+        coins.daily(message);
+
+    if(command.startsWith("pay "))
+        coins.pay(message);
+
+    if(command.startsWith("addcoins "))
+        coins.add(message);
+
+    if
+    (
+        command == "coinstop" ||
+        command == "ctop"
+    )
+        coins.leaderboard(message);
 
     //#endregion
 
@@ -191,11 +211,7 @@ bot.on('message', message =>
         games.triviaAdd(message);
     if(command == "era")
         games.era(message);
-    if
-    (
-        command == "eras" || 
-        command == "eralist"
-    )
+    if(command == "eras")
         games.eras(message);
     if(command.startsWith("era add "))
         games.eraAdd(message);
@@ -239,8 +255,7 @@ bot.on('message', message =>
     if
     (
         command == "candybongtop" ||
-        command == "cbtop" ||
-        command == "cbt"
+        command == "cbtop"
     )
         candybongs.leaderboard(message);
 
@@ -256,13 +271,13 @@ bot.on('message', message =>
         items.search(message);
     if
     (
-        command == "bag" ||
+        command == "oncebag" ||
         command == "ob"
     )
         items.bag(message, false);
     if
     (
-        command == "bag m" ||
+        command == "oncebag m" ||
         command == "ob m"
     )
     {
@@ -282,15 +297,15 @@ bot.on('message', message =>
     )
         items.codes(message);
 
+    if(command == "chances")
+        items.chances(message);
+
     if
     (
         command == "collections" ||
         command == "cols"
     )
         items.collections(message);
-
-    if(command == "chances")
-        items.chances(message);
 
     // if(command.startsWith("trade "))
     //     items.trade(message);

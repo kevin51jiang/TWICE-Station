@@ -4,58 +4,6 @@ const database = require("./database");
 
 const data = require("./data.json");
 
-//TODO: No more ;c
-
-exports.command = (message, params) =>
-{
-    var parameters = params.slice(2);
-
-    var command = params[1];
-
-    if(!command)
-    {
-        switch(params[0])
-        {
-            case "coins":
-            case "c":
-            case "bal":
-                this.balance(message);
-                break;
-
-            case "daily":
-            case "d":
-                daily(message);
-                break;
-        }
-    }
-
-    switch(command)
-    {
-        case "balance":
-        case "bal":
-        case "check":
-            this.balance(message);
-            break;
-
-        case "add":
-        case "a":
-            add(message, parameters[1]);
-            break;
-
-        case "pay":
-        case "p":
-        case "give":
-        case "g":
-            pay(message, parameters[1]);
-            break;
-
-        case "top":
-        case "t":
-            leaderboard(message);
-            break;
-    }
-}
-
 exports.rng = (message) =>
 {
     var rng1 = Math.floor(Math.random() * 99) + 1;
@@ -112,7 +60,8 @@ exports.balance = (message) =>
                 embed);
 
         embed.setAuthor(user.displayName, user.user.displayAvatarURL)
-             .setTitle("💰 Current TWICECOINS: " + coins.toLocaleString(), data.coinImage);
+             .setTitle("💰 Current TWICECOINS: " + coins.toLocaleString(), 
+                data.coinImage);
         message.channel.send(embed);
     },
     () =>
@@ -130,7 +79,7 @@ exports.balance = (message) =>
     601-700 = 5%
 */
 
-function daily(message)
+exports.daily = (message) =>
 {
     var currentTime = Date.now();
     var user = message.author.id;
@@ -198,8 +147,18 @@ function daily(message)
     }
 }
 
-function pay(message, amount)
+exports.pay = (message) =>
 {
+    var payee = message.mentions.members.first();
+    if(!payee) return message.reply("to whom do you want to pay?");
+    
+    if(payee.id == message.author.id)
+        return message.reply("you can't pay yourself.");
+
+    var amount = message.content.replace(payee.toString(), "")
+        .replace(/\s\s+/g, " ")
+        .split(" ")[1];
+
     if(isNaN(amount))
         return;
 
@@ -211,10 +170,6 @@ function pay(message, amount)
 
         if(amount > balance)
             return message.reply("you don't have enough coins!");
-
-        var payee = message.mentions.members.first();
-        if(!payee)
-            return message.reply("to whom do you want to pay? :thinking:");
 
         database.updateCoins(balance - amount, payor.id).then
         (() =>
@@ -252,7 +207,7 @@ function pay(message, amount)
     }
 }
 
-function add(message, amount) 
+exports.add = (message) =>
 {
     var testers = 
     [
@@ -264,20 +219,24 @@ function add(message, amount)
     if(!testers.includes(message.author.id))  
         return message.reply("you **don't** have permission " + 
             "to use this command.");
-
-    if(isNaN(amount))
-        return message.reply("that's not a number. :thinking:");
         
     var user = message.mentions.users.first();
     if(!user) return;
+    
+    var amount = message.content.replace("<@!", "<@")
+        .replace(user.toString(), "").replace(/\s\s+/g, " ")
+        .split(" ")[1];
 
-    var response = "**" + user.username + "** has received " 
+    if(isNaN(amount))
+        return message.reply("that's not a number. :thinking:");
+
+    var response = `**${user.username}** has received ` 
             + "__**" + amount + "**__ **TWICE**COINS.";
 
     addCoins(message, user, amount, response, false);
 }
 
-function leaderboard(message)
+exports.leaderboard = (message) =>
 {
     database.getAllCoins()
     .then(result =>
