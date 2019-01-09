@@ -63,6 +63,9 @@ typings/
 # sqlite
 userdata.sqlite
 
+# memes json
+memes.json
+
 # other folders
 others/
 old/
