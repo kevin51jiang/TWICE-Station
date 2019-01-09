@@ -61,6 +61,7 @@ function onCooldown(message, command)
     return false;
 }
 
+//TODO: only accept trivia and era answers
 function waitAnswer(message)
 {
     return new Promise
@@ -109,24 +110,29 @@ exports.trivia = (message) =>
         return message.reply("we still need more trivias so please submit some. " +
             ":pensive:\nTry `-triviahelp`");
 
-    var questions = trivias;
-    var triviaNumber = getRandomIndex(questions);
+        // var questions = trivias;
+        // var triviaNumber = getRandomIndex(questions);
 
     function getTrivia(answered)
     {
         request("http://api.kpoplul.com:82/twice/get-trivia",
-        (error, response, json) =>
+        (error, response, trivia) =>
         {
             if(error) throw error;
             if(response.statusCode != 200) 
                 return console.log("a problem occured");
 
+            trivia = JSON.parse(trivia);
+
+            console.log(trivia);
+
             if(!answered)
-            {
-                
-            }
+                return askTrivia(trivia);
             
-            console.log(json);
+            if(answered.includes(trivia.id))
+                return getTrivia(answered);
+            
+            askTrivia(trivia);
         });
     }
 
@@ -136,37 +142,41 @@ exports.trivia = (message) =>
         answered = answered.split(",");
         answered.pop();
 
-        // getTrivia();
+        getTrivia(answered);
 
-        questions = questions.filter
-            (value => !answered.includes(value.number));
-        triviaNumber = getRandomIndex(questions);
+        // questions = questions.filter
+        //     (value => !answered.includes(value.number));
+        // triviaNumber = getRandomIndex(questions);
             
-        if(questions.length <= 0)
-            return message.reply
-                ("sorry, but you have already answered all the trivias.");
+        // if(questions.length <= 0)
+        //     return message.reply
+        //         ("sorry, but you have already answered all the trivias.");
 
-        askTrivia();
+        // askTrivia();
     },
     () =>
     {
-        askTrivia();
+        getTrivia();
+        // askTrivia();
     });
 
-    function askTrivia()
+    function askTrivia(trivia)
     {
-        var trivia = questions[triviaNumber];
+        // var trivia = questions[triviaNumber];
         var choices = trivia.choices;
         var choicesText = "```css\n";
         for(i in choices)
+        {
+            if(!choices) continue;
             choicesText += "[" + (parseInt(i) + 1) + "]" 
                 + " " + choices[i] + "\n";
+        }
         choicesText += "```";
     
         var embed = new Discord.RichEmbed()
             .setColor(data.color)
-            .setTitle(trivia.question)
-            .setDescription(choicesText);
+            .setTitle(`📝 Trivia #${trivia.id}`)
+            .addField(trivia.question, choicesText);
     
         message.channel.send(message.author, embed);
     
@@ -175,20 +185,28 @@ exports.trivia = (message) =>
         .then((reply) =>
         {
             var answered = reply.content == answer.toString();
-            var response = message.author + "\n";
-            response += answered?
-                ":white_check_mark: Correct! You get __**" + 
-                    rewards.trivia + "**__ **TWICE**COINS." :
-                ":x: Wrong!";
+            var response = new Discord.RichEmbed()
+                .setColor(data.color);
+
+            if(answered)
+                response.addField("✅ Correct!",
+                    `You get **${rewards.trivia} TWICECOINS**.`);
+            else response.setTitle("❌ Wrong!");
+
+            // var response = message.author + "\n";
+            // response += answered?
+            //     ":white_check_mark: Correct! You get __**" + 
+            //         rewards.trivia + "**__ **TWICE**COINS." :
+            //     ":x: Wrong!";
 
             if(answered)
             {
-                database.addTrivia(message.author.id, trivia.number)
-                coins.earn(message, rewards.trivia, response);
+                database.addTrivia(message.author.id, trivia.id)
+                coins.earnEmbed(message, rewards.trivia, response);
                 return;
             }
 
-            message.channel.send(response)
+            message.channel.send(message.author, response);
         });
     }
 }
@@ -278,8 +296,9 @@ exports.era = (message) =>
             //     message.channel.send(response);
             //     return;
             // }
-                    
-            coins.earnEmbed(message, rewards.era, response);
+            if(answered)        
+                coins.earnEmbed(message, rewards.era, response);
+            else message.channel.send(message.author, response);
         });
 
         function simplify(text)
