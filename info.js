@@ -289,7 +289,8 @@ exports.help = (message, bot) =>
 {
     var embed = new Discord.RichEmbed()
         .setColor(data.color)
-        .setThumbnail(bot.user.displayAvatarURL)
+        .setAuthor(bot.user.username, bot.user.displayAvatarURL)
+        // .setThumbnail(bot.user.displayAvatarURL)
         .setTitle("TWICE Station Help")
         .setDescription("Visit this [link](https://github.com/esfox/TWICE-Station/wiki/TWICE-Station-Help/) to see the list of commands.");
         // .setDescription("I can play all sorts of stuff! To check what I can play do `;lists` I'm sure you'll be able to find something you like! If you want me to disconnect because you hate me do `;disconnect`");

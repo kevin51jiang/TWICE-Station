@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const fs = require("fs");
+const request = require("request");
 const imgur = require("imgur");
 
 const coins = require("./coins");
@@ -70,7 +71,7 @@ function waitAnswer(message)
         (
             message.channel,
             m => m.author.id === message.author.id,
-            { time: 20000 }
+            { time: 30000 }
         );  
     
         collector.on("collect",
@@ -79,9 +80,9 @@ function waitAnswer(message)
             userAnswered = true;
             collector.stop();
             
-            if(Object.values(commands)
-                .includes(reply.content.substr(1)))
-                return;
+            // if(Object.values(commands)
+            //     .includes(`${prefix}${reply.content}`))
+            //     return;
     
             success(reply);
         });
@@ -110,18 +111,40 @@ exports.trivia = (message) =>
 
     var questions = trivias;
     var triviaNumber = getRandomIndex(questions);
+
+    function getTrivia(answered)
+    {
+        request("http://api.kpoplul.com:82/twice/get-trivia",
+        (error, response, json) =>
+        {
+            if(error) throw error;
+            if(response.statusCode != 200) 
+                return console.log("a problem occured");
+
+            if(!answered)
+            {
+                
+            }
+            
+            console.log(json);
+        });
+    }
+
     database.getTrivias(message.author.id)
     .then(answered =>
     {
         answered = answered.split(",");
         answered.pop();
+
+        // getTrivia();
+
         questions = questions.filter
             (value => !answered.includes(value.number));
         triviaNumber = getRandomIndex(questions);
             
         if(questions.length <= 0)
             return message.reply
-                ("you have no more trivias left. ¯\\_(ツ)_/¯");
+                ("sorry, but you have already answered all the trivias.");
 
         askTrivia();
     },
@@ -200,53 +223,77 @@ exports.triviaAdd = (message) =>
 //#region Era
 exports.era = (message) =>
 {
-    if(!testers.includes(message.author.id))
-        return message.reply("we still need more pics so please stay tuned!");
+    // if(!testers.includes(message.author.id))
+    //     return message.reply("we still need more pics so please stay tuned!");
 
-    var items = eraPics;
-    var index = getRandomIndex(items);
-    var item = items[index];
-
-    var embed = new Discord.RichEmbed()
-        .setColor(data.color)
-        .setTitle("What era is this from?")
-        .setImage(item.image)
-        .setFooter("If the image doesn't show, do ;era again.");
-
-    message.channel.send(message.author, embed);
-
-    waitAnswer(message)
-    .then(reply =>
+    request("http://api.kpoplul.com:82/twice/get-eraimage", 
+    (error, response, json) =>
     {
-        var answer = simplify(item.era);
-        var answered = simplify(reply.content) == answer;
-        var response = message.author + "\n";
-        response += answered?
-            ":white_check_mark: Correct. You get __**" + 
-            rewards.era + "**__ **TWICE**COINS." :
-            ":x: Wrong!";
+        if(error) throw error;
+        if(response.statusCode != 200) return console.log("a problem occured");
 
-        if(!answered)
+        json = JSON.parse(json);
+        console.log(json);
+
+        var image = json.ProxyUrl;
+        var embed = new Discord.RichEmbed()
+            .setColor(data.color)
+            .setTitle("What era is this from?")
+            .setImage(image);
+            // .setFooter("If the image doesn't show, do ;era again.");
+
+        message.channel.send(message.author, embed);
+
+        waitAnswer(message)
+        .then(reply =>
         {
-            response += "\n`If your answer is wrong " + 
-                "but you think it's correct, please inform " + 
-                "@esfox#2053 or @chloe#0666 ASAP. Thanks!`" 
-            message.channel.send(response);
-            return;
-        }
-                
-        coins.earn(message, rewards.era, response);
+            var answer = simplify(json.era);
+            var answered = simplify(reply.content) == answer;
+            var response = new Discord.RichEmbed()
+                .setColor(data.color);
 
-        //TODO: Make reward responses as embeds... maybe
+            if(answered)
+                response.addField("✅ Correct!",
+                    `You get **${rewards.era} TWICECOINS**.`);
+            else
+            {
+                response
+                    .setTitle("❌ Wrong!")
+                    .setFooter("If your answer is wrong " + 
+                        "but you think it's correct, please inform " +
+                        "@esfox or @chloe ASAP. Thanks!");
+            }
+
+            // var response = message.author + "\n";
+            // response += answered?
+            //     ":white_check_mark: Correct. You get __**" + 
+            //     rewards.era + "**__ **TWICE**COINS." :
+            //     ":x: Wrong!";
+
+            // if(!answered)
+            // {
+            //     response += "\n`If your answer is wrong " + 
+            //         "but you think it's correct, please inform " + 
+            //         "@esfox#2053 or @chloe#0666 ASAP. Thanks!`" 
+            //     message.channel.send(response);
+            //     return;
+            // }
+                    
+            coins.earnEmbed(message, rewards.era, response);
+        });
+
+        function simplify(text)
+        {
+            return text
+                .toLowerCase()
+                .replace(/\s/g, "")
+                .replace(/\?|\!|\.|\-/g, "");
+        }
     });
 
-    function simplify(text)
-    {
-        return text
-            .toLowerCase()
-            .replace(/\s/g, "")
-            .replace(/\?|\!|\./g, "");
-    }
+    // var items = eraPics;
+    // var index = getRandomIndex(items);
+    // var item = items[index];
 }   
 
 const eras =
