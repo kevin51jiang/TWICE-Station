@@ -241,8 +241,8 @@ exports.triviaAdd = (message) =>
 //#region Era
 exports.era = (message) =>
 {
-    // if(!testers.includes(message.author.id))
-    //     return message.reply("we still need more pics so please stay tuned!");
+    if(!testers.includes(message.author.id))
+        return message.reply("under dev");
 
     request("http://api.kpoplul.com:82/twice/get-eraimage", 
     (error, response, json) =>
