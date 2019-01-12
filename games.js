@@ -100,7 +100,8 @@ function waitAnswer(message)
 var testers = 
 [
     "247955535620472844",
-    "274336998771130368"
+    "274336998771130368",
+    "417726391698718720"
 ];
 
 //#region Trivia
@@ -244,10 +245,14 @@ exports.era = (message) =>
     if(!testers.includes(message.author.id))
         return message.reply("under dev");
 
+    message.channel.startTyping();
+
     request("http://api.kpoplul.com:82/twice/get-eraimage", 
     (error, response, json) =>
     {
-        if(error) throw error;
+        message.channel.stopTyping();
+
+        if(error) return console.log(error);
         if(response.statusCode != 200) return console.log("a problem occured");
 
         json = JSON.parse(json);
@@ -296,6 +301,7 @@ exports.era = (message) =>
             //     message.channel.send(response);
             //     return;
             // }
+            
             if(answered)        
                 coins.earnEmbed(message, rewards.era, response);
             else message.channel.send(message.author, response);
