@@ -10,7 +10,7 @@
 			"link": "https://www.youtube.com/watch?v=6KMN61Zsd58",
 			"tracks": [
 				{
-					"title": "Like Ooh Ahh",
+					"title": "Like OOH-AHH",
 					"link": "https://www.youtube.com/watch?v=8BgIHJvTeCU",
 					"duration": "",
 					"lyrics": "https://colorcodedlyrics.com/2015/10/twice-like-ooh-ahh-ooh-ahhhage"
@@ -556,6 +556,152 @@
 			"color": "#E7CF87",
 			"duration": "29:44"
 		},
+		"bdz": {
+			"code": "bdz",
+			"title": "BDZ",
+			"link": "",
+			"tracks": [
+				{
+					"title": "BDZ",
+					"link": "https://www.youtube.com/watch?v=1gboAurxRos",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/08/twice-bdz"
+				},
+				{
+					"title": "One More Time",
+					"link": "https://www.youtube.com/watch?v=xdQedh2AsoM",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2017/10/twice-one-time"
+				},
+				{
+					"title": "Candy Pop",
+					"link": "https://www.youtube.com/watch?v=KF_CrNQrlUU",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/01/twice-candy-pop"
+				},
+				{
+					"title": "L.O.V.E",
+					"link": "https://www.youtube.com/watch?v=PVqxZCQkdE0",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/09/twice-l-o-v-e"
+				},
+				{
+					"title": "Wishing",
+					"link": "https://www.youtube.com/watch?v=06Y0eM8sIF0",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/09/twice-wishing"
+				},
+				{
+					"title": "Say It Again",
+					"link": "https://www.youtube.com/watch?v=8xhJT8-fig4",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/09/twice-say-it-again"
+				},
+				{
+					"title": "Wake Me Up",
+					"link": "https://www.youtube.com/watch?v=VkMpqd8yagE",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/04/twice-wake-me-up"
+				},
+				{
+					"title": "Brand New Girl",
+					"link": "https://www.youtube.com/watch?v=5gPYq1JH_cc",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/02/twice-brand-new-girl"
+				},
+				{
+					"title": "Be as ONE",
+					"link": "https://www.youtube.com/watch?v=pXS9WVPC1pg",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/09/twice-be-as-one"
+				},
+				{
+					"title": "I Want You Back",
+					"link": "https://www.youtube.com/watch?v=rn8LLahN9_g",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/06/twice-want-back"
+				}
+			],
+			"cover": "https://i.scdn.co/image/699818ea7635b25d277861b9ec40602965efd1a3",
+			"color": "#7E2E8F",
+			"duration": "35:24"
+		},
+		"bdzrepackage": {
+			"code": "bdr",
+			"title": "BDZ (Repackage)",
+			"link": "",
+			"tracks": [
+				{
+					"title": "Stay By My Side",
+					"link": "https://www.youtube.com/watch?v=VxI0NiAKN3I",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/10/twice-stay-side"
+				},
+				{
+					"title": "BDZ",
+					"link": "https://www.youtube.com/watch?v=1gboAurxRos",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/08/twice-bdz"
+				},
+				{
+					"title": "One More Time",
+					"link": "https://www.youtube.com/watch?v=xdQedh2AsoM",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2017/10/twice-one-time"
+				},
+				{
+					"title": "Candy Pop",
+					"link": "https://www.youtube.com/watch?v=KF_CrNQrlUU",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/01/twice-candy-pop"
+				},
+				{
+					"title": "L.O.V.E",
+					"link": "https://www.youtube.com/watch?v=PVqxZCQkdE0",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/09/twice-l-o-v-e"
+				},
+				{
+					"title": "Wishing",
+					"link": "https://www.youtube.com/watch?v=06Y0eM8sIF0",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/09/twice-wishing"
+				},
+				{
+					"title": "Say It Again",
+					"link": "https://www.youtube.com/watch?v=8xhJT8-fig4",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/09/twice-say-it-again"
+				},
+				{
+					"title": "Wake Me Up",
+					"link": "https://www.youtube.com/watch?v=VkMpqd8yagE",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/04/twice-wake-me-up"
+				},
+				{
+					"title": "Brand New Girl",
+					"link": "https://www.youtube.com/watch?v=5gPYq1JH_cc",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/02/twice-brand-new-girl"
+				},
+				{
+					"title": "Be as ONE",
+					"link": "https://www.youtube.com/watch?v=pXS9WVPC1pg",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/09/twice-be-as-one"
+				},
+				{
+					"title": "I Want You Back",
+					"link": "https://www.youtube.com/watch?v=rn8LLahN9_g",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/06/twice-want-back"
+				}
+			],
+			"cover": "https://i.scdn.co/image/77eb7c17cafe5503c514c0b7e2b942f6588f4eae",
+			"color": "#DADEE1",
+			"duration": "39:15"
+		},
 		"yesOrYes": {
 			"code": "yoy",
 			"title": "Yes or Yes",
@@ -671,6 +817,128 @@
 			"cover": "https://i.scdn.co/image/a9c13fb328423c703d26b8d98a8c6987e4242404",
 			"color": "#F2DCAA",
 			"duration": "31:30"
+		},
+		"#twice": {
+			"code": "htt",
+			"title": "#TWICE",
+			"link": "",
+			"tracks": [
+				{
+					"title": "Like OOH-AHH (Japanese Ver.)",
+					"link": "https://www.youtube.com/watch?v=SF4jJUlmYUo",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2017/07/twice-like-ooh-ahh-japanese-ver"
+				},
+				{
+					"title": "Cheer Up (Japanese Ver.)",
+					"link": "https://www.youtube.com/watch?v=f7t6HutmqqA",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2017/07/twice-cheer-japanese-ver"
+				},
+				{
+					"title": "TT (Japanese Ver.)",
+					"link": "https://www.youtube.com/watch?v=2mxm7eL8LHs",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2017/06/twice-tt-japanese-ver"
+				},
+				{
+					"title": "Knock Knock (Japanese Ver.)",
+					"link": "https://www.youtube.com/watch?v=aclodAhokek",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2017/07/twice-knock-knock-japanese-ver"
+				},
+				{
+					"title": "Signal (Japanese Ver.)",
+					"link": "https://www.youtube.com/watch?v=9fW5YoQa2H8",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2017/07/twice-signal-japanese-ver"
+				}
+			],
+			"cover": "https://i.scdn.co/image/6333e7e989d68e665f512f3ca29f389dad6860ff",
+			"color": "#00A6E4",
+			"duration": "34:16"
+		},
+		"candyPop": {
+			"code": "cdp",
+			"title": "Candy Pop",
+			"link": "",
+			"tracks": [
+				{
+					"title": "Candy Pop",
+					"link": "https://www.youtube.com/watch?v=KF_CrNQrlUU",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/01/twice-candy-pop"
+				},
+				{
+					"title": "Brand New Girl",
+					"link": "https://www.youtube.com/watch?v=5gPYq1JH_cc",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/02/twice-brand-new-girl"
+				}
+			],
+			"cover": "https://i.scdn.co/image/ebc421247e260e1a846bd48e05fbfbbae440f339",
+			"color": "#F29FBD",
+			"duration": "13:50"
+		},
+		"oneMoreTime": {
+			"code": "omt",
+			"title": "One More Time",
+			"link": "",
+			"tracks": [
+				{
+					"title": "One More Time",
+					"link": "https://www.youtube.com/watch?v=xdQedh2AsoM",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2017/10/twice-one-time"
+				},
+				{
+					"title": "Luv Me",
+					"link": "https://www.youtube.com/watch?v=S5wcE3aAZZc",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2017/10/twice-luv-me"
+				}
+			],
+			"cover": "https://i.scdn.co/image/3c3039d6c443b2945f39fda304bd9f81881d4c0c",
+			"color": "#C94485",
+			"duration": ""
+		},
+		"wakeMeUp": {
+			"code": "wmu",
+			"title": "Wake Me Up",
+			"link": "",
+			"tracks": [
+				{
+					"title": "Wake Me Up",
+					"link": "https://www.youtube.com/watch?v=VkMpqd8yagE",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/04/twice-wake-me-up"
+				},
+				{
+					"title": "Pink Lemonade",
+					"link": "https://www.youtube.com/watch?v=lqWQZ0y9vOI",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2018/05/twice-pink-lemonade"
+				}
+			],
+			"cover": "https://i.scdn.co/image/eba07320c308e7a3d0009e670aaa9c646980df67",
+			"color": "#ECCC9B",
+			"duration": ""
+		},
+		"#twice2": {
+			"code": "ht2",
+			"title": "#TWICE2",
+			"link": "",
+			"tracks": [
+				{
+					"title": "Likey (Japanese Ver.)",
+					"link": "https://www.youtube.com/watch?v=ZTQhMYchpsw",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2019/01/twice-likey-japanese-ver"
+				}
+			],
+			"cover": "https://i.scdn.co/image/068b02a90e73c68025ac04abb3e784ea29e53b15",
+			"color": "#B1A7CA",
+			"duration": ""
 		}
 	}
 }

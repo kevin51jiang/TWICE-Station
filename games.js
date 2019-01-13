@@ -338,7 +338,7 @@ exports.era = (message) =>
 
 const eras =
 [
-    "Like Ooh Ahh",
+    "Like OOH-AHH",
     "Cheer Up",
     "TT",
     "Knock Knock",

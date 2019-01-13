@@ -381,8 +381,8 @@ exports.collectionList = (message) =>
         },
         {
             title: "Album Collection",
-            bonus: "500",
-            description: "All the 10 Korea release albums.",
+            bonus: "2500",
+            description: "All the 18 albums and EPs. (`;albums` to see all albums)",
         },
         {
             title: "Member Collection",

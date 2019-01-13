@@ -78,6 +78,8 @@ exports.init = (client) =>
             tracks.push(song);
         });
     }
+
+    //TODO: Add EPs
 }
 
 exports.start = (message) =>

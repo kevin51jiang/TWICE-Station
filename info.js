@@ -104,30 +104,34 @@ exports.lyrics = (message) =>
     var parameters = text.split(" ");
     if(!parameters) return;
     
-    var languages = [ 'rom', 'han', 'eng' ];
+    var languages = [ 'rom', 'han', 'eng', 'jap'];
     var language = 0;
 
     if(languages.includes(parameters[0]))
     {
+        if(parameters[0] == "jap") 
+            parameters[0] = "han";
         language = languages.indexOf(parameters[0]);
         parameters.splice(0, 1);
     }
     
-    var song = parameters.join(" ");
+    var song = parameters.join(" ")
     var album = Object.values(data.albums)
         .find(v => v.tracks.find(t => hasTitle(t, song)));
-    if(!album) return error();
+    if(!album) return errorReply();
 
     var track = album.tracks.find(t => hasTitle(t, song));
 
     function hasTitle(track, song)
     {
         return track.title.toLowerCase()
-            .includes(song.toLowerCase());
+            .replace(/\(|\)|\./g, "")
+            .replace("-", " ")
+            .match(song.toLowerCase());
     }
 
     var link = track.lyrics;
-    if(!link) return error();
+    if(!link) return errorReply();
 
     message.channel.startTyping();
     request(link, (error, response, html) =>
@@ -142,11 +146,13 @@ exports.lyrics = (message) =>
             var border = $(element).attr("border");
             if(border == 0)
             {
+                var hasLanguage = false;
                 var td = cheerio.load(element);
                 element = td("td").each((i, e) =>
                 {
                     if(i == language)
                     {
+                        hasLanguage = true;
                         var lyrics = $(e).text();
                         sendLyrics(lyrics);
 
@@ -160,6 +166,10 @@ exports.lyrics = (message) =>
                         // sendLyrics(lyrics.join("\n\n"));
                     }
                 });
+                
+                if(!hasLanguage) 
+                    return errorReply("the song doesn't " + 
+                        "have that language.");
             }
         });
     });
@@ -193,9 +203,11 @@ exports.lyrics = (message) =>
         }
     }
 
-    function error()
+    function errorReply(response)
     {
-        return message.reply("cannot find lyrics for that song.");
+        if(!response)
+            message.reply("cannot find lyrics for that song.");
+        else message.reply(response);
     }
 }
 

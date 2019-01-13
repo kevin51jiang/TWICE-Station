@@ -347,18 +347,26 @@
         {
             "items":
             [ 
-                "tsb-a", 
-                "pgt-a", 
-                "tc1-a", 
-                "tc2-a", 
-                "sgl-a", 
-                "twt-a", 
-                "mnh-a", 
-                "wil-a", 
-                "smn-a", 
-                "yoy-a"
+                "tsb",
+                "pgt",
+                "tc1",
+                "tc2",
+                "sgl",
+                "twt",
+                "mnh",
+                "wil",
+                "smn",
+                "bdz",
+                "bdr",
+                "yoy",
+                "tyy",
+                "htt",
+                "cdp",
+                "omt",
+                "wmu",
+                "ht2"
             ],
-            "bonus": 500
+            "bonus": 2500
         },
 
         "Nayeon":
