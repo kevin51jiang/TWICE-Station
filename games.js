@@ -271,7 +271,6 @@ exports.era = (message) =>
         } 
 
         json = JSON.parse(json);
-        console.log(json);
 
         var image = json.ProxyUrl;
         var embed = new Discord.RichEmbed()
