@@ -7,9 +7,9 @@ const coins = require("./coins");
 const database = require("./database");
 
 const data = require("./data.json");
-const trivias = require("./trivias.json");
-const eraPics = require("./erapics.json");
-const pending = require("./pending.json");
+// const trivias = require("./trivias.json");
+// const eraPics = require("./erapics.json");
+// const pending = require("./pending.json");
 const members = require("./items.json").members;
 
 var commands = 
@@ -119,9 +119,16 @@ exports.trivia = (message) =>
         request("http://api.kpoplul.com:82/twice/get-trivia",
         (error, response, trivia) =>
         {
-            if(error) throw error;
-            if(response.statusCode != 200) 
+            if(error) 
+            {
+                message.channel.send("Can't get an image. Please try again.");
+                return console.log(error);
+            }
+            if(response.statusCode != 200)
+            {
+                message.channel.send("Can't get an image. Please try again.");
                 return console.log("a problem occured");
+            } 
 
             trivia = JSON.parse(trivia);
 
@@ -252,8 +259,16 @@ exports.era = (message) =>
     {
         message.channel.stopTyping();
 
-        if(error) return console.log(error);
-        if(response.statusCode != 200) return console.log("a problem occured");
+        if(error) 
+        {
+            message.channel.send("Can't get an image. Please try again.");
+            return console.log(error);
+        }
+        if(response.statusCode != 200)
+        {
+            message.channel.send("Can't get an image. Please try again.");
+            return console.log("a problem occured");
+        } 
 
         json = JSON.parse(json);
         console.log(json);

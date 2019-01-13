@@ -21,9 +21,9 @@ bot.login(args)
     if(error) console.log("gitgud haha"); 
 });
 
-var ping = "<@247955535620472844>•";
+var ping = "<@247955535620472844>•d";
 
-const prefix = ";";
+const prefix = "`";
 
 bot.on('ready', () =>
 {
@@ -56,7 +56,7 @@ bot.on('message', message =>
     if(message.guild.id == "524367541200617492")
         return;
 
-    pings(message); 
+    // pings(message); 
 
     coins.rng(message);
         
@@ -360,30 +360,28 @@ bot.on("guildMemberRemove", member =>
 
 bot.on('error', console.error);
 
-function pings(message)
-{
-    var chat = message.content.toLowerCase();
+// function pings(message)
+// {
+//     var chat = message.content.toLowerCase();
 
-    if
-    (
-        message.isMentioned(bot.user) ||
-        chat.includes(" chloe ") ||
-        chat.includes(" bot ") ||
-        chat.includes(" esfox ")
-    )
-    {
-        var tzuyuping = bot.emojis.find(emote => emote.name == "TzuyuPing");
-        message.react(tzuyuping.id);
-    }
-}
+//     if
+//     (
+//         message.isMentioned(bot.user) ||
+//         chat.includes(" chloe ") ||
+//         chat.includes(" bot ") ||
+//         chat.includes(" esfox ")
+//     )
+//     {
+//         var tzuyuping = bot.emojis.find(emote => emote.name == "TzuyuPing");
+//         message.react(tzuyuping.id);
+//     }
+// }
 
 function pong(message)
 {
-    var tzuyuping = bot.emojis.find(emote => emote.name == "TzuyuPing");
-
     var embed = new Discord.RichEmbed()
         .setColor(data.color)
-        .setDescription(tzuyuping + " **" + Math.round(bot.ping) + " ms**");
+        .setDescription("**" + Math.round(bot.ping) + " ms**");
     message.channel.send(embed);
 }
 

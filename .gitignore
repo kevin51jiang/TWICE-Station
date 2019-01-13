@@ -62,6 +62,7 @@ typings/
 
 # sqlite
 userdata.sqlite
+database.sqlite
 
 # memes json
 memes.json
