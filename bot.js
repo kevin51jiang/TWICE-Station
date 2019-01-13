@@ -18,15 +18,21 @@ var args = process.argv.slice(2)[0];
 bot.login(args)
 .catch(error =>
 {
+
     if(error) console.log("gitgud haha"); 
 });
 
 var ping = "<@247955535620472844>•";
-
-const prefix = ";";
+var prefix = ";";
 
 bot.on('ready', () =>
 {
+    if(bot.user.id == "517012034831908911")
+    {
+        prefix = "`";
+        ping = ping + "d";
+    }
+
     console.log(`Bot started!`);
     bot.user.setStatus('Online');
     bot.channels.get("533908427399757826").send(ping);
