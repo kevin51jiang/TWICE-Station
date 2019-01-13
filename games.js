@@ -335,25 +335,10 @@ exports.era = (message) =>
     // var item = items[index];
 }   
 
-const eras =
-[
-    "Like OOH-AHH",
-    "Cheer Up",
-    "TT",
-    "Knock Knock",
-    "Signal",
-    "Likey",
-    "Heart Shaker",
-    "What Is Love",
-    "Dance the Night Away",
-    "BDZ",
-    "Yes or Yes"
-]
-
 exports.eras = (message) =>
 {
     var erasText = "";
-    for(e of eras)
+    for(e of data.eras)
         erasText += "• " + e + "\n";
         
     var embed = new Discord.RichEmbed()
