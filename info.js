@@ -48,20 +48,6 @@ exports.albums = (message) =>
         i++;
     }
 
-    var japanese = 
-    `1. One More Time
-    2. Wake Me Up
-    3. Candy Pop`;
-
-    var melody =
-    `1. Alone (Chaeyoung)
-    2. Good Person (Mina)
-    3. Sana's Melody Project`;
-
-    var covers =
-    `1. 그리움만 쌓이네 (Nayeon)
-    2. Like a Star (Jeongyeon & her sister, Seungyeon)`;
-
     var embed = new Discord.RichEmbed()
         .setTitle("TWICE Current Albums 💿")
         .setColor("#fc5d9d")
@@ -224,66 +210,68 @@ exports.meme = (message) =>
         onCooldown = false;
     }, 3000);
 
-    fetch();
+    //TODO: Get from reddit
+
+    // fetch();
     
-    function fetch()
-    {
-        var messageID = memes[~~(Math.random() * memes.length)];
-        message.guild.channels.get("484658678721413120")
-        .fetchMessage(messageID)
-        .then(m => 
-        {
-            if(!m) return fetch();
-            if(m.attachments.size == 0)
-            {
-                if(m.embeds.length == 0) return fetch();
-                return readMessage(false);
-            }
-            readMessage(true);
+    // function fetch()
+    // {
+    //     var messageID = memes[~~(Math.random() * memes.length)];
+    //     message.guild.channels.get("484658678721413120")
+    //     .fetchMessage(messageID)
+    //     .then(m => 
+    //     {
+    //         if(!m) return fetch();
+    //         if(m.attachments.size == 0)
+    //         {
+    //             if(m.embeds.length == 0) return fetch();
+    //             return readMessage(false);
+    //         }
+    //         readMessage(true);
 
-            function readMessage(hasAttachment)
-            {
-                var content = hasAttachment?
-                    m.attachments.first() : m.embeds[0];
+    //         function readMessage(hasAttachment)
+    //         {
+    //             var content = hasAttachment?
+    //                 m.attachments.first() : m.embeds[0];
                 
-                var poster = m.member;
-                if(!poster) poster = m.author.username;
-                else poster = poster.displayName;
-                var response = `\`Meme posted by: ${poster}\`\n\n`;
+    //             var poster = m.member;
+    //             if(!poster) poster = m.author.username;
+    //             else poster = poster.displayName;
+    //             var response = `\`Meme posted by: ${poster}\`\n\n`;
                 
-                var text = m.content.replace(content.url, "");
-                if(text)
-                {
-                    if(m.mentions.users.size != 0)
-                    {
-                        var mention = m.mentions.users.first().username;
-                        text = text.replace(/<@.*>/g, `**${mention}**`);
-                    }
-                    response = `${response}${text}\n`;
-                }
-                response += content.url;
+    //             var text = m.content.replace(content.url, "");
+    //             if(text)
+    //             {
+    //                 if(m.mentions.users.size != 0)
+    //                 {
+    //                     var mention = m.mentions.users.first().username;
+    //                     text = text.replace(/<@.*>/g, `**${mention}**`);
+    //                 }
+    //                 response = `${response}${text}\n`;
+    //             }
+    //             response += content.url;
 
-                message.channel.send(response);
-            }
-        })
-        .catch(error =>
-        {
-           console.log(error);
-           message.reply("woops. Something went wrong. Try again.");
-        });
-    }
+    //             message.channel.send(response);
+    //         }
+    //     })
+    //     .catch(error =>
+    //     {
+    //        console.log(error);
+    //        message.reply("woops. Something went wrong. Try again.");
+    //     });
+    // }
 }
 
-exports.addMeme = (message) =>
-{
-    memes.push(message.id);
-    try
-    {
-        fs.writeFile("memes.json", JSON.stringify(memes, null, "\t"), 
-            "utf8", error => { if(error) throw error; });
-    }
-    catch(error) { console.log(error); }
-}
+// exports.addMeme = (message) =>
+// {
+//     memes.push(message.id);
+//     try
+//     {
+//         fs.writeFile("memes.json", JSON.stringify(memes, null, "\t"), 
+//             "utf8", error => { if(error) throw error; });
+//     }
+//     catch(error) { console.log(error); }
+// }
 
 exports.help = (message, bot) =>
 {

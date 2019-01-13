@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const data = require("./data.json");
 const ytdl = require('ytdl-core');
 
-const radioChannel = "496542169549504538";
+const radioChannel = "533915891654459420";
 
 var 
     bot, 
@@ -148,7 +148,8 @@ exports.playSong = (message) =>
         this.skip();
         message.channel.send(makeEmbed(`🎶 Now Playing "${find.title}"`));
     }
-    else message.channel.send(makeEmbed(`✅  ${find.title} added to the queue.`));
+    else message.channel
+        .send(makeEmbed(`✅  ${find.title} added to the queue.`));
 }
 
 // exports.playAlbum = (message, album) =>
@@ -223,7 +224,7 @@ exports.reset = (message) =>
 
 function connection()
 {
-    return bot.voiceConnections.get("481250119304478741");
+    return bot.voiceConnections.get("533510632985853953");
 }
 
 function joined(message)

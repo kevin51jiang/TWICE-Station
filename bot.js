@@ -29,7 +29,7 @@ bot.on('ready', () =>
 {
     console.log(`Bot started!`);
     bot.user.setStatus('Online');
-    bot.channels.get("496531070167285770").send(ping);
+    bot.channels.get("533908427399757826").send(ping);
     player.init(bot);
     database.init();
 });
@@ -60,8 +60,8 @@ bot.on('message', message =>
 
     coins.rng(message);
         
-    if(message.channel.id == "484658678721413120")
-        info.addMeme(message);
+    // if(message.channel.id == "484658678721413120")
+    //     info.addMeme(message);
 
     // if(command.startsWith(""))
     // {
@@ -95,8 +95,8 @@ bot.on('message', message =>
     if(command.startsWith("lyrics "))
         info.lyrics(message);
 
-    if(command == "meme")
-        info.meme(message);
+    // if(command == "meme")
+    //     info.meme(message);
 
     if(command == "help")
         info.help(message, bot);
@@ -404,20 +404,20 @@ function clean(message)
 
 function grantAccess(message)
 {
-    var id = message.content.split("-");
-    if(!id) return;
+    // var id = message.content.split("-");
+    // if(!id) return;
 
-    var user = message.guild.members.get(id[1]);
-    var channel = message.guild.channels.get("503988943931441172");
-    channel.overwritePermissions(user,
-    {
-        READ_MESSAGES: true,
-        SEND_MESSAGES: true
-    })
-    .then(() =>
-    {
-        message.channel.send(bot.user.username + " has been granted access to verification channel");
-    });
+    // var user = message.guild.members.get(id[1]);
+    // var channel = message.guild.channels.get("503988943931441172");
+    // channel.overwritePermissions(user,
+    // {
+    //     READ_MESSAGES: true,
+    //     SEND_MESSAGES: true
+    // })
+    // .then(() =>
+    // {
+    //     message.channel.send(bot.user.username + " has been granted access to verification channel");
+    // });
 }
 
 function sql(message)

@@ -15,7 +15,7 @@ exports.init = () =>
     return new Promise
     (success =>
     {
-        sql.open("./userdata.sqlite").then(() =>
+        sql.open("./database.sqlite").then(() =>
         {
             createTables()
             .then(() => success());
