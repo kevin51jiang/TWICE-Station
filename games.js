@@ -286,8 +286,47 @@ exports.era = (message) =>
                 // .setFooter("If the image doesn't show, do ;era again.");
     
             message.channel.send(message.author, embed)
-                .then(m => checkReactions(m));
-    
+                .then(m =>
+                {
+                    const filter = (reaction) => 
+                    {
+                        return ['🌐', '❗'].includes(reaction.emoji.name);
+                    };
+                    m.awaitReactions(filter,
+                    {
+                        max: 1,
+                        time: 300000
+                    }).then(reactions =>
+                    {
+                        if(find('🌐'))
+                        {
+                            embed.setFooter(json.imageWEB);
+                            m.edit(embed);
+                        }
+                        if(find('❗'))
+                        {
+                            var report = new Discord.RichEmbed()
+                                .setColor(data.color)
+                                .setTitle("📢 Image has been reported.")
+                                .setThumbnail(encodeURI(json.image))
+                                .addField("Proxy URL", json.ProxyUrl)
+                                .addField("Image Web", json.imageWEB)
+                                .addField("Image", encodeURI(json.image))
+                                .addField("Member Name", json.memberName)
+                                .addField("Era", json.era)
+                                .addField("API Version", json.apiVersion);
+                                
+                            message.guild.members.get(apiOwner)
+                                .send(report);
+                        }
+
+                        function find(emote)
+                        {
+                            return reactions.find(r => r.emoji.name == emote);
+                        }
+                    });
+                });
+
             waitAnswer(message)
             .then(reply =>
             {
@@ -342,47 +381,6 @@ exports.era = (message) =>
     // var index = getRandomIndex(items);
     // var item = items[index];
 }   
-
-function checkReactions(message)
-{
-    const filter = (reaction) => 
-    {
-        return ['🌐', '❗'].includes(reaction.emoji.name);
-    };
-    message.awaitReactions(filter,
-    {
-        max: 1,
-        time: 300000
-    }).then(reactions =>
-    {
-        if(find('🌐'))
-        {
-            embed.setFooter(json.imageWEB);
-            message.edit(embed);
-        }
-        if(find('❗'))
-        {
-            var report = new Discord.RichEmbed()
-                .setColor(data.color)
-                .setTitle("📢 Image has been reported.")
-                .setThumbnail(encodeURI(json.image))
-                .addField("Proxy URL", json.ProxyUrl)
-                .addField("Image Web", json.imageWEB)
-                .addField("Image", encodeURI(json.image))
-                .addField("Member Name", json.memberName)
-                .addField("Era", json.era)
-                .addField("API Version", json.apiVersion);
-                
-            message.guild.members.get(apiOwner)
-                .send(report);
-        }
-
-        function find(emote)
-        {
-            return reactions.find(r => r.emoji.name == emote);
-        }
-    });
-}
 
 exports.eras = (message) =>
 {
