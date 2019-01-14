@@ -229,6 +229,9 @@ bot.on('message', message =>
     )
         games.wheel(message, bot);
 
+
+    if(command.startsWith("apidelay "))
+        games.setAPIDelay(message);
     if(command == "verify all")
         games.eraVerifyAll(message);
     if(command.startsWith("verify ") && command != "verify all")

@@ -34,6 +34,8 @@ var cooldowns =
     wheel: {}
 };
 
+var apiDelay = 300;
+
 function onCooldown(message, command)
 {
     var cd = {};
@@ -256,70 +258,73 @@ exports.era = (message) =>
 
     request("http://api.kpoplul.com:82/twice/get-eraimage", 
     (error, response, json) =>
-    {
-        message.channel.stopTyping();
-
-        if(error) 
+    {   
+        setTimeout(() =>
         {
-            message.channel.send("Can't get an image. Please try again.");
-            return console.log(error);
-        }
-        if(response.statusCode != 200)
-        {
-            message.channel.send("Can't get an image. Please try again.");
-            return console.log("a problem occured");
-        } 
+            message.channel.stopTyping();
 
-        json = JSON.parse(json);
-
-        var image = json.ProxyUrl;
-        var embed = new Discord.RichEmbed()
-            .setColor(data.color)
-            .setTitle("What era is this from?")
-            .setImage(image);
-            // .setFooter("If the image doesn't show, do ;era again.");
-
-        message.channel.send(message.author, embed);
-
-        waitAnswer(message)
-        .then(reply =>
-        {
-            var answer = simplify(json.era);
-            var answered = simplify(reply.content) == answer;
-            var response = new Discord.RichEmbed()
-                .setColor(data.color);
-
-            if(answered)
-                response.addField("✅ Correct!",
-                    `You get **${rewards.era} TWICECOINS**.`);
-            else
+            if(error) 
             {
-                response
-                    .setTitle("❌ Wrong!")
-                    .setFooter("If your answer is wrong " + 
-                        "but you think it's correct, please inform " +
-                        "@esfox or @chloe ASAP. Thanks!");
+                message.channel.send("Can't get an image. Please try again.");
+                return console.log(error);
             }
-
-            // var response = message.author + "\n";
-            // response += answered?
-            //     ":white_check_mark: Correct. You get __**" + 
-            //     rewards.era + "**__ **TWICE**COINS." :
-            //     ":x: Wrong!";
-
-            // if(!answered)
-            // {
-            //     response += "\n`If your answer is wrong " + 
-            //         "but you think it's correct, please inform " + 
-            //         "@esfox#2053 or @chloe#0666 ASAP. Thanks!`" 
-            //     message.channel.send(response);
-            //     return;
-            // }
-            
-            if(answered)        
-                coins.earnEmbed(message, rewards.era, response);
-            else message.channel.send(message.author, response);
-        });
+            if(response.statusCode != 200)
+            {
+                message.channel.send("Can't get an image. Please try again.");
+                return console.log("a problem occured");
+            } 
+    
+            json = JSON.parse(json);
+    
+            var image = json.ProxyUrl;
+            var embed = new Discord.RichEmbed()
+                .setColor(data.color)
+                .setTitle("What era is this from?")
+                .setImage(image);
+                // .setFooter("If the image doesn't show, do ;era again.");
+    
+            message.channel.send(message.author, embed);
+    
+            waitAnswer(message)
+            .then(reply =>
+            {
+                var answer = simplify(json.era);
+                var answered = simplify(reply.content) == answer;
+                var response = new Discord.RichEmbed()
+                    .setColor(data.color);
+    
+                if(answered)
+                    response.addField("✅ Correct!",
+                        `You get **${rewards.era} TWICECOINS**.`);
+                else
+                {
+                    response
+                        .setTitle("❌ Wrong!")
+                        .setFooter("If your answer is wrong " + 
+                            "but you think it's correct, please inform " +
+                            "@esfox or @chloe ASAP. Thanks!");
+                }
+    
+                // var response = message.author + "\n";
+                // response += answered?
+                //     ":white_check_mark: Correct. You get __**" + 
+                //     rewards.era + "**__ **TWICE**COINS." :
+                //     ":x: Wrong!";
+    
+                // if(!answered)
+                // {
+                //     response += "\n`If your answer is wrong " + 
+                //         "but you think it's correct, please inform " + 
+                //         "@esfox#2053 or @chloe#0666 ASAP. Thanks!`" 
+                //     message.channel.send(response);
+                //     return;
+                // }
+                
+                if(answered)        
+                    coins.earnEmbed(message, rewards.era, response);
+                else message.channel.send(message.author, response);
+            });
+        }, apiDelay);
 
         function simplify(text)
         {
@@ -412,10 +417,21 @@ function generateCode(exceptions)
         number += digit; 
     }
 
-    if(exceptions.includes(number)) 
+    if(exceptions.includes(number))
         number = generateCode(exceptions);
 
     return number;
+}
+
+//Debugging
+exports.setAPIDelay = (message) =>
+{
+    var parameter = message.content;
+    parameter = parameter.substr(parameter.indexOf(" ") + 1);
+    if(!parameter) return;
+    if(isNaN(parameter)) return;
+    apiDelay = parseInt(parameter);
+    message.channel.send(`API Delay set to ${parameter}ms`);
 }
 
 // exports.eraAdd = (message) =>
