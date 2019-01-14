@@ -305,6 +305,8 @@ exports.era = (message) =>
                         }
                         if(find('❗'))
                         {
+                            var reporter = find('❗').users.first().tag;
+
                             var report = new Discord.RichEmbed()
                                 .setColor(data.color)
                                 .setTitle("📢 Image has been reported.")
@@ -314,7 +316,8 @@ exports.era = (message) =>
                                 .addField("Image", encodeURI(json.image))
                                 .addField("Member Name", json.memberName)
                                 .addField("Era", json.era)
-                                .addField("API Version", json.apiVersion);
+                                .addField("API Version", json.apiVersion)
+                                .setFooter(`Reported by: ${reporter}`);
                                 
                             message.guild.members.get(apiOwner)
                                 .send(report);
