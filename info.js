@@ -36,41 +36,92 @@ exports.command = (message, params) =>
     }
 }
 
-exports.albums = (message) =>
+exports.albums = (message, bot) =>
 {
-    var albums = "";
+    var albums = Object.values(data.albums);
+    var korean = albums.filter(a => !a.isJapanese),
+        japanese = albums.filter(a => a.isJapanese);
 
-    var i = 1;
-    for(album in data.albums)
+    var pages = [ korean, japanese ];
+    var page = 0;
+
+    sendPage();
+
+    function sendPage()
     {
-        albums += "\n" + i + ". " + 
-            data.albums[album].title;
-        i++;
+        var list = pages[page];
+
+        var embed = new Discord.RichEmbed()
+            .setTitle("TWICE Current Albums 💿")
+            .setColor(data.color)
+            .setThumbnail("https://i.imgur.com/hhfIJUF.gif")
+            .setFooter(`Page ${page + 1} / 2`);
+
+        var country = "Korean";
+        var switchPage = "➡";
+        if(page == 1)
+        {
+            country = "Japanese";
+            switchPage = "⬅";
+        }
+        
+        addAlbums(list);
+        
+        function addAlbums(list)
+        {
+            let i = 1;
+            let string = "";
+            list.forEach(a => { string += `${i}. ${a.title}\n`; i++; });
+            embed.addField(`${country} Releases`, string, true);
+        }
+
+        message.channel.send(embed)
+        .then(m =>
+        {
+            m.react("⬅").then(() => m.react("➡"));
+
+            const filter = (reaction, user) => 
+            {
+                return reaction.emoji.name == switchPage &&
+                    user.id != bot.user.id;
+            };
+
+            m.awaitReactions(filter,
+                {
+                    max: 1,
+                    time: 60000,
+                    error: [ 'time' ]
+                })
+            .then(reactions =>
+            {
+                if(match("⬅"))
+                    changePage(0);
+                
+                if(match("➡"))
+                    changePage(1);
+
+                function changePage(index)
+                {
+                    if(page == index) return;
+                    page = index;
+                    embed.setFooter(`Page ${index + 1} / 2`);
+                    m.delete();
+                    sendPage();
+                }
+
+                function match(emote)
+                {
+                    return emote == reactions.first().emoji.name;
+                }
+            })
+            .catch(() =>
+            {
+                embed.footer = null;
+                m.edit(embed);
+                m.clearReactions();
+            });
+        });
     }
-
-    var embed = new Discord.RichEmbed()
-        .setTitle("TWICE Current Albums 💿")
-        .setColor("#fc5d9d")
-        .setThumbnail("https://i.imgur.com/hhfIJUF.gif")
-        .addField("Korean Releases", albums)
-        // .addField("Japanese Releases", japanese + "\n‍")
-        // .addField("Melody Projects", melody + "\n‍")
-        // .addField("Covers", covers + "\n‍")
-
-        // .setDescription(' ```' + 
-        // ';page two\n' + 
-        // ';signal\n' +
-        // ';twicetagram\n' +
-        // ';merry and happy\n' + 
-        // ';candy pop\n' +
-        // ';what is love\n' +
-        // ';summer nights\n' +
-        // ';bdz' + 
-        // '```')
-        // .setFooter("These are the current albums/ " +
-        //     "mini albums TWICE has released");
-    
-    message.channel.send(embed);
 }
 
 exports.lists = (message) =>

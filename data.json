@@ -624,7 +624,8 @@
 			],
 			"cover": "https://i.scdn.co/image/699818ea7635b25d277861b9ec40602965efd1a3",
 			"color": "#7E2E8F",
-			"duration": "35:24"
+			"duration": "35:24",
+			"isJapanese": true
 		},
 		"bdzrepackage": {
 			"code": "bdr",
@@ -700,7 +701,8 @@
 			],
 			"cover": "https://i.scdn.co/image/77eb7c17cafe5503c514c0b7e2b942f6588f4eae",
 			"color": "#DADEE1",
-			"duration": "39:15"
+			"duration": "39:15",
+			"isJapanese": true
 		},
 		"yesOrYes": {
 			"code": "yoy",
@@ -856,7 +858,8 @@
 			],
 			"cover": "https://i.scdn.co/image/6333e7e989d68e665f512f3ca29f389dad6860ff",
 			"color": "#00A6E4",
-			"duration": "34:16"
+			"duration": "34:16",
+			"isJapanese": true
 		},
 		"candyPop": {
 			"code": "cdp",
@@ -878,7 +881,8 @@
 			],
 			"cover": "https://i.scdn.co/image/ebc421247e260e1a846bd48e05fbfbbae440f339",
 			"color": "#F29FBD",
-			"duration": "13:50"
+			"duration": "13:50",
+			"isJapanese": true
 		},
 		"oneMoreTime": {
 			"code": "omt",
@@ -900,7 +904,8 @@
 			],
 			"cover": "https://i.scdn.co/image/3c3039d6c443b2945f39fda304bd9f81881d4c0c",
 			"color": "#C94485",
-			"duration": ""
+			"duration": "",
+			"isJapanese": true
 		},
 		"wakeMeUp": {
 			"code": "wmu",
@@ -922,7 +927,8 @@
 			],
 			"cover": "https://i.scdn.co/image/eba07320c308e7a3d0009e670aaa9c646980df67",
 			"color": "#ECCC9B",
-			"duration": ""
+			"duration": "",
+			"isJapanese": true
 		},
 		"#twice2": {
 			"code": "ht2",
@@ -938,16 +944,35 @@
 			],
 			"cover": "https://i.scdn.co/image/068b02a90e73c68025ac04abb3e784ea29e53b15",
 			"color": "#B1A7CA",
-			"duration": ""
+			"duration": "",
+			"isJapanese": true
 		}
 	},
-	"melodyProjects":
+	"otherMusic":
 	[
 		{
 			"title": "Only Longing Grows",
-			"link": "https://www.youtube.com/watch?v=isLo0yBsAa0",
-			"duration": "",
-			"lyrics": "https://colorcodedlyrics.com/2015/10/twice-like-ooh-ahh-ooh-ahhhage"
+			"info": "Cover by Nayeon",
+			"url": "https://www.youtube.com/watch?v=isLo0yBsAa0",
+			"thumbnail": "https://i.ytimg.com/vi/K_wlWUtbyAY/mqdefault.jpg?v=58d527e4"
+		},
+		{
+			"title": "Good Person",
+			"info": "Mina Melody Project",
+			"url": "https://www.youtube.com/watch?v=oFggeqtmIwE",
+			"thumbnail": "https://www.allkpop.com/upload/2016/09/af_org/twice_1473952050_af_org.jpg"
+		},
+		{
+			"title": "Alone",
+			"info": "Chaeyoung Melody Project",
+			"url": "https://www.youtube.com/watch?v=U-D2xixv3Rs",
+			"thumbnail": "https://pbs.twimg.com/media/CywIE-RUcAAgCw-.jpg"
+		},
+		{
+			"title": "Like A Star",
+			"info": "Jeongyeon & Gong Seungyeon",
+			"url": "https://www.youtube.com/watch?v=v3myBev66aI",
+			"thumbnail": "https://0.soompi.io/wp-content/uploads/2017/06/30045950/Gong-Seung-Yeon-TWICE-Jungyeon.jpg"
 		}
 	],
 	"eras":

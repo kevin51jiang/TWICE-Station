@@ -79,7 +79,8 @@ exports.init = (client) =>
         });
     }
 
-    //TODO: Add EPs
+    for(song of data.otherMusic)
+        tracks.push(song);
 }
 
 exports.start = (message) =>
@@ -184,7 +185,8 @@ exports.queue = (message) =>
 
 exports.nowPlaying = (message) =>
 {
-    if(!song) return message.channel.send(makeEmbed("❌ Nothing is playing."));
+    if(!connection() || !song)
+        return message.channel.send(makeEmbed("❌ Nothing is playing."));
 
     // var time = connection().dispatcher.time;
     // var seconds = Math.floor(time/1000);
@@ -192,9 +194,13 @@ exports.nowPlaying = (message) =>
     // if(seconds < 10) seconds = `0${seconds}`;
     // time = `${minutes}:${seconds}`;
 
-    var embed = makeEmbed("🎶 Now Playing")
+    var embed = makeEmbed("🎶 Now Playing");
+    if(song.album) embed
         .setThumbnail(song.album.cover)
         .addField(song.title, song.album.title);
+    else embed
+        .setThumbnail(song.thumbnail)
+        .addField(song.title, song.info);
 
     message.channel.send(embed);
 }

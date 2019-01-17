@@ -93,7 +93,7 @@ bot.on('message', message =>
         info.command(message, command.split(/\s(.+)/));
 
     if(command == "albums")
-        info.albums(message);
+        info.albums(message, bot);
         
     if(command == "lists")
         info.lists(message);
