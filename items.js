@@ -18,7 +18,7 @@ const members = json.members;
 const collections = json.collections;
 
 var cooldowns = {};
-const cooldown = 10000;
+const cooldown = 25000;
 const capacity = 100;
 
 var trades = [];
