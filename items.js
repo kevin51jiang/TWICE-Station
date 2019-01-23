@@ -75,16 +75,17 @@ exports.get = (message, parameter) =>
 
 exports.search = (message) =>
 {
-    if
-    (
-        message.author.id != "247955535620472844" &&
-        message.author.id != "200132493335199746" &&
-        message.author.id != "274336998771130368"
-    )
-    {
-        if(onCooldown(message))
-            return;
-    }
+    // if
+    // (
+    //     message.author.id != "247955535620472844" &&
+    //     message.author.id != "200132493335199746" &&
+    //     message.author.id != "274336998771130368"
+    // )
+    // {
+    // }
+
+    if(onCooldown(message))
+        return;
 
     // if(!message.member.roles.find(role => role.id == "511484288953352192") &&
     //     message.author.id != "200132493335199746" && 
@@ -259,7 +260,7 @@ exports.bag = (message, isOnMobile) =>
         var count = 0,
             total = 0;
 
-        message.reply("check your DM's. 👌");
+        message.reply("check your DM. 👌");
 
         for(var i = 0; i < chunks.length; i++)
         {
@@ -700,7 +701,7 @@ exports.list = (message) =>
         response += `**${value}**\n\`\`\`ml\n${description}\n\`\`\`\n`;
     }
 
-    message.reply("I sent you the list of items in DM's. 👍");
+    message.reply("I sent you the list of items in DM. 👍");
     message.author.send(response);
 }
 
@@ -748,7 +749,7 @@ exports.codes = (message) =>
     embed.setFooter("The codes can be used for selling items and " +
         "for the Wheel of TWICE game.");
 
-    message.reply("I sent you the list of codes in DM's. 👍");
+    message.reply("I sent you the list of codes in DM. 👍");
     message.author.send(embed);
 }
 

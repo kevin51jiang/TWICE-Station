@@ -95,8 +95,8 @@ bot.on('message', message =>
     if(command == "albums")
         info.albums(message, bot);
         
-    if(command == "lists")
-        info.lists(message);
+    // if(command == "lists")
+    //     info.lists(message);
 
     if(command.startsWith("lyrics "))
         info.lyrics(message);
@@ -176,12 +176,11 @@ bot.on('message', message =>
         command == "coins" || 
         command == "bal" ||
         command == "c" ||
-        command.startsWith("coins ") ||
-        command.startsWith("c ") ||
-        command.startsWith("bal ")
+        command.startsWith("coins ") || 
+        command.startsWith("bal ") ||
+        command.startsWith("c ")
     )
         coins.balance(message);
-        // coins.command(message, command.split(" "));
         
     if
     (
@@ -219,8 +218,8 @@ bot.on('message', message =>
         games.era(message);
     if(command == "eras")
         games.eras(message);
-    if(command.startsWith("era add "))
-        games.eraAdd(message);
+    // if(command.startsWith("era add "))
+    //     games.eraAdd(message);
     
     if
     (
@@ -232,14 +231,14 @@ bot.on('message', message =>
 
     if(command.startsWith("apidelay "))
         games.setAPIDelay(message);
-    if(command == "verify all")
-        games.eraVerifyAll(message);
-    if(command.startsWith("verify ") && command != "verify all")
-        games.eraVerify(message, true);
-    if(command.startsWith("reject "))
-        games.eraVerify(message, false);
-    if(command == "pending")
-        games.pending(message);
+    // if(command == "verify all")
+    //     games.eraVerifyAll(message);
+    // if(command.startsWith("verify ") && command != "verify all")
+    //     games.eraVerify(message, true);
+    // if(command.startsWith("reject "))
+    //     games.eraVerify(message, false);
+    // if(command == "pending")
+    //     games.pending(message);
 
     //#endregion 
 

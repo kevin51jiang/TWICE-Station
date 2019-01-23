@@ -253,7 +253,6 @@ exports.leaderboard = (message) =>
         if(result.length > 10)
             result = result.slice(0, 10);
         var table = "💰 **TWICE**COINS Leaderboard\n" +
-
             "```css\n";
         
         var number = 0;

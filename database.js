@@ -4,6 +4,7 @@ const tables =
 {
     coins: "coins",
     daily: "daily",
+    lottery: "lottery",
     trivia: "trivia",
     items: "items",
     candybongs: "candybongs",
@@ -40,6 +41,14 @@ function createTables()
         sql.run
         (
             `CREATE TABLE IF NOT EXISTS ${tables.daily}` + 
+            "(" + 
+                "id TEXT, " + 
+                "time TEXT" +
+            ")"
+        );
+        sql.run
+        (
+            `CREATE TABLE IF NOT EXISTS ${tables.lottery}` + 
             "(" + 
                 "id TEXT, " + 
                 "time TEXT" +
@@ -167,7 +176,7 @@ exports.getAllCoins = () =>
 
 //#endregion
 
-//#region daily
+//#region daily & lottery
 
 exports.getDaily = (id) =>
 {
@@ -199,6 +208,41 @@ exports.setDaily = (id, time) =>
     (success =>
     {
         sql.run("UPDATE daily SET time = '"     
+            + time + "' WHERE id = " + id)
+            .then(() => success());
+    });
+}
+
+exports.getLottery = (id) =>
+{
+    return new Promise
+    ((success, fail) =>
+    {
+        sql.get("SELECT lottery FROM lottery WHERE id = " + id)
+            .then(row => success(row.lottery))
+            .catch(() => fail());
+    });
+}
+
+exports.addLottery = (id, time) =>
+{
+    return new Promise
+    (success =>
+    {
+        sql.run("INSERT INTO lottery " + 
+        "(id, time) "
+        + "VALUES (?, ?)", 
+        [id, time]).then    
+        (() => success());
+    });
+}
+
+exports.setLottery = (id, time) =>
+{
+    return new Promise
+    (success =>
+    {
+        sql.run("UPDATE lottery SET time = '"     
             + time + "' WHERE id = " + id)
             .then(() => success());
     });

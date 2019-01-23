@@ -27,8 +27,28 @@ var rewards =
     wheel: 100
 };
 
+const lotteryRewards = 
+[
+    {
+        chance: 0.3,
+        reward: 125000
+    },
+    {
+        chance: 0.5,
+        reward: 100000
+    },
+    {
+        chance: 5,
+        reward: 2500
+    },
+    {
+        chance: 20,
+        reward: 500
+    }
+];
+
 //TODO: Cooldown is per command.
-const cooldown = 3000;
+const cooldown = 60000;
 var cooldowns =
 {
     wheel: {}
@@ -56,14 +76,17 @@ function onCooldown(message, command)
 
     if(cd[message.author.id])
     {
+        var timeLeft = Date.now() - cd[message.author.id];
+        var timeLeft = (cooldown - timeLeft) / 1000;
+        if(timeLeft > 1) timeLeft = ~~timeLeft;
         var embed = new Discord.RichEmbed()
             .setColor(data.color)
-            .setTitle("❄ On cooldown, please wait a few seconds.");
+            .setTitle(`❄ On cooldown, please wait ${timeLeft} seconds.`);
         message.channel.send(message.author, embed);
         return true;
     }
     
-    cd[message.author.id] = true;
+    cd[message.author.id] = Date.now();
     setTimeout(() =>
     {
         delete cd[message.author.id];
@@ -114,14 +137,16 @@ exports.trivia = (message) =>
         return message.reply("we still need more trivias so " +
             "please submit some. 😔\n");
 
-        // var questions = trivias;
-        // var triviaNumber = getRandomIndex(questions);
+    // var questions = trivias;
+    // var triviaNumber = getRandomIndex(questions);
 
     function getTrivia(answered)
     {
+        message.channel.startTyping();
         request("http://api.kpoplul.com:82/twice/get-trivia",
         (error, response, trivia) =>
         {
+            message.channel.stopTyping();
             if(error) 
             {
                 message.channel.send("Can't get an image. Please try again.");
@@ -134,8 +159,6 @@ exports.trivia = (message) =>
             } 
 
             trivia = JSON.parse(trivia);
-
-            console.log(trivia);
 
             if(!answered)
                 return askTrivia(trivia);
@@ -344,10 +367,10 @@ exports.era = (message) =>
                 else
                 {
                     response
-                        .setTitle("❌ Wrong!")
-                        .setFooter("If your answer is wrong " + 
-                            "but you think it's correct, please inform " +
-                            "@esfox or @chloe ASAP. Thanks!");
+                        .setTitle("❌ Wrong!");
+                        // .setFooter("If your answer is wrong " + 
+                        //     "but you think it's correct, please inform " +
+                        //     "@esfox or @chloe ASAP. Thanks!");
                 }
     
                 // var response = message.author + "\n";
@@ -448,6 +471,79 @@ exports.wheel = (message, bot) =>
 }
 //#endregion
 
+exports.lottery = (message) =>
+{
+    var currentTime = Date.now();
+    var user = message.author.id;
+
+    database.getLottery(user)
+    .then(last =>
+    {
+        var difference = currentTime - parseInt(last);
+        var hours = (difference / (1000 * 60 * 60));
+        var minutes = (difference / (1000 * 60));
+        var seconds = (difference / 1000);
+
+        if(hours > 1) 
+            minutes = minutes % 60;
+
+        if(hours >= 24)
+        {   
+            database.setLottery(user, currentTime.toString())
+            .then(() =>
+            {
+                doLottery();
+            }); 
+        }
+        else
+        {
+            hours = 24 - Math.ceil(hours);
+            seconds %= 60;
+
+            var text = `\n⌛ Please wait ${hours} hours, ` + 
+                `${(60 - (Math.ceil(minutes)))} minutes and ` +
+                `${(60 - Math.ceil(seconds))} seconds.`;
+
+            var embed = new Discord.RichEmbed()
+                .setColor(data.color)
+                .setTitle(text);
+            message.channel.send(message.author, embed);
+        }
+    },
+    () =>
+    {
+        database.addLottery(user, currentTime.toString())
+        .then(() => 
+        {
+            doLottery();
+        }); 
+    });
+
+    function doLottery()
+    {
+        database.getCoins(user)
+        .then(coins =>
+        {
+            database.updateCoins(coins - 25, user)
+            .then(() =>
+            {
+             
+            });
+        },
+        () =>
+        {
+            message.reply("you don't have coins yet.");
+        });
+    }
+
+    /* 
+    - deduct 25 coins
+    - show winning
+    - save date.now to db
+    - apply cooldown
+    */
+}
+
 function getRandomIndex(array)
 {
     return Math.floor(Math.random() * array.length);
@@ -479,7 +575,7 @@ exports.setAPIDelay = (message) =>
     message.channel.send(`API Delay set to ${parameter}ms`);
 }
 
-// exports.eraAdd = (message) =>
+    // exports.eraAdd = (message) =>
 // {
 //     var era = message.content.match
 //         (/(?<=\[)(.*?)(?=\])|(?<=\()(.*?)(?=\))/g);

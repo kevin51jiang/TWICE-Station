@@ -13,16 +13,18 @@ exports.command = (message, params) =>
 
     for(key in data.albums)
     {
-        if(command
-            .replace(" and ", "&")
-            .replace(" n ", "&")
-            .replace(/\s/g, '') == key.toLowerCase())
+        if(key.toLowerCase()
+            .match(command
+                .replace(" and ", "&")
+                .replace(" n ", "&")
+                .replace(/\s/g, '')))
         {
             var album = data.albums[key];
 
             var tracks = "";
             for(i in album.tracks)
-                tracks += "\n" + (parseInt(i) + 1) + ". " + album.tracks[i].title;
+                tracks += "\n" + (parseInt(i) + 1) + ". " + 
+                    album.tracks[i].title;
 
             var embed = new Discord.RichEmbed()
                 .setColor(album.color)
@@ -124,29 +126,29 @@ exports.albums = (message, bot) =>
     }
 }
 
-exports.lists = (message) =>
-{
-    if(message.author.id != "200132493335199746" ||
-        message.author.id != "247955535620472844")
-        return;
+// exports.lists = (message) =>
+// {
+//     if(message.author.id != "200132493335199746" ||
+//         message.author.id != "247955535620472844")
+//         return;
 
-    var embed = new Discord.RichEmbed()
-        .setColor(data.color)
-        .setThumbnail("https://i.imgur.com/Vp9dbMJ.png")
-        .setTitle("What I can play for you? 🎶")
-        .setDescription
-        (
-            '```' +
-            ';korean releases\n' +
-            ';japanese releases\n' +
-            ';melody projects\n' +
-            ';covers\n' +
-            ';genres\n' +            
-            '```'
-        );
+//     var embed = new Discord.RichEmbed()
+//         .setColor(data.color)
+//         .setThumbnail("https://i.imgur.com/Vp9dbMJ.png")
+//         .setTitle("What I can play for you? 🎶")
+//         .setDescription
+//         (
+//             '```' +
+//             ';korean releases\n' +
+//             ';japanese releases\n' +
+//             ';melody projects\n' +
+//             ';covers\n' +
+//             ';genres\n' +            
+//             '```'
+//         );
         
-    message.channel.send(embed);
-}
+//     message.channel.send(embed);
+// }
 
 exports.lyrics = (message) =>
 {
@@ -343,7 +345,9 @@ exports.help = (message, bot) =>
         .setAuthor(bot.user.username, bot.user.displayAvatarURL)
         // .setThumbnail(bot.user.displayAvatarURL)
         .setTitle("TWICE Station Help")
-        .setDescription("Visit this [link](https://github.com/esfox/TWICE-Station/wiki/TWICE-Station-Help/) to see the list of commands.");
+        .setDescription("Visit this [link]" + 
+            "(https://github.com/esfox/TWICE-Station/wiki/" + 
+            "TWICE-Station-Help/) to see the list of commands.");
         // .setDescription("I can play all sorts of stuff! To check what I can play do `;lists` I'm sure you'll be able to find something you like! If you want me to disconnect because you hate me do `;disconnect`");
 
     message.channel.send(embed);
@@ -421,8 +425,8 @@ exports.botinfo = (message, bot) =>
         .setColor(data.color)
         .setThumbnail(thumbnail)
         .setTitle("TWICE Station", bot.user.username)
-        .setDescription("I play TWICE music. Albums, Covers, " + 
-            "Japanese releases etc..\n\nIf you need any help, " + 
+        .setDescription("I play TWICE music, have currency, mini-games, etc. " + 
+            "\n\nIf you need any help, " + 
             "doing `;help` will show the list of what I can do " + 
             "for you!")
         .addField("If you're having any problems or concerns, message my creator:",
