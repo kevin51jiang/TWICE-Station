@@ -18,7 +18,6 @@ var args = process.argv.slice(2)[0];
 bot.login(args)
 .catch(error =>
 {
-
     if(error) console.log("gitgud haha"); 
 });
 

@@ -21,7 +21,7 @@ function play()
 
     connection().playStream(ytdl(song.url, 
         { audioonly: true, quality: "highestaudio" }));
-    connection().player.setBitrate(96);
+    // connection().player.setBitrate(96);
     connection().dispatcher.setBitrate(96);
     connection().dispatcher.on("start", () =>
     {
@@ -33,7 +33,7 @@ function play()
     connection().dispatcher.on("end", () =>
     { 
         if(stop) return;
-        connection().player.streamingData.pausedTime = 0;
+        // connection().player.streamingData.pausedTime = 0;
 
         if(queue.length == 0)
         {
@@ -234,7 +234,7 @@ function connection()
 {
     return bot.voiceConnections.get("533510632985853953");
 }
-
+    
 function joined(message)
 {
     var isJoined = true;
