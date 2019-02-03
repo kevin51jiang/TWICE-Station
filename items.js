@@ -50,7 +50,7 @@ function onCooldown(message)
     }
      
     cooldowns[user] = Date.now();
-    setTimeout(() =>    
+    setTimeout(_ =>    
     {
         delete cooldowns[user];
     }, cooldown);
@@ -188,11 +188,10 @@ exports.search = (message) =>
         .then(bag =>
         {
             bag = JSON.parse(bag);
-    
-            var count = 0;
-            for(key in bag)
-                count += bag[key];
-    
+
+            let count = Object.values(bag)
+                .reduce((total, item) => total += item);
+
             if(count >= capacity)
                 return message.reply("your OnceBag is full!");
     
@@ -205,12 +204,12 @@ exports.search = (message) =>
             database.updateItems(user, JSON.stringify(bag));
     
             message.channel.send(message.author, embed)
-            .then(() => 
+            .then(_ => 
             {
                 checkCollection(message, bag);
             });
         },
-        () =>
+        _ =>
         {
             if(foundTrash) return trash();
 
@@ -320,7 +319,7 @@ exports.bag = (message, isOnMobile) =>
             message.author.send(text);
         }
     },
-    () =>
+    _ =>
     {
         message.reply("your OnceBag is empty.");
     });
@@ -355,7 +354,7 @@ exports.collections = (message) =>
         }
         catch(error) { console.log(error) };
     },
-    () =>
+    _ =>
     {
         errorReply();
     });
@@ -604,7 +603,7 @@ exports.sell = (message) =>
                 }
                 catch(error) { errorReply() };
             },
-            () =>
+            _ =>
             {
                 errorReply();
             });
@@ -618,7 +617,7 @@ exports.sell = (message) =>
         function save(item, amount)
         {
             database.updateItems(user, JSON.stringify(tempBag))
-            .then(() =>
+            .then(_ =>
             {
                 var embed = new Discord.RichEmbed() 
                     .setColor(data.color);
@@ -666,7 +665,7 @@ exports.sell = (message) =>
             });
         }
     },
-    () =>
+    _ =>
     {
         message.reply("your OnceBag is empty.");
     });
@@ -828,7 +827,7 @@ function checkCollection(message, bag)
         }
 
         database.updateCollections(user, JSON.stringify(completedCollections))
-        .then(() =>
+        .then(_ =>
         {
             if(reward <= 0)
                 return;
@@ -864,7 +863,7 @@ function checkCollection(message, bag)
             coins.earnEmbed(message, reward, embed);
         });
     },
-    () =>
+    _ =>
     {
         return;
     });
@@ -1092,7 +1091,7 @@ function getItemFromName(name)
 
 //             message.channel.send("Waiting for the response of " + 
 //                 `**${mention.displayName}**...`);
-//             setTimeout(() =>
+//             setTimeout(_ =>
 //             {
 //                 trades = trades.filter(t => t.from != user.id);
 //                 message.reply("the trade has timed out.");
@@ -1128,7 +1127,7 @@ function getItemFromName(name)
 //             confirmTrade(trade);
 //         });
 //     },
-//     () =>
+//     _ =>
 //     {
 //         return message.reply("your OnceBag is empty.");
 //     });

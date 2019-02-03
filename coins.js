@@ -166,7 +166,7 @@ exports.pay = (message) =>
     database.getCoins(payor.id).then
     ((balance) =>
     {   
-        amount = parseInt(amount);
+        amount = Math.abs(parseInt(amount));
 
         if(amount > balance)
             return message.reply("you don't have enough coins!");
