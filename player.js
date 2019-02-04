@@ -22,7 +22,7 @@ function play()
     connection().playStream(ytdl(song.url, 
         { audioonly: true, quality: "highestaudio" }));
     // connection().player.setBitrate(96);
-    connection().dispatcher.setBitrate(96);
+    // connection().dispatcher.setBitrate(96);
     connection().dispatcher.on("start", () =>
     {
         if(!connectingMessage) return;
