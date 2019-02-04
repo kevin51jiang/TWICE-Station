@@ -212,8 +212,7 @@ exports.add = (message) =>
     var testers = 
     [
         "247955535620472844",
-        "200132493335199746",
-        "274336998771130368",
+        "200132493335199746"
     ];
 
     if(!testers.includes(message.author.id))  
