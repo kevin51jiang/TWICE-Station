@@ -75,15 +75,6 @@ exports.get = (message, parameter) =>
 
 exports.search = (message) =>
 {
-    // if
-    // (
-    //     message.author.id != "247955535620472844" &&
-    //     message.author.id != "200132493335199746" &&
-    //     message.author.id != "274336998771130368"
-    // )
-    // {
-    // }
-
     if(onCooldown(message))
         return;
 
@@ -189,9 +180,10 @@ exports.search = (message) =>
         {
             bag = JSON.parse(bag);
 
-            let count = Object.values(bag)
-                .reduce((total, item) => total += item);
-
+            let count = Object.values(bag);
+            if(count.length > 0) 
+                count = count.reduce((total, item) => total += item);
+            
             if(count >= capacity)
                 return message.reply("your OnceBag is full!");
     
