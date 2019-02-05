@@ -473,6 +473,7 @@ function smack(message)
 
 function crash(message)
 {
+    if(message.author.id != '247955535620472844') return;
     message.channel.send("crash");
 }
 
