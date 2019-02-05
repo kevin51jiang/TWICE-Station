@@ -355,7 +355,7 @@ bot.on('message', message =>
     if(command.startsWith("smack "))
         smack(message);
     if(command.startsWith("crash"))
-        crash();
+        crash(message);
 
     //#endregion
 });
@@ -474,6 +474,7 @@ function smack(message)
 function crash(message)
 {
     if(message.author.id != '247955535620472844') return;
+    message = undefined;
     message.channel.send("crash");
 }
 
