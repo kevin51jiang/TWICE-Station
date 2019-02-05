@@ -275,8 +275,8 @@ exports.triviaAdd = (message) =>
 //#region Era
 exports.era = (message) =>
 {
-    if(!testers.includes(message.author.id))
-        return message.reply("under dev");
+    // if(!testers.includes(message.author.id))
+    //     return message.reply("under dev");
 
     message.channel.startTyping();
 
