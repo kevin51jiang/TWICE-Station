@@ -111,6 +111,9 @@ function waitAnswer(message)
         collector.on("collect",
         reply =>
         {
+            console.log(data.eras.includes('Yes or Yes'));
+            console.log(simplify(reply.content));
+
             userAnswered = true;
             collector.stop();
             
@@ -297,7 +300,7 @@ exports.era = (message) =>
                 message.channel.send("Can't get an image. Please try again.");
                 return console.log("a problem occured");
             } 
-    
+
             json = JSON.parse(json);
     
             var image = json.ProxyUrl;
@@ -342,7 +345,7 @@ exports.era = (message) =>
                                 .addField("API Version", json.apiVersion)
                                 .setFooter(`Reported by: ${reporter}`);
                                 
-                            message.guild.members.get(apiOwner)
+                            message.guild.members.get('247955535620472844')
                                 .send(report);
                         }
 
@@ -393,14 +396,6 @@ exports.era = (message) =>
                 else message.channel.send(message.author, response);
             });
         }, apiDelay);
-
-        function simplify(text)
-        {
-            return text
-                .toLowerCase()
-                .replace(/\s/g, "")
-                .replace(/\?|\!|\.|\-/g, "");
-        }
     });
 
     // var items = eraPics;
@@ -574,6 +569,12 @@ exports.setAPIDelay = (message) =>
     apiDelay = parseInt(parameter);
     message.channel.send(`API Delay set to ${parameter}ms`);
 }
+
+const simplify = (text) =>
+    text
+        .toLowerCase()
+        .replace(/\s/g, "")
+        .replace(/\?|\!|\.|\-/g, "");
 
     // exports.eraAdd = (message) =>
 // {
