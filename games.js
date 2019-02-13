@@ -281,6 +281,9 @@ exports.era = (message) =>
     // if(!testers.includes(message.author.id))
     //     return message.reply("under dev");
 
+    return message
+        .reply('sorry the API for getting pics is currently broken. :(');
+
     message.channel.startTyping();
 
     request("http://api.kpoplul.com:82/twice/get-eraimage", 
