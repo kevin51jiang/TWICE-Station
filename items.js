@@ -363,28 +363,28 @@ exports.collectionList = (message) =>
     [
         {
             title: "Sweet Collection",
-            bonus: "50",
+            bonus: "500",
             description: "All 9 candies and jellies, 1 of each member.",
         },
         {
             title: "Plushie Collection",
-            bonus: "400",
+            bonus: "900",
             description: "All 9 plushies, 1 of each member.",
         },
         {
             title: "Album Collection",
-            bonus: "2500",
+            bonus: "3000",
             description: "All the 18 albums and EPs. (`;albums` to see all albums)",
         },
         {
             title: "Member Collection",
-            bonus: "500",
+            bonus: "750",
             description: "The plushie, photocard, poster and the rare " + 
                 "item of a member. (9 collections, 1 for each member)",
         },
         {
             title: "TWICE Collection",
-            bonus: "1,500",
+            bonus: "2,500",
             description: "All the 9 member photocards and posters.",
         },
         {
@@ -394,12 +394,12 @@ exports.collectionList = (message) =>
         },
         {
             title: "Yes or Yes Collection",
-            bonus: "3,000",
+            bonus: "3,500",
             description: "Yes or Yes Album and Yes or Yes Dice.",
         },
         {
             title: "Member Special Collection",
-            bonus: "4,000",
+            bonus: "5,000",
             description: "The photocard, rare item " + 
                 "and legendary item of a member.",
         },
