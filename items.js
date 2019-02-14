@@ -368,33 +368,33 @@ exports.collectionList = (message) =>
         },
         {
             title: "Plushie Collection",
-            bonus: "900",
+            bonus: "1500",
             description: "All 9 plushies, 1 of each member.",
         },
         {
             title: "Album Collection",
-            bonus: "3000",
+            bonus: "5000",
             description: "All the 18 albums and EPs. (`;albums` to see all albums)",
         },
         {
             title: "Member Collection",
-            bonus: "750",
+            bonus: "1000",
             description: "The plushie, photocard, poster and the rare " + 
                 "item of a member. (9 collections, 1 for each member)",
         },
         {
             title: "TWICE Collection",
-            bonus: "2,500",
+            bonus: "5,000",
             description: "All the 9 member photocards and posters.",
         },
         {
             title: "Cheer Up Collection",
-            bonus: "3,000",
+            bonus: "4,000",
             description: "Page Two Album and Cheer Up Jacket.",
         },
         {
             title: "Yes or Yes Collection",
-            bonus: "3,500",
+            bonus: "4,000",
             description: "Yes or Yes Album and Yes or Yes Dice.",
         },
         {
@@ -405,7 +405,7 @@ exports.collectionList = (message) =>
         },
         {
             title: "JYP Collection",
-            bonus: "10,000",
+            bonus: "15,000",
             description: "What Is Love? Album, Signal Album, " + 
                 "JYP Plastic Pants and JYP's MIDI Keyboard."
         },

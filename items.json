@@ -7,7 +7,7 @@
             "name": "nice",
             "text": "__nice__",
             "limit": 65,
-            "cost": 2,
+            "cost": 5,
             "list":    
             [
                 {
@@ -28,7 +28,7 @@
             "name": "good", 
             "text": "**good**",
             "limit": 35,
-            "cost": 15,
+            "cost": 30,
             "list":
             [
                 {
@@ -49,7 +49,7 @@
             "name": "amazing",
             "text": "__**amazing**__",
             "limit": 14,
-            "cost": 75,
+            "cost": 150,
             "list":
             [
                 {
@@ -70,7 +70,7 @@
             "name": "rare",
             "text": "**RARE**",
             "limit": 5,
-            "cost": 300,
+            "cost": 500,
             "list":
             [
                 {
@@ -340,7 +340,7 @@
                 "mm-p",
                 "jh-p" 
             ],
-            "bonus": 900
+            "bonus": 1500
         }, 
 
         "Album":
@@ -366,7 +366,7 @@
                 "wmu-a",
                 "ht2-a"
             ],
-            "bonus": 3000
+            "bonus": 5000
         },
 
         "Nayeon":
@@ -378,7 +378,7 @@
                 "ny-ps",
                 "mc"
             ],
-            "bonus": 750
+            "bonus": 1000
         },
 
         "Dahyun":
@@ -390,7 +390,7 @@
                 "dh-ps",
                 "cm"
             ],
-            "bonus": 750
+            "bonus": 1000
         },
 
         "Sana":
@@ -402,7 +402,7 @@
                 "sn-ps",
                 "ck"
             ],
-            "bonus": 750
+            "bonus": 1000
         },
 
         "Mina":
@@ -414,7 +414,7 @@
                 "mn-ps",
                 "sw"
             ],
-            "bonus": 750
+            "bonus": 1000
         },
 
         "Jeongyeon":
@@ -426,7 +426,7 @@
                 "jy-ps",
                 "sx"
             ],
-            "bonus": 750
+            "bonus": 1000
         },
 
         "Tzuyu":
@@ -438,7 +438,7 @@
                 "tz-ps",
                 "bw"
             ],
-            "bonus": 750
+            "bonus": 1000
         },
 
         "Chaeyoung":
@@ -450,7 +450,7 @@
                 "ch-ps",
                 "sb"
             ],
-            "bonus": 750
+            "bonus": 1000
         },
 
         "Momo":
@@ -462,7 +462,7 @@
                 "mm-ps",
                 "jk"
             ],
-            "bonus": 750
+            "bonus": 1000
         },
 
         "Jihyo":
@@ -474,7 +474,7 @@
                 "jh-ps",
                 "th"
             ],
-            "bonus": 750
+            "bonus": 1000
         },
 
         "TWICE":
@@ -500,7 +500,7 @@
                 "jh-pc",
                 "jh-ps"
             ],
-            "bonus": 2500
+            "bonus": 5000
         },
 
         "Cheer Up":
@@ -510,7 +510,7 @@
                 "pgt-a",
                 "chj"
             ],
-            "bonus": 3500
+            "bonus": 4000
         },
 
         "Yes or Yes":
@@ -520,7 +520,7 @@
                 "yoy-a",
                 "yoy"
             ],
-            "bonus": 3500
+            "bonus": 4000
         },
 
         "Nayeon Special":
@@ -631,7 +631,7 @@
                 "sgl-a", 
                 "wil-a"
             ],
-            "bonus": 10000
+            "bonus": 15000
         }
     },
 
