@@ -28,7 +28,7 @@
             "name": "good", 
             "text": "**good**",
             "limit": 35,
-            "cost": 30,
+            "cost": 25,
             "list":
             [
                 {
@@ -49,7 +49,7 @@
             "name": "amazing",
             "text": "__**amazing**__",
             "limit": 14,
-            "cost": 150,
+            "cost": 100,
             "list":
             [
                 {
