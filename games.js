@@ -424,15 +424,14 @@ exports.eras = (message) =>
 //#region Wheel of Twice
 exports.wheel = (message, bot) =>
 {
-    if(onCooldown(message, commands.wheel)) return;
-
     var chat = message.content;
     var parameters = chat.substr(chat.indexOf(" ") + 1);
     var member = members.find(m =>
         m.name.toLowerCase() == parameters.toLowerCase() ||
         m.code == parameters.toLowerCase());
     if(!member) return message.reply("you did not type a member.");
-    
+    if(onCooldown(message, commands.wheel)) return;
+
     var rngMember = members[getRandomIndex(members)];
     // var rngMember = members[0];
 
