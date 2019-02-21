@@ -202,9 +202,10 @@ exports.follow = (message) =>
 exports.unfollow = async (message) =>
 {
     let follows = await database.getFollows(message.author.id)
-        .catch(_ => noFollows());
+        .catch(_ => noFollows(message));
 
-    if(follows.length === 0) return noFollows();
+    if(!follows) return;
+    if(follows.length === 0) return noFollows(message);
 
     let channels = message.mentions.channels.array();
     if(!channels || channels.length === 0) 
@@ -235,9 +236,10 @@ exports.unfollow = async (message) =>
 exports.follows = async (message) =>
 {
     let follows = await database.getFollows(message.author.id)
-        .catch(_ => noFollows());
+        .catch(_ => noFollows(message));
     
-    if(follows.length === 0) return noFollows();
+    if(!follows) return;
+    if(follows.length === 0) return noFollows(message);
 
     follows = JSON.parse(follows).map(f => `<#${f}>`).join(',');
 
@@ -550,5 +552,7 @@ exports.serverinfo = (message) =>
     message.channel.send(embed);
 }
 
-const noFollows = _ =>
+function noFollows(message)
+{
     message.reply('you have\'t followed any channels yet.');
+}
