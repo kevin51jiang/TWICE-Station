@@ -5,7 +5,9 @@ const cheerio = require("cheerio");
 const fs = require("fs");
 
 const data = require("./data.json");
-const memes = require("./memes.json");
+// const memes = require("./memes.json");
+
+// const 
 
 exports.command = (message, params) =>
 {
@@ -149,6 +151,103 @@ exports.albums = (message, bot) =>
         
 //     message.channel.send(embed);
 // }
+
+exports.follow = (message) =>
+{
+    const user = message.author.id;
+    let channels = message.mentions.channels.array();
+    if(!channels || channels.length === 0) 
+        return message.reply('please mention the channel to follow.');
+    channels = channels.map(c => c.id);
+    
+    const followChannels = data.followChannels;
+    if(!channels.every(c => followChannels.includes(c)))
+    {
+        if(channels.some(c => followChannels.includes(c)))
+            return message.reply("some of those channels " + 
+                "can't be followed.");
+        return message.reply(`${channels.length > 1? 'those channels' : 
+            'that channel'} can't be followed.`);
+    } 
+
+    database.getFollows(user)
+    .then(follows =>
+    {
+        if(!follows || follows.length === 0) follows = [];
+        follows = JSON.parse(follows);
+        if(channels.every(c => follows.includes(c)))
+            return message.reply('you\'ve already followed ' + 
+                `${channels.length > 1? 'those channels': 'that channel'}.`);
+        channels = channels.filter(c => !follows.includes(c));
+
+        follows.push(...channels);
+        database.updateFollows(user, JSON.stringify(follows))
+            .then(_ => respond());
+    }, _ =>
+    {
+        let follows = [];
+        follows.push(...channels);
+        database.addFollows(user, JSON.stringify(follows))
+            .then(_ => respond());
+    });
+
+    const respond = _ =>
+        message.channel.send(new Discord.RichEmbed()
+            .setColor(data.color)
+            .setTitle('🔔 Followed...')
+            .setDescription(channels.map(c => `<#${c}>`).join(', ') + 
+                '\n\nMedia posted there will be DM\'ed to you.'));
+}
+
+exports.unfollow = async (message) =>
+{
+    let follows = await database.getFollows(message.author.id)
+        .catch(_ => noFollows());
+
+    if(follows.length === 0) return noFollows();
+
+    let channels = message.mentions.channels.array();
+    if(!channels || channels.length === 0) 
+        return message.reply('please mention the channel to unfollow.');
+    channels = channels.map(c => c.id);
+
+    follows = JSON.parse(follows);
+    channels = channels.filter(c => follows.includes(c));
+    if(channels.length === 0)
+        return message.reply(`you haven't followed ${channels.length > 1?
+            'those channels' : 'that channel'}.`);
+    
+    follows.forEach((f, i) =>
+    {
+        if(channels.includes(f)) follows.splice(i, 1);
+    });
+    
+    database.updateFollows(message.author.id, JSON.stringify(follows))
+        .then(_ => respond());
+
+    const respond = _ =>
+        message.channel.send(new Discord.RichEmbed()
+            .setColor(data.color)
+            .setTitle('🔕 Unfollowed...')
+            .setDescription(channels.map(c => `<#${c}>`).join(', ')));
+}
+
+exports.follows = async (message) =>
+{
+    let follows = await database.getFollows(message.author.id)
+        .catch(_ => noFollows());
+    
+    if(follows.length === 0) return noFollows();
+
+    follows = JSON.parse(follows).map(f => `<#${f}>`).join(',');
+
+    const embed = new Discord.RichEmbed()
+        .setColor(data.color)
+        .setTitle('🔔 You are following...')
+        .setDescription(follows);
+    
+    message.channel.send(embed);
+}
 
 exports.lyrics = (message) =>
 {
@@ -338,6 +437,7 @@ exports.meme = (message) =>
 //     catch(error) { console.log(error); }
 // }
 
+
 exports.help = (message, bot) =>
 {
     var embed = new Discord.RichEmbed()
@@ -449,3 +549,6 @@ exports.serverinfo = (message) =>
     
     message.channel.send(embed);
 }
+
+const noFollows = _ =>
+    message.reply('you have\'t followed any channels yet.');

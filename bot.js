@@ -1,40 +1,40 @@
 ﻿const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-const data = require("./data.json");
+const data = require('./data.json');
 
-const database = require("./database");
-const player = require("./player");
-const info = require("./info");
-const coins = require("./coins");
-const games = require("./games");
-const candybongs = require("./candybongs");
-const items = require("./items");
-const rpg = require("./rpg");
+const database = require('./database');
+const player = require('./player');
+const info = require('./info');
+const coins = require('./coins');
+const games = require('./games');
+const candybongs = require('./candybongs');
+const items = require('./items');
+const rpg = require('./rpg');
 
-// const fun = require("./fun");
+// const fun = require('./fun');
 
 var args = process.argv.slice(2)[0];
 bot.login(args)
 .catch(error =>
 {
-    if(error) console.log("gitgud haha"); 
+    if(error) console.log('gitgud haha'); 
 });
 
-var ping = "<@247955535620472844>•";
-var prefix = ";";
+var ping = '<@247955535620472844>•';
+var prefix = ';';
 
 bot.on('ready', () =>
 {
-    if(bot.user.id == "517012034831908911")
+    if(bot.user.id === '517012034831908911')
     {
-        prefix = "`";
-        ping = ping + "d";
+        prefix = '`';
+        ping = ping + 'd';
     }
 
     console.log(`Bot started!`);
     bot.user.setStatus('Online');
-    bot.channels.get("533908427399757826").send(ping);
+    bot.channels.get('533908427399757826').send(ping);
     player.init(bot);
     database.init();
 });
@@ -44,75 +44,86 @@ bot.on('message', message =>
     if
     (  
         message.author.bot &&
-        message.content == ping
+        message.content === ping
     )
         message.delete();
 
     // fun.ligmaInteraction(message);
 
     if(message.author.bot) return;
-    if(message.channel.type == "dm")
+    if(message.channel.type === 'dm')
     {
-        if(message.content.startsWith(";sql "))
+        if(message.content.startsWith(';sql '))
             sql(message);
         return;
     }
 
-    if(message.guild.id == "524367541200617492")
+    if(message.guild.id === '524367541200617492')
         return;
+
+    if(data.followChannels.includes(message.channel.id))
+        return sendToFollowers(message);
 
     // pings(message); 
 
     coins.rng(message);
         
-    // if(message.channel.id == "484658678721413120")
+    // if(message.channel.id === '484658678721413120')
     //     info.addMeme(message);
 
-    // if(command.startsWith(""))
+    // if(command.startsWith(''))
     // {
-    //     if(message.author.id != "247955535620472844")
-    //         return message.reply("I'm Beta. Use <@496529668850057227> instead.");
+    //     if(message.author.id != '247955535620472844')
+    //         return message.reply('I'm Beta. Use <@496529668850057227> instead.');
     // }
     
     // fun.interaction(message);
 
-    var command = message.content;
-
-    command = command.toLowerCase().replace(/\s\s+/g, " ");
+    let command = message.content;
+    command = command.toLowerCase().replace(/\s\s+/g, ' ');
 
     if(!command.startsWith(prefix)) return;
-    command = command.replace(prefix, "");
+    command = command.replace(prefix, '');
 
-    if(command == "ping")
+    if(command === 'ping')
         pong(message);
 
     //#region info
 
-    if(command.startsWith("i ") || command.startsWith("info "))
+    if(command.startsWith('i ') || command.startsWith('info '))
         info.command(message, command.split(/\s(.+)/));
 
-    if(command == "albums")
+    if(command === 'albums')
         info.albums(message, bot);
         
-    // if(command == "lists")
+    // if(command === 'lists')
     //     info.lists(message);
 
-    if(command.startsWith("lyrics "))
+    if(command.startsWith('lyrics '))
         info.lyrics(message);
 
-    // if(command == "meme")
+    if(command.startsWith('follow '))
+        info.follow(message);
+
+    if(command.startsWith('unfollow '))
+        info.unfollow(message);
+
+    if(command === 'follows')
+        info.follows(message);
+
+    // if(command === 'meme')
     //     info.meme(message);
 
-    if(command == "help")
+    if(command === 'help')
         info.help(message, bot);
             
-    if(command == "botinfo")
+    if(command === 'botinfo')
         info.botinfo(message, bot);
         
-    if(command == "serverinfo")
+    if(command === 'serverinfo')
         info.serverinfo(message);
         
-    if(command == "userinfo" || command.startsWith("userinfo "))
+    if(command === 'userinfo' || command.startsWith('userinfo '))
         info.userinfo(message);
 
     //#endregion
@@ -121,49 +132,49 @@ bot.on('message', message =>
 
     // for(var album in data.albums)
     // {
-    //     if(command.replace(/\s/g, "") == album.toLowerCase()
-    //         .replace("&", "and")
-    //         .replace("?", ""))
+    //     if(command.replace(/\s/g, '') === album.toLowerCase()
+    //         .replace('&', 'and')
+    //         .replace('?', ''))
     //         player.playAlbum(channel, data.albums[album]);
     // }
 
-    if(command == "start")
+    if(command === 'start')
         player.start(message);
 
     if
     (
-        command.startsWith("play ") ||
-        command.startsWith("p ")
+        command.startsWith('play ') ||
+        command.startsWith('p ')
     )
         player.playSong(message);
 
     if
     (
-        command == "skip" ||
-        command == "next" ||
-        command == "n"
+        command === 'skip' ||
+        command === 'next' ||
+        command === 'n'
     )
         player.skip(message);
 
     if
     (
-        command == "queue" ||
-        command == "q"
+        command === 'queue' ||
+        command === 'q'
     )
         player.queue(message);
 
-    if(command == "np")
+    if(command === 'np')
         player.nowPlaying(message);
 
     if
     (
-        command == "disconnect" || 
-        command == "dc" ||
-        command == "stop"
+        command === 'disconnect' || 
+        command === 'dc' ||
+        command === 'stop'
     )
         player.stop(message);
 
-    if(command == "reset")
+    if(command === 'reset')
         player.reset(message);
 
     //#endregion
@@ -172,32 +183,32 @@ bot.on('message', message =>
 
     if
     (
-        command == "coins" || 
-        command == "bal" ||
-        command == "c" ||
-        command.startsWith("coins ") || 
-        command.startsWith("bal ") ||
-        command.startsWith("c ")
+        command === 'coins' || 
+        command === 'bal' ||
+        command === 'c' ||
+        command.startsWith('coins ') || 
+        command.startsWith('bal ') ||
+        command.startsWith('c ')
     )
         coins.balance(message);
         
     if
     (
-        command == "daily" ||
-        command == "d"
+        command === 'daily' ||
+        command === 'd'
     )    
         coins.daily(message);
 
-    if(command.startsWith("pay "))
+    if(command.startsWith('pay '))
         coins.pay(message);
 
-    if(command.startsWith("addcoins "))
+    if(command.startsWith('addcoins '))
         coins.add(message);
 
     if
     (
-        command == "coinstop" ||
-        command == "ctop"
+        command === 'coinstop' ||
+        command === 'ctop'
     )
         coins.leaderboard(message);
 
@@ -205,38 +216,38 @@ bot.on('message', message =>
 
     //#region games
 
-    if(command == "trivia" || command == "t")
+    if(command === 'trivia' || command === 't')
         games.trivia(message);
     if
     (
-        command.startsWith("trivia add ") ||
-        command.startsWith("t add ")
+        command.startsWith('trivia add ') ||
+        command.startsWith('t add ')
     )
         games.triviaAdd(message);
-    if(command == "era")
+    if(command === 'era')
         games.era(message);
-    if(command == "eras")
+    if(command === 'eras')
         games.eras(message);
-    // if(command.startsWith("era add "))
+    // if(command.startsWith('era add '))
     //     games.eraAdd(message);
     
     if
     (
-        command.startsWith("wheel ") ||
-        command.startsWith("w ")
+        command.startsWith('wheel ') ||
+        command.startsWith('w ')
     )
         games.wheel(message, bot);
 
 
-    if(command.startsWith("apidelay "))
+    if(command.startsWith('apidelay '))
         games.setAPIDelay(message);
-    // if(command == "verify all")
+    // if(command === 'verify all')
     //     games.eraVerifyAll(message);
-    // if(command.startsWith("verify ") && command != "verify all")
+    // if(command.startsWith('verify ') && command != 'verify all')
     //     games.eraVerify(message, true);
-    // if(command.startsWith("reject "))
+    // if(command.startsWith('reject '))
     //     games.eraVerify(message, false);
-    // if(command == "pending")
+    // if(command === 'pending')
     //     games.pending(message);
 
     //#endregion 
@@ -245,24 +256,24 @@ bot.on('message', message =>
 
     if
     (
-        command == "candybong" ||
-        command == "cb" ||
-        command.startsWith("candybong ") ||
-        command.startsWith("cb ")
+        command === 'candybong' ||
+        command === 'cb' ||
+        command.startsWith('candybong ') ||
+        command.startsWith('cb ')
     )
         candybongs.candybong(message);
 
     if
     (
-        command == "candybongs" ||
-        command == "cbs"
+        command === 'candybongs' ||
+        command === 'cbs'
     )
         candybongs.candybongs(message);
     
     if
     (
-        command == "candybongtop" ||
-        command == "cbtop"
+        command === 'candybongtop' ||
+        command === 'cbtop'
     )
         candybongs.leaderboard(message);
 
@@ -272,55 +283,55 @@ bot.on('message', message =>
 
     if
     (
-        command == "search" ||
-        command == "s"
+        command === 'search' ||
+        command === 's'
     )
         items.search(message);
     if
     (
-        command == "oncebag" ||
-        command == "ob"
+        command === 'oncebag' ||
+        command === 'ob'
     )
         items.bag(message, false);
     if
     (
-        command == "oncebag m" ||
-        command == "ob m"
+        command === 'oncebag m' ||
+        command === 'ob m'
     )
     {
         items.bag(message, true);
     }
 
-    if(command.startsWith("sell "))
+    if(command.startsWith('sell '))
         items.sell(message);
 
-    if(command == "items")
+    if(command === 'items')
         items.list(message);
 
     if
     (
-        command == "itemcodes" ||
-        command == "ic"
+        command === 'itemcodes' ||
+        command === 'ic'
     )
         items.codes(message);
 
-    if(command == "chances")
+    if(command === 'chances')
         items.chances(message);
 
     if
     (
-        command == "collections" ||
-        command == "cols"
+        command === 'collections' ||
+        command === 'cols'
     )
         items.collections(message);
 
-    // if(command.startsWith("trade "))
+    // if(command.startsWith('trade '))
     //     items.trade(message);
 
     if
     (
-        command == "collectionlist" ||
-        command == "clist"
+        command === 'collectionlist' ||
+        command === 'clist'
     )
         items.collectionList(message);
 
@@ -328,33 +339,33 @@ bot.on('message', message =>
         
     //#region RPG   
 
-    // if(command.startsWith("g "))    
+    // if(command.startsWith('g '))    
     //     rpg.command(message);
 
     //#endregion
 
     //#region Dev commands
 
-    if(command.startsWith("reset "))
+    if(command.startsWith('reset '))
     {
-        if(message.author.id != "247955535620472844") return;
+        if(message.author.id != '247955535620472844') return;
         
         database.reset(message.content.slice(7))
-            .then(() => message.channel.send("Table recreated."));
+            .then(() => message.channel.send('Table recreated.'));
     }
     if
     (
-        command == "test" ||
-        command.startsWith("test ")
+        command === 'test' ||
+        command.startsWith('test ')
     )
         test(message);
-    if(command.startsWith("pr "))
+    if(command.startsWith('pr '))
         clean(message);
-    if(command.startsWith("grant "))
+    if(command.startsWith('grant '))
         grantAccess(message);
-    if(command.startsWith("smack "))
+    if(command.startsWith('smack '))
         smack(message);
-    if(command.startsWith("crash"))
+    if(command.startsWith('crash'))
         crash(message);
 
     //#endregion
@@ -379,17 +390,70 @@ bot.on('error', console.error);
 //         chat.includes(" esfox ")
 //     )
 //     {
-//         var tzuyuping = bot.emojis.find(emote => emote.name == "TzuyuPing");
+//         var tzuyuping = bot.emojis.find(emote => emote.name === "TzuyuPing");
 //         message.react(tzuyuping.id);
 //     }
 // }
 
 function pong(message)
 {
-    var embed = new Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
         .setColor(data.color)
         .setDescription("**" + Math.round(bot.ping) + " ms**");
     message.channel.send(embed);
+}
+
+function sendToFollowers(message)
+{
+    setTimeout(_ => run(), 1000);
+    function run()
+    {
+        const attachmentsURLs = parseAttachments(message.attachments.array());
+        const embedsURLs = parseEmbedMedia(message.embeds);
+        let links = [ ...attachmentsURLs, ...embedsURLs ];
+        if(links.length === 0) return;
+
+        links = links.reduce((chunks, element, i) =>
+        {
+            const index = Math.floor(i/5);
+            if(!chunks[index]) chunks[index] = [];
+            chunks[index].push(element);
+            return chunks;
+        }, []);
+
+        database.getFollowers(message.channel.id)
+        .then(followers =>
+        {
+            followers = followers.map(f => f.id);
+            for(const follower of followers)
+            {
+                const members = message.guild.members.map(m => m.id);
+                if(!members.includes(follower)) continue;
+                links.forEach(chunk =>
+                {
+                    chunk = chunk.join('\n');
+                    message.guild.members.get(follower)
+                        .send(chunk);
+                });
+            }
+        });
+    }
+
+    function parseAttachments(attachments)
+    {
+        if(attachments.length === 0) return [];
+        attachments = attachments.filter(a => a.height > 1 && a.width > 1);
+        return attachments.map(a => a.url);
+    }
+
+    function parseEmbedMedia(attachments)
+    {
+        const types = [ 'image', 'gifv', 'video' ];
+        if(attachments.length === 0) return [];
+        attachments = attachments.filter(a => 
+            types.includes(a.type) || a.video || a.image);
+        return attachments.map(a => a.url);
+    }
 }
 
 function clean(message)
@@ -397,7 +461,7 @@ function clean(message)
     if(message.author.id != "247955535620472844")
         return;
 
-    var limit = parseInt(message.content.split(" ")[1]);
+    const limit = parseInt(message.content.split(" ")[1]);
     message.channel.fetchMessages({ limit: limit + 1 })
         .then(messages =>
         {  
@@ -432,11 +496,11 @@ function sql(message)
      message.author.id != "200132493335199746")
         return message.reply("no.")
 
-    var query = message.content.slice(5);
+    const query = message.content.slice(5);
     database.query(query)
     .then(result =>
     {
-        var response = "✅";
+        let response = "✅";
         if(result) 
         {
             response = "```json\n" + result + "\n```";
@@ -482,10 +546,14 @@ function test(message)
 {
     if(message.author.id != "247955535620472844")
         return;
+// 533551595644780554
+    const category = message.guild.channels.get('533551227951251456');
+    message.channel.send(category.children.array()
+        .map(c => `${c.id}`).join('\n'));
 
     // var parameter = message.content;
     // parameter = parameter.substring(parameter.indexOf(" ") + 1);
-    // if(parameter == message.content) return;
+    // if(parameter === message.content) return;
 
     // items.get(message, parameter);
 

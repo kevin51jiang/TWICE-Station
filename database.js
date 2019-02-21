@@ -6,6 +6,7 @@ const tables =
     daily: "daily",
     lottery: "lottery",
     trivia: "trivia",
+    follows: 'follows',
     items: "items",
     candybongs: "candybongs",
     rpg: "rpg"
@@ -61,6 +62,14 @@ function createTables()
                 "id TEXT, " + 
                 "answered TEXT" +
             ")"
+        );
+        sql.run
+        (
+            `CREATE TABLE IF NOT EXISTS ${tables.follows}` +
+            '(' +
+                'id TEXT, ' +
+                'follows TEXT' +
+            ')'
         );
         sql.run
         (
@@ -125,6 +134,60 @@ exports.remove = (user) =>
 
     console.log(`User with ID ${user} has been deleted from the database.`);
 }
+
+//#region Follows
+
+exports.getFollowers = (channel) =>
+{
+    return new Promise
+    ((success, fail) =>
+    {
+        sql.all(`SELECT id FROM ${tables.follows}
+            WHERE follows LIKE '%${channel}%'`)
+            .then(results => success(results))
+            .catch(_ => fail());
+    });
+}
+
+exports.getFollows = (id) =>
+{
+    return new Promise
+    ((success, fail) =>
+    {
+        sql.get(`SELECT follows FROM ${tables.follows}
+            WHERE id = ${id}`)
+            .then(row => success(row.follows))
+            .catch(_ => fail());
+    });
+}
+
+exports.addFollows = (id, follows) =>
+{
+    return new Promise
+    (success =>
+    {
+        sql.run(`INSERT INTO ${tables.follows}
+            (id, follows)
+            VALUES (${id},'${follows}') `)
+            .then(_ => success())
+            .catch(error => console.log(error));
+    });
+}
+
+exports.updateFollows = (id, follows) =>
+{
+    return new Promise
+    (success =>
+    {
+        sql.run(`UPDATE ${tables.follows}
+            SET follows = '${follows}'
+            WHERE id = ${id}`)
+            .then(_ => success())
+            .catch(error => console.log(error));
+    });
+}
+
+//#endregion
 
 //#region coins
  
