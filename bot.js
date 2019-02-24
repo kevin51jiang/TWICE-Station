@@ -425,35 +425,19 @@ function sendToFollowers(message)
         .then(followers =>
         {
             followers = followers.map(f => f.id);
-            followers.forEach(follower =>
+            for(const follower of followers)
             {
                 const members = message.guild.members.map(m => m.id);
-                if(members.includes(follower))
+                if(!members.includes(follower)) continue;
+                links.forEach(chunk =>
                 {
-                    links.forEach(chunk =>
-                    {
-                        chunk = `\`Message link:\` ${message.url}\n\n` 
-                            + chunk.join('\n');
-                        message.guild.members.get(follower).send(chunk)
-                            .catch(_ => 
-                                console.log('Some weird error '
-                                    + 'is happening here'));
-                    });
-                }
-            });
-            // for(const follower of followers)
-            // {
-            //     const members = message.guild.members.map(m => m.id);
-            //     if(!members.includes(follower)) continue;
-            //     links.forEach(chunk =>
-            //     {
-            //         chunk = `\`Message link:\` ${message.url}\n\n` 
-            //             + chunk.join('\n');
-            //         message.guild.members.get(follower).send(chunk)
-            //             .catch(_ => 
-            //                 console.log('Some weird error is happening here'));
-            //     });
-            // }
+                    chunk = `\`Message link:\` ${message.url}\n\n` 
+                        + chunk.join('\n');
+                    message.guild.members.get(follower).send(chunk)
+                        .catch(_ => 
+                            console.log('Some weird error is happening here'));
+                });
+            }
         });
     }
 
