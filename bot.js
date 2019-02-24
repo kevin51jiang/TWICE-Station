@@ -431,9 +431,9 @@ function sendToFollowers(message)
                 if(!members.includes(follower)) continue;
                 links.forEach(chunk =>
                 {
-                    chunk = chunk.join('\n');
-                    message.guild.members.get(follower)
-                        .send(chunk);
+                    chunk = `\`Message link:\` ${message.url}\n\n` 
+                        + chunk.join('\n');
+                    message.guild.members.get(follower).send(chunk);
                 });
             }
         });
