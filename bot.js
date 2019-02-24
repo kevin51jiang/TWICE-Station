@@ -405,45 +405,39 @@ function pong(message)
 
 function sendToFollowers(message)
 {
-    try
+    setTimeout(_ => run(), 1000);
+    function run()
     {
-        setTimeout(_ => run(), 1000);
-        function run()
+        const attachmentsURLs = parseAttachments(message.attachments.array());
+        const embedsURLs = parseEmbedMedia(message.embeds);
+        let links = [ ...attachmentsURLs, ...embedsURLs ];
+        if(links.length === 0) return;
+
+        links = links.reduce((chunks, element, i) =>
         {
-            const attachmentsURLs = parseAttachments(message.attachments.array());
-            const embedsURLs = parseEmbedMedia(message.embeds);
-            let links = [ ...attachmentsURLs, ...embedsURLs ];
-            if(links.length === 0) return;
+            const index = Math.floor(i/5);
+            if(!chunks[index]) chunks[index] = [];
+            chunks[index].push(element);
+            return chunks;
+        }, []);
 
-            links = links.reduce((chunks, element, i) =>
+        database.getFollowers(message.channel.id)
+        .then(followers =>
+        {
+            followers = followers.map(f => f.id);
+            for(const follower of followers)
             {
-                const index = Math.floor(i/5);
-                if(!chunks[index]) chunks[index] = [];
-                chunks[index].push(element);
-                return chunks;
-            }, []);
-
-            database.getFollowers(message.channel.id)
-            .then(followers =>
-            {
-                followers = followers.map(f => f.id);
-                for(const follower of followers)
+                const members = message.guild.members.map(m => m.id);
+                if(!members.includes(follower)) continue;
+                links.forEach(chunk =>
                 {
-                    const members = message.guild.members.map(m => m.id);
-                    if(!members.includes(follower)) continue;
-                    links.forEach(chunk =>
-                    {
-                            chunk = `\`Message link:\` ${message.url}\n\n` 
-                                + chunk.join('\n');
-                            message.guild.members.get(follower).send(chunk);
-                    });
-                }
-            });
-        }
-    }
-    catch(e) 
-    {
-        console.log(e);
+                        chunk = `\`Message link:\` ${message.url}\n\n` 
+                            + chunk.join('\n');
+                        message.guild.members.get(follower).send(chunk)
+                        .catch(console.error);
+                });
+            }
+        });
     }
 
     function parseAttachments(attachments)

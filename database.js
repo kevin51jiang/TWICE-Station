@@ -145,7 +145,11 @@ exports.getFollowers = (channel) =>
         sql.all(`SELECT id FROM ${tables.follows}
             WHERE follows LIKE '%${channel}%'`)
             .then(results => success(results))
-            .catch(_ => fail());
+            .catch(error => 
+            {
+                console.log(error);
+                fail();
+            });
     });
 }
 
