@@ -434,11 +434,9 @@ function sendToFollowers(message)
                         chunk = `\`Message link:\` ${message.url}\n\n` 
                             + chunk.join('\n');
                         message.guild.members.get(follower).send(chunk)
-                            .catch(error =>
-                            {
-                                console.log(message.author.id);
-                                console.log(error);
-                            });
+                            .catch(_ => 
+                                console.log('Some weird error ' + 
+                                    'is happening here'));
                 });
             }
         });
