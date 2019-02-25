@@ -427,6 +427,8 @@ function sendToFollowers(message)
             followers = followers.map(f => f.id);
             for(const follower of followers)
             {
+                if(follower === message.author.id) continue;
+
                 const members = message.guild.members.map(m => m.id);
                 if(!members.includes(follower)) continue;
                 links.forEach(chunk =>
