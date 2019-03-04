@@ -218,7 +218,7 @@ exports.unfollow = async (message) =>
         return message.reply(`you haven't followed ${channels.length > 1?
             'those channels' : 'that channel'}.`);
     
-    follows = follows.filter(f => channels.includes(f));
+    follows = follows.filter(f => !channels.includes(f));
     database.updateFollows(message.author.id, JSON.stringify(follows))
         .then(_ => respond());
 
