@@ -22,7 +22,8 @@ function play()
 
     // connection().playFile(song.link);
     connection().playStream(ytdl(song.url, 
-        { audioonly: true, quality: "highestaudio" }));
+        { audioonly: true, quality: "highestaudio" }), 
+        { bitrate: 192000 });
     // connection().player.setBitrate(96);
     // connection().dispatcher.setBitrate(96);
     connection().dispatcher.on("start", () =>
