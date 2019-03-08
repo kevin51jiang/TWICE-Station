@@ -16,13 +16,13 @@ var tracks = [],
 
 function play()
 { 
-    [ song ] = data.albums.whatIsLove.tracks;
-    // song = queue.shift();
-    // if(!song) return;
+    // [ song ] = data.albums.whatIsLove.tracks;
+    song = queue.shift();
+    if(!song) return;
 
-    connection().playFile(song.link);
-    // connection().playStream(ytdl(song.url, 
-    //     { audioonly: true, quality: "highestaudio" }));
+    // connection().playFile(song.link);
+    connection().playStream(ytdl(song.url, 
+        { audioonly: true, quality: "highestaudio" }));
     // connection().player.setBitrate(96);
     // connection().dispatcher.setBitrate(96);
     connection().dispatcher.on("start", () =>
