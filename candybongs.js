@@ -46,6 +46,8 @@ exports.candybong = (message) =>
     
     if(onCooldown(message)) return;
 
+    return message.reply('not available until 1 hour 😛');
+
     get(message, message.author);
 }
 
