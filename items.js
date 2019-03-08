@@ -593,7 +593,11 @@ exports.sell = (message) =>
 
                     save(key);
                 }
-                catch(error) { errorReply() };
+                catch(error)
+                {
+                    console.error(error);
+                    errorReply()
+                };
             },
             _ =>
             {

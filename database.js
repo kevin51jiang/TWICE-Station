@@ -360,7 +360,11 @@ exports.getCollections = (id) =>
         sql.get("SELECT collections FROM items " + 
             "WHERE id = " + id)
             .then(row => success(row.collections))
-            .catch(() => fail());
+            .catch(error =>
+            {
+                console.error(error);
+                fail();
+            });
     });
 }
 
