@@ -894,6 +894,64 @@
 			"color": "#ECCC9B",
 			"duration": "",
 			"isJapanese": true
+		},
+		"#twice": {
+			"code": "htt",
+			"title": "#TWICE",
+			"link": "",
+			"tracks": [
+				{
+					"title": "Like OOH-AHH (Japanese Ver.)",
+					"link": "",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2017/07/twice-like-ooh-ahh-japanese-ver"
+				},
+				{
+					"title": "Cheer Up (Japanese Ver.)",
+					"link": "",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2017/07/twice-cheer-japanese-ver"
+				},
+				{
+					"title": "TT (Japanese Ver.)",
+					"link": "",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2017/06/twice-tt-japanese-ver"
+				},
+				{
+					"title": "Knock Knock (Japanese Ver.)",
+					"link": "",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2017/07/twice-knock-knock-japanese-ver"
+				},
+				{
+					"title": "Signal (Japanese Ver.)",
+					"link": "",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2017/07/twice-signal-japanese-ver"
+				}
+			],
+			"cover": "https://i.scdn.co/image/6333e7e989d68e665f512f3ca29f389dad6860ff",
+			"color": "#00A6E4",
+			"duration": "34:16",
+			"isJapanese": true
+		},
+		"#twice2": {
+			"code": "ht2",
+			"title": "#TWICE2",
+			"link": "",
+			"tracks": [
+				{
+					"title": "Likey (Japanese Ver.)",
+					"link": "",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2019/01/twice-likey-japanese-ver"
+				}
+			],
+			"cover": "https://i.scdn.co/image/068b02a90e73c68025ac04abb3e784ea29e53b15",
+			"color": "#B1A7CA",
+			"duration": "",
+			"isJapanese": true
 		}
 	},
 	"otherMusic":
