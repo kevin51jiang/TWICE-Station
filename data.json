@@ -22,7 +22,7 @@
 					"lyrics": "https://colorcodedlyrics.com/2015/10/twice-do-it-again-dasi-haejwo"
 				},
 				{
-					"title": "I think I'm Crazy",
+					"title": "Going Crazy",
 					"link": "https://www.youtube.com/watch?v=8HUzP-iTCQQ",
 					"duration": "",
 					"lyrics": "https://colorcodedlyrics.com/2015/10/twice-i-think-i-m-crazy-michyeossnabwa"
@@ -170,6 +170,12 @@
 					"link": "https://www.youtube.com/watch?v=Z6w2QPqYtrs",
 					"duration": "",
 					"lyrics": "https://colorcodedlyrics.com/2017/02/twice-ice-cream-nogayo"
+				},
+				{
+					"title": "TT",
+					"link": "https://www.youtube.com/watch?v=dYYA1IZc4JI",
+					"duration": "",
+					"lyrics": "https://colorcodedlyrics.com/2016/10/twice-tt"
 				},
 				{
 					"title": "1 to 10",
@@ -453,7 +459,7 @@
 			"tracks": [
 				{
 					"title": "What is Love?",
-					"link": "https://www.youtube.com/watch?v=tcaauRPFUEQ",
+					"link": "./music/TWICE - What is Love/01. What is Love.mp3",
 					"duration": "",
 					"lyrics": "https://colorcodedlyrics.com/2018/04/twice-what-is-love"
 				},
