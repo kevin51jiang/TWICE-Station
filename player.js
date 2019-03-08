@@ -20,7 +20,7 @@ function play()
     // song = queue.shift();
     // if(!song) return;
 
-    connection().playFile(song.link, { bitrate: 192000 });
+    connection().playFile(song.link, { bitrate: 256000 });
     // connection().playStream(ytdl(song.url, 
     //     { audioonly: true, quality: "highestaudio" }));
     // connection().player.setBitrate(96);
