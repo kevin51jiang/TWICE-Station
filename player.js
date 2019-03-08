@@ -16,11 +16,10 @@ var tracks = [],
 
 function play()
 { 
-    [ song ] = data.albums.theStoryBegins.tracks;
-    // song = queue.shift();
-    // if(!song) return;
+    song = queue.shift();
+    if(!song) return;
 
-    connection().playFile(song.link, { bitrate: 256000 });
+    connection().playFile(song.url, { bitrate: 256000 });
     // connection().playStream(ytdl(song.url, 
     //     { audioonly: true, quality: "highestaudio" }));
     // connection().player.setBitrate(96);
@@ -81,8 +80,8 @@ exports.init = (client) =>
         });
     }
 
-    for(song of data.otherMusic)
-        tracks.push(song);
+    // for(song of data.otherMusic)
+    //     tracks.push(song);
 }
 
 exports.start = (message) =>
