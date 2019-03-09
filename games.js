@@ -26,7 +26,8 @@ var rewards =
 {
     trivia: 25,
     era: 50,
-    wheel: 250
+    wheel: 250,
+    gts: 50
 };
 
 const lotteryRewards = 
@@ -563,8 +564,10 @@ exports.songGuess = (message) =>
                 .setFooter('Still in testing.');
                 
             if(simplify(reply.content) === simplify(title))
-                return message.channel.send(message.author, 
-                    embed.setTitle('✅ Correct!'));
+            {
+                embed.setTitle('✅ Correct!');
+                return coins.earnEmbed(message, rewards.gts, embed);
+            }
 
             return message.channel.send(message.author, 
                 embed.setTitle('❌ Wrong!')
