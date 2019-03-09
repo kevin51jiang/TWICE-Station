@@ -238,6 +238,12 @@ bot.on('message', message =>
     )
         games.wheel(message, bot);
 
+    if
+    (
+        command === 'guessthesong' ||
+        command === 'gts'
+    )
+        games.songGuess(message);
 
     if(command.startsWith('apidelay '))
         games.setAPIDelay(message);

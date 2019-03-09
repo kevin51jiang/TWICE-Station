@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const fs = require("fs");
 const request = require("request");
 const imgur = require("imgur");
+const cheerio = require('cheerio');
 
 const coins = require("./coins");
 const database = require("./database");
@@ -111,8 +112,8 @@ function waitAnswer(message)
         collector.on("collect",
         reply =>
         {
-            console.log(data.eras.includes('Yes or Yes'));
-            console.log(simplify(reply.content));
+            // console.log(data.eras.includes('Yes or Yes'));
+            // console.log(simplify(reply.content));
 
             userAnswered = true;
             collector.stop();
@@ -468,6 +469,128 @@ exports.wheel = (message, bot) =>
 }
 //#endregion
 
+//#region Song Guess
+exports.songGuess = (message) =>
+{
+    const random = (list) => 
+        list[Math.floor(Math.random() * list.length)];
+    
+    const simplify = (text) => text
+        .toLowerCase()
+        .trim()
+        .replace(/\s\s+/g, ' ')
+        .replace(/\(|\)|\.|\?|\!|\-/g, '')
+        .replace('&', 'and');
+
+    let song;
+    getSong();
+
+    function getSong()
+    {
+        let list = Object.values(data.albums);  
+        song = random(random(list).tracks);
+        if(song.title.match('Ver.')) getSong();
+        if(!song) getSong();
+    }
+
+    const title = song.title,
+        link = song.lyrics;
+
+    message.channel.startTyping();
+
+    request(link, (error, response, html) =>
+    {
+        message.channel.stopTyping();
+        if(error) return console.error(error);
+        if(response.statusCode != 200)
+            return message.channel.send('Something went wrong.');
+
+        let $ = cheerio.load(html);
+        let lyrics = $('table').last();
+        lyrics = $(lyrics).each((_, e) =>
+        {
+            $ = cheerio.load(e);
+            $('td').each((i, e) =>
+            {
+                if(i === 0)
+                {
+                    let stanza = cheerio.load(e);
+                    let count = stanza('p').length;
+                    getStanza();
+
+                    function getStanza()
+                    {
+                        let index = Math.floor(Math.random() * count);
+                        stanza('p').each((n, p) =>
+                        {
+                            if(n === index)
+                            {
+                                const text = $(p).text();
+                                if(!text || text === '')
+                                    return getStanza();
+                                if(text.toLowerCase().match(simplify(title)))
+                                    return getStanza();
+                                
+                                sendLyrics(text);
+                            }
+                        }); 
+                    }
+                }
+            });
+        });
+    });
+
+    async function sendLyrics(lyrics)
+    {
+        lyrics = lyrics.split('\n').slice(0, 4).join('\n');
+        lyrics = await getImage(lyrics);
+
+        const embed = new Discord.RichEmbed()
+            .setColor(data.color)
+            .setTitle('❔ Guess the Song! 🎵')
+            .setImage(lyrics);
+
+        message.channel.stopTyping();
+        message.channel.send(message.author, embed);
+        waitAnswer(message).then(reply =>
+        {
+            const embed = new Discord.RichEmbed()
+                .setColor(data.color)
+                .setFooter('Still in testing.');
+                
+            if(simplify(reply.content) === simplify(title))
+                return message.channel.send(message.author, 
+                    embed.setTitle('✅ Correct!'));
+
+            return message.channel.send(message.author, 
+                embed.setTitle('❌ Wrong!').setDescription(`It's ${title}.`));   
+        }); 
+    }
+
+    function getImage(text)
+    {
+        const url = 'http://api.img4me.com/?font=arial'
+            + '&fcolor=BFBFC1&size=10&bcolor=33353C&type=png&text='
+            + encodeURI(text.replace('&', 'and'));
+
+        return new Promise(resolve =>
+        {
+            request(url, (error, response, link) =>
+            {
+                if(error || response.statusCode != 200)
+                {
+                    console.error(error);
+                    return message.channel.send('Something went wrong.');
+                }
+    
+                resolve(link);
+            });
+        });
+    }
+}
+//#endregion
+
+//TODO
 exports.lottery = (message) =>
 {
     var currentTime = Date.now();
