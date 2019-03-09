@@ -230,7 +230,7 @@ exports.trivia = (message) =>
 
             if(answered)
                 response.addField("✅ Correct!",
-                    `You get **${rewards.trivia} TWICECOINS**.`);
+                    `You win **${rewards.trivia} TWICECOINS**.`);
             else response.setTitle("❌ Wrong!");
 
             // var response = message.author + "\n";
@@ -565,7 +565,8 @@ exports.songGuess = (message) =>
                 
             if(simplify(reply.content) === simplify(title))
             {
-                embed.setTitle('✅ Correct!');
+                embed.setTitle('✅ Correct!\n'
+                    + `You win **${rewards.gts} TWICECOINS**.`);
                 return coins.earnEmbed(message, rewards.gts, embed);
             }
 
