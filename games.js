@@ -18,7 +18,8 @@ var commands =
     trivia: "trivia",
     t: "t",
     era: "era",
-    wheel: "wheel"
+    wheel: "wheel",
+    gts: "gts"
 };
 
 var rewards =
@@ -65,7 +66,7 @@ var testers =
 var apiOwner = "417726391698718720";
 var apiDelay = 300;
 
-function onCooldown(message, command)
+function onCooldown(message, command, duration = cooldown)
 {
     var cd = {};
     switch(command)
@@ -78,7 +79,7 @@ function onCooldown(message, command)
     if(cd[message.author.id])
     {
         var timeLeft = Date.now() - cd[message.author.id];
-        var timeLeft = (cooldown - timeLeft) / 1000;
+        var timeLeft = (duration - timeLeft) / 1000;
         if(timeLeft > 1) timeLeft = ~~timeLeft;
         var embed = new Discord.RichEmbed()
             .setColor(data.color)
@@ -91,7 +92,7 @@ function onCooldown(message, command)
     setTimeout(() =>
     {
         delete cd[message.author.id];
-    }, cooldown);
+    }, duration);
     return false;
 }
 
@@ -472,6 +473,9 @@ exports.wheel = (message, bot) =>
 //#region Song Guess
 exports.songGuess = (message) =>
 {
+    if(onCooldown(message, commands.gts, 10000))
+        return;
+
     const random = (list) => 
         list[Math.floor(Math.random() * list.length)];
     
@@ -563,7 +567,8 @@ exports.songGuess = (message) =>
                     embed.setTitle('✅ Correct!'));
 
             return message.channel.send(message.author, 
-                embed.setTitle('❌ Wrong!').setDescription(`It's ${title}.`));   
+                embed.setTitle('❌ Wrong!')
+                    .setDescription(`It's **${title}**.`));   
         }); 
     }
 
