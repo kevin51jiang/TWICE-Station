@@ -492,7 +492,7 @@ exports.wheel = (message, bot) =>
 }
 //#endregion
 
-//#region Song Guess
+//#region Lyrics Guess
 exports.lyricsGuess = (message) =>
 {
     if(onCooldown(message, commands.gtl, 25000))
@@ -578,8 +578,7 @@ exports.lyricsGuess = (message) =>
         waitAnswer(message, embed).then(reply =>
         {
              embed = new Discord.RichEmbed()
-                .setColor(data.color)
-                .setFooter('Still in testing.');
+                .setColor(data.color);
                 
             if(simplify(reply.content) === simplify(title))
             {
