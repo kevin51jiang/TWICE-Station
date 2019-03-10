@@ -640,8 +640,6 @@ exports.audioGuess = async (message) =>
     const title = song.title,
         link = song.link;
 
-    console.log(title, link);
-
     let startTime = ~~(await getAudioDurationInSeconds(link));
     startTime = Math.floor(Math.random() * startTime - 5);
     if(startTime <= 0)
