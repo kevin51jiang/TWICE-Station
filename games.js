@@ -29,7 +29,7 @@ var rewards =
     trivia: 25,
     era: 50,
     wheel: 250,
-    gts: 50
+    gts: 200
 };
 
 const lotteryRewards = 
@@ -602,7 +602,7 @@ exports.songGuess = (message) =>
 //#region Audio Guess
 exports.audioGuess = async (message) =>
 {
-    if(onCooldown(message, commands.gts, 10))
+    if(onCooldown(message, commands.gts))
         return;
 
     const random = (list) => list[Math.floor(Math.random() * list.length)];
@@ -670,8 +670,7 @@ exports.audioGuess = async (message) =>
             {
                 embed.setTitle('✅ Correct!\n' 
                     + `You win **${rewards.gts} TWICECOINS**.`);
-                return message.channel.send(message.author, embed);
-                // return coins.earnEmbed(message, rewards.gts, embed);
+                return coins.earnEmbed(message, rewards.gts, embed);
             }
 
             return message.channel.send(message.author, 
