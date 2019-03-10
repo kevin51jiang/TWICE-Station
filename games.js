@@ -79,7 +79,7 @@ function onCooldown(message, command, duration = cooldown)
             cd = cooldowns.wheel;
             break;
 
-        case command.gts:
+        case commands.gts:
             cd = cooldowns.gts;
             break;
     }
