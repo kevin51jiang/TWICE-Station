@@ -243,7 +243,8 @@ bot.on('message', message =>
         command === 'guessthesong' ||
         command === 'gts'
     )
-        games.songGuess(message);
+        games.audioGuess(message);
+        // games.songGuess(message);
 
     if(command.startsWith('apidelay '))
         games.setAPIDelay(message);
@@ -552,71 +553,22 @@ function crash(message)
     message.channel.send("crash");
 }
 
-function test(message)
+async function test(message)
 {
     if(message.author.id != "247955535620472844")
         return;
+}
+
 // 533551595644780554
-    const category = message.guild.channels.get('533551227951251456');
-    message.channel.send(category.children.array()
-        .map(c => `${c.id}`).join('\n'));
+    // const category = message.guild.channels.get('533551227951251456');
+    // message.channel.send(category.children.array()
+    //     .map(c => `${c.id}`).join('\n'));
 
     // var parameter = message.content;
     // parameter = parameter.substring(parameter.indexOf(" ") + 1);
     // if(parameter === message.content) return;
 
     // items.get(message, parameter);
-
-    // var number = message.content.slice(6).split("+");
-    // var x = parseInt(number[0]),
-    //     y = parseInt(number[1]),
-    //     cost = 100,
-    //     increase = 50;
-
-    // var text = "```cpp\n";
-    
-    // var final = 0;
-    // for(var i = x; i < x + y; i++)
-    // {
-    //     var z = cost + (increase * i);
-    //     text += `${cost} + (${increase} x ${i}) = ${z}\n`;
-    //     final += z;
-    // }
-    
-    // text += "\n```\nTotal: " + final;
-    // message.channel.send(text);
-
-    // message.channel.send
-    // (
-    //     "```" +
-    //     ";(album name)\n" +
-    //     ";connect (this isn't necessary anymore, since it auto connects when you play)\n" +
-    //     ";disconnect/dc/stop\n" +
-    //     ";skip\n\n" +
-
-    //     ";i/info (album name)\n" +
-    //     ";albums\n" +
-    //     ";lists\n" +
-    //     ";help\n" +
-    //     ";botinfo\n" +
-    //     ";serverinfo\n" +
-    //     ";userinfo (user)\n\n" +
-
-    //     ";coins/c/bal\n" +
-    //     ";daily/d\n\n" +
-
-    //     ";trivia/t\n" +
-    //     ";era\n" +
-    //     ";eras/eralist\n" +
-    //     ";era add\n" +
-    //     ";trivia/t add\n\n" +
-
-    //     ";verify (all)\n" +
-    //     ";reject\n" +
-    //     ";pending" +
-    //     "```"
-    // );
-}
 
 //IMPORTANT: Querying from Pitch's database for era pics
 

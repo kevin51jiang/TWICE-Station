@@ -73,3 +73,6 @@ old/
 
 # .vscode file
 .vscode
+
+# mp3 files
+.mp3

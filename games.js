@@ -1,8 +1,10 @@
 const Discord = require('discord.js');
 const fs = require("fs");
 const request = require("request");
-const imgur = require("imgur");
+// const imgur = require("imgur");
 const cheerio = require('cheerio');
+const ffmpeg = require('fluent-ffmpeg');
+const { getAudioDurationInSeconds } = require('get-audio-duration')
 
 const coins = require("./coins");
 const database = require("./database");
@@ -477,9 +479,7 @@ exports.songGuess = (message) =>
     if(onCooldown(message, commands.gts, 10000))
         return;
 
-    const random = (list) => 
-        list[Math.floor(Math.random() * list.length)];
-    
+    const random = (list) => list[Math.floor(Math.random() * list.length)];
     const simplify = (text) => text
         .toLowerCase()
         .trim()
@@ -594,6 +594,88 @@ exports.songGuess = (message) =>
     
                 resolve(link);
             });
+        });
+    }
+}
+//#endregion
+
+//#region Audio Guess
+exports.audioGuess = (message) =>
+{
+    if(onCooldown(message, commands.gts, 10))
+        return;
+
+    const random = (list) => list[Math.floor(Math.random() * list.length)];
+    const simplify = (text) => text
+        .toLowerCase()
+        .trim()
+        .replace(/\s\s+/g, ' ')
+        .replace(/\(|\)|\.|\?|\!|\-/g, '')
+        .replace('&', 'and');
+    
+    let song;
+    getSong();
+
+    function getSong()
+    {
+        let list = Object.values(data.albums);
+        song = random(random(list).tracks);
+        if(!song) getSong();
+        if(!song.link || song.link === '') getSong();
+    }
+
+    const title = song.title,
+        link = song.link;
+
+    let startTime = ~~(await getAudioDurationInSeconds('./What Is Love.mp3'));
+    startTime = Math.floor(Math.random() * startTime - 3);
+    if(startTime <= 0)
+        startTime += 3;
+
+    ffmpeg(link)
+        .setStartTime(startTime)
+        .setDuration(2)
+        .noVideo()
+        .output('Song.mp3')
+        .on('end', error =>
+        {
+            if(error)
+                return console.error(error);
+            send();
+        })
+        .on('error', error =>
+        {
+            console.log(error);
+        })
+        .run();
+
+    function send()
+    {
+        message.channel.send(`${message.author}\n❔ Guess the Song! 🎵`,
+        {
+            files:
+            [{
+                attachment: './Song.mp3',
+                name: 'Song.mp3'
+            }]   
+        })
+        .then(_ => fs.unlink('Song.mp3', error => { if(error) throw error; }));
+        waitAnswer(message).then(reply =>
+        {
+            const embed = new Discord.RichEmbed()
+                .setColor(data.color)
+                .setFooter('Still in testing.');
+                
+            if(simplify(reply.content) === simplify(title))
+            {
+                embed.setTitle('✅ Correct!\n' 
+                    + `You win **${rewards.gts} TWICECOINS**.`);
+                return coins.earnEmbed(message, rewards.gts, embed);
+            }
+
+            return message.channel.send(message.author, 
+                embed.setTitle('❌ Wrong!')
+                    .setDescription(`It's **${title}**.`)); 
         });
     }
 }
