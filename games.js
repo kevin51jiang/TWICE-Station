@@ -620,6 +620,7 @@ exports.audioGuess = async (message) =>
     {
         let list = Object.values(data.albums);
         song = random(random(list).tracks);
+        if(song.title.match('Ver.')) getSong();
         if(!song) getSong();
         if(!song.link || song.link === '') getSong();
     }
