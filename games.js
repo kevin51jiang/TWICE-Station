@@ -108,7 +108,7 @@ function onCooldown(message, command, duration = cooldown)
 }
 
 //TODO: only accept trivia and era answers
-function waitAnswer(message)
+function waitAnswer(message, timeUpReply)
 {
     return new Promise
     ((success) =>
@@ -141,7 +141,11 @@ function waitAnswer(message)
         () =>
         {  
             if(!userAnswered)
+            {
+                if(timeUpReply)
+                    return message.channel.send(message.author, timeUpReply);
                 message.reply("time's up!");
+            }
         });
     });
 }
@@ -637,9 +641,9 @@ exports.audioGuess = async (message) =>
         link = song.link;
 
     let startTime = ~~(await getAudioDurationInSeconds(link));
-    startTime = Math.floor(Math.random() * startTime - 3);
+    startTime = Math.floor(Math.random() * startTime - 5);
     if(startTime <= 0)
-        startTime += 3;
+        startTime += 5;
 
     ffmpeg(link)
         .setStartTime(startTime)
@@ -666,14 +670,19 @@ exports.audioGuess = async (message) =>
             [{
                 attachment: './Song.mp3',
                 name: 'Song.mp3'
-            }]   
+            }]
         })
         .then(_ => fs.unlink('Song.mp3', error => { if(error) throw error; }));
-        waitAnswer(message).then(reply =>
+
+        const embed = new Discord.RichEmbed()
+            .setColor(data.color)
+            .setTitle("⏰ Time's up!")
+            .setDescription(`It's **${title}**.`);
+
+        waitAnswer(message, embed).then(reply =>
         {
             const embed = new Discord.RichEmbed()
-                .setColor(data.color)
-                .setFooter('Still in testing.');
+                .setColor(data.color);
                 
             if(simplify(reply.content) === simplify(title))
             {
@@ -682,7 +691,7 @@ exports.audioGuess = async (message) =>
                 return coins.earnEmbed(message, rewards.gts, embed);
             }
 
-            return message.channel.send(message.author, 
+            return message.channel.send(message.author,
                 embed.setTitle('❌ Wrong!')
                     .setDescription(`It's **${title}**.`)); 
         });
