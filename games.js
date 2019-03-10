@@ -72,6 +72,9 @@ var apiDelay = 300;
 
 function onCooldown(message, command, duration = cooldown)
 {
+    if(message.author.id === '247955535620472844')
+        return false;
+
     var cd = {};
     switch(command)
     {
