@@ -617,7 +617,7 @@ exports.audioGuess = async (message) =>
     if(onCooldown(message, commands.gts))
         return;
 
-    const random = (list) => list[Math.floor(Math.random() * list.length)];
+    const random = (list) => list[~~(Math.random() * list.length)];
     const simplify = (text) => text
         .toLowerCase()
         .trim()
@@ -639,6 +639,8 @@ exports.audioGuess = async (message) =>
 
     const title = song.title,
         link = song.link;
+
+    console.log(title, link);
 
     let startTime = ~~(await getAudioDurationInSeconds(link));
     startTime = Math.floor(Math.random() * startTime - 5);
