@@ -670,7 +670,7 @@ exports.audioGuess = async (message) =>
             {
                 embed.setTitle('✅ Correct!\n' 
                     + `You win **${rewards.gts} TWICECOINS**.`);
-                message.channel.send(message.author, embed);
+                return message.channel.send(message.author, embed);
                 // return coins.earnEmbed(message, rewards.gts, embed);
             }
 
