@@ -627,7 +627,7 @@ exports.audioGuess = (message) =>
     const title = song.title,
         link = song.link;
 
-    let startTime = ~~(await getAudioDurationInSeconds('./What Is Love.mp3'));
+    let startTime = ~~(await getAudioDurationInSeconds(link));
     startTime = Math.floor(Math.random() * startTime - 3);
     if(startTime <= 0)
         startTime += 3;
