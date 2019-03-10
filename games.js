@@ -427,7 +427,7 @@ exports.eras = (message) =>
 //#endregion
 
 //#region Wheel of Twice
-exports.wheel = async (message, bot) =>
+exports.wheel = (message, bot) =>
 {
     var chat = message.content;
     var parameters = chat.substr(chat.indexOf(" ") + 1);
@@ -600,7 +600,7 @@ exports.songGuess = (message) =>
 //#endregion
 
 //#region Audio Guess
-exports.audioGuess = (message) =>
+exports.audioGuess = async (message) =>
 {
     if(onCooldown(message, commands.gts, 10))
         return;
