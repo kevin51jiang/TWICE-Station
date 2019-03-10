@@ -427,7 +427,7 @@ exports.eras = (message) =>
 //#endregion
 
 //#region Wheel of Twice
-exports.wheel = (message, bot) =>
+exports.wheel = async (message, bot) =>
 {
     var chat = message.content;
     var parameters = chat.substr(chat.indexOf(" ") + 1);
