@@ -56,7 +56,8 @@ const lotteryRewards =
 const cooldown = 60000;
 var cooldowns =
 {
-    wheel: {}
+    wheel: {},
+    gts: {}
 };
 
 var testers = 
@@ -76,6 +77,10 @@ function onCooldown(message, command, duration = cooldown)
     {
         case commands.wheel:
             cd = cooldowns.wheel;
+            break;
+
+        case command.gts:
+            cd = cooldowns.gts;
             break;
     }
 
