@@ -634,7 +634,7 @@ exports.audioGuess = async (message) =>
 
     ffmpeg(link)
         .setStartTime(startTime)
-        .setDuration(2)
+        .setDuration(1)
         .noVideo()
         .output('Song.mp3')
         .on('end', error =>
