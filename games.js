@@ -674,7 +674,8 @@ exports.audioGuess = async (message) =>
                 name: 'Song.mp3'
             }]
         })
-        .then(_ => fs.unlink('Song.mp3', error => { if(error) throw error; }));
+        .then(_ => fs.unlink('Song.mp3', error => 
+            { if(error) console.error(error); }));
 
         const embed = new Discord.RichEmbed()
             .setColor(data.color)
