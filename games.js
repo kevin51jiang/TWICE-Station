@@ -21,7 +21,8 @@ var commands =
     t: "t",
     era: "era",
     wheel: "wheel",
-    gts: "gts"
+    gts: "gts",
+    gtl: "gtl"
 };
 
 var rewards =
@@ -29,7 +30,8 @@ var rewards =
     trivia: 25,
     era: 50,
     wheel: 250,
-    gts: 200
+    gts: 100,
+    gtl: 200
 };
 
 const lotteryRewards = 
@@ -57,7 +59,8 @@ const cooldown = 60000;
 var cooldowns =
 {
     wheel: {},
-    gts: {}
+    gts: {},
+    gtl: {}
 };
 
 var testers = 
@@ -84,6 +87,10 @@ function onCooldown(message, command, duration = cooldown)
 
         case commands.gts:
             cd = cooldowns.gts;
+            break;
+
+        case commands.gtl:
+            cd = cooldowns.gtl;
             break;
     }
 
@@ -486,18 +493,10 @@ exports.wheel = (message, bot) =>
 //#endregion
 
 //#region Song Guess
-exports.songGuess = (message) =>
+exports.lyricsGuess = (message) =>
 {
-    if(onCooldown(message, commands.gts, 10000))
+    if(onCooldown(message, commands.gtl, 25000))
         return;
-
-    const random = (list) => list[Math.floor(Math.random() * list.length)];
-    const simplify = (text) => text
-        .toLowerCase()
-        .trim()
-        .replace(/\s\s+/g, ' ')
-        .replace(/\(|\)|\.|\?|\!|\-/g, '')
-        .replace('&', 'and');
 
     let song;
     getSong();
@@ -545,7 +544,8 @@ exports.songGuess = (message) =>
                                 const text = $(p).text();
                                 if(!text || text === '')
                                     return getStanza();
-                                if(text.toLowerCase().match(simplify(title)))
+                                if(text.toLowerCase()
+                                    .match(title.toLowerCase()))
                                     return getStanza();
                                 
                                 sendLyrics(text);
@@ -562,24 +562,30 @@ exports.songGuess = (message) =>
         lyrics = lyrics.split('\n').slice(0, 4).join('\n');
         lyrics = await getImage(lyrics);
 
-        const embed = new Discord.RichEmbed()
+        let embed = new Discord.RichEmbed()
             .setColor(data.color)
             .setTitle('❔ Guess the Song! 🎵')
             .setImage(lyrics);
 
         message.channel.stopTyping();
         message.channel.send(message.author, embed);
-        waitAnswer(message).then(reply =>
+
+        embed = new Discord.RichEmbed()
+            .setColor(data.color)
+            .setTitle("⏰ Time's up!")
+            .setDescription(`It's **${title}**.`);
+
+        waitAnswer(message, embed).then(reply =>
         {
-            const embed = new Discord.RichEmbed()
+             embed = new Discord.RichEmbed()
                 .setColor(data.color)
                 .setFooter('Still in testing.');
                 
             if(simplify(reply.content) === simplify(title))
             {
                 embed.setTitle('✅ Correct!\n'
-                    + `You win **${rewards.gts} TWICECOINS**.`);
-                return coins.earnEmbed(message, rewards.gts, embed);
+                    + `You win **${rewards.gtl} TWICECOINS**.`);
+                return coins.earnEmbed(message, rewards.gtl, embed);
             }
 
             return message.channel.send(message.author, 
@@ -617,14 +623,6 @@ exports.audioGuess = async (message) =>
     if(onCooldown(message, commands.gts))
         return;
 
-    const random = (list) => list[~~(Math.random() * list.length)];
-    const simplify = (text) => text
-        .toLowerCase()
-        .trim()
-        .replace(/\s\s+/g, ' ')
-        .replace(/\(|\)|\.|\?|\!|\-/g, '')
-        .replace('&', 'and');
-    
     let song;
     getSong();
 
@@ -647,7 +645,7 @@ exports.audioGuess = async (message) =>
 
     ffmpeg(link)
         .setStartTime(startTime)
-        .setDuration(1)
+        .setDuration(0.75)
         .noVideo()
         .output('Song.mp3')
         .on('end', error =>
@@ -805,13 +803,15 @@ exports.setAPIDelay = (message) =>
     message.channel.send(`API Delay set to ${parameter}ms`);
 }
 
-const simplify = (text) =>
-    text
-        .toLowerCase()
-        .replace(/\s/g, "")
-        .replace(/\?|\!|\.|\-/g, "");
-
-    // exports.eraAdd = (message) =>
+const random = (list) => list[Math.floor(Math.random() * list.length)];
+const simplify = (text) => text
+    .toLowerCase()
+    .trim()
+    .replace(/\s/g, '')
+    .replace(/\?|\!|\.|\(|\)|\.|\?|\!|\-|\'/g, '')
+    .replace('&', 'and');
+        
+// exports.eraAdd = (message) =>
 // {
 //     var era = message.content.match
 //         (/(?<=\[)(.*?)(?=\])|(?<=\()(.*?)(?=\))/g);

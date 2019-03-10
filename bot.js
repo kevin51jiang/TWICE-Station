@@ -246,6 +246,13 @@ bot.on('message', message =>
         games.audioGuess(message);
         // games.songGuess(message);
 
+    if
+    (
+        command === 'guessthelyrics' ||
+        command === 'gtl'
+    )
+        games.lyricsGuess(message);
+
     if(command.startsWith('apidelay '))
         games.setAPIDelay(message);
     // if(command === 'verify all')
