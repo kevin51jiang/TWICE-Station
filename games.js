@@ -642,7 +642,9 @@ exports.audioGuess = async (message) =>
     if(startTime <= 0)
         startTime += 5;
 
-    ffmpeg(link)
+    try
+    {
+        ffmpeg(link)
         .setStartTime(startTime)
         .setDuration(0.75)
         .noVideo()
@@ -658,6 +660,11 @@ exports.audioGuess = async (message) =>
             console.log(error);
         })
         .run();
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
 
     function send()
     {
