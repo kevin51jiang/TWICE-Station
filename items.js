@@ -363,49 +363,49 @@ exports.collectionList = (message) =>
     [
         {
             title: "Sweet Collection",
-            bonus: "500",
+            bonus: collections.Sweet.bonus,
             description: "All 9 candies and jellies, 1 of each member.",
         },
         {
             title: "Plushie Collection",
-            bonus: "1500",
+            bonus: collections.Plushie.bonus,
             description: "All 9 plushies, 1 of each member.",
         },
         {
             title: "Album Collection",
-            bonus: "5000",
+            bonus: collections.Album.bonus,
             description: "All the 18 albums and EPs. (`;albums` to see all albums)",
         },
         {
             title: "Member Collection",
-            bonus: "1000",
+            bonus: collections.Nayeon.bonus,
             description: "The plushie, photocard, poster and the rare " + 
                 "item of a member. (9 collections, 1 for each member)",
         },
         {
             title: "TWICE Collection",
-            bonus: "5,000",
+            bonus: collections.TWICE.bonus,
             description: "All the 9 member photocards and posters.",
         },
         {
             title: "Cheer Up Collection",
-            bonus: "4,000",
+            bonus: collections['Cheer Up'].bonus,
             description: "Page Two Album and Cheer Up Jacket.",
         },
         {
             title: "Yes or Yes Collection",
-            bonus: "4,000",
+            bonus: collections['Yes or Yes'].bonus,
             description: "Yes or Yes Album and Yes or Yes Dice.",
         },
         {
             title: "Member Special Collection",
-            bonus: "5,000",
+            bonus: collections['Nayeon Special'].bonus,
             description: "The photocard, rare item " + 
                 "and legendary item of a member.",
         },
         {
             title: "JYP Collection",
-            bonus: "15,000",
+            bonus: collections.JYP.bonus,
             description: "What Is Love? Album, Signal Album, " + 
                 "JYP Plastic Pants and JYP's MIDI Keyboard."
         },

@@ -29,9 +29,9 @@ var rewards =
 {
     trivia: 25,
     era: 50,
-    wheel: 250,
-    gts: 100,
-    gtl: 200
+    wheel: 350,
+    gts: 150,
+    gtl: 300
 };
 
 const lotteryRewards = 
