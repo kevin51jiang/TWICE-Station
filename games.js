@@ -642,9 +642,7 @@ exports.audioGuess = async (message) =>
     if(startTime <= 0)
         startTime += 5;
 
-    try
-    {
-        ffmpeg(link)
+    ffmpeg(link)
         .setStartTime(startTime)
         .setDuration(0.75)
         .noVideo()
@@ -660,11 +658,6 @@ exports.audioGuess = async (message) =>
             console.log(error);
         })
         .run();
-    }
-    catch(error)
-    {
-        console.log(error);
-    }
 
     function send()
     {
@@ -676,8 +669,20 @@ exports.audioGuess = async (message) =>
                 name: 'Song.mp3'
             }]
         })
-        .then(_ => fs.unlink('Song.mp3', error => 
-            { if(error) console.error(error); }));
+        .then(_ =>
+        {
+            try
+            {
+                fs.unlink('Song.mp3', error => 
+                {
+                    if(error) console.error(error);
+                });
+            }
+            catch(error)
+            {
+                console.log(error);
+            }
+        });
 
         const embed = new Discord.RichEmbed()
             .setColor(data.color)
