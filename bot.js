@@ -14,15 +14,15 @@ const items = require('./items');
 
 // const fun = require('./fun');
 
-var args = process.argv.slice(2)[0];
+const args = process.argv.slice(2)[0];
 bot.login(args)
 .catch(error =>
 {
     if(error) console.log('gitgud haha'); 
 });
 
-var ping = '<@247955535620472844>•';
-var prefix = ';';
+const ping = '<@247955535620472844>•';
+const prefix = ';';
 
 bot.on('ready', () =>
 {
@@ -50,8 +50,6 @@ bot.on('message', message =>
         message.content === ping
     )
         message.delete();
-
-    // fun.ligmaInteraction(message);
 
     if(message.author.bot) return;
     if(message.channel.type === 'dm')
