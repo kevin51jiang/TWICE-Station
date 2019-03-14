@@ -22,7 +22,8 @@ var commands =
     era: "era",
     wheel: "wheel",
     gts: "gts",
-    gtl: "gtl"
+    gtl: "gtl",
+    gtm: 'gtm'
 };
 
 var rewards =
@@ -31,7 +32,8 @@ var rewards =
     era: 50,
     wheel: 350,
     gts: 150,
-    gtl: 300
+    gtl: 300,
+    gtm: 300
 };
 
 const lotteryRewards = 
@@ -60,7 +62,8 @@ var cooldowns =
 {
     wheel: {},
     gts: {},
-    gtl: {}
+    gtl: {},
+    gtm: {}
 };
 
 var testers = 
@@ -75,8 +78,8 @@ var apiDelay = 300;
 
 function onCooldown(message, command, duration = cooldown)
 {
-    if(message.author.id === '247955535620472844')
-        return false;
+    // if(message.author.id === '247955535620472844')
+    //     return false;
 
     var cd = {};
     switch(command)
@@ -91,6 +94,10 @@ function onCooldown(message, command, duration = cooldown)
 
         case commands.gtl:
             cd = cooldowns.gtl;
+            break;
+
+        case commands.gtm:
+            cd = cooldowns.gtm;
             break;
     }
 
@@ -114,7 +121,6 @@ function onCooldown(message, command, duration = cooldown)
     return false;
 }
 
-//TODO: only accept trivia and era answers
 function waitAnswer(message, timeUpReply)
 {
     return new Promise
@@ -157,7 +163,6 @@ function waitAnswer(message, timeUpReply)
     });
 }
 
-//#region Trivia
 exports.trivia = (message) =>
 {
     if(!testers.includes(message.author.id))
@@ -297,9 +302,6 @@ exports.triviaAdd = (message) =>
     message.delete();
 }
 
-//#endregion
-
-//#region Era
 exports.era = (message) =>
 {
     // if(!testers.includes(message.author.id))
@@ -443,9 +445,6 @@ exports.eras = (message) =>
     message.channel.send(embed);
 }
 
-//#endregion
-
-//#region Wheel of Twice
 exports.wheel = (message, bot) =>
 {
     var chat = message.content;
@@ -456,7 +455,7 @@ exports.wheel = (message, bot) =>
     if(!member) return message.reply("you did not type a member.");
     if(onCooldown(message, commands.wheel)) return;
 
-    var rngMember = members[getRandomIndex(members)];
+    var rngMember = randomElement(members);
     // var rngMember = members[0];
 
     var wheelEmote = bot.emojis.find(e => e.name == "WheelSpin");
@@ -490,12 +489,10 @@ exports.wheel = (message, bot) =>
         }, 4000);
     });
 }
-//#endregion
 
-//#region Lyrics Guess
 exports.lyricsGuess = (message) =>
 {
-    if(onCooldown(message, commands.gtl, 25000))
+    if(onCooldown(message, commands.gtl, 30000))
         return;
 
     let song;
@@ -504,7 +501,7 @@ exports.lyricsGuess = (message) =>
     function getSong()
     {
         let list = Object.values(data.albums);  
-        song = random(random(list).tracks);
+        song = randomElement(randomElement(list).tracks);
         if(song.title.match('Ver.')) getSong();
         if(!song) getSong();
     }
@@ -560,7 +557,7 @@ exports.lyricsGuess = (message) =>
     async function sendLyrics(lyrics)
     {
         lyrics = lyrics.split('\n').slice(0, 4).join('\n');
-        lyrics = await getImage(lyrics);
+        lyrics = await textToImage(lyrics);
 
         let embed = new Discord.RichEmbed()
             .setColor(data.color)
@@ -592,31 +589,8 @@ exports.lyricsGuess = (message) =>
                     .setDescription(`It's **${title}**.`));   
         }); 
     }
-
-    function getImage(text)
-    {
-        const url = 'http://api.img4me.com/?font=arial'
-            + '&fcolor=BFBFC1&size=10&bcolor=33353C&type=png&text='
-            + encodeURI(text.replace('&', 'and'));
-
-        return new Promise(resolve =>
-        {
-            request(url, (error, response, link) =>
-            {
-                if(error || response.statusCode != 200)
-                {
-                    console.error(error);
-                    return message.channel.send('Something went wrong.');
-                }
-    
-                resolve(link);
-            });
-        });
-    }
 }
-//#endregion
 
-//#region Audio Guess
 exports.audioGuess = async (message) =>
 {
     if(onCooldown(message, commands.gts))
@@ -628,7 +602,7 @@ exports.audioGuess = async (message) =>
     function getSong()
     {
         let list = Object.values(data.albums);
-        song = random(random(list).tracks);
+        song = randomElement(randomElement(list).tracks);
         if(song.title.match('Ver.')) getSong();
         if(!song) getSong();
         if(!song.link || song.link === '') getSong();
@@ -702,12 +676,108 @@ exports.audioGuess = async (message) =>
             }
 
             return message.channel.send(message.author,
-                embed.setTitle('❌ Wrong!')
+            embed.setTitle('❌ Wrong!')
                     .setDescription(`It's **${title}**.`)); 
         });
     }
 }
-//#endregion
+
+exports.memberGuess = async (message) =>
+{
+    if(onCooldown(message, commands.gtm))
+        return;
+
+    message.channel.startTyping();
+
+    const member = randomElement(members.map(m => 
+        ({ 
+            name: m.name,
+            hangul: m.hangul
+        })));
+
+    const getHTML = (link) =>
+        new Promise(resolve =>
+        {
+            request(link, (error, response, html) =>
+            {
+                if(error || response.statusCode != 200) 
+                {
+                    console.log(error, 'An error occurred.');
+                    return resolve(); 
+                }
+                
+                resolve(html);
+            });
+        });
+    
+    let html = await getHTML('https://kprofiles.com/twice-members-profile');
+    if(!html) return;
+
+    let $ = cheerio.load(html);
+    let info = $(`.entry-content > p:contains("${member.hangul}")`).text();
+    let facts = $(`.entry-content > p:contains("${member.name} Facts")`
+        + ' a:contains("Show more")').prop('href');
+
+    html = await getHTML(facts);
+    if(!html) return;
+
+    $ = cheerio.load(html);
+    facts = $(`.entry-content > p:contains("${member.name} facts")`)
+        .text();
+
+    info += `\n${facts}`;
+    info = info.split('\n')
+        .filter(i => 
+        {
+            i = i.toLowerCase();
+            const isValid = 
+                i !== '' &&
+                i !== member.name.toLowerCase() &&
+                !i.match('twice members profile') &&
+                !i.match(`${member.name.toLowerCase()} facts`) &&
+                !i.match('nationality') &&
+                !i.match('stage name') &&
+                !i.match('birth name') &&
+                !i.match('blood type') &&
+                !i.match('zodiac') &&
+                !i.match('weight') &&
+                !i.match('representative color') &&
+                !i.match('show more');
+            return isValid;
+        })
+        .map(i => i.replace(/^– /g, ''));
+
+    info = randomElement(info)
+        .replace(new RegExp(member.name, 'g'), 'this member');
+    info = info.charAt(0).toUpperCase() + info.substr(1).trim();
+    info = await textToImage(info);
+    
+    let embed = new Discord.RichEmbed()
+        .setColor(data.color)
+        .setTitle('👩 Guess the Member!')
+        .setImage(info);
+
+    message.channel.stopTyping();
+    message.channel.send(message.author, embed);
+
+    embed = new Discord.RichEmbed()
+        .setColor(data.color)
+        .setTitle("⏰ Time's up!")
+        .setFooter('Information from kprofiles.com');
+
+    waitAnswer(message, embed).then(reply =>
+    {
+        if(simplify(reply.content) === simplify(member.name))
+        {
+            embed.setTitle('✅ Correct!\n' 
+                + `You win **${rewards.gtm} TWICECOINS**.`)
+            return coins.earnEmbed(message, rewards.gtm, embed);
+        }
+
+        return message.channel.send(message.author,
+            embed.setTitle('❌ Wrong!')); 
+    });
+}
 
 //TODO
 exports.lottery = (message) =>
@@ -783,10 +853,33 @@ exports.lottery = (message) =>
     */
 }
 
-function getRandomIndex(array)
-{
-    return Math.floor(Math.random() * array.length);
-}
+const randomElement = (list) => list[Math.floor(Math.random() * list.length)];
+const simplify = (text) => text
+    .toLowerCase()
+    .trim()
+    .replace(/\s/g, '')
+    .replace(/\?|\!|\.|\(|\)|\.|\?|\!|\-|\'/g, '')
+    .replace('&', 'and');
+    
+
+const textToImage = (text) =>
+    new Promise(resolve =>
+    {
+        const url = 'http://api.img4me.com/?font=arial'
+            + '&fcolor=BFBFC1&size=10&bcolor=33353C&type=png&text='
+            + encodeURI(text.replace('&', 'and'));
+
+        request(url, (error, response, link) =>
+        {
+            if(error || response.statusCode != 200)
+            {
+                console.error(error);
+                return message.channel.send('Something went wrong.');
+            }
+
+            resolve(link);
+        });
+    });
 
 function generateCode(exceptions)
 {
@@ -813,15 +906,8 @@ exports.setAPIDelay = (message) =>
     apiDelay = parseInt(parameter);
     message.channel.send(`API Delay set to ${parameter}ms`);
 }
-
-const random = (list) => list[Math.floor(Math.random() * list.length)];
-const simplify = (text) => text
-    .toLowerCase()
-    .trim()
-    .replace(/\s/g, '')
-    .replace(/\?|\!|\.|\(|\)|\.|\?|\!|\-|\'/g, '')
-    .replace('&', 'and');
         
+//#region old
 // exports.eraAdd = (message) =>
 // {
 //     var era = message.content.match
@@ -1096,7 +1182,7 @@ const simplify = (text) => text
 //         {
 //             image : era.image,
 //             era : era.era
-//         };
+//  };
         
 //         eraPics.push(era);
 //     }
@@ -1147,3 +1233,4 @@ const simplify = (text) => text
 //         });
 //     }
 // }
+//#endregion

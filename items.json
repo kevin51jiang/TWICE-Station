@@ -218,6 +218,7 @@
         {
             "code": "ny",
             "name": "Nayeon",
+            "hangul": "나연",
             "animal": "Bunny",
             "emote": "🐰",
             "photocard": "https://i.imgur.com/iNX9ErD.jpg",
@@ -227,6 +228,7 @@
         {
             "code": "jy",
             "name": "Jeongyeon",
+            "hangul": "정연",
             "animal": "Dragon",
             "emote": "🐲",
             "photocard": "https://i.imgur.com/pA54JXE.jpg",
@@ -236,6 +238,7 @@
         {
             "code": "mm",
             "name": "Momo",
+            "hangul": "모모",
             "animal": "Pig",
             "emote": "🐷",
             "photocard": "https://i.imgur.com/ZNXbMOZ.jpg",
@@ -245,6 +248,7 @@
         {
             "code": "sn",
             "name": "Sana",
+            "hangul": "사나",
             "animal": "Squirrel",
             "emote": "🐿",
             "photocard": "https://i.imgur.com/wTi3BoN.jpg",
@@ -254,6 +258,7 @@
         {
             "code": "jh",
             "name": "Jihyo",
+            "hangul": "지효",
             "animal": "Unicorn",
             "emote": "🦄",
             "photocard": "https://i.imgur.com/2w7UaID.jpg",
@@ -263,6 +268,7 @@
         {
             "code": "mn",
             "name": "Mina",
+            "hangul": "미나",
             "animal": "Penguin",
             "emote": "🐧",
             "photocard": "https://i.imgur.com/pZfwokN.jpg",
@@ -272,6 +278,7 @@
         {
             "code": "dh",
             "name": "Dahyun",
+            "hangul": "다현",
             "animal": "Eagle",
             "emote": "🦅",
             "photocard": "https://i.imgur.com/ax1G8UG.jpg",
@@ -281,6 +288,7 @@
         {
             "code": "ch",
             "name": "Chaeyoung",
+            "hangul": "채영",
             "animal": "Tiger",
             "emote": "🐯",
             "photocard": "https://i.imgur.com/3f62mR5.jpg",
@@ -290,6 +298,7 @@
         {
             "code": "tz",
             "name": "Tzuyu",
+            "hangul": "쯔위",
             "animal": "Puppy",
             "emote": "🐶",
             "photocard": "https://i.imgur.com/JpqJVKL.jpg",

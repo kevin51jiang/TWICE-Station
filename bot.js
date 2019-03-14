@@ -10,7 +10,7 @@ const coins = require('./coins');
 const games = require('./games');
 const candybongs = require('./candybongs');
 const items = require('./items');
-const rpg = require('./rpg');
+// const rpg = require('./rpg');
 
 // const fun = require('./fun');
 
@@ -26,18 +26,20 @@ var prefix = ';';
 
 bot.on('ready', () =>
 {
+    console.log(`Bot started!`);
+    database.init();
+    player.init(bot);
+    
     if(bot.user.id === '517012034831908911')
     {
         prefix = '`';
         ping = ping + 'd';
     }
+    else
+        player.start();
 
-    console.log(`Bot started!`);
     bot.user.setStatus('Online');
     bot.channels.get('533908427399757826').send(ping);
-    player.init(bot);
-    player.start();
-    database.init();
 });
 
 bot.on('message', message =>
@@ -239,6 +241,7 @@ bot.on('message', message =>
     )
         games.wheel(message, bot);
 
+    //TODO: Rename to (item)-guess
     if
     (
         command === 'guessthesong' ||
@@ -254,8 +257,17 @@ bot.on('message', message =>
     )
         games.lyricsGuess(message);
 
+    
+    if
+    (
+        command === 'guessthemember' ||
+        command === 'gtm'
+    )
+        games.memberGuess(message);
+
     if(command.startsWith('apidelay '))
         games.setAPIDelay(message);
+
     // if(command === 'verify all')
     //     games.eraVerifyAll(message);
     // if(command.startsWith('verify ') && command != 'verify all')
@@ -567,6 +579,7 @@ async function test(message)
         return;
 }
 
+//#region misc
 // 533551595644780554
     // const category = message.guild.channels.get('533551227951251456');
     // message.channel.send(category.children.array()
@@ -607,3 +620,4 @@ async function test(message)
     
     //     message.channel.send(embed);
     // });
+//#endregion
