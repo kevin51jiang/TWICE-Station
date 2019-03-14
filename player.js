@@ -110,7 +110,8 @@ exports.start = (message) =>
     
         }).catch(console.error);
         
-    });
+    })
+    .catch(console.error);
 }
 
 exports.skip = (message) =>
