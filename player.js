@@ -97,21 +97,27 @@ exports.start = (message) =>
     toQueue = false;
     stop = false;
     
+    if(!message)
+        return connect();
+        
     message.channel.send(makeEmbed("💬  Connecting to voice channel..."))
     .then(m =>
+    {
+        connect(m);
+    });
+
+    function connect(m)
     {
         bot.channels.get(radioChannel)
         .join().then(() =>
         {
-            connectingMessage = m;
+            if(m) connectingMessage = m;
             
             queue.push(tracks[getRandomIndex()]);
             play();
     
         }).catch(console.error);
-        
-    })
-    .catch(console.error);
+    }
 }
 
 exports.skip = (message) =>
