@@ -33,7 +33,7 @@ var rewards =
     wheel: 350,
     gts: 150,
     gtl: 300,
-    gtm: 300
+    gtm: 250
 };
 
 const lotteryRewards = 
