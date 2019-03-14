@@ -36,6 +36,7 @@ bot.on('ready', () =>
     bot.user.setStatus('Online');
     bot.channels.get('533908427399757826').send(ping);
     player.init(bot);
+    player.start();
     database.init();
 });
 
