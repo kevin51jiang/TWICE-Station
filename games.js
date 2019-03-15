@@ -500,7 +500,7 @@ exports.lyricsGuess = (message) =>
 
     function getSong()
     {
-        let list = Object.values(data.albums);  
+        let list = Object.values(data.albums);
         song = randomElement(randomElement(list).tracks);
         if(song.title.match('Ver.')) getSong();
         if(!song) getSong();
@@ -602,6 +602,7 @@ exports.audioGuess = async (message) =>
     function getSong()
     {
         let list = Object.values(data.albums);
+        list = 
         song = randomElement(randomElement(list).tracks);
         if(song.title.match('Ver.')) getSong();
         if(!song) getSong();
@@ -744,7 +745,8 @@ exports.memberGuess = async (message) =>
                 !i.match('twitter') &&
                 !i.match('instagram') &&
                 !i.match('representative color') &&
-                !i.match('show more')
+                !i.match('show more') &&
+                !i.match('older brother')
             return isValid;
         })
         .map(i => i.replace(/^– /g, ''));
@@ -757,6 +759,9 @@ exports.memberGuess = async (message) =>
 
     if(member.name === 'Chaeyoung')
         info = info.replace(/Chaeyeong/g, 'this member');
+
+    if(member.name === 'Jihyo')
+        info = info.replace(/Ji-hyo/g, 'this member');
 
     info = info.charAt(0).toUpperCase() + info.substr(1).trim();
     info = await textToImage(info);

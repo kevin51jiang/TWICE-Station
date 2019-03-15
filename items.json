@@ -375,7 +375,7 @@
                 "wmu-a",
                 "ht2-a"
             ],
-            "bonus": 5000
+            "bonus": 9000
         },
 
         "Nayeon":
@@ -387,7 +387,7 @@
                 "ny-ps",
                 "mc"
             ],
-            "bonus": 2000
+            "bonus": 4000
         },
 
         "Dahyun":
@@ -399,7 +399,7 @@
                 "dh-ps",
                 "cm"
             ],
-            "bonus": 2000
+            "bonus": 4000
         },
 
         "Sana":
@@ -411,7 +411,7 @@
                 "sn-ps",
                 "ck"
             ],
-            "bonus": 2000
+            "bonus": 4000
         },
 
         "Mina":
@@ -423,7 +423,7 @@
                 "mn-ps",
                 "sw"
             ],
-            "bonus": 2000
+            "bonus": 4000
         },
 
         "Jeongyeon":
@@ -435,7 +435,7 @@
                 "jy-ps",
                 "sx"
             ],
-            "bonus": 2000
+            "bonus": 4000
         },
 
         "Tzuyu":
@@ -447,7 +447,7 @@
                 "tz-ps",
                 "bw"
             ],
-            "bonus": 2000
+            "bonus": 4000
         },
 
         "Chaeyoung":
@@ -459,7 +459,7 @@
                 "ch-ps",
                 "sb"
             ],
-            "bonus": 2000
+            "bonus": 4000
         },
 
         "Momo":
@@ -471,7 +471,7 @@
                 "mm-ps",
                 "jk"
             ],
-            "bonus": 2000
+            "bonus": 4000
         },
 
         "Jihyo":
@@ -483,7 +483,7 @@
                 "jh-ps",
                 "th"
             ],
-            "bonus": 2000
+            "bonus": 4000
         },
 
         "TWICE":
