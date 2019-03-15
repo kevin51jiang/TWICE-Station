@@ -31,7 +31,7 @@ var rewards =
     trivia: 25,
     era: 50,
     wheel: 350,
-    gts: 150,
+    gts: 200,
     gtl: 300,
     gtm: 250
 };
