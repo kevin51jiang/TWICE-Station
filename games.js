@@ -741,8 +741,10 @@ exports.memberGuess = async (message) =>
                 !i.match('blood type') &&
                 !i.match('zodiac') &&
                 !i.match('weight') &&
+                !i.match('twitter') &&
+                !i.match('instagram') &&
                 !i.match('representative color') &&
-                !i.match('show more');
+                !i.match('show more')
             return isValid;
         })
         .map(i => i.replace(/^– /g, ''));
