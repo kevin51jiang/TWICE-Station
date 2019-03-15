@@ -602,7 +602,6 @@ exports.audioGuess = async (message) =>
     function getSong()
     {
         let list = Object.values(data.albums);
-        list = 
         song = randomElement(randomElement(list).tracks);
         if(song.title.match('Ver.')) getSong();
         if(!song) getSong();
@@ -612,7 +611,8 @@ exports.audioGuess = async (message) =>
     const title = song.title,
         link = song.link;
 
-    let startTime = ~~(await getAudioDurationInSeconds(link));
+    let startTime = ~~(await getAudioDurationInSeconds(link)
+        .catch(console.error));
     startTime = Math.floor(Math.random() * startTime - 5);
     if(startTime <= 0)
         startTime += 5;
@@ -644,20 +644,9 @@ exports.audioGuess = async (message) =>
                 name: 'Song.mp3'
             }]
         })
-        .then(_ =>
-        {
-            try
-            {
-                fs.unlink('Song.mp3', error => 
-                {
-                    if(error) console.error(error);
-                });
-            }
-            catch(error)
-            {
-                console.log(error);
-            }
-        });
+        .then(_ => fs.unlink('Song.mp3', error => 
+            { if(error) console.error(error); }))
+        .catch(console.error);
 
         const embed = new Discord.RichEmbed()
             .setColor(data.color)

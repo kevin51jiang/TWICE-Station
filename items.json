@@ -28,7 +28,7 @@
             "name": "good", 
             "text": "**good**",
             "limit": 35,
-            "cost": 50,
+            "cost": 100,
             "list":
             [
                 {
@@ -349,7 +349,7 @@
                 "mm-p",
                 "jh-p" 
             ],
-            "bonus": 2000
+            "bonus": 3000
         }, 
 
         "Album":

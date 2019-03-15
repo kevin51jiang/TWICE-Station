@@ -21,8 +21,8 @@ bot.login(args)
     if(error) console.log('gitgud haha'); 
 });
 
-const ping = '<@247955535620472844>•';
-const prefix = ';';
+let ping = '<@247955535620472844>•';
+let prefix = ';';
 
 bot.on('ready', () =>
 {
