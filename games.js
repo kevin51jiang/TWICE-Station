@@ -496,11 +496,17 @@ exports.lyricsGuess = (message) =>
         return;
 
     let song;
+    let list = Object.values(data.albums);
+    // list = list.reduce((array, album) =>
+    //     array.concat(...album.tracks), []);
+    // list = list.filter((track, i) => 
+    //     list.indexOf(list.findIndex(e => e.title === track.title)) === i);
+    // console.log(list);
+    // list = Object.values(data.albums);
     getSong();
 
     function getSong()
     {
-        let list = Object.values(data.albums);
         song = randomElement(randomElement(list).tracks);
         if(song.title.match('Ver.')) getSong();
         if(!song) getSong();
@@ -597,15 +603,15 @@ exports.audioGuess = async (message) =>
         return;
 
     let song;
+    let list = Object.values(data.albums);
     getSong();
 
     function getSong()
     {
-        let list = Object.values(data.albums);
         song = randomElement(randomElement(list).tracks);
         if(song.title.match('Ver.')) getSong();
         if(!song) getSong();
-        if(!song.link || song.link === '') getSong();
+        if(song.link === '') getSong();
     }
 
     const title = song.title,
@@ -615,6 +621,7 @@ exports.audioGuess = async (message) =>
         .catch(error => 
         {
             console.error(error);
+            delete cooldowns.gts[message.author.id];
             const notice = new Discord.RichEmbed()
                 .setColor(data.color)
                 .setTitle('❌ Whoops! An error occurred. Try again.');
