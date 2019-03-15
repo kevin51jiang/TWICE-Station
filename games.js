@@ -748,9 +748,13 @@ exports.memberGuess = async (message) =>
         .map(i => i.replace(/^– /g, ''));
 
     info = randomElement(info)
-        .replace(new RegExp(member.name, 'g'), 'this member')
-        .replace(/Jungyeon/g, 'this member')
-        .replace(/Chaeyeong/g, 'this member');
+        .replace(new RegExp(member.name, 'g'), 'this member');
+
+    if(member.name === 'Jeongyeon')
+        info = info.replace(/Jungyeon/g, 'this member');
+
+    if(member.name === 'Chaeyoung')
+        info = info.replace(/Chaeyeong/g, 'this member');
 
     info = info.charAt(0).toUpperCase() + info.substr(1).trim();
     info = await textToImage(info);
