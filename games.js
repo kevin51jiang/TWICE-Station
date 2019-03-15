@@ -612,7 +612,14 @@ exports.audioGuess = async (message) =>
         link = song.link;
 
     let startTime = ~~(await getAudioDurationInSeconds(link)
-        .catch(console.error));
+        .catch(error => 
+        {
+            console.error(error);
+            const notice = new Discord.RichEmbed()
+                .setColor(data.color)
+                .setTitle('❌ Whoops! An error occurred. Try again.');
+            message.channel.send(message.author, notice);
+        }));
     startTime = Math.floor(Math.random() * startTime - 5);
     if(startTime <= 0)
         startTime += 5;
