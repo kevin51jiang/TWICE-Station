@@ -792,7 +792,8 @@ exports.memberGuess = async (message) =>
         }
 
         return message.channel.send(message.author,
-            embed.setTitle('❌ Wrong!')); 
+            embed.setTitle('❌ Wrong!\n'
+                + `The correct answer was **${member.name}**.` )); 
     });
 }
 
